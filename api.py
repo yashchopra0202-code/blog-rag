@@ -1,4 +1,7 @@
+import glob
+import json
 import os
+from collections import Counter
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -10,7 +13,25 @@ import rag_core
 
 load_dotenv()
 PERSIST_DIR = "chroma_db"
+ARTICLES_DIR = "data/articles"
+MANIFEST_PATH = "data/manifest.json"
 MODEL = "claude-haiku-4-5"
+
+# Slug -> human label for the discovery UI. Keeps display names in one place.
+SITE_LABELS = {
+    "anthropic-research": "Anthropic · Research",
+    "anthropic-engineering": "Anthropic · Engineering",
+    "anthropic-news": "Anthropic · News",
+    "openai-research": "OpenAI · Research",
+    "openai-index": "OpenAI · Index",
+    "google-research": "Google Research",
+    "deepmind": "Google DeepMind",
+    "meta-ai": "Meta AI",
+    "huggingface": "Hugging Face",
+    "microsoft-research": "Microsoft Research",
+    "mistral": "Mistral",
+    "cohere": "Cohere",
+}
 PROMPT_TMPL = (
     "Answer the question using ONLY the context below. "
     "If the answer is not in the context, say you don't know.\n\n"
@@ -54,6 +75,31 @@ def ask(payload: Ask):
     return answer_question(q)
 
 
+def corpus_stats() -> dict:
+    """Counts + freshness for the discovery UI, read from disk (no index load)."""
+    files = glob.glob(os.path.join(ARTICLES_DIR, "*.md"))
+    counts = Counter(os.path.basename(f).split("__", 1)[0] for f in files)
+    sites = [{"name": s, "label": SITE_LABELS.get(s, s), "count": n}
+             for s, n in counts.most_common()]
+    updated = ""
+    try:
+        with open(MANIFEST_PATH, encoding="utf-8") as f:
+            manifest = json.load(f)
+        dates = [v.get("scraped_at", "")[:10] for v in manifest.values()
+                 if v.get("scraped_at")]
+        updated = max(dates) if dates else ""
+    except (OSError, ValueError):
+        pass
+    return {"articles": len(files), "sites": sites, "updated": updated}
+
+
+@app.get("/stats")
+def stats():
+    return corpus_stats()
+
+
 @app.get("/")
 def index():
-    return FileResponse("static/index.html")
+    # no-cache so an edited page is always served fresh on the next load.
+    return FileResponse("static/index.html",
+                        headers={"Cache-Control": "no-cache, must-revalidate"})

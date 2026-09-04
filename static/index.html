@@ -1,621 +1,495 @@
-<!--
-THESIS: a single question, answered from primary-source lab writing, with proof-of-work (visible sources) instead of a bare chat bubble.
-OWN-WORLD: cool-neutral slate ground, one committed deep-teal accent for the single action and every state signal; one system-sans family; small-caps-free, label-free headings; soft-elevated card surfaces with real offset+blur shadows.
-STORY: visitor reads the scope (which labs), asks a question, sees a loading state that names what's happening, gets an answer plus a clearly separated, clickable source list, or a plain-language error naming the fix.
-FIRST VIEWPORT: centered single column, ~640px; heading + one-line scope statement; input+button row directly below, full width; example chips beneath for a cold start; nothing else above the fold.
-FORM: local FastAPI Operate tool, not a marketing surface — earned-familiarity form UI over concept exploration; no seed script run (no PRODUCT.md/decision-page infra in this harness; disclosed to the caller).
-FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
--->
 <!doctype html>
 <html lang="en">
 <head>
-<meta charset="UTF-8">
+<meta charset="utf-8">
 <meta name="viewport" content="width=device-width, initial-scale=1">
-<title>Ask the Frontier Labs</title>
+<title>Frontier — Ask the AI Labs</title>
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
+  /* ---------- palette (light is the base; dark overrides below) ---------- */
   :root {
-    --bg: #f5f6f8;
-    --surface: #ffffff;
-    --surface-2: #ebeef2;
-    --border: #dde1e7;
-    --text: #14161a;
-    --text-secondary: #565c66;
-    --text-tertiary: #7a8090;
-    --accent: #0f766e;
-    --accent-strong: #0b5c56;
-    --accent-text: #0f766e;
-    --accent-contrast: #ffffff;
-    --danger: #b3261e;
-    --danger-bg: #fdecea;
-    --danger-border: #f3c8c4;
-    --focus-ring: rgba(15, 118, 110, 0.35);
-    --shadow-color: rgba(20, 24, 32, 0.10);
+    --bg: #F5F6F0;
+    --bg-grad: radial-gradient(1200px 520px at 50% -8%, #EAF1EC 0%, rgba(234,241,236,0) 60%);
+    --surface: #FFFFFF;
+    --surface-2: #EFF1EA;
+    --text: #15201A;
+    --text-2: #57615A;
+    --text-3: #7C867E;
+    --border: #E3E5DC;
+    --border-strong: #D2D6CA;
+    --accent: #0E7C66;
+    --accent-strong: #0A5F4E;
+    --accent-contrast: #FFFFFF;
+    --accent-soft: #E3F1EB;
+    --accent-text: #0A4B3D;
+    --amber-text: #8A5A00;
+    --amber-soft: #FBEED6;
+    --danger-text: #9A3324;
+    --danger-soft: #FBE6E1;
+    --shadow-sm: 0 1px 2px rgba(21,32,26,.05);
+    --shadow-lg: 0 1px 2px rgba(21,32,26,.05), 0 22px 48px -26px rgba(21,32,26,.30);
+    --ring: rgba(14,124,102,.32);
+    --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
+    --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     color-scheme: light;
   }
-
-  @media (prefers-color-scheme: dark) {
-    :root {
-      --bg: #0e1216;
-      --surface: #171c22;
-      --surface-2: #1e2530;
-      --border: #2b3340;
-      --text: #edf0f4;
-      --text-secondary: #a4acba;
-      --text-tertiary: #7c8494;
-      --accent: #14b8a6;
-      --accent-strong: #2dd4bf;
-      --accent-text: #5eead4;
-      --accent-contrast: #04211f;
-      --danger: #f2726a;
-      --danger-bg: #2a1616;
-      --danger-border: #4a2320;
-      --focus-ring: rgba(20, 184, 166, 0.35);
-      --shadow-color: rgba(0, 0, 0, 0.45);
+  :root:not([data-theme="light"]) {
+    @media (prefers-color-scheme: dark) {
+      --bg: #0E1512; --bg-grad: radial-gradient(1200px 520px at 50% -8%, #12241E 0%, rgba(18,36,30,0) 60%);
+      --surface: #161F1B; --surface-2: #1C2822;
+      --text: #E9F1EC; --text-2: #9FAEA6; --text-3: #7A897F;
+      --border: #253029; --border-strong: #32403799;
+      --accent: #45C79E; --accent-strong: #5FD6B0; --accent-contrast: #06231B;
+      --accent-soft: #10322A; --accent-text: #8FE7CC;
+      --amber-text: #E4AF57; --amber-soft: #2A2213;
+      --danger-text: #F0977F; --danger-soft: #2E1712;
+      --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+      --shadow-lg: 0 1px 2px rgba(0,0,0,.35), 0 26px 52px -26px rgba(0,0,0,.7);
+      --ring: rgba(69,199,158,.40);
       color-scheme: dark;
     }
   }
+  :root[data-theme="dark"] {
+    --bg: #0E1512; --bg-grad: radial-gradient(1200px 520px at 50% -8%, #12241E 0%, rgba(18,36,30,0) 60%);
+    --surface: #161F1B; --surface-2: #1C2822;
+    --text: #E9F1EC; --text-2: #9FAEA6; --text-3: #7A897F;
+    --border: #253029; --border-strong: #324037;
+    --accent: #45C79E; --accent-strong: #5FD6B0; --accent-contrast: #06231B;
+    --accent-soft: #10322A; --accent-text: #8FE7CC;
+    --amber-text: #E4AF57; --amber-soft: #2A2213;
+    --danger-text: #F0977F; --danger-soft: #2E1712;
+    --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+    --shadow-lg: 0 1px 2px rgba(0,0,0,.35), 0 26px 52px -26px rgba(0,0,0,.7);
+    --ring: rgba(69,199,158,.40);
+    color-scheme: dark;
+  }
 
   * { box-sizing: border-box; }
-
-  html {
-    scrollbar-color: var(--border) transparent;
-  }
-
+  [hidden] { display: none !important; }
+  html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0;
-    min-height: 100vh;
-    background: var(--bg);
+    margin: 0; min-height: 100vh;
+    background: var(--bg-grad), var(--bg);
     color: var(--text);
-    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
-    font-size: 16px;
-    line-height: 1.5;
-    -webkit-font-smoothing: antialiased;
+    font-family: var(--font-body);
+    font-size: 16px; line-height: 1.6;
+    font-feature-settings: "cv05" 1, "ss01" 1;
+    -webkit-font-smoothing: antialiased; text-rendering: optimizeLegibility;
+  }
+  ::selection { background: var(--accent-soft); color: var(--accent-text); }
+  :focus-visible { outline: 2px solid var(--accent); outline-offset: 2px; border-radius: 6px; }
+  * { scrollbar-color: var(--border-strong) transparent; }
+  ::-webkit-scrollbar { width: 12px; height: 12px; }
+  ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 3px solid var(--bg); }
+  a { color: var(--accent-text); text-underline-offset: 3px; text-decoration-thickness: 1px; }
+
+  .wrap { max-width: 780px; margin: 0 auto; padding: 0 22px 88px; }
+
+  /* ---------- top bar ---------- */
+  .topbar {
+    max-width: 780px; margin: 0 auto; padding: 20px 22px 14px;
+    display: flex; align-items: center; justify-content: space-between;
+  }
+  .brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--text); }
+  .brand .mark {
+    width: 27px; height: 27px; display: grid; place-items: center;
+    color: var(--accent); flex: none;
+  }
+  .brand .name { font-family: var(--font-display); font-weight: 700; font-size: 1.12rem; letter-spacing: -.02em; }
+  .brand .name b { color: var(--accent-text); font-weight: 700; }
+  .icon-btn {
+    width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border);
+    background: var(--surface); color: var(--text-2); cursor: pointer;
+    display: grid; place-items: center; transition: color .15s, border-color .15s, background .15s, transform .12s;
+    box-shadow: var(--shadow-sm);
+  }
+  .icon-btn:hover { color: var(--text); border-color: var(--border-strong); }
+  .icon-btn:active { transform: translateY(1px); }
+  .icon-btn .moon { display: none; }
+  :root[data-theme="dark"] .icon-btn .sun { display: none; }
+  :root[data-theme="dark"] .icon-btn .moon { display: block; }
+  @media (prefers-color-scheme: dark) {
+    :root:not([data-theme="light"]) .icon-btn .sun { display: none; }
+    :root:not([data-theme="light"]) .icon-btn .moon { display: block; }
   }
 
-  ::selection {
-    background: var(--focus-ring);
-    color: var(--text);
+  /* ---------- hero ---------- */
+  .hero { padding: 26px 0 22px; }
+  h1 {
+    font-family: var(--font-display); font-weight: 600;
+    font-size: clamp(2.15rem, 6.4vw, 3.35rem); line-height: 1.03;
+    letter-spacing: -.035em; margin: 0 0 .5em; max-width: 15ch;
+  }
+  .lede { margin: 0; color: var(--text-2); font-size: 1.06rem; max-width: 60ch; }
+  .lede b { color: var(--text); font-weight: 600; }
+  .lede .dot { color: var(--text-3); margin: 0 .5ch; }
+  .lede .updated { color: var(--text-3); white-space: nowrap; }
+
+  /* ---------- ask field ---------- */
+  form.ask { margin: 22px 0 0; }
+  .field {
+    display: flex; align-items: center; gap: 8px;
+    background: var(--surface); border: 1px solid var(--border-strong);
+    border-radius: 15px; padding: 8px 8px 8px 16px;
+    box-shadow: var(--shadow-lg);
+    transition: border-color .16s, box-shadow .16s;
+  }
+  .field:focus-within { border-color: var(--accent); box-shadow: var(--shadow-lg), 0 0 0 4px var(--ring); }
+  .field .search-i { color: var(--text-3); flex: none; }
+  #q {
+    flex: 1; min-width: 0; border: 0; background: transparent; outline: none;
+    color: var(--text); font: inherit; font-size: 1.05rem; padding: 8px 2px; caret-color: var(--accent);
+  }
+  #q::placeholder { color: var(--text-3); }
+  .send {
+    flex: none; height: 44px; min-width: 44px; padding: 0 16px; border: 0; border-radius: 11px;
+    background: var(--accent); color: var(--accent-contrast); cursor: pointer;
+    font: inherit; font-weight: 600; font-size: .95rem;
+    display: inline-flex; align-items: center; gap: 7px;
+    transition: background .15s, transform .12s, opacity .15s;
+  }
+  .send:hover { background: var(--accent-strong); }
+  .send:active { transform: translateY(1px); }
+  .send:disabled { opacity: .55; cursor: default; }
+  .send .label { display: inline; }
+  .send .spinner { display: none; width: 17px; height: 17px; }
+  .send.busy .arrow { display: none; }
+  .send.busy .label { display: none; }
+  .send.busy .spinner { display: block; animation: spin .7s linear infinite; }
+  @media (max-width: 460px) {
+    .send { padding: 0; width: 44px; } .send .label { display: none; }
   }
 
-  a { color: var(--accent-text); }
-
-  :focus-visible {
-    outline: 2px solid var(--accent);
-    outline-offset: 2px;
-    border-radius: 4px;
+  /* ---------- suggestions ---------- */
+  .suggest { margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .suggest .lead { font-size: .84rem; color: var(--text-3); margin-right: 2px; }
+  .chip {
+    font: inherit; font-size: .88rem; cursor: pointer;
+    background: var(--surface); border: 1px solid var(--border);
+    color: var(--text-2); border-radius: 999px; padding: 7px 13px;
+    display: inline-flex; align-items: center; gap: 7px;
+    transition: color .14s, border-color .14s, background .14s, transform .12s;
+    box-shadow: var(--shadow-sm);
   }
+  .chip:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
+  .chip:active { transform: translateY(1px); }
+  .chip .sparkle { color: var(--accent); flex: none; }
 
-  .visually-hidden {
-    position: absolute;
-    width: 1px; height: 1px;
-    padding: 0; margin: -1px;
-    overflow: hidden;
-    clip: rect(0,0,0,0);
-    white-space: nowrap;
-    border: 0;
+  /* ---------- result panel ---------- */
+  .panel { margin: 26px 0 0; }
+  .answer-card {
+    background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 24px 24px 8px; box-shadow: var(--shadow-lg);
   }
-
-  .page {
-    max-width: 680px;
-    margin: 0 auto;
-    padding: 4rem 1.5rem 5rem;
+  .asked {
+    font-family: var(--font-display); font-weight: 600; font-size: 1.12rem;
+    letter-spacing: -.02em; color: var(--text); margin: 0 0 14px; line-height: 1.3;
   }
+  .answer { color: var(--text); font-size: 1.03rem; line-height: 1.68; white-space: pre-wrap; word-wrap: break-word; }
+  .answer p { margin: 0 0 .85em; }
+  .answer strong { font-weight: 600; color: var(--text); }
+  .answer code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .9em;
+    background: var(--surface-2); border: 1px solid var(--border); border-radius: 5px; padding: .08em .38em; }
 
-  .intro {
-    margin-bottom: 2.25rem;
+  .sources { margin-top: 20px; border-top: 1px solid var(--border); padding: 18px 0 16px; }
+  .sources h2 {
+    display: flex; align-items: center; gap: 8px; margin: 0 0 12px;
+    font-family: var(--font-body); font-weight: 600; font-size: .82rem;
+    letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text);
   }
-
-  .intro h1 {
-    font-size: 2rem;
-    line-height: 1.2;
-    letter-spacing: -0.02em;
-    font-weight: 700;
-    margin: 0 0 0.6rem;
+  .sources h2 .badge { color: var(--accent); }
+  .sources ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .src {
+    display: flex; align-items: center; gap: 12px; text-decoration: none;
+    padding: 11px 13px; border-radius: 11px; background: var(--surface-2);
+    border: 1px solid transparent; transition: border-color .14s, transform .12s, background .14s;
   }
+  .src:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .src:hover .src-out { color: var(--accent); transform: translate(1px,-1px); }
+  .src .src-body { min-width: 0; flex: 1; }
+  .src .src-title { color: var(--text); font-weight: 500; font-size: .96rem; line-height: 1.35;
+    display: block; white-space: nowrap; overflow: hidden; text-overflow: ellipsis; }
+  .src .src-site { color: var(--text-3); font-size: .8rem; }
+  .src .src-out { color: var(--text-3); flex: none; transition: color .14s, transform .14s; }
 
-  .intro .subtitle {
-    margin: 0;
-    color: var(--text-secondary);
-    font-size: 1.0625rem;
-    line-height: 1.55;
-    max-width: 62ch;
+  /* ---------- loading ---------- */
+  .loading { margin: 26px 0 0; background: var(--surface); border: 1px solid var(--border);
+    border-radius: 16px; padding: 24px; box-shadow: var(--shadow-lg); }
+  .loading .status { display: flex; align-items: center; gap: 10px; color: var(--text-2); font-size: .95rem; margin-bottom: 18px; }
+  .loading .status .spinner { width: 17px; height: 17px; color: var(--accent); animation: spin .7s linear infinite; }
+  .skel { height: 13px; border-radius: 6px; margin: 10px 0;
+    background: linear-gradient(90deg, var(--surface-2) 25%, var(--border) 37%, var(--surface-2) 63%);
+    background-size: 400% 100%; animation: shimmer 1.4s ease infinite; }
+  .skel.s1 { width: 92%; } .skel.s2 { width: 100%; } .skel.s3 { width: 74%; }
+
+  /* ---------- error ---------- */
+  .error { margin: 26px 0 0; display: flex; align-items: flex-start; gap: 11px;
+    background: var(--danger-soft); border: 1px solid transparent; border-radius: 14px;
+    padding: 15px 17px; color: var(--danger-text); }
+  .error svg { flex: none; margin-top: 1px; }
+  .error .etxt { color: var(--danger-text); font-size: .95rem; }
+  .error .etxt b { display: block; margin-bottom: 2px; color: var(--danger-text); font-weight: 600; }
+
+  /* ---------- corpus / what's inside ---------- */
+  .corpus { margin: 46px 0 0; }
+  .corpus h2 {
+    font-family: var(--font-display); font-weight: 600; font-size: 1.12rem;
+    letter-spacing: -.02em; margin: 0 0 4px;
   }
-
-  .ask-form {
-    margin-bottom: 1.75rem;
+  .corpus .sub { margin: 0 0 16px; color: var(--text-2); font-size: .92rem; }
+  .labs { display: flex; flex-wrap: wrap; gap: 8px; }
+  .lab {
+    font: inherit; font-size: .875rem; cursor: pointer; text-align: left;
+    background: var(--surface); border: 1px solid var(--border); border-radius: 11px;
+    padding: 9px 12px; display: inline-flex; align-items: baseline; gap: 8px;
+    color: var(--text); transition: border-color .14s, background .14s, transform .12s; box-shadow: var(--shadow-sm);
   }
-
-  .input-row {
-    display: flex;
-    gap: 0.6rem;
-    align-items: stretch;
+  .lab:hover { border-color: var(--accent); background: var(--accent-soft); }
+  .lab:active { transform: translateY(1px); }
+  .lab .count {
+    font-variant-numeric: tabular-nums; font-size: .78rem; font-weight: 600;
+    color: var(--accent-text); background: var(--accent-soft); border-radius: 6px; padding: 1px 6px;
   }
+  .lab:hover .count { background: var(--surface); }
 
-  #question {
-    flex: 1 1 auto;
-    min-width: 0;
-    font: inherit;
-    font-size: 1.0625rem;
-    color: var(--text);
-    background: var(--surface);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.85rem 1rem;
-    caret-color: var(--accent);
-    transition: border-color 150ms ease, box-shadow 150ms ease;
-  }
+  footer { margin: 40px auto 0; max-width: 780px; padding: 22px 22px 0;
+    border-top: 1px solid var(--border); color: var(--text-3); font-size: .82rem; line-height: 1.6; }
 
-  #question::placeholder {
-    color: var(--text-tertiary);
-  }
-
-  #question:hover {
-    border-color: var(--text-tertiary);
-  }
-
-  #question:focus-visible {
-    outline: none;
-    border-color: var(--accent);
-    box-shadow: 0 0 0 3px var(--focus-ring);
-  }
-
-  #question:disabled {
-    opacity: 0.65;
-    cursor: not-allowed;
-  }
-
-  #ask-btn {
-    flex: 0 0 auto;
-    display: inline-flex;
-    align-items: center;
-    justify-content: center;
-    gap: 0.5rem;
-    min-width: 6.5rem;
-    font: inherit;
-    font-size: 1rem;
-    font-weight: 600;
-    color: var(--accent-contrast);
-    background: var(--accent);
-    border: 1px solid transparent;
-    border-radius: 10px;
-    padding: 0.85rem 1.15rem;
-    cursor: pointer;
-    transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
-  }
-
-  #ask-btn:hover:not(:disabled) {
-    background: var(--accent-strong);
-  }
-
-  #ask-btn:active:not(:disabled) {
-    transform: translateY(1px);
-  }
-
-  #ask-btn:focus-visible {
-    outline: none;
-    box-shadow: 0 0 0 3px var(--focus-ring);
-  }
-
-  #ask-btn:disabled {
-    cursor: not-allowed;
-    opacity: 0.75;
-  }
-
-  #ask-btn .spinner {
-    width: 1rem;
-    height: 1rem;
-    animation: spin 700ms linear infinite;
-    display: none;
-  }
-
-  #ask-btn.is-loading .spinner { display: inline-block; }
-  #ask-btn.is-loading .send-icon { display: none; }
-
-  @keyframes spin {
-    to { transform: rotate(360deg); }
-  }
-
-  .examples {
-    display: flex;
-    flex-wrap: wrap;
-    gap: 0.5rem;
-    margin-top: 0.85rem;
-  }
-
-  .example-chip {
-    font: inherit;
-    font-size: 0.875rem;
-    color: var(--text-secondary);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 999px;
-    padding: 0.4rem 0.85rem;
-    cursor: pointer;
-    transition: border-color 150ms ease, color 150ms ease;
-  }
-
-  .example-chip:hover:not(:disabled) {
-    border-color: var(--text-tertiary);
-    color: var(--text);
-  }
-
-  .example-chip:disabled {
-    cursor: not-allowed;
-    opacity: 0.55;
-  }
-
-  .status {
-    min-height: 1.4rem;
-    margin-bottom: 0.5rem;
-    color: var(--text-secondary);
-    font-size: 0.9375rem;
-  }
-
-  .panel {
-    border-radius: 14px;
-    padding: 1.5rem 1.6rem;
-    margin-top: 0.5rem;
-  }
-
-  .panel[hidden] { display: none; }
-
-  .answer-panel {
-    background: var(--surface);
-    border: 1px solid var(--border);
-    box-shadow: 0 8px 24px -12px var(--shadow-color);
-    animation: rise 220ms cubic-bezier(0.16, 1, 0.3, 1);
-  }
-
-  @keyframes rise {
-    from { opacity: 0; transform: translateY(6px); }
-    to { opacity: 1; transform: translateY(0); }
-  }
-
-  .panel-heading {
-    margin: 0 0 0.75rem;
-    font-size: 0.8125rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--text-tertiary);
-  }
-
-  .answer-text {
-    font-size: 1.0625rem;
-    line-height: 1.65;
-    color: var(--text);
-    max-width: 68ch;
-    white-space: pre-wrap;
-  }
-
-  .sources {
-    margin-top: 1.5rem;
-    padding-top: 1.25rem;
-    border-top: 1px solid var(--border);
-  }
-
-  .sources[hidden] { display: none; }
-
-  .sources-heading {
-    margin: 0 0 0.75rem;
-    font-size: 0.8125rem;
-    font-weight: 700;
-    letter-spacing: 0.04em;
-    text-transform: uppercase;
-    color: var(--text-tertiary);
-  }
-
-  .sources-list {
-    list-style: none;
-    margin: 0;
-    padding: 0;
-    display: flex;
-    flex-direction: column;
-    gap: 0.5rem;
-  }
-
-  .source-link {
-    display: flex;
-    align-items: baseline;
-    gap: 0.6rem;
-    text-decoration: none;
-    color: var(--text);
-    background: var(--surface-2);
-    border: 1px solid var(--border);
-    border-radius: 10px;
-    padding: 0.7rem 0.9rem;
-    transition: border-color 150ms ease, background-color 150ms ease;
-  }
-
-  .source-link:hover {
-    border-color: var(--accent);
-    background: var(--surface);
-  }
-
-  .source-title {
-    font-size: 0.9375rem;
-    font-weight: 600;
-    flex: 1 1 auto;
-    min-width: 0;
-    overflow: hidden;
-    text-overflow: ellipsis;
-    white-space: nowrap;
-  }
-
-  .source-site {
-    flex: 0 0 auto;
-    font-size: 0.8125rem;
-    color: var(--text-tertiary);
-  }
-
-  .source-link svg {
-    flex: 0 0 auto;
-    width: 0.9rem;
-    height: 0.9rem;
-    color: var(--text-tertiary);
-  }
-
-  .error-panel {
-    display: flex;
-    gap: 0.75rem;
-    align-items: flex-start;
-    background: var(--danger-bg);
-    border: 1px solid var(--danger-border);
-    color: var(--danger);
-  }
-
-  .error-panel svg {
-    flex: 0 0 auto;
-    width: 1.15rem;
-    height: 1.15rem;
-    margin-top: 0.15rem;
-  }
-
-  .error-panel p {
-    margin: 0;
-    font-size: 0.9375rem;
-    line-height: 1.5;
-    color: var(--text);
-  }
-
-  .footer {
-    margin-top: 3rem;
-  }
-
-  .footer p {
-    margin: 0;
-    font-size: 0.8125rem;
-    color: var(--text-tertiary);
-  }
-
-  @media (max-width: 480px) {
-    .page {
-      padding: 2.75rem 1.25rem 3.5rem;
-    }
-    .intro h1 {
-      font-size: 1.625rem;
-    }
-    .input-row {
-      flex-direction: column;
-    }
-    #ask-btn {
-      width: 100%;
-    }
-  }
-
+  .reveal { animation: reveal .5s cubic-bezier(.16,1,.3,1) both; }
+  @keyframes reveal { from { opacity: 0; transform: translateY(10px); filter: blur(6px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  @keyframes shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
   @media (prefers-reduced-motion: reduce) {
-    #ask-btn .spinner {
-      animation-duration: 1400ms;
-    }
-    .answer-panel {
-      animation: none;
-    }
+    * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    .skel { animation: none; }
   }
 </style>
 </head>
 <body>
-  <div class="page">
-    <header class="intro">
-      <h1>Ask the frontier labs</h1>
-      <p class="subtitle">
-        Answers grounded in research &amp; engineering posts from Anthropic, OpenAI, Google DeepMind, Meta,
-        Hugging Face, Microsoft, Mistral, and Cohere.
-      </p>
-    </header>
+  <header class="topbar">
+    <a class="brand" href="/" aria-label="Frontier — home">
+      <span class="mark" aria-hidden="true">
+        <svg width="24" height="24" viewBox="0 0 24 24" fill="none"><path d="M12 2.5c.5 4.2 2.8 6.5 7 7-4.2.5-6.5 2.8-7 7-.5-4.2-2.8-6.5-7-7 4.2-.5 6.5-2.8 7-7Z" fill="currentColor"/></svg>
+      </span>
+      <span class="name">Frontier<b>·</b>Labs</span>
+    </a>
+    <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">
+      <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
+      <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.2A7.6 7.6 0 0 1 9.8 4 7.6 7.6 0 1 0 20 14.2Z"/></svg>
+    </button>
+  </header>
 
-    <main>
-      <form id="ask-form" class="ask-form" autocomplete="off">
-        <label for="question" class="visually-hidden">Your question</label>
-        <div class="input-row">
-          <input
-            id="question"
-            name="question"
-            type="text"
-            placeholder="e.g. How does speculative decoding work?"
-            autocomplete="off"
-            spellcheck="false"
-          >
-          <button id="ask-btn" type="submit">
-            <svg class="send-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <path d="M17.5 2.5 2.5 8.75l6.146 2.604M17.5 2.5 11.354 17.5l-2.708-6.146M17.5 2.5 9.146 11.354" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
-            </svg>
-            <svg class="spinner" viewBox="0 0 20 20" fill="none" aria-hidden="true">
-              <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" stroke-opacity="0.25"/>
-              <path d="M18 10a8 8 0 0 0-8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-            </svg>
-            <span class="btn-label">Ask</span>
-          </button>
+  <main class="wrap">
+    <section class="hero">
+      <h1>Ask the AI labs anything.</h1>
+      <p class="lede">Grounded answers from <b id="stat-articles">the latest posts</b> across <b id="stat-sites">12 research blogs</b> — every claim linked to the source it came from.<span id="stat-updated"></span></p>
+    </section>
+
+    <form class="ask" id="ask-form" autocomplete="off">
+      <label class="field" for="q">
+        <span class="search-i" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></span>
+        <input id="q" name="q" type="text" placeholder="e.g. What did Anthropic find about Claude's quality issues?" aria-label="Your question">
+        <button class="send" id="send" type="submit">
+          <span class="label">Ask</span>
+          <span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+          <span class="spinner" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9" opacity=".9"/></svg></span>
+        </button>
+      </label>
+    </form>
+
+    <section class="suggest" id="suggest" aria-label="Suggested questions">
+      <span class="lead">Try</span>
+    </section>
+
+    <section class="loading" id="loading" hidden aria-hidden="true">
+      <div class="status"><span class="spinner"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9" opacity=".9"/></svg></span><span id="loading-text">Searching the archive…</span></div>
+      <div class="skel s1"></div><div class="skel s2"></div><div class="skel s3"></div>
+    </section>
+
+    <section class="error" id="error" hidden role="alert">
+      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8.5v4.2M12 16.2v.1"/><path d="M10.3 3.9 2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+      <span class="etxt"><b>Something went wrong</b><span id="error-msg"></span></span>
+    </section>
+
+    <section class="panel" id="panel" hidden>
+      <div class="answer-card">
+        <p class="asked" id="asked"></p>
+        <div class="answer" id="answer" aria-live="polite"></div>
+        <div class="sources" id="sources" hidden>
+          <h2><span class="badge" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sources</h2>
+          <ul id="sources-list"></ul>
         </div>
-        <div class="examples" id="examples">
-          <button type="button" class="example-chip" data-q="What is constitutional AI?">What is constitutional AI?</button>
-          <button type="button" class="example-chip" data-q="How does speculative decoding speed up inference?">How does speculative decoding work?</button>
-          <button type="button" class="example-chip" data-q="What is retrieval-augmented generation?">What is retrieval-augmented generation?</button>
-        </div>
-      </form>
+      </div>
+    </section>
 
-      <div id="status" class="status" role="status" aria-live="polite"></div>
+    <section class="corpus">
+      <h2>What's inside</h2>
+      <p class="sub">The most recent posts from every major lab. Tap one to see what it's been publishing.</p>
+      <div class="labs" id="labs" aria-label="Sources by lab"></div>
+    </section>
 
-      <section id="error-panel" class="panel error-panel" role="alert" hidden>
-        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
-          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
-          <path d="M10 6.5v4M10 13.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
-        </svg>
-        <p id="error-message"></p>
-      </section>
-
-      <section id="answer-panel" class="panel answer-panel" aria-live="polite" hidden>
-        <h2 class="panel-heading">Answer</h2>
-        <div id="answer-text" class="answer-text"></div>
-
-        <div id="sources-section" class="sources" hidden>
-          <h3 class="sources-heading">Sources</h3>
-          <ul id="sources-list" class="sources-list"></ul>
-        </div>
-      </section>
-    </main>
-
-    <footer class="footer">
-      <p>Runs locally against your own indexed blog archive.</p>
+    <footer>
+      Answers are generated by Claude Haiku strictly from the scraped articles above and cite their sources — they can still be incomplete or wrong, so follow the links to confirm. Ask about the <em>content</em> of recent posts, not about the tool itself.
     </footer>
-  </div>
+  </main>
 
-  <script>
-    (function () {
-      var form = document.getElementById('ask-form');
-      var input = document.getElementById('question');
-      var button = document.getElementById('ask-btn');
-      var buttonLabel = button.querySelector('.btn-label');
-      var statusEl = document.getElementById('status');
-      var errorPanel = document.getElementById('error-panel');
-      var errorMessage = document.getElementById('error-message');
-      var answerPanel = document.getElementById('answer-panel');
-      var answerText = document.getElementById('answer-text');
-      var sourcesSection = document.getElementById('sources-section');
-      var sourcesList = document.getElementById('sources-list');
-      var examples = document.getElementById('examples');
+<script>
+(function () {
+  "use strict";
+  const $ = (s) => document.querySelector(s);
+  const form = $("#ask-form"), q = $("#q"), send = $("#send");
+  const panel = $("#panel"), asked = $("#asked"), answerEl = $("#answer");
+  const sourcesWrap = $("#sources"), sourcesList = $("#sources-list");
+  const loading = $("#loading"), loadingText = $("#loading-text");
+  const errorEl = $("#error"), errorMsg = $("#error-msg");
+  const suggest = $("#suggest"), labs = $("#labs");
 
-      async function ask(q) {
-        const r = await fetch('/ask', {
-          method: 'POST',
-          headers: { 'Content-Type': 'application/json' },
-          body: JSON.stringify({ question: q })
-        });
-        if (!r.ok) {
-          let detail = 'Request failed';
-          try {
-            const body = await r.json();
-            if (body && body.detail) detail = body.detail;
-          } catch (e) {
-            // response wasn't JSON; keep the generic message
-          }
-          throw new Error(detail);
-        }
-        return r.json();
+  /* ---- theme ---- */
+  const theme = $("#theme");
+  try {
+    const saved = localStorage.getItem("frontier-theme");
+    if (saved === "dark" || saved === "light") document.documentElement.setAttribute("data-theme", saved);
+  } catch (e) {}
+  theme.addEventListener("click", () => {
+    const cur = document.documentElement.getAttribute("data-theme")
+      || (matchMedia("(prefers-color-scheme: dark)").matches ? "dark" : "light");
+    const next = cur === "dark" ? "light" : "dark";
+    document.documentElement.setAttribute("data-theme", next);
+    try { localStorage.setItem("frontier-theme", next); } catch (e) {}
+  });
+
+  /* ---- suggested questions (curated to land in the corpus) ---- */
+  const SUGGESTIONS = [
+    "What caused the recent Claude quality issues?",
+    "What is Voxtral and what can it do?",
+    "What has DeepMind published on weather and science?",
+    "How is Cohere approaching enterprise AI?",
+    "What are the latest ideas on AI agents and tool use?",
+  ];
+  SUGGESTIONS.forEach((text) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip";
+    const s = document.createElement("span");
+    s.className = "sparkle"; s.setAttribute("aria-hidden", "true");
+    s.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c.4 3.4 2.2 5.3 5.6 5.7-3.4.4-5.2 2.3-5.6 5.6-.4-3.3-2.2-5.2-5.6-5.6C9.8 8.3 11.6 6.4 12 3Z"/></svg>';
+    b.append(s, document.createTextNode(text));
+    b.addEventListener("click", () => runQuestion(text));
+    suggest.appendChild(b);
+  });
+
+  /* ---- corpus stats + lab chips ---- */
+  fetch("/stats").then((r) => r.ok ? r.json() : null).then((data) => {
+    if (!data) return;
+    const total = data.articles || 0;
+    const nSites = (data.sites || []).length;
+    if (total) $("#stat-articles").textContent = total + " recent article" + (total === 1 ? "" : "s");
+    if (nSites) $("#stat-sites").textContent = nSites + " research blog" + (nSites === 1 ? "" : "s");
+    if (data.updated) {
+      const d = new Date(data.updated + "T00:00:00");
+      if (!isNaN(d)) {
+        const span = $("#stat-updated");
+        span.innerHTML = '<span class="dot">·</span><span class="updated">updated ' +
+          d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + "</span>";
       }
+    }
+    (data.sites || []).forEach((site) => {
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "lab";
+      const name = document.createElement("span"); name.textContent = site.label || site.name;
+      const c = document.createElement("span"); c.className = "count";
+      c.textContent = site.count; c.setAttribute("aria-label", site.count + " articles");
+      b.append(name, c);
+      const clean = (site.label || site.name).replace(/\s·\s.*/, "");
+      const seg = (site.label || site.name).includes("·")
+        ? (site.label || site.name).replace(/^.*·\s/, "").toLowerCase() + " from " + clean
+        : clean;
+      b.addEventListener("click", () => runQuestion("What has " + seg + " published recently?"));
+      labs.appendChild(b);
+    });
+  }).catch(() => {});
 
-      function setLoading(isLoading) {
-        input.disabled = isLoading;
-        button.disabled = isLoading;
-        button.classList.toggle('is-loading', isLoading);
-        buttonLabel.textContent = isLoading ? 'Thinking…' : 'Ask';
-        var chips = examples.querySelectorAll('.example-chip');
-        for (var i = 0; i < chips.length; i++) chips[i].disabled = isLoading;
-        statusEl.textContent = isLoading ? 'Searching the blog archive…' : '';
-      }
+  /* ---- ask flow ---- */
+  function show(el) { el.hidden = false; el.setAttribute("aria-hidden", "false"); }
+  function hide(el) { el.hidden = true; el.setAttribute("aria-hidden", "true"); }
+  function setBusy(on) {
+    send.classList.toggle("busy", on); send.disabled = on; q.disabled = on;
+  }
 
-      function hidePanels() {
-        errorPanel.hidden = true;
-        answerPanel.hidden = true;
-      }
-
-      function showError(message) {
-        hidePanels();
-        errorMessage.textContent = message;
-        errorPanel.hidden = false;
-      }
-
-      function showAnswer(data) {
-        hidePanels();
-        answerText.textContent = data.answer || '';
-
-        sourcesList.innerHTML = '';
-        var sources = Array.isArray(data.sources) ? data.sources : [];
-
-        if (sources.length === 0) {
-          sourcesSection.hidden = true;
-        } else {
-          sources.forEach(function (source) {
-            var li = document.createElement('li');
-            var link = document.createElement('a');
-            link.className = 'source-link';
-            var sourceUrl = String(source.url || '');
-            link.href = sourceUrl.startsWith('http') ? sourceUrl : '#';
-            link.target = '_blank';
-            link.rel = 'noopener noreferrer';
-
-            var title = document.createElement('span');
-            title.className = 'source-title';
-            title.textContent = source.title || source.url || 'Untitled source';
-
-            var site = document.createElement('span');
-            site.className = 'source-site';
-            site.textContent = source.site || '';
-
-            var icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
-            icon.setAttribute('viewBox', '0 0 20 20');
-            icon.setAttribute('fill', 'none');
-            icon.setAttribute('aria-hidden', 'true');
-            var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
-            path.setAttribute('d', 'M8 4.5H4.5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V12M11.5 3.5h5v5M16.25 3.75l-7 7');
-            path.setAttribute('stroke', 'currentColor');
-            path.setAttribute('stroke-width', '1.5');
-            path.setAttribute('stroke-linecap', 'round');
-            path.setAttribute('stroke-linejoin', 'round');
-            icon.appendChild(path);
-
-            link.appendChild(title);
-            link.appendChild(site);
-            link.appendChild(icon);
-            li.appendChild(link);
-            sourcesList.appendChild(li);
-          });
-          sourcesSection.hidden = false;
-        }
-
-        answerPanel.hidden = false;
-      }
-
-      form.addEventListener('submit', function (event) {
-        event.preventDefault();
-        var q = input.value.trim();
-        if (!q) {
-          showError('Type a question first.');
-          input.focus();
-          return;
-        }
-
-        setLoading(true);
-        hidePanels();
-
-        ask(q)
-          .then(function (data) {
-            showAnswer(data);
-          })
-          .catch(function (err) {
-            showError(err.message || 'Something went wrong. Please try again.');
-          })
-          .finally(function () {
-            setLoading(false);
-          });
+  async function runQuestion(text) {
+    const question = (text != null ? text : q.value).trim();
+    if (!question) { q.focus(); return; }
+    q.value = question;
+    hide(errorEl); hide(panel);
+    loadingText.textContent = "Searching the archive…";
+    show(loading);
+    setBusy(true);
+    try {
+      const r = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question }),
       });
+      let data = null;
+      try { data = await r.json(); } catch (e) {}
+      if (!r.ok) throw new Error((data && data.detail) || ("Request failed (" + r.status + ")"));
+      render(question, data);
+    } catch (err) {
+      hide(loading);
+      errorMsg.textContent = " " + (err && err.message ? err.message : "Could not reach the server.");
+      show(errorEl);
+      errorEl.classList.remove("reveal"); void errorEl.offsetWidth; errorEl.classList.add("reveal");
+    } finally {
+      setBusy(false);
+    }
+  }
 
-      examples.addEventListener('click', function (event) {
-        var chip = event.target.closest('.example-chip');
-        if (!chip) return;
-        input.value = chip.getAttribute('data-q') || chip.textContent;
-        input.focus();
+  // Escape HTML first, THEN add only <strong>/<code> around already-escaped
+  // text — the model's output can never inject markup this way.
+  function safeMarkdown(text) {
+    const esc = String(text == null ? "" : text)
+      .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
+      .replace(/\n{3,}/g, "\n\n");
+    return esc
+      .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
+      .replace(/`([^`]+)`/g, "<code>$1</code>");
+  }
+
+  function render(question, data) {
+    hide(loading);
+    asked.textContent = question;
+    answerEl.innerHTML = safeMarkdown(data && data.answer);
+    const sources = (data && data.sources) || [];
+    sourcesList.textContent = "";
+    if (sources.length) {
+      sources.forEach((s) => {
+        const li = document.createElement("li");
+        const a = document.createElement("a");
+        a.className = "src";
+        const url = String(s.url || "");
+        a.href = url.startsWith("http") ? url : "#";
+        a.target = "_blank"; a.rel = "noopener noreferrer";
+        const body = document.createElement("span"); body.className = "src-body";
+        const t = document.createElement("span"); t.className = "src-title"; t.textContent = s.title || url || "Untitled";
+        const site = document.createElement("span"); site.className = "src-site"; site.textContent = s.site || "";
+        body.append(t, site);
+        const out = document.createElement("span"); out.className = "src-out"; out.setAttribute("aria-hidden", "true");
+        out.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg>';
+        a.append(body, out);
+        li.appendChild(a); sourcesList.appendChild(li);
       });
-    })();
-  </script>
+      show(sourcesWrap);
+    } else {
+      hide(sourcesWrap);
+    }
+    show(panel);
+    panel.classList.remove("reveal"); void panel.offsetWidth; panel.classList.add("reveal");
+    panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  form.addEventListener("submit", (e) => { e.preventDefault(); runQuestion(); });
+})();
+</script>
 </body>
 </html>
