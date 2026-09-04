@@ -33,6 +33,12 @@ SITE_LABELS = {
     "microsoft-research": "Microsoft Research",
     "mistral": "Mistral",
     "cohere": "Cohere",
+    "xai": "xAI",
+    "stability": "Stability AI",
+    "ai2": "Allen AI (AI2)",
+    "together": "Together AI",
+    "perplexity": "Perplexity",
+    "nvidia": "NVIDIA",
 }
 PROMPT_TMPL = (
     "Answer the question using ONLY the context below. "
