@@ -265,6 +265,18 @@
     * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .skel { animation: none; }
   }
+
+  /* ---------- today feed ---------- */
+  .today { padding: 8px 0 26px; }
+  .today-title { font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em; font-size: 1.15rem; margin: 0 0 12px; }
+  .feed { display: flex; flex-direction: column; gap: 12px; }
+  .feed-empty { color: var(--text-3); }
+  .feed-day { color: var(--text-3); font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; margin: 14px 0 2px; }
+  .nugget-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow-sm); }
+  .nugget-card .label { color: var(--accent-text); font-size: .78rem; font-weight: 600; }
+  .nugget-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; margin: 4px 0 8px; line-height: 1.3; }
+  .nugget-card p { margin: 0 0 10px; color: var(--text-2); }
+  .nugget-card a { font-weight: 600; }
 </style>
 </head>
 <body>
@@ -282,6 +294,12 @@
   </header>
 
   <main class="wrap">
+    <section id="today" class="today" aria-label="Today's nuggets">
+      <h2 class="today-title">Fresh from the labs</h2>
+      <div id="today-feed" class="feed"></div>
+      <p id="today-empty" class="feed-empty" hidden>No new posts in the last week.</p>
+    </section>
+
     <section class="hero">
       <h1>Ask the AI labs anything.</h1>
       <p class="lede">Grounded answers from <b id="stat-articles">the latest posts</b> across <b id="stat-sites">12 research blogs</b> — every claim linked to the source it came from.<span id="stat-updated"></span></p>
@@ -528,6 +546,45 @@
   }
 
   form.addEventListener("submit", (e) => { e.preventDefault(); runQuestion(); });
+
+  /* ---- today feed ---- */
+  async function loadFeed() {
+    const wrap = document.getElementById('today-feed');
+    const empty = document.getElementById('today-empty');
+    try {
+      const res = await fetch('/feed?days=7');
+      const data = await res.json();
+      wrap.innerHTML = '';
+      if (!data.groups || !data.groups.length) { empty.hidden = false; return; }
+      empty.hidden = true;
+      for (const group of data.groups) {
+        const day = document.createElement('div');
+        day.className = 'feed-day';
+        day.textContent = new Date(group.date + 'T00:00:00')
+          .toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' });
+        wrap.appendChild(day);
+        for (const it of group.items) {
+          const card = document.createElement('article');
+          card.className = 'nugget-card';
+          const label = document.createElement('div');
+          label.className = 'label';
+          label.textContent = it.label || it.site;
+          const h = document.createElement('h3');
+          h.textContent = it.title;
+          const p = document.createElement('p');
+          p.textContent = it.nugget;              // textContent escapes model/source text
+          const a = document.createElement('a');
+          a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
+          a.textContent = 'Read source →';
+          card.append(label, h, p, a);
+          wrap.appendChild(card);
+        }
+      }
+    } catch (e) {
+      empty.hidden = false;
+    }
+  }
+  loadFeed();
 })();
 </script>
 </body>
