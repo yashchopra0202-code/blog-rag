@@ -1187,6 +1187,15 @@
     "site": "stability",
     "title": "Introducing Our New Chief Pipeline Architect, Robert Legato"
   },
+  "https://stability.ai/news-updates/introducing-our-new-svp-head-of-product-ryan-ellis": {
+    "date": "Mar 10",
+    "file": "data/articles/stability__introducing-our-new-svp-head-of-product-ryan-ellis.md",
+    "nugget": "Stability AI hired Ryan Ellis as Senior Vice President of Product, bringing his extensive experience from leading product development at Unity and Salesforce, where he managed platforms used by millions of developers and creators. Ellis will focus on making Stability AI's visual media and generative AI tools more accessible and user-friendly for creative professionals and developers. This hire matters because it signals Stability AI's commitment to improving product design and accessibility in the competitive generative AI space, leveraging Ellis's proven track record of scaling developer platforms and creator tools.",
+    "nugget_at": "2026-09-04T21:49:39+00:00",
+    "scraped_at": "2026-09-04T21:46:11+00:00",
+    "site": "stability",
+    "title": "Introducing Our New SVP, Head of Product, Ryan Ellis"
+  },
   "https://stability.ai/news-updates/introducing-stability-ai-solutions": {
     "date": "Aug 5",
     "file": "data/articles/stability__introducing-stability-ai-solutions.md",
@@ -1232,6 +1241,15 @@
     "site": "stability",
     "title": "Stability AI Achieves SOC 2 Type II and SOC 3 Compliance, Reaching New Industry Standard for Enterprise-Grade Security"
   },
+  "https://stability.ai/news-updates/stability-ai-and-arm-bring-on-device-generative-audio-to-smartphones": {
+    "date": "Mar 3",
+    "file": "data/articles/stability__stability-ai-and-arm-bring-on-device-generative-audio-to-smartphones.md",
+    "nugget": "Stability AI partnered with Arm to bring generative audio to smartphones, achieving 30x faster text-to-audio generation on mobile devices by optimizing their model to run entirely on-device without internet connection. This matters because it democratizes AI-powered content creation by making high-quality audio generation accessible to anyone with a compatible smartphone, with plans to extend this to image, video, and 3D generation across all mobile devices globally.",
+    "nugget_at": "2026-09-04T21:49:41+00:00",
+    "scraped_at": "2026-09-04T21:46:54+00:00",
+    "site": "stability",
+    "title": "Stability AI and Arm Bring On-Device Generative Audio to Smartphones"
+  },
   "https://stability.ai/news-updates/stability-ai-and-arm-release-stable-audio-open-small-enabling-real-world-deployment-for-on-device-audio-control": {
     "date": "May 14",
     "file": "data/articles/stability__stability-ai-and-arm-release-stable-audio-open-small-enabling-real-world-deploym.md",
@@ -1258,6 +1276,15 @@
     "scraped_at": "2026-09-04T21:10:22+00:00",
     "site": "stability",
     "title": "Stability AI and NVIDIA Bring Faster Performance and Simplified Enterprise Deployment with the Stable Diffusion 3.5 NIM"
+  },
+  "https://stability.ai/news-updates/stability-ai-announces-investment-from-wpp-and-new-partnership-to-shape-the-future-of-media-and-entertainment-production": {
+    "date": "Mar 5",
+    "file": "data/articles/stability__stability-ai-announces-investment-from-wpp-and-new-partnership-to-shape-the-futu.md",
+    "nugget": "Stability AI and marketing giant WPP announced a strategic partnership and investment deal where WPP will integrate Stability AI's generative models for image, video, 3D, and audio into its creative workflow, while WPP's real-world insights help guide Stability AI's product development. This matters because it represents a major convergence of enterprise-grade AI tools with one of the world's largest advertising and creative services companies, potentially accelerating AI adoption across the global marketing and entertainment industries while helping to shape how generative AI is applied professionally in creative work.",
+    "nugget_at": "2026-09-04T21:49:43+00:00",
+    "scraped_at": "2026-09-04T21:46:16+00:00",
+    "site": "stability",
+    "title": "Stability AI Announces Investment from WPP and New Partnership to Shape the Future of Media and Entertainment Production"
   },
   "https://stability.ai/news-updates/stability-ai-brings-image-services-to-amazon-bedrock-delivering-professional-creative-control-with-enterprise-grade-infrastructure": {
     "date": "Sep 18",
@@ -1321,6 +1348,15 @@
     "scraped_at": "2026-09-04T21:11:06+00:00",
     "site": "stability",
     "title": "Stable Diffusion Now Optimized for AMD Radeon\u2122 GPUs and Ryzen\u2122 AI APUs"
+  },
+  "https://stability.ai/news-updates/stable-point-aware-3d": {
+    "date": "Jan 8",
+    "file": "data/articles/stability__stable-point-aware-3d.md",
+    "nugget": "Stable Point Aware 3D (SPAR3D) is a new AI model that generates complete, editable 3D objects from a single image in under a second, with real-time editing capabilities and 360-degree view prediction. This matters because it significantly accelerates 3D asset creation for game developers, product designers, and other professionals by making what previously took hours achievable in milliseconds, and the model is freely available for both commercial and non-commercial use.",
+    "nugget_at": "2026-09-04T21:49:45+00:00",
+    "scraped_at": "2026-09-04T21:48:35+00:00",
+    "site": "stability",
+    "title": "Introducing Stable Point Aware 3D: Real-Time Editing and Complete Object Structure Generation"
   },
   "https://stability.ai/news-updates/stable-video-4d-20-new-upgrades-for-high-fidelity-novel-views-and-4d-generation-from-a-single-video": {
     "date": "May 20",
