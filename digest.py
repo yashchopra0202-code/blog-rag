@@ -1,6 +1,6 @@
 import json
 import os
-from datetime import datetime, timezone
+from datetime import datetime, timedelta, timezone
 
 import httpx
 from dotenv import load_dotenv
@@ -39,8 +39,18 @@ def select_new_entries(manifest, since):
     return out
 
 
+def effective_since(state, now=None):
+    """The lower-bound timestamp for a digest: the last-sent time, or 24h ago
+    when no digest has been sent yet (first run)."""
+    last = state.get("last_sent")
+    if last:
+        return last
+    now = now or datetime.now(timezone.utc)
+    return (now - timedelta(hours=24)).isoformat(timespec="seconds")
+
+
 def _esc(s):
-    return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;")
+    return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
 def build_digest(entries, feed_url="http://127.0.0.1:8000/"):
@@ -83,7 +93,8 @@ def main() -> None:
         raise SystemExit("Set RESEND_API_KEY and DIGEST_TO in .env")
     manifest = load_manifest(MANIFEST_PATH)
     state = load_state()
-    entries = select_new_entries(manifest, state.get("last_sent"))
+    since = effective_since(state)
+    entries = select_new_entries(manifest, since)
     if not entries:
         print("No new nuggets since last digest. Nothing sent.")
         return
