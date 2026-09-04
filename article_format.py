@@ -17,11 +17,23 @@ _KEYS = ("url", "title", "site", "date", "scraped_at")
 
 
 def write_article(articles_dir: str, meta: dict, body: str) -> str:
+    # Validate required keys
+    missing_keys = []
+    if "url" not in meta:
+        missing_keys.append("url")
+    if "site" not in meta:
+        missing_keys.append("site")
+    if missing_keys:
+        raise ValueError(f"Missing required metadata key(s): {', '.join(missing_keys)}")
+
     os.makedirs(articles_dir, exist_ok=True)
     path = os.path.join(articles_dir, article_filename(meta["site"], meta["url"]))
     lines = ["---"]
     for k in _KEYS:
-        lines.append(f"{k}: {meta.get(k, '')}")
+        # Sanitize metadata values: collapse newlines/whitespace to single spaces
+        value = str(meta.get(k, ""))
+        sanitized_value = " ".join(value.split())
+        lines.append(f"{k}: {sanitized_value}")
     lines.append("---")
     lines.append("")
     lines.append(body.strip())
