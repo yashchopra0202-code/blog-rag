@@ -28,6 +28,16 @@ def test_select_all_when_no_since():
     assert len(digest.select_new_entries(manifest, since=None)) == 1
 
 
+def test_select_caps_to_newest_limit():
+    manifest = {
+        "old": {"nugget": "o", "scraped_at": "2026-09-05T08:00:00+00:00", "title": "O", "site": "s"},
+        "mid": {"nugget": "m", "scraped_at": "2026-09-05T09:00:00+00:00", "title": "M", "site": "s"},
+        "new": {"nugget": "n", "scraped_at": "2026-09-05T10:00:00+00:00", "title": "N", "site": "s"},
+    }
+    out = digest.select_new_entries(manifest, since=None, limit=2)
+    assert [e["url"] for e in out] == ["new", "mid"]  # newest first, capped to 2
+
+
 def test_build_digest_escapes_and_includes():
     entries = [{"url": 'https://x/a?q="quoted"', "title": "Big <news>", "site": "lab",
                 "nugget": "why & how", "scraped_at": "2026-09-05T10:00:00+00:00"}]

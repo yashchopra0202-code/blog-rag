@@ -26,7 +26,7 @@ def save_state(state, path=STATE_PATH):
         json.dump(state, f, indent=2)
 
 
-def select_new_entries(manifest, since):
+def select_new_entries(manifest, since, limit=None):
     out = []
     for url, v in manifest.items():
         if not v.get("nugget"):
@@ -36,6 +36,9 @@ def select_new_entries(manifest, since):
             continue
         out.append({"url": url, "title": v.get("title", url), "site": v.get("site", ""),
                     "nugget": v["nugget"], "scraped_at": stamp})
+    out.sort(key=lambda e: e["scraped_at"], reverse=True)  # newest first
+    if limit is not None:
+        out = out[:limit]
     return out
 
 
@@ -91,15 +94,18 @@ def main() -> None:
     feed_url = os.getenv("FEED_URL", "http://127.0.0.1:8000/")
     if not api_key or not to:
         raise SystemExit("Set RESEND_API_KEY and DIGEST_TO in .env")
+    limit = int(os.getenv("DIGEST_LIMIT", "20"))  # cap one email to the N newest nuggets
     manifest = load_manifest(MANIFEST_PATH)
     state = load_state()
     since = effective_since(state)
-    entries = select_new_entries(manifest, since)
+    entries = select_new_entries(manifest, since, limit=limit)
     if not entries:
         print("No new nuggets since last digest. Nothing sent.")
         return
     subject, html = build_digest(entries, feed_url=feed_url)
     send_digest(subject, html, api_key, sender, to)
+    # entries are the newest `limit`; advancing to their max means older in-window
+    # nuggets beyond the cap are not re-sent next run (intended: one email = newest N).
     state["last_sent"] = max(e["scraped_at"] for e in entries)
     save_state(state)
     print(f"Sent digest with {len(entries)} nugget(s) to {to}.")
