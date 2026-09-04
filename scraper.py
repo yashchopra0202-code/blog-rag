@@ -68,10 +68,6 @@ def extract_article(html, url):
     return {"title": title, "date": date, "body": body}
 
 
-def _links_from(page):
-    return page.css("a::attr(href)").getall()
-
-
 def fetch_html(url, render_js):
     from scrapling.fetchers import Fetcher, DynamicFetcher
     if not render_js:
@@ -94,11 +90,11 @@ def _discover(site):
     found = []
     for listing in site["listing_urls"]:
         html = fetch_html(listing, site["render_js"])
+        time.sleep(REQUEST_DELAY_SEC)
         if not html:
             continue
         links = Selector(html).css("a::attr(href)").getall()
         found += filter_article_links(links, site["article_url_pattern"], listing)
-        time.sleep(REQUEST_DELAY_SEC)
     # dedupe preserving order
     seen, uniq = set(), []
     for u in found:
@@ -108,11 +104,14 @@ def _discover(site):
 
 
 def scrape_site(site, manifest, articles_dir, max_articles):
+    # Listings are assumed reverse-chronological, so the first max_articles
+    # are the newest posts (recent-N by design).
     candidates = _discover(site)[:max_articles]
     todo = new_urls(candidates, manifest)
     saved = 0
     for url in todo:
         html = fetch_html(url, site["render_js"])
+        time.sleep(REQUEST_DELAY_SEC)
         if not html:
             continue
         data = extract_article(html, url)
@@ -126,7 +125,6 @@ def scrape_site(site, manifest, articles_dir, max_articles):
         manifest[url] = {"title": meta["title"], "date": meta["date"],
                          "site": site["name"], "file": path, "scraped_at": now}
         saved += 1
-        time.sleep(REQUEST_DELAY_SEC)
     return saved
 
 
