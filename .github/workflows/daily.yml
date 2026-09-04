@@ -1,0 +1,47 @@
+# .github/workflows/daily.yml
+name: daily-nuggets
+on:
+  schedule:
+    - cron: "0 13 * * *"   # 13:00 UTC daily
+  workflow_dispatch: {}
+permissions:
+  contents: write
+concurrency:
+  group: daily-nuggets
+  cancel-in-progress: false
+jobs:
+  run:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install RAG deps
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+      - name: Install scraper (scrapling) deps
+        run: |
+          python -m venv .venv-scrapling
+          .venv-scrapling/bin/pip install scrapling
+          .venv-scrapling/bin/python -m playwright install --with-deps chromium || true
+      - name: Scrape
+        run: .venv-scrapling/bin/python scraper.py
+      - name: Nuggetize
+        env:
+          ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
+        run: .venv/bin/python nuggetize.py
+      - name: Email digest
+        env:
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_TO: ${{ secrets.DIGEST_TO }}
+          DIGEST_FROM: ${{ secrets.DIGEST_FROM }}
+        run: .venv/bin/python digest.py
+      - name: Commit refreshed data
+        run: |
+          git config user.name "yashchopra0202-code"
+          git config user.email "yashchopra0202@gmail.com"
+          git add data/articles data/manifest.json data/digest_state.json
+          git diff --cached --quiet || git commit -m "chore: daily nugget refresh [skip ci]"
+          git push

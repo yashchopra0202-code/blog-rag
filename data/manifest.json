@@ -1,0 +1,1143 @@
+{
+  "https://ai.meta.com/blog/alta-daily-fashion-app-segment-anything/": {
+    "date": "",
+    "file": "data/articles/meta-ai__alta-daily-fashion-app-segment-anything.md",
+    "scraped_at": "2026-09-04T13:19:53+00:00",
+    "site": "meta-ai",
+    "title": "How Alta Daily Uses Meta\u2019s Segment Anything to Reimagine the Digital Closet"
+  },
+  "https://ai.meta.com/blog/assistive-robotics-university-of-pittsburgh-sam-dino/": {
+    "date": "",
+    "file": "data/articles/meta-ai__assistive-robotics-university-of-pittsburgh-sam-dino.md",
+    "scraped_at": "2026-09-04T13:18:29+00:00",
+    "site": "meta-ai",
+    "title": "Reimagining Independence: How Meta\u2019s AI Models Are Helping the University of Pittsburgh Transform Assistive Robotics"
+  },
+  "https://ai.meta.com/blog/brain2qwerty-brain-ai-human-communication/": {
+    "date": "",
+    "file": "data/articles/meta-ai__brain2qwerty-brain-ai-human-communication.md",
+    "scraped_at": "2026-09-04T13:19:35+00:00",
+    "site": "meta-ai",
+    "title": "From Brain Waves to Words: Brain2Qwerty Offers a New Path to Communication Without Surgery"
+  },
+  "https://ai.meta.com/blog/genesis-mission-lawrence-berkeley-national-laboratory-segment-anything-dino/": {
+    "date": "",
+    "file": "data/articles/meta-ai__genesis-mission-lawrence-berkeley-national-laboratory-segment-anything-dino.md",
+    "scraped_at": "2026-09-04T13:18:35+00:00",
+    "site": "meta-ai",
+    "title": "How Meta\u2019s AI Models Are Powering the First Wave of Genesis Mission Projects"
+  },
+  "https://ai.meta.com/blog/introducing-muse-image-muse-video-msl/": {
+    "date": "",
+    "file": "data/articles/meta-ai__introducing-muse-image-muse-video-msl.md",
+    "scraped_at": "2026-09-04T13:19:26+00:00",
+    "site": "meta-ai",
+    "title": "Introducing Muse Image and Muse Video"
+  },
+  "https://ai.meta.com/blog/introducing-muse-spark-meta-model-api/": {
+    "date": "",
+    "file": "data/articles/meta-ai__introducing-muse-spark-meta-model-api.md",
+    "scraped_at": "2026-09-04T13:18:23+00:00",
+    "site": "meta-ai",
+    "title": "Introducing Muse Spark 1.1"
+  },
+  "https://ai.meta.com/blog/introducing-muse-spark-msl/": {
+    "date": "",
+    "file": "data/articles/meta-ai__introducing-muse-spark-msl.md",
+    "scraped_at": "2026-09-04T13:19:47+00:00",
+    "site": "meta-ai",
+    "title": "Introducing Muse Spark: Scaling Towards Personal Superintelligence"
+  },
+  "https://ai.meta.com/blog/scaling-how-we-build-test-advanced-ai/": {
+    "date": "",
+    "file": "data/articles/meta-ai__scaling-how-we-build-test-advanced-ai.md",
+    "scraped_at": "2026-09-04T13:19:40+00:00",
+    "site": "meta-ai",
+    "title": "Scaling How We Build and Test Our Most Advanced AI"
+  },
+  "https://ai.meta.com/blog/tribe-v2-brain-predictive-foundation-model/": {
+    "date": "",
+    "file": "data/articles/meta-ai__tribe-v2-brain-predictive-foundation-model.md",
+    "scraped_at": "2026-09-04T13:20:00+00:00",
+    "site": "meta-ai",
+    "title": "Introducing TRIBE v2: A Predictive Foundation Model Trained to Understand How the Human Brain Processes Complex Stimuli"
+  },
+  "https://ai.meta.com/blog/world-resources-institute-dino-canopy-height-maps-v2/": {
+    "date": "",
+    "file": "data/articles/meta-ai__world-resources-institute-dino-canopy-height-maps-v2.md",
+    "scraped_at": "2026-09-04T13:20:06+00:00",
+    "site": "meta-ai",
+    "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2"
+  },
+  "https://cohere.com/blog/a-day-in-the-life-of-a-wealth-manager-with-and-without-ai": {
+    "date": "",
+    "file": "data/articles/cohere__a-day-in-the-life-of-a-wealth-manager-with-and-without-ai.md",
+    "scraped_at": "2026-09-04T13:25:08+00:00",
+    "site": "cohere",
+    "title": "A day in the life of a wealth manager, with and without AI"
+  },
+  "https://cohere.com/blog/automating-fork-maintenance-with-ai-agents": {
+    "date": "",
+    "file": "data/articles/cohere__automating-fork-maintenance-with-ai-agents.md",
+    "scraped_at": "2026-09-04T13:25:24+00:00",
+    "site": "cohere",
+    "title": "Automating fork maintenance with AI agents"
+  },
+  "https://cohere.com/blog/automations-early-footprint": {
+    "date": "",
+    "file": "data/articles/cohere__automations-early-footprint.md",
+    "scraped_at": "2026-09-04T13:24:38+00:00",
+    "site": "cohere",
+    "title": "Automation\u2019s Early Footprint"
+  },
+  "https://cohere.com/blog/cohere-security-ai-agent-north-wiz": {
+    "date": "",
+    "file": "data/articles/cohere__cohere-security-ai-agent-north-wiz.md",
+    "scraped_at": "2026-09-04T13:25:27+00:00",
+    "site": "cohere",
+    "title": "Creating a security agent with Cohere North and Wiz"
+  },
+  "https://cohere.com/blog/cohere-signs-eu-code-of-practice": {
+    "date": "",
+    "file": "data/articles/cohere__cohere-signs-eu-code-of-practice.md",
+    "scraped_at": "2026-09-04T13:25:06+00:00",
+    "site": "cohere",
+    "title": "Cohere signs EU Code of Practice on Transparency of AI-Generated Content"
+  },
+  "https://cohere.com/blog/cohere-university-of-toronto-announcement": {
+    "date": "",
+    "file": "data/articles/cohere__cohere-university-of-toronto-announcement.md",
+    "scraped_at": "2026-09-04T13:25:11+00:00",
+    "site": "cohere",
+    "title": "Cohere and the University of Toronto partner to advance responsible AI adoption at scale"
+  },
+  "https://cohere.com/blog/cohere-university-of-waterloo-announcement": {
+    "date": "",
+    "file": "data/articles/cohere__cohere-university-of-waterloo-announcement.md",
+    "scraped_at": "2026-09-04T13:24:30+00:00",
+    "site": "cohere",
+    "title": "Cohere and the University of Waterloo launch partnership to strengthen Canada\u2019s AI talent pipeline"
+  },
+  "https://cohere.com/blog/command-a-plus": {
+    "date": "",
+    "file": "data/articles/cohere__command-a-plus.md",
+    "scraped_at": "2026-09-04T13:24:50+00:00",
+    "site": "cohere",
+    "title": "Introducing Command A+: Making sovereign agentic capabilities available to all"
+  },
+  "https://cohere.com/blog/enterprise-ai-maturity-model": {
+    "date": "",
+    "file": "data/articles/cohere__enterprise-ai-maturity-model.md",
+    "scraped_at": "2026-09-04T13:24:55+00:00",
+    "site": "cohere",
+    "title": "The five phases of enterprise AI maturity, Part 1: How to get past \u201cthe production wall\u201d"
+  },
+  "https://cohere.com/blog/forward-deployed-engineers-capability-building": {
+    "date": "",
+    "file": "data/articles/cohere__forward-deployed-engineers-capability-building.md",
+    "scraped_at": "2026-09-04T13:24:58+00:00",
+    "site": "cohere",
+    "title": "Why forward-deployed engineers should build capability, not dependency"
+  },
+  "https://cohere.com/blog/generative-ai-for-business": {
+    "date": "",
+    "file": "data/articles/cohere__generative-ai-for-business.md",
+    "scraped_at": "2026-09-04T13:24:44+00:00",
+    "site": "cohere",
+    "title": "Generative AI for business: Use cases, benefits, and adoption"
+  },
+  "https://cohere.com/blog/hardware-aware-dynamic-speculative-decoding": {
+    "date": "",
+    "file": "data/articles/cohere__hardware-aware-dynamic-speculative-decoding.md",
+    "scraped_at": "2026-09-04T13:25:19+00:00",
+    "site": "cohere",
+    "title": "Hardware-aware dynamic speculative decoding"
+  },
+  "https://cohere.com/blog/how-small-models-can-make-a-big-impact-for-enterprises": {
+    "date": "",
+    "file": "data/articles/cohere__how-small-models-can-make-a-big-impact-for-enterprises.md",
+    "scraped_at": "2026-09-04T13:24:41+00:00",
+    "site": "cohere",
+    "title": "How small AI models can make a big impact for enterprises"
+  },
+  "https://cohere.com/blog/introducing-north-automations-ai-workflows": {
+    "date": "",
+    "file": "data/articles/cohere__introducing-north-automations-ai-workflows.md",
+    "scraped_at": "2026-09-04T13:24:33+00:00",
+    "site": "cohere",
+    "title": "Introducing North Automations: Intelligent workflow orchestration"
+  },
+  "https://cohere.com/blog/north-mini-code": {
+    "date": "",
+    "file": "data/articles/cohere__north-mini-code.md",
+    "scraped_at": "2026-09-04T13:24:47+00:00",
+    "site": "cohere",
+    "title": "Introducing North Mini Code: Cohere\u2019s first model for developers"
+  },
+  "https://cohere.com/blog/parse": {
+    "date": "",
+    "file": "data/articles/cohere__parse.md",
+    "scraped_at": "2026-09-04T13:25:00+00:00",
+    "site": "cohere",
+    "title": "Introducing Parse: Enterprise document intelligence at scale"
+  },
+  "https://cohere.com/blog/state-of-sovereign-ai-adoption-2026": {
+    "date": "",
+    "file": "data/articles/cohere__state-of-sovereign-ai-adoption-2026.md",
+    "scraped_at": "2026-09-04T13:24:27+00:00",
+    "site": "cohere",
+    "title": "The state of sovereign AI adoption in 2026"
+  },
+  "https://cohere.com/blog/the-culture-funnel-you-cant-align-what-isnt-in-the-data": {
+    "date": "",
+    "file": "data/articles/cohere__the-culture-funnel-you-cant-align-what-isnt-in-the-data.md",
+    "scraped_at": "2026-09-04T13:25:03+00:00",
+    "site": "cohere",
+    "title": "The Culture Funnel: You can\u2019t align what isn\u2019t in the data"
+  },
+  "https://cohere.com/blog/the-future-of-work-debate-has-an-evidence-problem": {
+    "date": "",
+    "file": "data/articles/cohere__the-future-of-work-debate-has-an-evidence-problem.md",
+    "scraped_at": "2026-09-04T13:24:36+00:00",
+    "site": "cohere",
+    "title": "The future of work debate has an evidence problem"
+  },
+  "https://cohere.com/blog/the-total-cost-of-ai-ownership": {
+    "date": "",
+    "file": "data/articles/cohere__the-total-cost-of-ai-ownership.md",
+    "scraped_at": "2026-09-04T13:25:13+00:00",
+    "site": "cohere",
+    "title": "The total cost of AI ownership"
+  },
+  "https://cohere.com/blog/tiny-aya-in-the-wild": {
+    "date": "",
+    "file": "data/articles/cohere__tiny-aya-in-the-wild.md",
+    "scraped_at": "2026-09-04T13:25:16+00:00",
+    "site": "cohere",
+    "title": "Tiny Aya in the wild: What people are building with open multilingual AI"
+  },
+  "https://cohere.com/blog/transcribe": {
+    "date": "",
+    "file": "data/articles/cohere__transcribe.md",
+    "scraped_at": "2026-09-04T13:24:52+00:00",
+    "site": "cohere",
+    "title": "Introducing Cohere Transcribe: a new state-of-the-art in open-source speech recognition"
+  },
+  "https://cohere.com/blog/transcribe-arabic": {
+    "date": "",
+    "file": "data/articles/cohere__transcribe-arabic.md",
+    "scraped_at": "2026-09-04T13:25:21+00:00",
+    "site": "cohere",
+    "title": "Meet Cohere Transcribe Arabic"
+  },
+  "https://cohere.com/blog/why-cultural-awareness-is-essential-for-global-ai": {
+    "date": "",
+    "file": "data/articles/cohere__why-cultural-awareness-is-essential-for-global-ai.md",
+    "scraped_at": "2026-09-04T13:25:29+00:00",
+    "site": "cohere",
+    "title": "Why Cultural Awareness is Essential for Global AI"
+  },
+  "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/": {
+    "date": "2025-07-30",
+    "file": "data/articles/deepmind__alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail.md",
+    "scraped_at": "2026-09-04T13:16:34+00:00",
+    "site": "deepmind",
+    "title": "AlphaEarth Foundations helps map our planet in unprecedented detail"
+  },
+  "https://deepmind.google/blog/alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms/": {
+    "date": "2025-05-14",
+    "file": "data/articles/deepmind__alphaevolve-a-gemini-powered-coding-agent-for-designing-advanced-algorithms.md",
+    "scraped_at": "2026-09-04T13:16:40+00:00",
+    "site": "deepmind",
+    "title": "AlphaEvolve: A Gemini-powered coding agent for designing advanced algorithms"
+  },
+  "https://deepmind.google/blog/alphagenome-ai-for-better-understanding-the-genome/": {
+    "date": "2025-06-25",
+    "file": "data/articles/deepmind__alphagenome-ai-for-better-understanding-the-genome.md",
+    "scraped_at": "2026-09-04T13:17:58+00:00",
+    "site": "deepmind",
+    "title": "AlphaGenome: AI for better understanding the genome"
+  },
+  "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/": {
+    "date": "2026-07-21",
+    "file": "data/articles/deepmind__introducing-gemini-3-5-flash-cyber.md",
+    "scraped_at": "2026-09-04T13:17:12+00:00",
+    "site": "deepmind",
+    "title": "Introducing Gemini 3.5 Flash Cyber"
+  },
+  "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/": {
+    "date": "2026-06-11",
+    "file": "data/articles/deepmind__investing-in-multi-agent-ai-safety-research.md",
+    "scraped_at": "2026-09-04T13:17:53+00:00",
+    "site": "deepmind",
+    "title": "Investing in multi-agent AI safety research"
+  },
+  "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/": {
+    "date": "2026-08-27",
+    "file": "data/articles/deepmind__piloting-the-worlds-first-double-blind-ai-evaluations.md",
+    "scraped_at": "2026-09-04T13:16:45+00:00",
+    "site": "deepmind",
+    "title": "Piloting the world's first double-blind AI evaluations"
+  },
+  "https://deepmind.google/blog/putting-sign-language-ai-into-users-hands/": {
+    "date": "2026-08-12",
+    "file": "data/articles/deepmind__putting-sign-language-ai-into-users-hands.md",
+    "scraped_at": "2026-09-04T13:16:55+00:00",
+    "site": "deepmind",
+    "title": "Putting sign language AI into users\u2019 hands"
+  },
+  "https://deepmind.google/blog/securing-the-future-of-ai-agents/": {
+    "date": "2026-06-18",
+    "file": "data/articles/deepmind__securing-the-future-of-ai-agents.md",
+    "scraped_at": "2026-09-04T13:17:41+00:00",
+    "site": "deepmind",
+    "title": "Securing the future of AI agents"
+  },
+  "https://huggingface.co/blog/asr-benchmark-optimization": {
+    "date": "2026-06-10",
+    "file": "data/articles/huggingface__asr-benchmark-optimization.md",
+    "scraped_at": "2026-09-04T13:20:29+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/asr-benchmark-optimization"
+  },
+  "https://huggingface.co/blog/gradio-workflow-guide": {
+    "date": "2025-07-08",
+    "file": "data/articles/huggingface__gradio-workflow-guide.md",
+    "scraped_at": "2026-09-04T13:20:25+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/gradio-workflow-guide"
+  },
+  "https://huggingface.co/blog/open-asr-leaderboard-global-south": {
+    "date": "2026-04-07",
+    "file": "data/articles/huggingface__open-asr-leaderboard-global-south.md",
+    "scraped_at": "2026-09-04T13:20:21+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/open-asr-leaderboard-global-south"
+  },
+  "https://huggingface.co/blog/pwc-search": {
+    "date": "2026-04-20",
+    "file": "data/articles/huggingface__pwc-search.md",
+    "scraped_at": "2026-09-04T13:20:27+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/pwc-search"
+  },
+  "https://huggingface.co/blog/train-to-paint-with-code": {
+    "date": "2026-09-03",
+    "file": "data/articles/huggingface__train-to-paint-with-code.md",
+    "scraped_at": "2026-09-04T13:20:17+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/train-to-paint-with-code"
+  },
+  "https://huggingface.co/blog/webgpu-kernels": {
+    "date": "2026-09-01",
+    "file": "data/articles/huggingface__webgpu-kernels.md",
+    "scraped_at": "2026-09-04T13:20:19+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/webgpu-kernels"
+  },
+  "https://mistral.ai/news/accelerate-ai-native-industry/": {
+    "date": "",
+    "file": "data/articles/mistral__accelerate-ai-native-industry.md",
+    "scraped_at": "2026-09-04T13:24:05+00:00",
+    "site": "mistral",
+    "title": "Emmi joins Mistral to accelerate the AI-native industry"
+  },
+  "https://mistral.ai/news/agentic-search": {
+    "date": "",
+    "file": "data/articles/mistral__agentic-search.md",
+    "scraped_at": "2026-09-04T13:22:49+00:00",
+    "site": "mistral",
+    "title": "Agentic Search. More accurate and efficient results from your AI systems."
+  },
+  "https://mistral.ai/news/agentic-search/": {
+    "date": "",
+    "file": "data/articles/mistral__agentic-search.md",
+    "scraped_at": "2026-09-04T13:23:09+00:00",
+    "site": "mistral",
+    "title": "Agentic Search. More accurate and efficient results from your AI systems."
+  },
+  "https://mistral.ai/news/ai-now-summit-2026/": {
+    "date": "",
+    "file": "data/articles/mistral__ai-now-summit-2026.md",
+    "scraped_at": "2026-09-04T13:23:44+00:00",
+    "site": "mistral",
+    "title": "AI Now Summit 2026"
+  },
+  "https://mistral.ai/news/connectors/": {
+    "date": "",
+    "file": "data/articles/mistral__connectors.md",
+    "scraped_at": "2026-09-04T13:24:09+00:00",
+    "site": "mistral",
+    "title": "Connect the dots: Build with built-in and custom MCPs in Studio"
+  },
+  "https://mistral.ai/news/forge/": {
+    "date": "",
+    "file": "data/articles/mistral__forge.md",
+    "scraped_at": "2026-09-04T13:24:20+00:00",
+    "site": "mistral",
+    "title": "Introducing Forge"
+  },
+  "https://mistral.ai/news/introducing-physics-ai-at-mistral/": {
+    "date": "",
+    "file": "data/articles/mistral__introducing-physics-ai-at-mistral.md",
+    "scraped_at": "2026-09-04T13:23:57+00:00",
+    "site": "mistral",
+    "title": "Introducing physics AI at Mistral: the foundation for engineering acceleration."
+  },
+  "https://mistral.ai/news/leanstral-1-5/": {
+    "date": "",
+    "file": "data/articles/mistral__leanstral-1-5.md",
+    "scraped_at": "2026-09-04T13:23:34+00:00",
+    "site": "mistral",
+    "title": "Leanstral 1.5: Proof Abundance for All"
+  },
+  "https://mistral.ai/news/manage-prompts-and-skills-in-studio/": {
+    "date": "",
+    "file": "data/articles/mistral__manage-prompts-and-skills-in-studio.md",
+    "scraped_at": "2026-09-04T13:23:21+00:00",
+    "site": "mistral",
+    "title": "Your Prompts and Skills need a system of record."
+  },
+  "https://mistral.ai/news/mistral-small-4/": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-small-4.md",
+    "scraped_at": "2026-09-04T13:22:32+00:00",
+    "site": "mistral",
+    "title": "Introducing Mistral Small 4"
+  },
+  "https://mistral.ai/news/mistral-x-humain": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-x-humain.md",
+    "scraped_at": "2026-09-04T13:22:42+00:00",
+    "site": "mistral",
+    "title": "Mistral x HUMAIN"
+  },
+  "https://mistral.ai/news/mistral-x-humain/": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-x-humain.md",
+    "scraped_at": "2026-09-04T13:23:04+00:00",
+    "site": "mistral",
+    "title": "Mistral x HUMAIN"
+  },
+  "https://mistral.ai/news/more-control-over-connectors/": {
+    "date": "",
+    "file": "data/articles/mistral__more-control-over-connectors.md",
+    "scraped_at": "2026-09-04T13:23:39+00:00",
+    "site": "mistral",
+    "title": "Bringing more control over your connectors"
+  },
+  "https://mistral.ai/news/ocr-4/": {
+    "date": "",
+    "file": "data/articles/mistral__ocr-4.md",
+    "scraped_at": "2026-09-04T13:22:21+00:00",
+    "site": "mistral",
+    "title": "Introducing"
+  },
+  "https://mistral.ai/news/physics-ai-research/": {
+    "date": "",
+    "file": "data/articles/mistral__physics-ai-research.md",
+    "scraped_at": "2026-09-04T13:24:00+00:00",
+    "site": "mistral",
+    "title": "Physics AI research that\u2019s shaping the industry."
+  },
+  "https://mistral.ai/news/regional-inference-open-models-new-compute": {
+    "date": "",
+    "file": "data/articles/mistral__regional-inference-open-models-new-compute.md",
+    "scraped_at": "2026-09-04T13:22:53+00:00",
+    "site": "mistral",
+    "title": "In-region inference, open models, and new European infrastructure for sovereign AI."
+  },
+  "https://mistral.ai/news/regional-inference-open-models-new-compute/": {
+    "date": "",
+    "file": "data/articles/mistral__regional-inference-open-models-new-compute.md",
+    "scraped_at": "2026-09-04T13:23:00+00:00",
+    "site": "mistral",
+    "title": "In-region inference, open models, and new European infrastructure for sovereign AI."
+  },
+  "https://mistral.ai/news/robostral-navigate/": {
+    "date": "",
+    "file": "data/articles/mistral__robostral-navigate.md",
+    "scraped_at": "2026-09-04T13:23:27+00:00",
+    "site": "mistral",
+    "title": "Robostral Navigate: single-camera AI navigation | Mistral AI"
+  },
+  "https://mistral.ai/news/search-toolkit/": {
+    "date": "",
+    "file": "data/articles/mistral__search-toolkit.md",
+    "scraped_at": "2026-09-04T13:23:52+00:00",
+    "site": "mistral",
+    "title": "Introducing Search Toolkit"
+  },
+  "https://mistral.ai/news/shieldstral/": {
+    "date": "",
+    "file": "data/articles/mistral__shieldstral.md",
+    "scraped_at": "2026-09-04T13:23:14+00:00",
+    "site": "mistral",
+    "title": "Introducing Shieldstral."
+  },
+  "https://mistral.ai/news/vibe-agent/": {
+    "date": "",
+    "file": "data/articles/mistral__vibe-agent.md",
+    "scraped_at": "2026-09-04T13:23:48+00:00",
+    "site": "mistral",
+    "title": "Vibe gets to work."
+  },
+  "https://mistral.ai/news/vibe-remote-agents-mistral-medium-3-5/": {
+    "date": "",
+    "file": "data/articles/mistral__vibe-remote-agents-mistral-medium-3-5.md",
+    "scraped_at": "2026-09-04T13:22:26+00:00",
+    "site": "mistral",
+    "title": "Remote agents in Vibe. Powered by Mistral Medium 3.5."
+  },
+  "https://mistral.ai/news/voxtral-tts/": {
+    "date": "",
+    "file": "data/articles/mistral__voxtral-tts.md",
+    "scraped_at": "2026-09-04T13:22:37+00:00",
+    "site": "mistral",
+    "title": "Speaking of Voxtral"
+  },
+  "https://mistral.ai/news/workflows/": {
+    "date": "",
+    "file": "data/articles/mistral__workflows.md",
+    "scraped_at": "2026-09-04T13:24:14+00:00",
+    "site": "mistral",
+    "title": "Workflows for work that runs the business"
+  },
+  "https://openai.com/index/ai-native-company-workflows/": {
+    "date": "2026-08-25",
+    "file": "data/articles/openai-index__ai-native-company-workflows.md",
+    "scraped_at": "2026-09-04T13:13:21+00:00",
+    "site": "openai-index",
+    "title": "How AI-native companies turn workflows into operating capability"
+  },
+  "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": {
+    "date": "2026-08-31",
+    "file": "data/articles/openai-index__chatgpt-connects-health-records-and-healthcare-sources.md",
+    "scraped_at": "2026-09-04T13:13:31+00:00",
+    "site": "openai-index",
+    "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT"
+  },
+  "https://openai.com/index/chatgpt-for-academic-researchers/": {
+    "date": "2026-06-11",
+    "file": "data/articles/openai-research__chatgpt-for-academic-researchers.md",
+    "scraped_at": "2026-09-04T13:12:23+00:00",
+    "site": "openai-research",
+    "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers"
+  },
+  "https://openai.com/index/daybreak-for-frontline-defenders/": {
+    "date": "2026-09-01",
+    "file": "data/articles/openai-index__daybreak-for-frontline-defenders.md",
+    "scraped_at": "2026-09-04T13:13:10+00:00",
+    "site": "openai-index",
+    "title": "Daybreak for Frontline Defenders: $1B to protect essential services"
+  },
+  "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/": {
+    "date": "2026-09-01",
+    "file": "data/articles/openai-index__expanding-access-to-ai-with-chatgpt-ads.md",
+    "scraped_at": "2026-09-04T13:13:41+00:00",
+    "site": "openai-index",
+    "title": "A milestone in expanding access to AI"
+  },
+  "https://openai.com/index/gpt-5-6/": {
+    "date": "2026-09-01",
+    "file": "data/articles/openai-research__gpt-5-6.md",
+    "scraped_at": "2026-09-04T13:12:39+00:00",
+    "site": "openai-research",
+    "title": "GPT\u20115.6: Frontier intelligence that scales with your ambition"
+  },
+  "https://openai.com/index/gpt-6-astra/": {
+    "date": "",
+    "file": "data/articles/openai-research__gpt-6-astra.md",
+    "scraped_at": "2026-09-04T13:12:47+00:00",
+    "site": "openai-research",
+    "title": "This page couldn\u2019t load"
+  },
+  "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/": {
+    "date": "2026-08-26",
+    "file": "data/articles/openai-research__how-two-settings-tripled-our-arc-agi-3-scores.md",
+    "scraped_at": "2026-09-04T13:12:18+00:00",
+    "site": "openai-research",
+    "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark"
+  },
+  "https://openai.com/index/hugging-face-incident-and-the-road-ahead/": {
+    "date": "2026-05-12",
+    "file": "data/articles/openai-research__hugging-face-incident-and-the-road-ahead.md",
+    "scraped_at": "2026-09-04T13:12:02+00:00",
+    "site": "openai-research",
+    "title": "The Hugging Face incident and the road ahead"
+  },
+  "https://openai.com/index/introducing-gpt-5-4/": {
+    "date": "2026-09-01",
+    "file": "data/articles/openai-research__introducing-gpt-5-4.md",
+    "scraped_at": "2026-09-04T13:12:58+00:00",
+    "site": "openai-research",
+    "title": "Introducing GPT\u20115.4"
+  },
+  "https://openai.com/index/introducing-gpt-5-5/": {
+    "date": "2026-09-01",
+    "file": "data/articles/openai-research__introducing-gpt-5-5.md",
+    "scraped_at": "2026-09-04T13:12:53+00:00",
+    "site": "openai-research",
+    "title": "Introducing GPT\u20115.5"
+  },
+  "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/": {
+    "date": "2026-08-31",
+    "file": "data/articles/openai-index__our-decision-on-cursor-following-its-acquisition-by-spacex.md",
+    "scraped_at": "2026-09-04T13:13:47+00:00",
+    "site": "openai-index",
+    "title": "Our decision on Cursor following its acquisition by SpaceX"
+  },
+  "https://openai.com/index/pacing-model-development-cyber-capabilities/": {
+    "date": "2026-08-31",
+    "file": "data/articles/openai-research__pacing-model-development-cyber-capabilities.md",
+    "scraped_at": "2026-09-04T13:12:06+00:00",
+    "site": "openai-research",
+    "title": "Pacing model development in an era of cyber-critical capabilities"
+  },
+  "https://openai.com/index/path-to-astra/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-index__path-to-astra.md",
+    "scraped_at": "2026-09-04T13:13:26+00:00",
+    "site": "openai-index",
+    "title": "Path to Astra: critical capabilities and frontier safeguards"
+  },
+  "https://openai.com/index/safety-overview-gpt-6-astra/": {
+    "date": "2026-09-01",
+    "file": "data/articles/openai-index__safety-overview-gpt-6-astra.md",
+    "scraped_at": "2026-09-04T13:13:16+00:00",
+    "site": "openai-index",
+    "title": "Safety overview: GPT\u20116 Astra"
+  },
+  "https://openai.com/index/scientific-computing-agentic-ai/": {
+    "date": "2026-08-26",
+    "file": "data/articles/openai-research__scientific-computing-agentic-ai.md",
+    "scraped_at": "2026-09-04T13:12:28+00:00",
+    "site": "openai-research",
+    "title": "Scientific computing in the age of agentic AI"
+  },
+  "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety/": {
+    "date": "2026-08-28",
+    "file": "data/articles/openai-index__supporting-california-bill-advance-ai-youth-safety.md",
+    "scraped_at": "2026-09-04T13:13:36+00:00",
+    "site": "openai-index",
+    "title": "OpenAI supports California\u2019s bill to advance youth AI safety"
+  },
+  "https://openai.com/index/ten-advances-in-mathematics/": {
+    "date": "2026-08-26",
+    "file": "data/articles/openai-research__ten-advances-in-mathematics.md",
+    "scraped_at": "2026-09-04T13:12:13+00:00",
+    "site": "openai-research",
+    "title": "Ten advances in mathematics and theoretical computer science | OpenAI"
+  },
+  "https://openai.com/index/unlocking-self-improvement-gpt-red/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-research__unlocking-self-improvement-gpt-red.md",
+    "scraped_at": "2026-09-04T13:12:33+00:00",
+    "site": "openai-research",
+    "title": "GPT\u2011Red: Unlocking Self-Improvement for Robustness"
+  },
+  "https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/": {
+    "date": "",
+    "file": "data/articles/google-research__a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain.md",
+    "scraped_at": "2026-09-04T13:14:19+00:00",
+    "site": "google-research",
+    "title": "A connectomics milestone: Mapping the complete male fruit fly brain"
+  },
+  "https://research.google/blog/advancing-amie-towards-expert-level-audio-visual-clinical-consultations/": {
+    "date": "",
+    "file": "data/articles/google-research__advancing-amie-towards-expert-level-audio-visual-clinical-consultations.md",
+    "scraped_at": "2026-09-04T13:16:06+00:00",
+    "site": "google-research",
+    "title": "Advancing AMIE towards expert-level audio-visual clinical consultations"
+  },
+  "https://research.google/blog/agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-conversations-in-xr/": {
+    "date": "",
+    "file": "data/articles/google-research__agenthands-generating-interactive-hand-gestures-for-spatially-grounded-agent-con.md",
+    "scraped_at": "2026-09-04T13:15:22+00:00",
+    "site": "google-research",
+    "title": "AgentHands: Generating interactive hand gestures for spatially grounded agent conversations in XR"
+  },
+  "https://research.google/blog/an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data/": {
+    "date": "",
+    "file": "data/articles/google-research__an-ai-tool-for-prioritizing-candidate-biomarkers-from-wearable-sensor-data.md",
+    "scraped_at": "2026-09-04T13:15:28+00:00",
+    "site": "google-research",
+    "title": "An AI tool for prioritizing candidate biomarkers from wearable sensor data"
+  },
+  "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/": {
+    "date": "",
+    "file": "data/articles/google-research__empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality.md",
+    "scraped_at": "2026-09-04T13:15:56+00:00",
+    "site": "google-research",
+    "title": "Empty shelves or lost keys? Recall is the bottleneck for parametric factuality"
+  },
+  "https://research.google/blog/glucofm-foundation-model-for-continuous-glucose-monitoring/": {
+    "date": "",
+    "file": "data/articles/google-research__glucofm-foundation-model-for-continuous-glucose-monitoring.md",
+    "scraped_at": "2026-09-04T13:15:05+00:00",
+    "site": "google-research",
+    "title": "GlucoFM: Foundation model for continuous glucose monitoring"
+  },
+  "https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/": {
+    "date": "",
+    "file": "data/articles/google-research__how-mobility-gives-language-models-a-deeper-understanding-of-place.md",
+    "scraped_at": "2026-09-04T13:15:37+00:00",
+    "site": "google-research",
+    "title": "How mobility gives language models a deeper understanding of place"
+  },
+  "https://research.google/blog/mapping-global-methane-emissions-from-space-with-deep-learning/": {
+    "date": "",
+    "file": "data/articles/google-research__mapping-global-methane-emissions-from-space-with-deep-learning.md",
+    "scraped_at": "2026-09-04T13:14:31+00:00",
+    "site": "google-research",
+    "title": "Mapping global methane emissions from space with deep learning"
+  },
+  "https://research.google/blog/planetary-prediction-engine-automating-global-models-via-earth-ai/": {
+    "date": "",
+    "file": "data/articles/google-research__planetary-prediction-engine-automating-global-models-via-earth-ai.md",
+    "scraped_at": "2026-09-04T13:14:54+00:00",
+    "site": "google-research",
+    "title": "Planetary prediction engine: Automating global models via Earth AI"
+  },
+  "https://research.google/blog/seeing-beyond-bmi-estimating-cardiometabolic-risk-with-smartphone-imagery/": {
+    "date": "",
+    "file": "data/articles/google-research__seeing-beyond-bmi-estimating-cardiometabolic-risk-with-smartphone-imagery.md",
+    "scraped_at": "2026-09-04T13:15:49+00:00",
+    "site": "google-research",
+    "title": "Seeing beyond BMI: Estimating cardiometabolic risk with smartphone imagery"
+  },
+  "https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/": {
+    "date": "",
+    "file": "data/articles/google-research__timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting.md",
+    "scraped_at": "2026-09-04T13:14:44+00:00",
+    "site": "google-research",
+    "title": "TimesFM-3: A zero-shot foundation model for multivariate forecasting"
+  },
+  "https://research.google/blog/transfer-learning-for-genomic-prediction-in-underrepresented-populations/": {
+    "date": "",
+    "file": "data/articles/google-research__transfer-learning-for-genomic-prediction-in-underrepresented-populations.md",
+    "scraped_at": "2026-09-04T13:14:09+00:00",
+    "site": "google-research",
+    "title": "Transfer learning for genomic prediction in underrepresented populations"
+  },
+  "https://www.anthropic.com/engineering/AI-resistant-technical-evaluations": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__ai-resistant-technical-evaluations.md",
+    "scraped_at": "2026-09-04T13:10:08+00:00",
+    "site": "anthropic-engineering",
+    "title": "Designing AI-resistant technical evaluations"
+  },
+  "https://www.anthropic.com/engineering/a-postmortem-of-three-recent-issues": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__a-postmortem-of-three-recent-issues.md",
+    "scraped_at": "2026-09-04T13:10:34+00:00",
+    "site": "anthropic-engineering",
+    "title": "A postmortem of three recent issues"
+  },
+  "https://www.anthropic.com/engineering/advanced-tool-use": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__advanced-tool-use.md",
+    "scraped_at": "2026-09-04T13:10:18+00:00",
+    "site": "anthropic-engineering",
+    "title": "Introducing advanced tool use on the Claude Developer Platform"
+  },
+  "https://www.anthropic.com/engineering/april-23-postmortem": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__april-23-postmortem.md",
+    "scraped_at": "2026-09-04T13:09:45+00:00",
+    "site": "anthropic-engineering",
+    "title": "An update on recent Claude Code quality reports"
+  },
+  "https://www.anthropic.com/engineering/building-c-compiler": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__building-c-compiler.md",
+    "scraped_at": "2026-09-04T13:10:05+00:00",
+    "site": "anthropic-engineering",
+    "title": "Building a C compiler with a team of parallel Claudes"
+  },
+  "https://www.anthropic.com/engineering/building-effective-agents": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__building-effective-agents.md",
+    "scraped_at": "2026-09-04T13:10:58+00:00",
+    "site": "anthropic-engineering",
+    "title": "Building effective agents"
+  },
+  "https://www.anthropic.com/engineering/claude-code-auto-mode": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__claude-code-auto-mode.md",
+    "scraped_at": "2026-09-04T13:09:52+00:00",
+    "site": "anthropic-engineering",
+    "title": "How we built Claude Code auto mode: a safer way to skip permissions"
+  },
+  "https://www.anthropic.com/engineering/claude-code-best-practices": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__claude-code-best-practices.md",
+    "scraped_at": "2026-09-04T13:10:48+00:00",
+    "site": "anthropic-engineering",
+    "title": "Best practices for Claude Code"
+  },
+  "https://www.anthropic.com/engineering/claude-code-sandboxing": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__claude-code-sandboxing.md",
+    "scraped_at": "2026-09-04T13:10:25+00:00",
+    "site": "anthropic-engineering",
+    "title": "Beyond permission prompts: making Claude Code more secure and autonomous"
+  },
+  "https://www.anthropic.com/engineering/claude-think-tool": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__claude-think-tool.md",
+    "scraped_at": "2026-09-04T13:10:52+00:00",
+    "site": "anthropic-engineering",
+    "title": "The \"think\" tool: Enabling Claude to stop and think in complex tool use situations"
+  },
+  "https://www.anthropic.com/engineering/code-execution-with-mcp": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__code-execution-with-mcp.md",
+    "scraped_at": "2026-09-04T13:10:22+00:00",
+    "site": "anthropic-engineering",
+    "title": "Code execution with MCP: Building more efficient agents"
+  },
+  "https://www.anthropic.com/engineering/contextual-retrieval": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__contextual-retrieval.md",
+    "scraped_at": "2026-09-04T13:11:02+00:00",
+    "site": "anthropic-engineering",
+    "title": "Introducing Contextual Retrieval"
+  },
+  "https://www.anthropic.com/engineering/demystifying-evals-for-ai-agents": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__demystifying-evals-for-ai-agents.md",
+    "scraped_at": "2026-09-04T13:10:12+00:00",
+    "site": "anthropic-engineering",
+    "title": "Demystifying evals for AI agents"
+  },
+  "https://www.anthropic.com/engineering/desktop-extensions": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__desktop-extensions.md",
+    "scraped_at": "2026-09-04T13:10:41+00:00",
+    "site": "anthropic-engineering",
+    "title": "Desktop Extensions: One-click MCP server installation for Claude Desktop"
+  },
+  "https://www.anthropic.com/engineering/effective-context-engineering-for-ai-agents": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__effective-context-engineering-for-ai-agents.md",
+    "scraped_at": "2026-09-04T13:10:31+00:00",
+    "site": "anthropic-engineering",
+    "title": "Effective context engineering for AI agents"
+  },
+  "https://www.anthropic.com/engineering/effective-harnesses-for-long-running-agents": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__effective-harnesses-for-long-running-agents.md",
+    "scraped_at": "2026-09-04T13:10:15+00:00",
+    "site": "anthropic-engineering",
+    "title": "Effective harnesses for long-running agents"
+  },
+  "https://www.anthropic.com/engineering/equipping-agents-for-the-real-world-with-agent-skills": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__equipping-agents-for-the-real-world-with-agent-skills.md",
+    "scraped_at": "2026-09-04T13:10:28+00:00",
+    "site": "anthropic-engineering",
+    "title": "Equipping agents for the real world with Agent Skills"
+  },
+  "https://www.anthropic.com/engineering/eval-awareness-browsecomp": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__eval-awareness-browsecomp.md",
+    "scraped_at": "2026-09-04T13:09:59+00:00",
+    "site": "anthropic-engineering",
+    "title": "Eval awareness in Claude Opus 4.6\u2019s BrowseComp performance"
+  },
+  "https://www.anthropic.com/engineering/harness-design-long-running-apps": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__harness-design-long-running-apps.md",
+    "scraped_at": "2026-09-04T13:09:56+00:00",
+    "site": "anthropic-engineering",
+    "title": "Harness design for long-running application development"
+  },
+  "https://www.anthropic.com/engineering/how-we-contain-claude": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__how-we-contain-claude.md",
+    "scraped_at": "2026-09-04T13:09:42+00:00",
+    "site": "anthropic-engineering",
+    "title": "How we contain Claude across products"
+  },
+  "https://www.anthropic.com/engineering/infrastructure-noise": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__infrastructure-noise.md",
+    "scraped_at": "2026-09-04T13:10:02+00:00",
+    "site": "anthropic-engineering",
+    "title": "Quantifying infrastructure noise in agentic coding evals"
+  },
+  "https://www.anthropic.com/engineering/managed-agents": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__managed-agents.md",
+    "scraped_at": "2026-09-04T13:09:49+00:00",
+    "site": "anthropic-engineering",
+    "title": "Scaling Managed Agents: Decoupling the brain from the hands"
+  },
+  "https://www.anthropic.com/engineering/multi-agent-research-system": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__multi-agent-research-system.md",
+    "scraped_at": "2026-09-04T13:10:44+00:00",
+    "site": "anthropic-engineering",
+    "title": "How we built our multi-agent research system"
+  },
+  "https://www.anthropic.com/engineering/swe-bench-sonnet": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__swe-bench-sonnet.md",
+    "scraped_at": "2026-09-04T13:10:55+00:00",
+    "site": "anthropic-engineering",
+    "title": "Raising the bar on SWE-bench Verified with Claude 3.5 Sonnet"
+  },
+  "https://www.anthropic.com/engineering/writing-tools-for-agents": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__writing-tools-for-agents.md",
+    "scraped_at": "2026-09-04T13:10:37+00:00",
+    "site": "anthropic-engineering",
+    "title": "Writing effective tools for agents \u2014 with agents"
+  },
+  "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy": {
+    "date": "",
+    "file": "data/articles/anthropic-news__announcing-our-updated-responsible-scaling-policy.md",
+    "scraped_at": "2026-09-04T13:11:52+00:00",
+    "site": "anthropic-news",
+    "title": "Announcing our updated Responsible Scaling Policy"
+  },
+  "https://www.anthropic.com/news/claude-opus-5": {
+    "date": "",
+    "file": "data/articles/anthropic-news__claude-opus-5.md",
+    "scraped_at": "2026-09-04T13:11:24+00:00",
+    "site": "anthropic-news",
+    "title": "Introducing Claude Opus 5"
+  },
+  "https://www.anthropic.com/news/claude-text-watermark": {
+    "date": "",
+    "file": "data/articles/anthropic-news__claude-text-watermark.md",
+    "scraped_at": "2026-09-04T13:11:18+00:00",
+    "site": "anthropic-news",
+    "title": "How Claude\u2019s text watermark works"
+  },
+  "https://www.anthropic.com/news/enterprise-frontier-safeguards": {
+    "date": "",
+    "file": "data/articles/anthropic-news__enterprise-frontier-safeguards.md",
+    "scraped_at": "2026-09-04T13:11:27+00:00",
+    "site": "anthropic-news",
+    "title": "Developing Enterprise Frontier Safeguards with our customers"
+  },
+  "https://www.anthropic.com/news/expanding-support-for-scientists": {
+    "date": "",
+    "file": "data/articles/anthropic-news__expanding-support-for-scientists.md",
+    "scraped_at": "2026-09-04T13:11:33+00:00",
+    "site": "anthropic-news",
+    "title": "Expanding our support for scientists"
+  },
+  "https://www.anthropic.com/news/improving-alignment-security-efforts": {
+    "date": "",
+    "file": "data/articles/anthropic-news__improving-alignment-security-efforts.md",
+    "scraped_at": "2026-09-04T13:11:30+00:00",
+    "site": "anthropic-news",
+    "title": "Improving our alignment and security efforts"
+  },
+  "https://www.anthropic.com/news/improving-fable-5-s-biology-safeguards": {
+    "date": "",
+    "file": "data/articles/anthropic-news__improving-fable-5-s-biology-safeguards.md",
+    "scraped_at": "2026-09-04T13:11:40+00:00",
+    "site": "anthropic-news",
+    "title": "Improving Fable 5's biology safeguards"
+  },
+  "https://www.anthropic.com/news/investigating-incidents-cybersecurity-evals": {
+    "date": "",
+    "file": "data/articles/anthropic-news__investigating-incidents-cybersecurity-evals.md",
+    "scraped_at": "2026-09-04T13:11:46+00:00",
+    "site": "anthropic-news",
+    "title": "Investigating three real-world incidents in our cybersecurity evaluations"
+  },
+  "https://www.anthropic.com/news/model-hardware-standard-research-preview": {
+    "date": "",
+    "file": "data/articles/anthropic-news__model-hardware-standard-research-preview.md",
+    "scraped_at": "2026-09-04T13:11:14+00:00",
+    "site": "anthropic-news",
+    "title": "Previewing the Model Hardware Standard"
+  },
+  "https://www.anthropic.com/news/position-open-weights-models": {
+    "date": "",
+    "file": "data/articles/anthropic-news__position-open-weights-models.md",
+    "scraped_at": "2026-09-04T13:11:49+00:00",
+    "site": "anthropic-news",
+    "title": "Our position on open-weights models"
+  },
+  "https://www.anthropic.com/news/tino-cuellar": {
+    "date": "",
+    "file": "data/articles/anthropic-news__tino-cuellar.md",
+    "scraped_at": "2026-09-04T13:11:43+00:00",
+    "site": "anthropic-news",
+    "title": "Mariano-Florentino (Tino) Cu\u00e9llar to join Anthropic as Chief Global Affairs Officer"
+  },
+  "https://www.anthropic.com/news/wellbeing-research-grants": {
+    "date": "",
+    "file": "data/articles/anthropic-news__wellbeing-research-grants.md",
+    "scraped_at": "2026-09-04T13:11:36+00:00",
+    "site": "anthropic-news",
+    "title": "Funding better evaluations of AI\u2019s impact on wellbeing"
+  },
+  "https://www.anthropic.com/research/Claude-accelerates-protein-design": {
+    "date": "",
+    "file": "data/articles/anthropic-research__claude-accelerates-protein-design.md",
+    "scraped_at": "2026-09-04T13:08:46+00:00",
+    "site": "anthropic-research",
+    "title": "How Claude is accelerating protein design and analytical chemistry"
+  },
+  "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures": {
+    "date": "",
+    "file": "data/articles/anthropic-research__automated-researchers-mitigate-alignment-failures.md",
+    "scraped_at": "2026-09-04T13:08:59+00:00",
+    "site": "anthropic-research",
+    "title": "Automated researchers can reliably mitigate alignment failures"
+  },
+  "https://www.anthropic.com/research/claude-values-models-languages": {
+    "date": "",
+    "file": "data/articles/anthropic-research__claude-values-models-languages.md",
+    "scraped_at": "2026-09-04T13:09:36+00:00",
+    "site": "anthropic-research",
+    "title": "Claude\u2019s values across models and languages"
+  },
+  "https://www.anthropic.com/research/discovering-cryptographic-weaknesses": {
+    "date": "",
+    "file": "data/articles/anthropic-research__discovering-cryptographic-weaknesses.md",
+    "scraped_at": "2026-09-04T13:09:09+00:00",
+    "site": "anthropic-research",
+    "title": "Discovering cryptographic weaknesses with Claude"
+  },
+  "https://www.anthropic.com/research/enabling-independent-research": {
+    "date": "",
+    "file": "data/articles/anthropic-research__enabling-independent-research.md",
+    "scraped_at": "2026-09-04T13:09:02+00:00",
+    "site": "anthropic-research",
+    "title": "Enabling independent research on how people use Claude"
+  },
+  "https://www.anthropic.com/research/global-workspace": {
+    "date": "",
+    "file": "data/articles/anthropic-research__global-workspace.md",
+    "scraped_at": "2026-09-04T13:08:52+00:00",
+    "site": "anthropic-research",
+    "title": "A global workspace in language models"
+  },
+  "https://www.anthropic.com/research/how-canada-uses-claude": {
+    "date": "",
+    "file": "data/articles/anthropic-research__how-canada-uses-claude.md",
+    "scraped_at": "2026-09-04T13:09:32+00:00",
+    "site": "anthropic-research",
+    "title": "How Canada uses Claude: Findings from the Anthropic Economic Index"
+  },
+  "https://www.anthropic.com/research/multiagent-systems": {
+    "date": "",
+    "file": "data/articles/anthropic-research__multiagent-systems.md",
+    "scraped_at": "2026-09-04T13:09:06+00:00",
+    "site": "anthropic-research",
+    "title": "Patterns and problems in emerging multiagent systems"
+  },
+  "https://www.anthropic.com/research/project-pilot": {
+    "date": "",
+    "file": "data/articles/anthropic-research__project-pilot.md",
+    "scraped_at": "2026-09-04T13:09:29+00:00",
+    "site": "anthropic-research",
+    "title": "Project Pilot: Can AI control a drone?"
+  },
+  "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs": {
+    "date": "",
+    "file": "data/articles/anthropic-research__reviewing-the-evidence-on-worker-retraining-programs.md",
+    "scraped_at": "2026-09-04T13:08:49+00:00",
+    "site": "anthropic-research",
+    "title": "Reviewing the evidence on worker retraining programs"
+  },
+  "https://www.anthropic.com/research/riemann-zeta": {
+    "date": "",
+    "file": "data/articles/anthropic-research__riemann-zeta.md",
+    "scraped_at": "2026-09-04T13:08:42+00:00",
+    "site": "anthropic-research",
+    "title": "Learning more about Claude's mathematical capabilities"
+  },
+  "https://www.anthropic.com/research/teaching-claude-why": {
+    "date": "",
+    "file": "data/articles/anthropic-research__teaching-claude-why.md",
+    "scraped_at": "2026-09-04T13:08:56+00:00",
+    "site": "anthropic-research",
+    "title": "Teaching Claude why"
+  },
+  "https://www.microsoft.com/en-us/research/blog/aurora-1-5-extending-open-foundation-models-for-weather-and-earth-system-applications/": {
+    "date": "2026-07-09",
+    "file": "data/articles/microsoft-research__aurora-1-5-extending-open-foundation-models-for-weather-and-earth-system-applica.md",
+    "scraped_at": "2026-09-04T13:21:50+00:00",
+    "site": "microsoft-research",
+    "title": "Aurora 1.5: Extending open foundation models for weather and Earth-system applications"
+  },
+  "https://www.microsoft.com/en-us/research/blog/broadening-access-to-skala-creates-a-faster-path-to-predictive-dft/": {
+    "date": "2026-08-20",
+    "file": "data/articles/microsoft-research__broadening-access-to-skala-creates-a-faster-path-to-predictive-dft.md",
+    "scraped_at": "2026-09-04T13:20:55+00:00",
+    "site": "microsoft-research",
+    "title": "Broadening access to Skala creates a faster path to predictive DFT"
+  },
+  "https://www.microsoft.com/en-us/research/blog/echoverse-deep-evolving-environments-for-computer-use-agents/": {
+    "date": "2026-07-30",
+    "file": "data/articles/microsoft-research__echoverse-deep-evolving-environments-for-computer-use-agents.md",
+    "scraped_at": "2026-09-04T13:21:27+00:00",
+    "site": "microsoft-research",
+    "title": "Echoverse: Deep, evolving environments for computer-use agents"
+  },
+  "https://www.microsoft.com/en-us/research/blog/evolib-turning-experience-into-evolving-knowledge/": {
+    "date": "2026-07-30",
+    "file": "data/articles/microsoft-research__evolib-turning-experience-into-evolving-knowledge.md",
+    "scraped_at": "2026-09-04T13:21:35+00:00",
+    "site": "microsoft-research",
+    "title": "EvoLib: Turning experience into evolving knowledge"
+  },
+  "https://www.microsoft.com/en-us/research/blog/flint-a-visualization-language-for-the-ai-era/": {
+    "date": "2026-07-08",
+    "file": "data/articles/microsoft-research__flint-a-visualization-language-for-the-ai-era.md",
+    "scraped_at": "2026-09-04T13:21:57+00:00",
+    "site": "microsoft-research",
+    "title": "Flint: A visualization language for the AI era"
+  },
+  "https://www.microsoft.com/en-us/research/blog/gigapath-flash-and-gigatime-flash-toward-population-scale-discovery-with-efficient-pathology-foundation-models/": {
+    "date": "2026-08-31",
+    "file": "data/articles/microsoft-research__gigapath-flash-and-gigatime-flash-toward-population-scale-discovery-with-efficie.md",
+    "scraped_at": "2026-09-04T13:20:47+00:00",
+    "site": "microsoft-research",
+    "title": "GigaPath-Flash and GigaTIME-Flash: Toward population-scale discovery with efficient pathology foundation models"
+  },
+  "https://www.microsoft.com/en-us/research/blog/introducing-care-x-towards-clinically-useful-radiology-vlms-with-auxiliary-supervision-reward-aligned-learning-and-tool-augmented-measurement/": {
+    "date": "2026-08-11",
+    "file": "data/articles/microsoft-research__introducing-care-x-towards-clinically-useful-radiology-vlms-with-auxiliary-super.md",
+    "scraped_at": "2026-09-04T13:21:12+00:00",
+    "site": "microsoft-research",
+    "title": "Introducing\u202fCARE-X: Towards Clinically Useful Radiology VLMs with Auxiliary Supervision, Reward-Aligned Learning, and Tool-Augmented Measurement"
+  },
+  "https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/": {
+    "date": "2026-06-29",
+    "file": "data/articles/microsoft-research__memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity.md",
+    "scraped_at": "2026-09-04T13:22:13+00:00",
+    "site": "microsoft-research",
+    "title": "Memora:\u00a0A Harmonic Memory Representation Balancing Abstraction and Specificity"
+  },
+  "https://www.microsoft.com/en-us/research/blog/mindtopo-reveals-vlms-spatial-reasoning-abilities/": {
+    "date": "2026-08-12",
+    "file": "data/articles/microsoft-research__mindtopo-reveals-vlms-spatial-reasoning-abilities.md",
+    "scraped_at": "2026-09-04T13:21:05+00:00",
+    "site": "microsoft-research",
+    "title": "MindTopo reveals VLMs\u2019 spatial reasoning abilities"
+  },
+  "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/": {
+    "date": "2026-08-03",
+    "file": "data/articles/microsoft-research__orchard-an-open-framework-for-scalable-agentic-ai.md",
+    "scraped_at": "2026-09-04T13:21:20+00:00",
+    "site": "microsoft-research",
+    "title": "Orchard: An open framework for scalable agentic AI"
+  },
+  "https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/": {
+    "date": "2026-06-30",
+    "file": "data/articles/microsoft-research__skillopt-agent-skills-as-trainable-parameters.md",
+    "scraped_at": "2026-09-04T13:22:04+00:00",
+    "site": "microsoft-research",
+    "title": "SkillOpt: Agent skills as trainable parameters"
+  }
+}

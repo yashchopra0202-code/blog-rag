@@ -4,6 +4,4 @@ __pycache__/
 *.pyc
 .pytest_cache/
 chroma_db/
-data/articles/
-data/manifest.json
 .DS_Store
