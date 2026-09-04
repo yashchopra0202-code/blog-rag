@@ -38,6 +38,16 @@ PROMPT_TMPL = (
     "Context:\n{context}\n\nQuestion: {question}"
 )
 
+def nice_title(title: str, url: str) -> str:
+    """Fall back to a readable title derived from the URL slug when a site
+    (e.g. Hugging Face) didn't expose a title the scraper could capture."""
+    if title and not title.startswith("http"):
+        return title
+    slug = url.rstrip("/").split("/")[-1].split("?")[0]
+    words = slug.replace("-", " ").replace("_", " ").strip()
+    return (words[:1].upper() + words[1:]) if words else url
+
+
 app = FastAPI(title="blog-rag")
 
 
@@ -62,8 +72,8 @@ def answer_question(question: str) -> dict:
         url = d.metadata.get("source", "")
         if url and url not in seen:
             seen.add(url)
-            sources.append({"title": d.metadata.get("title", ""), "url": url,
-                            "site": d.metadata.get("site", "")})
+            sources.append({"title": nice_title(d.metadata.get("title", ""), url),
+                            "url": url, "site": d.metadata.get("site", "")})
     return {"answer": answer, "sources": sources}
 
 
@@ -96,6 +106,23 @@ def corpus_stats() -> dict:
 @app.get("/stats")
 def stats():
     return corpus_stats()
+
+
+@app.get("/articles")
+def articles(site: str, limit: int = 20):
+    """Recent posts for one lab, newest first — a metadata listing, not a search.
+
+    Manifest insertion order is scrape order, which is the listing (reverse-
+    chronological) order, so we preserve it rather than re-sorting."""
+    try:
+        with open(MANIFEST_PATH, encoding="utf-8") as f:
+            manifest = json.load(f)
+    except (OSError, ValueError):
+        manifest = {}
+    items = [{"url": url, "title": nice_title(v.get("title", ""), url), "date": v.get("date", "")}
+             for url, v in manifest.items() if v.get("site") == site]
+    return {"site": site, "label": SITE_LABELS.get(site, site),
+            "count": len(items), "articles": items[: max(1, min(limit, 100))]}
 
 
 @app.get("/")

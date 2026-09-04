@@ -318,7 +318,7 @@
         <p class="asked" id="asked"></p>
         <div class="answer" id="answer" aria-live="polite"></div>
         <div class="sources" id="sources" hidden>
-          <h2><span class="badge" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sources</h2>
+          <h2><span class="badge" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span id="sources-label">Sources</span></h2>
           <ul id="sources-list"></ul>
         </div>
       </div>
@@ -341,7 +341,7 @@
   const $ = (s) => document.querySelector(s);
   const form = $("#ask-form"), q = $("#q"), send = $("#send");
   const panel = $("#panel"), asked = $("#asked"), answerEl = $("#answer");
-  const sourcesWrap = $("#sources"), sourcesList = $("#sources-list");
+  const sourcesWrap = $("#sources"), sourcesList = $("#sources-list"), sourcesLabel = $("#sources-label");
   const loading = $("#loading"), loadingText = $("#loading-text");
   const errorEl = $("#error"), errorMsg = $("#error-msg");
   const suggest = $("#suggest"), labs = $("#labs");
@@ -401,11 +401,7 @@
       const c = document.createElement("span"); c.className = "count";
       c.textContent = site.count; c.setAttribute("aria-label", site.count + " articles");
       b.append(name, c);
-      const clean = (site.label || site.name).replace(/\s·\s.*/, "");
-      const seg = (site.label || site.name).includes("·")
-        ? (site.label || site.name).replace(/^.*·\s/, "").toLowerCase() + " from " + clean
-        : clean;
-      b.addEventListener("click", () => runQuestion("What has " + seg + " published recently?"));
+      b.addEventListener("click", () => browseLab(site.name, site.label || site.name));
       labs.appendChild(b);
     });
   }).catch(() => {});
@@ -456,36 +452,79 @@
       .replace(/`([^`]+)`/g, "<code>$1</code>");
   }
 
+  const OUT_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg>';
+
+  function sourceRow(title, url, sub) {
+    const li = document.createElement("li");
+    const a = document.createElement("a");
+    a.className = "src";
+    const u = String(url || "");
+    a.href = u.startsWith("http") ? u : "#";
+    a.target = "_blank"; a.rel = "noopener noreferrer";
+    const body = document.createElement("span"); body.className = "src-body";
+    const t = document.createElement("span"); t.className = "src-title"; t.textContent = title || u || "Untitled";
+    const s = document.createElement("span"); s.className = "src-site"; s.textContent = sub || "";
+    body.append(t, s);
+    const out = document.createElement("span"); out.className = "src-out"; out.setAttribute("aria-hidden", "true");
+    out.innerHTML = OUT_ICON;
+    a.append(body, out);
+    li.appendChild(a);
+    return li;
+  }
+
+  function revealPanel() {
+    show(panel);
+    panel.classList.remove("reveal"); void panel.offsetWidth; panel.classList.add("reveal");
+    panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+  }
+
+  function niceDate(d) {
+    if (!d) return "";
+    const dt = new Date(d + "T00:00:00");
+    return isNaN(dt) ? "" : dt.toLocaleDateString(undefined, { month: "short", day: "numeric", year: "numeric" });
+  }
+
   function render(question, data) {
     hide(loading);
     asked.textContent = question;
+    answerEl.hidden = false;
     answerEl.innerHTML = safeMarkdown(data && data.answer);
+    sourcesLabel.textContent = "Sources";
     const sources = (data && data.sources) || [];
     sourcesList.textContent = "";
     if (sources.length) {
-      sources.forEach((s) => {
-        const li = document.createElement("li");
-        const a = document.createElement("a");
-        a.className = "src";
-        const url = String(s.url || "");
-        a.href = url.startsWith("http") ? url : "#";
-        a.target = "_blank"; a.rel = "noopener noreferrer";
-        const body = document.createElement("span"); body.className = "src-body";
-        const t = document.createElement("span"); t.className = "src-title"; t.textContent = s.title || url || "Untitled";
-        const site = document.createElement("span"); site.className = "src-site"; site.textContent = s.site || "";
-        body.append(t, site);
-        const out = document.createElement("span"); out.className = "src-out"; out.setAttribute("aria-hidden", "true");
-        out.innerHTML = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg>';
-        a.append(body, out);
-        li.appendChild(a); sourcesList.appendChild(li);
-      });
+      sources.forEach((s) => sourcesList.appendChild(sourceRow(s.title, s.url, s.site)));
       show(sourcesWrap);
     } else {
       hide(sourcesWrap);
     }
-    show(panel);
-    panel.classList.remove("reveal"); void panel.offsetWidth; panel.classList.add("reveal");
-    panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
+    revealPanel();
+  }
+
+  // A lab chip lists that lab's recent posts (metadata) — never a semantic
+  // search, so it can never surface another lab's articles.
+  async function browseLab(slug, label) {
+    hide(errorEl); hide(panel);
+    loadingText.textContent = "Loading recent posts from " + label + "…";
+    show(loading);
+    try {
+      const r = await fetch("/articles?site=" + encodeURIComponent(slug) + "&limit=25");
+      let data = null; try { data = await r.json(); } catch (e) {}
+      if (!r.ok) throw new Error((data && data.detail) || ("Request failed (" + r.status + ")"));
+      hide(loading);
+      asked.textContent = "Recent from " + label;
+      answerEl.hidden = true; answerEl.textContent = "";
+      const list = (data && data.articles) || [];
+      sourcesLabel.textContent = list.length + " recent post" + (list.length === 1 ? "" : "s");
+      sourcesList.textContent = "";
+      list.forEach((a) => sourcesList.appendChild(sourceRow(a.title, a.url, niceDate(a.date))));
+      if (list.length) show(sourcesWrap); else hide(sourcesWrap);
+      revealPanel();
+    } catch (err) {
+      hide(loading);
+      errorMsg.textContent = " " + (err && err.message ? err.message : "Could not load posts.");
+      show(errorEl);
+    }
   }
 
   form.addEventListener("submit", (e) => { e.preventDefault(); runQuestion(); });
