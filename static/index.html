@@ -1,0 +1,620 @@
+<!--
+THESIS: a single question, answered from primary-source lab writing, with proof-of-work (visible sources) instead of a bare chat bubble.
+OWN-WORLD: cool-neutral slate ground, one committed deep-teal accent for the single action and every state signal; one system-sans family; small-caps-free, label-free headings; soft-elevated card surfaces with real offset+blur shadows.
+STORY: visitor reads the scope (which labs), asks a question, sees a loading state that names what's happening, gets an answer plus a clearly separated, clickable source list, or a plain-language error naming the fix.
+FIRST VIEWPORT: centered single column, ~640px; heading + one-line scope statement; input+button row directly below, full width; example chips beneath for a cold start; nothing else above the fold.
+FORM: local FastAPI Operate tool, not a marketing surface — earned-familiarity form UI over concept exploration; no seed script run (no PRODUCT.md/decision-page infra in this harness; disclosed to the caller).
+FINISH: unreviewed and undocumented is unfinished; this build ends with the finish review, the verdict, and DESIGN.md.
+-->
+<!doctype html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Ask the Frontier Labs</title>
+<style>
+  :root {
+    --bg: #f5f6f8;
+    --surface: #ffffff;
+    --surface-2: #ebeef2;
+    --border: #dde1e7;
+    --text: #14161a;
+    --text-secondary: #565c66;
+    --text-tertiary: #7a8090;
+    --accent: #0f766e;
+    --accent-strong: #0b5c56;
+    --accent-text: #0f766e;
+    --accent-contrast: #ffffff;
+    --danger: #b3261e;
+    --danger-bg: #fdecea;
+    --danger-border: #f3c8c4;
+    --focus-ring: rgba(15, 118, 110, 0.35);
+    --shadow-color: rgba(20, 24, 32, 0.10);
+    color-scheme: light;
+  }
+
+  @media (prefers-color-scheme: dark) {
+    :root {
+      --bg: #0e1216;
+      --surface: #171c22;
+      --surface-2: #1e2530;
+      --border: #2b3340;
+      --text: #edf0f4;
+      --text-secondary: #a4acba;
+      --text-tertiary: #7c8494;
+      --accent: #14b8a6;
+      --accent-strong: #2dd4bf;
+      --accent-text: #5eead4;
+      --accent-contrast: #04211f;
+      --danger: #f2726a;
+      --danger-bg: #2a1616;
+      --danger-border: #4a2320;
+      --focus-ring: rgba(20, 184, 166, 0.35);
+      --shadow-color: rgba(0, 0, 0, 0.45);
+      color-scheme: dark;
+    }
+  }
+
+  * { box-sizing: border-box; }
+
+  html {
+    scrollbar-color: var(--border) transparent;
+  }
+
+  body {
+    margin: 0;
+    min-height: 100vh;
+    background: var(--bg);
+    color: var(--text);
+    font-family: -apple-system, BlinkMacSystemFont, "Segoe UI", Roboto, "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    -webkit-font-smoothing: antialiased;
+  }
+
+  ::selection {
+    background: var(--focus-ring);
+    color: var(--text);
+  }
+
+  a { color: var(--accent-text); }
+
+  :focus-visible {
+    outline: 2px solid var(--accent);
+    outline-offset: 2px;
+    border-radius: 4px;
+  }
+
+  .visually-hidden {
+    position: absolute;
+    width: 1px; height: 1px;
+    padding: 0; margin: -1px;
+    overflow: hidden;
+    clip: rect(0,0,0,0);
+    white-space: nowrap;
+    border: 0;
+  }
+
+  .page {
+    max-width: 680px;
+    margin: 0 auto;
+    padding: 4rem 1.5rem 5rem;
+  }
+
+  .intro {
+    margin-bottom: 2.25rem;
+  }
+
+  .intro h1 {
+    font-size: 2rem;
+    line-height: 1.2;
+    letter-spacing: -0.02em;
+    font-weight: 700;
+    margin: 0 0 0.6rem;
+  }
+
+  .intro .subtitle {
+    margin: 0;
+    color: var(--text-secondary);
+    font-size: 1.0625rem;
+    line-height: 1.55;
+    max-width: 62ch;
+  }
+
+  .ask-form {
+    margin-bottom: 1.75rem;
+  }
+
+  .input-row {
+    display: flex;
+    gap: 0.6rem;
+    align-items: stretch;
+  }
+
+  #question {
+    flex: 1 1 auto;
+    min-width: 0;
+    font: inherit;
+    font-size: 1.0625rem;
+    color: var(--text);
+    background: var(--surface);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.85rem 1rem;
+    caret-color: var(--accent);
+    transition: border-color 150ms ease, box-shadow 150ms ease;
+  }
+
+  #question::placeholder {
+    color: var(--text-tertiary);
+  }
+
+  #question:hover {
+    border-color: var(--text-tertiary);
+  }
+
+  #question:focus-visible {
+    outline: none;
+    border-color: var(--accent);
+    box-shadow: 0 0 0 3px var(--focus-ring);
+  }
+
+  #question:disabled {
+    opacity: 0.65;
+    cursor: not-allowed;
+  }
+
+  #ask-btn {
+    flex: 0 0 auto;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    gap: 0.5rem;
+    min-width: 6.5rem;
+    font: inherit;
+    font-size: 1rem;
+    font-weight: 600;
+    color: var(--accent-contrast);
+    background: var(--accent);
+    border: 1px solid transparent;
+    border-radius: 10px;
+    padding: 0.85rem 1.15rem;
+    cursor: pointer;
+    transition: background-color 150ms ease, transform 150ms ease, box-shadow 150ms ease;
+  }
+
+  #ask-btn:hover:not(:disabled) {
+    background: var(--accent-strong);
+  }
+
+  #ask-btn:active:not(:disabled) {
+    transform: translateY(1px);
+  }
+
+  #ask-btn:focus-visible {
+    outline: none;
+    box-shadow: 0 0 0 3px var(--focus-ring);
+  }
+
+  #ask-btn:disabled {
+    cursor: not-allowed;
+    opacity: 0.75;
+  }
+
+  #ask-btn .spinner {
+    width: 1rem;
+    height: 1rem;
+    animation: spin 700ms linear infinite;
+    display: none;
+  }
+
+  #ask-btn.is-loading .spinner { display: inline-block; }
+  #ask-btn.is-loading .send-icon { display: none; }
+
+  @keyframes spin {
+    to { transform: rotate(360deg); }
+  }
+
+  .examples {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 0.5rem;
+    margin-top: 0.85rem;
+  }
+
+  .example-chip {
+    font: inherit;
+    font-size: 0.875rem;
+    color: var(--text-secondary);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 999px;
+    padding: 0.4rem 0.85rem;
+    cursor: pointer;
+    transition: border-color 150ms ease, color 150ms ease;
+  }
+
+  .example-chip:hover:not(:disabled) {
+    border-color: var(--text-tertiary);
+    color: var(--text);
+  }
+
+  .example-chip:disabled {
+    cursor: not-allowed;
+    opacity: 0.55;
+  }
+
+  .status {
+    min-height: 1.4rem;
+    margin-bottom: 0.5rem;
+    color: var(--text-secondary);
+    font-size: 0.9375rem;
+  }
+
+  .panel {
+    border-radius: 14px;
+    padding: 1.5rem 1.6rem;
+    margin-top: 0.5rem;
+  }
+
+  .panel[hidden] { display: none; }
+
+  .answer-panel {
+    background: var(--surface);
+    border: 1px solid var(--border);
+    box-shadow: 0 8px 24px -12px var(--shadow-color);
+    animation: rise 220ms cubic-bezier(0.16, 1, 0.3, 1);
+  }
+
+  @keyframes rise {
+    from { opacity: 0; transform: translateY(6px); }
+    to { opacity: 1; transform: translateY(0); }
+  }
+
+  .panel-heading {
+    margin: 0 0 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+
+  .answer-text {
+    font-size: 1.0625rem;
+    line-height: 1.65;
+    color: var(--text);
+    max-width: 68ch;
+    white-space: pre-wrap;
+  }
+
+  .sources {
+    margin-top: 1.5rem;
+    padding-top: 1.25rem;
+    border-top: 1px solid var(--border);
+  }
+
+  .sources[hidden] { display: none; }
+
+  .sources-heading {
+    margin: 0 0 0.75rem;
+    font-size: 0.8125rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    color: var(--text-tertiary);
+  }
+
+  .sources-list {
+    list-style: none;
+    margin: 0;
+    padding: 0;
+    display: flex;
+    flex-direction: column;
+    gap: 0.5rem;
+  }
+
+  .source-link {
+    display: flex;
+    align-items: baseline;
+    gap: 0.6rem;
+    text-decoration: none;
+    color: var(--text);
+    background: var(--surface-2);
+    border: 1px solid var(--border);
+    border-radius: 10px;
+    padding: 0.7rem 0.9rem;
+    transition: border-color 150ms ease, background-color 150ms ease;
+  }
+
+  .source-link:hover {
+    border-color: var(--accent);
+    background: var(--surface);
+  }
+
+  .source-title {
+    font-size: 0.9375rem;
+    font-weight: 600;
+    flex: 1 1 auto;
+    min-width: 0;
+    overflow: hidden;
+    text-overflow: ellipsis;
+    white-space: nowrap;
+  }
+
+  .source-site {
+    flex: 0 0 auto;
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+  }
+
+  .source-link svg {
+    flex: 0 0 auto;
+    width: 0.9rem;
+    height: 0.9rem;
+    color: var(--text-tertiary);
+  }
+
+  .error-panel {
+    display: flex;
+    gap: 0.75rem;
+    align-items: flex-start;
+    background: var(--danger-bg);
+    border: 1px solid var(--danger-border);
+    color: var(--danger);
+  }
+
+  .error-panel svg {
+    flex: 0 0 auto;
+    width: 1.15rem;
+    height: 1.15rem;
+    margin-top: 0.15rem;
+  }
+
+  .error-panel p {
+    margin: 0;
+    font-size: 0.9375rem;
+    line-height: 1.5;
+    color: var(--text);
+  }
+
+  .footer {
+    margin-top: 3rem;
+  }
+
+  .footer p {
+    margin: 0;
+    font-size: 0.8125rem;
+    color: var(--text-tertiary);
+  }
+
+  @media (max-width: 480px) {
+    .page {
+      padding: 2.75rem 1.25rem 3.5rem;
+    }
+    .intro h1 {
+      font-size: 1.625rem;
+    }
+    .input-row {
+      flex-direction: column;
+    }
+    #ask-btn {
+      width: 100%;
+    }
+  }
+
+  @media (prefers-reduced-motion: reduce) {
+    #ask-btn .spinner {
+      animation-duration: 1400ms;
+    }
+    .answer-panel {
+      animation: none;
+    }
+  }
+</style>
+</head>
+<body>
+  <div class="page">
+    <header class="intro">
+      <h1>Ask the frontier labs</h1>
+      <p class="subtitle">
+        Answers grounded in research &amp; engineering posts from Anthropic, OpenAI, Google DeepMind, Meta,
+        Hugging Face, Microsoft, Mistral, and Cohere.
+      </p>
+    </header>
+
+    <main>
+      <form id="ask-form" class="ask-form" autocomplete="off">
+        <label for="question" class="visually-hidden">Your question</label>
+        <div class="input-row">
+          <input
+            id="question"
+            name="question"
+            type="text"
+            placeholder="e.g. How does speculative decoding work?"
+            autocomplete="off"
+            spellcheck="false"
+          >
+          <button id="ask-btn" type="submit">
+            <svg class="send-icon" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <path d="M17.5 2.5 2.5 8.75l6.146 2.604M17.5 2.5 11.354 17.5l-2.708-6.146M17.5 2.5 9.146 11.354" stroke="currentColor" stroke-width="1.5" stroke-linecap="round" stroke-linejoin="round"/>
+            </svg>
+            <svg class="spinner" viewBox="0 0 20 20" fill="none" aria-hidden="true">
+              <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="2" stroke-opacity="0.25"/>
+              <path d="M18 10a8 8 0 0 0-8-8" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+            </svg>
+            <span class="btn-label">Ask</span>
+          </button>
+        </div>
+        <div class="examples" id="examples">
+          <button type="button" class="example-chip" data-q="What is constitutional AI?">What is constitutional AI?</button>
+          <button type="button" class="example-chip" data-q="How does speculative decoding speed up inference?">How does speculative decoding work?</button>
+          <button type="button" class="example-chip" data-q="What is retrieval-augmented generation?">What is retrieval-augmented generation?</button>
+        </div>
+      </form>
+
+      <div id="status" class="status" role="status" aria-live="polite"></div>
+
+      <section id="error-panel" class="panel error-panel" role="alert" hidden>
+        <svg viewBox="0 0 20 20" fill="none" aria-hidden="true">
+          <circle cx="10" cy="10" r="8" stroke="currentColor" stroke-width="1.5"/>
+          <path d="M10 6.5v4M10 13.5h.01" stroke="currentColor" stroke-width="1.5" stroke-linecap="round"/>
+        </svg>
+        <p id="error-message"></p>
+      </section>
+
+      <section id="answer-panel" class="panel answer-panel" aria-live="polite" hidden>
+        <h2 class="panel-heading">Answer</h2>
+        <div id="answer-text" class="answer-text"></div>
+
+        <div id="sources-section" class="sources" hidden>
+          <h3 class="sources-heading">Sources</h3>
+          <ul id="sources-list" class="sources-list"></ul>
+        </div>
+      </section>
+    </main>
+
+    <footer class="footer">
+      <p>Runs locally against your own indexed blog archive.</p>
+    </footer>
+  </div>
+
+  <script>
+    (function () {
+      var form = document.getElementById('ask-form');
+      var input = document.getElementById('question');
+      var button = document.getElementById('ask-btn');
+      var buttonLabel = button.querySelector('.btn-label');
+      var statusEl = document.getElementById('status');
+      var errorPanel = document.getElementById('error-panel');
+      var errorMessage = document.getElementById('error-message');
+      var answerPanel = document.getElementById('answer-panel');
+      var answerText = document.getElementById('answer-text');
+      var sourcesSection = document.getElementById('sources-section');
+      var sourcesList = document.getElementById('sources-list');
+      var examples = document.getElementById('examples');
+
+      async function ask(q) {
+        const r = await fetch('/ask', {
+          method: 'POST',
+          headers: { 'Content-Type': 'application/json' },
+          body: JSON.stringify({ question: q })
+        });
+        if (!r.ok) {
+          let detail = 'Request failed';
+          try {
+            const body = await r.json();
+            if (body && body.detail) detail = body.detail;
+          } catch (e) {
+            // response wasn't JSON; keep the generic message
+          }
+          throw new Error(detail);
+        }
+        return r.json();
+      }
+
+      function setLoading(isLoading) {
+        input.disabled = isLoading;
+        button.disabled = isLoading;
+        button.classList.toggle('is-loading', isLoading);
+        buttonLabel.textContent = isLoading ? 'Thinking…' : 'Ask';
+        var chips = examples.querySelectorAll('.example-chip');
+        for (var i = 0; i < chips.length; i++) chips[i].disabled = isLoading;
+        statusEl.textContent = isLoading ? 'Searching the blog archive…' : '';
+      }
+
+      function hidePanels() {
+        errorPanel.hidden = true;
+        answerPanel.hidden = true;
+      }
+
+      function showError(message) {
+        hidePanels();
+        errorMessage.textContent = message;
+        errorPanel.hidden = false;
+      }
+
+      function showAnswer(data) {
+        hidePanels();
+        answerText.textContent = data.answer || '';
+
+        sourcesList.innerHTML = '';
+        var sources = Array.isArray(data.sources) ? data.sources : [];
+
+        if (sources.length === 0) {
+          sourcesSection.hidden = true;
+        } else {
+          sources.forEach(function (source) {
+            var li = document.createElement('li');
+            var link = document.createElement('a');
+            link.className = 'source-link';
+            link.href = source.url || '#';
+            link.target = '_blank';
+            link.rel = 'noopener noreferrer';
+
+            var title = document.createElement('span');
+            title.className = 'source-title';
+            title.textContent = source.title || source.url || 'Untitled source';
+
+            var site = document.createElement('span');
+            site.className = 'source-site';
+            site.textContent = source.site || '';
+
+            var icon = document.createElementNS('http://www.w3.org/2000/svg', 'svg');
+            icon.setAttribute('viewBox', '0 0 20 20');
+            icon.setAttribute('fill', 'none');
+            icon.setAttribute('aria-hidden', 'true');
+            var path = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+            path.setAttribute('d', 'M8 4.5H4.5a1 1 0 0 0-1 1v10a1 1 0 0 0 1 1h10a1 1 0 0 0 1-1V12M11.5 3.5h5v5M16.25 3.75l-7 7');
+            path.setAttribute('stroke', 'currentColor');
+            path.setAttribute('stroke-width', '1.5');
+            path.setAttribute('stroke-linecap', 'round');
+            path.setAttribute('stroke-linejoin', 'round');
+            icon.appendChild(path);
+
+            link.appendChild(title);
+            link.appendChild(site);
+            link.appendChild(icon);
+            li.appendChild(link);
+            sourcesList.appendChild(li);
+          });
+          sourcesSection.hidden = false;
+        }
+
+        answerPanel.hidden = false;
+      }
+
+      form.addEventListener('submit', function (event) {
+        event.preventDefault();
+        var q = input.value.trim();
+        if (!q) {
+          showError('Type a question first.');
+          input.focus();
+          return;
+        }
+
+        setLoading(true);
+        hidePanels();
+
+        ask(q)
+          .then(function (data) {
+            showAnswer(data);
+          })
+          .catch(function (err) {
+            showError(err.message || 'Something went wrong. Please try again.');
+          })
+          .finally(function () {
+            setLoading(false);
+          });
+      });
+
+      examples.addEventListener('click', function (event) {
+        var chip = event.target.closest('.example-chip');
+        if (!chip) return;
+        input.value = chip.getAttribute('data-q') || chip.textContent;
+        input.focus();
+      });
+    })();
+  </script>
+</body>
+</html>
