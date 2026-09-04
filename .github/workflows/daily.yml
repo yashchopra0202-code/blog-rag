@@ -25,7 +25,9 @@ jobs:
         run: |
           python -m venv .venv-scrapling
           .venv-scrapling/bin/pip install scrapling
-          .venv-scrapling/bin/python -m playwright install --with-deps chromium || true
+          # scrapling's own CLI installs its fetcher backends (curl_cffi) + browsers
+          # (playwright/camoufox). `pip install scrapling` alone does NOT pull these.
+          .venv-scrapling/bin/scrapling install
       - name: Scrape
         continue-on-error: true   # a CI bot-wall must not block nuggetize/digest of existing nuggets
         run: .venv-scrapling/bin/python scraper.py
