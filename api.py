@@ -1,3 +1,5 @@
+import os
+
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
 from fastapi.responses import FileResponse
@@ -27,6 +29,8 @@ def _llm():
 
 
 def answer_question(question: str) -> dict:
+    if not os.path.isdir(PERSIST_DIR):
+        raise HTTPException(status_code=503, detail="No index. Run ingest.py first.")
     store = rag_core.load_index(PERSIST_DIR)
     retriever = rag_core.get_retriever(store, k=4)
     docs = retriever.invoke(question)

@@ -1,4 +1,6 @@
 from types import SimpleNamespace
+import fastapi
+import pytest
 from fastapi.testclient import TestClient
 import api
 
@@ -11,6 +13,7 @@ def test_answer_question_returns_answer_and_dedup_sources(monkeypatch):
         _FakeDoc("ctx two", {"source": "https://x/a", "title": "A", "site": "s"}),
         _FakeDoc("ctx three", {"source": "https://x/b", "title": "B", "site": "s"}),
     ]
+    monkeypatch.setattr(api.os.path, "isdir", lambda p: True)
     monkeypatch.setattr(api.rag_core, "load_index", lambda p: object())
     monkeypatch.setattr(api.rag_core, "get_retriever",
                         lambda store, k=4: SimpleNamespace(invoke=lambda q: docs))
@@ -34,3 +37,9 @@ def test_ask_endpoint_rejects_empty():
     client = TestClient(api.app)
     r = client.post("/ask", json={"question": "  "})
     assert r.status_code == 400
+
+def test_answer_question_no_index_503(monkeypatch):
+    monkeypatch.setattr(api.os.path, "isdir", lambda p: False)
+    with pytest.raises(fastapi.HTTPException) as ei:
+        api.answer_question("q?")
+    assert ei.value.status_code == 503
