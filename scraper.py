@@ -33,3 +33,26 @@ def save_manifest(path, manifest):
 
 def new_urls(candidates, manifest):
     return [u for u in candidates if u not in manifest]
+
+
+def extract_article(html, url):
+    from scrapling.parser import Selector
+    sel = Selector(html)
+
+    title = (sel.css("article h1::text").get()
+             or sel.css("h1::text").get()
+             or sel.css("title::text").get() or "").strip()
+
+    date = (sel.css('meta[property="article:published_time"]::attr(content)').get()
+            or sel.css("time::attr(datetime)").get() or "").strip()[:10]
+
+    container = None
+    for selector in ("article", "main", '[role="main"]'):
+        node = sel.css(selector)
+        if node:
+            container = node
+            break
+    node = container if container else sel
+    paras = [t.strip() for t in node.css("p::text").getall() if t and t.strip()]
+    body = "\n\n".join(paras)
+    return {"title": title, "date": date, "body": body}
