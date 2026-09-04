@@ -2,6 +2,7 @@ import glob
 import json
 import os
 from collections import Counter
+from datetime import datetime, timezone, timedelta
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException
@@ -16,6 +17,7 @@ PERSIST_DIR = "chroma_db"
 ARTICLES_DIR = "data/articles"
 MANIFEST_PATH = "data/manifest.json"
 MODEL = "claude-haiku-4-5"
+FEED_MAX_DAYS = 30
 
 # Slug -> human label for the discovery UI. Keeps display names in one place.
 SITE_LABELS = {
@@ -103,9 +105,40 @@ def corpus_stats() -> dict:
     return {"articles": len(files), "sites": sites, "updated": updated}
 
 
+def feed_data(days: int = 7) -> dict:
+    """Nuggets from the last `days`, grouped by scrape date (newest first).
+
+    Reads only the manifest — no vector index load. Within a day, manifest
+    insertion order (scrape order, reverse-chronological) is preserved."""
+    days = max(1, min(days, FEED_MAX_DAYS))
+    try:
+        with open(MANIFEST_PATH, encoding="utf-8") as f:
+            manifest = json.load(f)
+    except (OSError, ValueError):
+        manifest = {}
+    cutoff = (datetime.now(timezone.utc).date() - timedelta(days=days - 1)).isoformat()
+    groups: dict = {}
+    for url, v in manifest.items():
+        nugget = v.get("nugget")
+        day = (v.get("scraped_at") or "")[:10]
+        if not nugget or not day or day < cutoff:
+            continue
+        site = v.get("site", "")
+        groups.setdefault(day, []).append({
+            "title": nice_title(v.get("title", ""), url), "url": url, "site": site,
+            "label": SITE_LABELS.get(site, site), "nugget": nugget})
+    ordered = [{"date": d, "items": groups[d]} for d in sorted(groups, reverse=True)]
+    return {"days": days, "groups": ordered}
+
+
 @app.get("/stats")
 def stats():
     return corpus_stats()
+
+
+@app.get("/feed")
+def feed(days: int = 7):
+    return feed_data(days)
 
 
 @app.get("/articles")
