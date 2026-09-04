@@ -21,13 +21,17 @@ jobs:
         run: |
           python -m venv .venv
           .venv/bin/pip install -r requirements.txt
+      # Best-effort: scrapling's full stealth-browser stack (curl_cffi, patchright,
+      # camoufox/playwright browsers) is fiddly on CI runners. This step is
+      # non-fatal — if it can't build, the Scrape step below no-ops and the daily
+      # EMAIL still sends from the existing manifest. Reliable fresh scraping is
+      # done locally (see README "Daily nuggets"); CI scraping is a bonus.
       - name: Install scraper (scrapling) deps
+        continue-on-error: true
         run: |
           python -m venv .venv-scrapling
-          .venv-scrapling/bin/pip install scrapling
-          # scrapling's own CLI installs its fetcher backends (curl_cffi) + browsers
-          # (playwright/camoufox). `pip install scrapling` alone does NOT pull these.
-          .venv-scrapling/bin/scrapling install
+          .venv-scrapling/bin/pip install "scrapling[fetchers]" click
+          .venv-scrapling/bin/scrapling install || true
       - name: Scrape
         continue-on-error: true   # a CI bot-wall must not block nuggetize/digest of existing nuggets
         run: .venv-scrapling/bin/python scraper.py
