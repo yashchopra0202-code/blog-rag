@@ -548,7 +548,8 @@ FINISH: unreviewed and undocumented is unfinished; this build ends with the fini
             var li = document.createElement('li');
             var link = document.createElement('a');
             link.className = 'source-link';
-            link.href = source.url || '#';
+            var sourceUrl = String(source.url || '');
+            link.href = sourceUrl.startsWith('http') ? sourceUrl : '#';
             link.target = '_blank';
             link.rel = 'noopener noreferrer';
 

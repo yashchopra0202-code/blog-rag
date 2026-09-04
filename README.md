@@ -17,3 +17,6 @@ Re-run the scraper any time to pick up new posts, then re-run ingest.
 ## Tests
 - RAG venv:      `.venv/bin/python -m pytest tests/test_article_format.py tests/test_sites.py tests/test_rag_core.py tests/test_api.py`
 - Scraper venv:  `~/.venvs/scrapling/bin/python -m pytest tests/test_scraper.py tests/test_extraction.py`
+
+## Security
+The `/ask` endpoint feeds raw scraped third-party article text to the LLM as context, so it implicitly trusts the content of the configured blogs. This is acceptable for a local personal tool over trusted lab sources, but it means you should only add sites you trust to `sites.py`.

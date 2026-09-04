@@ -33,6 +33,8 @@ def write_article(articles_dir: str, meta: dict, body: str) -> str:
         # Sanitize metadata values: collapse newlines/whitespace to single spaces
         value = str(meta.get(k, ""))
         sanitized_value = " ".join(value.split())
+        # Collapse runs of 3+ dashes so a value can't fake a frontmatter delimiter
+        sanitized_value = re.sub(r"-{3,}", "-", sanitized_value)
         lines.append(f"{k}: {sanitized_value}")
     lines.append("---")
     lines.append("")

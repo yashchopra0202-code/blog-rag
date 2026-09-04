@@ -34,6 +34,18 @@ def test_write_article_sanitizes_newlines_in_metadata(tmp_path):
     assert got_meta["site"] == meta["site"]
     assert got_body.strip() == body
 
+def test_write_article_sanitizes_dashes_in_metadata(tmp_path):
+    """Test that a run of 3+ dashes in a metadata value can't corrupt frontmatter."""
+    meta = {"url": "https://x.com/a", "title": "Foo --- Bar", "site": "s",
+            "date": "2026-08-30", "scraped_at": "2026-09-04T00:00:00Z"}
+    body = "Line one.\n\nLine two."
+    path = af.write_article(str(tmp_path), meta, body)
+    got_meta, got_body = af.parse_article(path)
+    # Body must round-trip exactly, with no header remnants leaked into it
+    assert got_body.strip() == body
+    # Title must no longer contain a run of 3+ dashes
+    assert "---" not in got_meta["title"]
+
 def test_write_article_raises_on_missing_url(tmp_path):
     """Test that write_article raises ValueError when 'url' is missing."""
     meta = {"title": "Test", "site": "s", "date": "2026-08-30", "scraped_at": "2026-09-04T00:00:00Z"}
