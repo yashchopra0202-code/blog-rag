@@ -10,3 +10,8 @@ def test_extract_article_pulls_title_date_body():
     assert "Second paragraph" in out["body"]
     assert "menu junk" not in out["body"]
     assert "footer junk" not in out["body"]
+
+def test_extract_article_empty_body_when_no_paragraphs():
+    html = "<html><body><div>no paragraphs here</div></body></html>"
+    out = scraper.extract_article(html, "https://x.com/p")
+    assert out["body"] == ""
