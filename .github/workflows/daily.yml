@@ -32,14 +32,21 @@ jobs:
           python -m venv .venv-scrapling
           .venv-scrapling/bin/pip install "scrapling[fetchers]" click
           .venv-scrapling/bin/scrapling install || true
+      # Every pipeline step is continue-on-error so the run always reaches the
+      # Health check & alert step below, which decides pass/fail and notifies.
       - name: Scrape
-        continue-on-error: true   # a CI bot-wall must not block nuggetize/digest of existing nuggets
+        id: scrape
+        continue-on-error: true
         run: .venv-scrapling/bin/python scraper.py
       - name: Nuggetize
+        id: nuggetize
+        continue-on-error: true
         env:
           ANTHROPIC_API_KEY: ${{ secrets.ANTHROPIC_API_KEY }}
         run: .venv/bin/python nuggetize.py
       - name: Email digest
+        id: digest
+        continue-on-error: true
         env:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           DIGEST_TO: ${{ secrets.DIGEST_TO }}
@@ -53,3 +60,14 @@ jobs:
           git add data/articles data/manifest.json data/digest_state.json
           git diff --cached --quiet || git commit -m "chore: daily nugget refresh [skip ci]"
           git push
+      - name: Health check & alert
+        if: always()
+        env:
+          SCRAPE_OUTCOME: ${{ steps.scrape.outcome }}
+          NUGGETIZE_OUTCOME: ${{ steps.nuggetize.outcome }}
+          DIGEST_OUTCOME: ${{ steps.digest.outcome }}
+          RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
+          DIGEST_TO: ${{ secrets.DIGEST_TO }}
+          DIGEST_FROM: ${{ secrets.DIGEST_FROM }}
+          RUN_URL: ${{ github.server_url }}/${{ github.repository }}/actions/runs/${{ github.run_id }}
+        run: .venv/bin/python alert.py

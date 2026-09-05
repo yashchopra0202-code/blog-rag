@@ -15,3 +15,11 @@ def test_manifest_roundtrip_and_new_urls(tmp_path):
     scraper.save_manifest(p, m)
     assert scraper.load_manifest(p) == m
     assert scraper.new_urls(["https://x/a", "https://x/b"], m) == ["https://x/b"]
+
+def test_write_scrape_status(tmp_path):
+    import json
+    p = str(tmp_path / "scrape_status.json")
+    scraper.write_scrape_status(18, 17, 5, path=p)
+    with open(p) as f:
+        s = json.load(f)
+    assert s == {"sites_total": 18, "sites_ok": 17, "new_articles": 5}

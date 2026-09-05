@@ -168,19 +168,33 @@ def scrape_site(site, manifest, articles_dir, max_articles):
     return saved
 
 
+SCRAPE_STATUS_PATH = "data/scrape_status.json"
+
+
+def write_scrape_status(sites_total, sites_ok, new_articles, path=SCRAPE_STATUS_PATH):
+    """Machine-readable run health for the workflow's alert step."""
+    os.makedirs(os.path.dirname(path) or ".", exist_ok=True)
+    with open(path, "w", encoding="utf-8") as f:
+        json.dump({"sites_total": sites_total, "sites_ok": sites_ok,
+                   "new_articles": new_articles}, f, indent=2)
+
+
 def main():
     manifest = load_manifest(MANIFEST_PATH)
     total = 0
+    sites_ok = 0
     for site in SITES:
         print(f"Scraping {site['name']} ...")
         try:
             n = scrape_site(site, manifest, ARTICLES_DIR, MAX_ARTICLES_PER_SITE)
             print(f"  +{n} new articles")
             total += n
+            sites_ok += 1
         except Exception as e:  # noqa: BLE001 - isolate site failures
             print(f"  [error] {site['name']} failed: {e}")
         save_manifest(MANIFEST_PATH, manifest)  # checkpoint after each site
     print(f"Done. {total} new articles. Manifest has {len(manifest)} total.")
+    write_scrape_status(len(SITES), sites_ok, total)
 
 
 if __name__ == "__main__":

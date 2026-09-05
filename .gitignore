@@ -5,3 +5,4 @@ __pycache__/
 .pytest_cache/
 chroma_db/
 .DS_Store
+data/scrape_status.json
