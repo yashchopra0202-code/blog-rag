@@ -21,19 +21,33 @@ def parse_update(update):
 
 def _esc(s):
     return (str(s if s is not None else "")
-            .replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;"))
+            .replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;"))
+
+def _clip_text(s, n):
+    """Trim tag-free text to <= n chars without leaving a partial &entity;."""
+    if n <= 0:
+        return ""
+    if len(s) <= n:
+        return s
+    cut = s[:n]
+    amp = cut.rfind("&")
+    if amp != -1 and ";" not in cut[amp:]:
+        cut = cut[:amp]
+    return cut
+
+def _link_line(url, title, name):
+    """One '• <a href=..>title</a> — name' line, fully escaped."""
+    url = str(url or "")
+    t = _esc(title or url or "source")
+    link = f'<a href="{_esc(url)}">{t}</a>' if url.startswith("http") else t
+    return "• " + (f"{_esc(name)}: " if name else "") + link
 
 def format_answer(answer, sources):
-    body = _esc(answer)
-    lines = []
-    for s in (sources or [])[:5]:
-        name = _esc(s.get("label") or s.get("site") or "")
-        url = str(s.get("url") or "")
-        title = _esc(s.get("title") or url or "source")
-        link = f'<a href="{_esc(url)}">{title}</a>' if url.startswith("http") else title
-        lines.append(f"• {link}" + (f" — {name}" if name else ""))
-    out = body + ("\n\n<b>Sources</b>\n" + "\n".join(lines) if lines else "")
-    return out[:MAX_LEN]
+    lines = [_link_line(s.get("url"), s.get("title"), s.get("label") or s.get("site"))
+             for s in (sources or [])[:5]]
+    suffix = ("\n\n<b>Sources</b>\n" + "\n".join(lines)) if lines else ""
+    body = _clip_text(_esc(answer), MAX_LEN - len(suffix))
+    return body + suffix
 
 def format_latest(groups, limit=10):
     rows, n = [], 0
@@ -41,27 +55,25 @@ def format_latest(groups, limit=10):
         for it in g.get("items", []):
             if n >= limit:
                 break
-            url = str(it.get("url") or "")
-            title = _esc(it.get("title") or url)
-            name = _esc(it.get("label") or it.get("site") or "")
-            link = f'<a href="{_esc(url)}">{title}</a>' if url.startswith("http") else title
-            rows.append(f"• {link}" + (f" — {name}" if name else ""))
+            rows.append(_link_line(it.get("url"), it.get("title"), it.get("label") or it.get("site")))
             n += 1
     if not rows:
         return "No recent posts in the last week. Ask me a question instead!"
-    return ("<b>Latest from the labs</b>\n" + "\n".join(rows))[:MAX_LEN]
+    out = "<b>Latest from the labs</b>"
+    for r in rows:
+        if len(out) + len(r) + 1 > MAX_LEN:
+            break
+        out += "\n" + r
+    return out
 
 def format_digest_message(entries, feed_url, top=5):
-    rows = []
+    footer = f'\n\n<a href="{_esc(feed_url)}">Open the full feed →</a>' if feed_url else ""
+    out = "<b>Fresh from the AI labs</b>"
     for e in (entries or [])[:top]:
-        url = str(e.get("url") or "")
-        title = _esc(e.get("title") or url)
-        name = _esc(e.get("label") or e.get("site") or "")
-        link = f'<a href="{_esc(url)}">{title}</a>' if url.startswith("http") else title
-        head = f"• {link}" + (f" — {name}" if name else "")
+        head = _link_line(e.get("url"), e.get("title"), e.get("label") or e.get("site"))
         nug = _esc(e.get("nugget") or "")
-        rows.append(head + (f"\n{nug}" if nug else ""))
-    body = "<b>Fresh from the AI labs</b>\n\n" + "\n\n".join(rows)
-    if feed_url:
-        body += f'\n\n<a href="{_esc(feed_url)}">Open the full feed →</a>'
-    return body[:MAX_LEN]
+        block = head + (f"\n{nug}" if nug else "")
+        if len(out) + len(block) + 2 + len(footer) > MAX_LEN:
+            break
+        out += "\n\n" + block
+    return out + footer

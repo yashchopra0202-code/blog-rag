@@ -69,3 +69,18 @@ def test_format_digest_message_caps_top():
     entries = [{"title": f"T{i}", "url": f"https://x/{i}", "site": "s", "nugget": "n"} for i in range(10)]
     out = telegram.format_digest_message(entries, "https://feed/", top=3)
     assert out.count("<a href=\"https://x/") == 3
+
+def test_format_answer_escapes_quote_in_title():
+    out = telegram.format_answer("a", [{"title": 'He said "hi"', "url": "https://x/a", "site": "s"}])
+    assert "&quot;" in out
+
+def test_format_answer_long_body_keeps_sources_tag_intact():
+    out = telegram.format_answer("x" * 5000, [{"title": "T", "url": "https://x/a", "label": "Lab"}])
+    assert len(out) <= telegram.MAX_LEN
+    assert out.rstrip().endswith("</a>")
+
+def test_format_digest_message_truncates_safely():
+    entries = [{"title": "T" + str(i), "url": f"https://x/{i}", "site": "s", "nugget": "y" * 900} for i in range(6)]
+    out = telegram.format_digest_message(entries, "https://feed/", top=6)
+    assert len(out) <= telegram.MAX_LEN
+    assert '<a href="https://feed/"' in out
