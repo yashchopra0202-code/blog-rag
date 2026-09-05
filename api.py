@@ -5,12 +5,15 @@ from collections import Counter
 from datetime import datetime, timezone, timedelta
 
 from dotenv import load_dotenv
-from fastapi import FastAPI, HTTPException
+from fastapi import FastAPI, HTTPException, Request
 from fastapi.responses import FileResponse
 from pydantic import BaseModel
 from langchain_anthropic import ChatAnthropic
 
 import rag_core
+import telegram as tg
+import telegram_api
+import store
 
 load_dotenv()
 PERSIST_DIR = "chroma_db"
@@ -103,6 +106,42 @@ def ask(payload: Ask):
     if not q:
         raise HTTPException(status_code=400, detail="Question is empty.")
     return answer_question(q)
+
+
+WELCOME = ("Hi{name}! I answer questions about what the AI labs are publishing. "
+           "Send me any question, or /latest for recent posts. /stop to unsubscribe.")
+
+
+@app.post("/telegram/webhook")
+async def telegram_webhook(request: Request):
+    if request.headers.get("X-Telegram-Bot-Api-Secret-Token") != os.getenv("TELEGRAM_WEBHOOK_SECRET"):
+        raise HTTPException(status_code=401, detail="bad secret")
+    token = os.getenv("TELEGRAM_BOT_TOKEN", "")
+    update = await request.json()
+    intent = tg.parse_update(update)
+    chat = intent.get("chat") or {}
+    cid = chat.get("id")
+    if cid is None:
+        return {"ok": True}
+    if intent["kind"] == "start":
+        try: store.add_subscriber(chat)
+        except Exception: pass
+        name = " " + chat.get("first_name", "") if chat.get("first_name") else ""
+        telegram_api.send_message(token, cid, WELCOME.format(name=name))
+    elif intent["kind"] == "stop":
+        try: store.deactivate_subscriber(cid)
+        except Exception: pass
+        telegram_api.send_message(token, cid, "You're unsubscribed. Send /start to rejoin.")
+    elif intent["kind"] == "latest":
+        groups = feed_data(7).get("groups", [])
+        telegram_api.send_message(token, cid, tg.format_latest(groups))
+    elif intent["kind"] == "question":
+        result = rag_answer(intent["text"])
+        if "error" in result:
+            telegram_api.send_message(token, cid, "The archive isn't ready yet — please try again shortly.")
+        else:
+            telegram_api.send_message(token, cid, tg.format_answer(result["answer"], result["sources"]))
+    return {"ok": True}
 
 
 def corpus_stats() -> dict:
