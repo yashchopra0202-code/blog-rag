@@ -24,3 +24,18 @@ def test_set_webhook_sends_secret(monkeypatch):
     assert seen["url"].endswith("/botTOK/setWebhook")
     assert seen["json"]["url"] == "https://app/telegram/webhook"
     assert seen["json"]["secret_token"] == "sec"
+
+def test_send_message_error_does_not_leak_token(monkeypatch):
+    import httpx as _httpx, pytest
+    class _Bad:
+        status_code = 401
+        def raise_for_status(self):
+            raise _httpx.HTTPStatusError(
+                "401 Unauthorized",
+                request=_httpx.Request("POST", "https://api.telegram.org/botSECRET123/sendMessage"),
+                response=_httpx.Response(401))
+        def json(self): return {}
+    monkeypatch.setattr(telegram_api.httpx, "post", lambda *a, **k: _Bad())
+    with pytest.raises(RuntimeError) as ei:
+        telegram_api.send_message("SECRET123", 7, "hi")
+    assert "SECRET123" not in str(ei.value)
