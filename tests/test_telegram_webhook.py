@@ -14,6 +14,11 @@ def test_webhook_rejects_bad_secret(monkeypatch):
     r = client.post("/telegram/webhook", json={}, headers={"X-Telegram-Bot-Api-Secret-Token": "nope"})
     assert r.status_code == 401
 
+def test_webhook_rejects_when_secret_unset(monkeypatch):
+    monkeypatch.delenv("TELEGRAM_WEBHOOK_SECRET", raising=False)
+    r = client.post("/telegram/webhook", json={}, headers={"X-Telegram-Bot-Api-Secret-Token": "anything"})
+    assert r.status_code == 401
+
 def test_webhook_start_subscribes_and_greets(monkeypatch):
     sent = []; subbed = []
     _setup(monkeypatch, sent)

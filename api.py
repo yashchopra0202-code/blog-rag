@@ -1,4 +1,5 @@
 import glob
+import hmac
 import json
 import os
 from collections import Counter
@@ -76,8 +77,8 @@ def rag_answer(question: str) -> dict:
     Telegram webhook, neither of which should have to catch HTTPException."""
     if not os.path.isdir(PERSIST_DIR):
         return {"error": "No index. Run ingest.py first.", "status": 503}
-    store = rag_core.load_index(PERSIST_DIR)
-    retriever = rag_core.get_retriever(store, k=4)
+    vectordb = rag_core.load_index(PERSIST_DIR)
+    retriever = rag_core.get_retriever(vectordb, k=4)
     docs = retriever.invoke(question)
     context = rag_core.format_docs(docs)
     answer = _llm().invoke(PROMPT_TMPL.format(context=context, question=question)).content
@@ -114,7 +115,9 @@ WELCOME = ("Hi{name}! I answer questions about what the AI labs are publishing. 
 
 @app.post("/telegram/webhook")
 async def telegram_webhook(request: Request):
-    if request.headers.get("X-Telegram-Bot-Api-Secret-Token") != os.getenv("TELEGRAM_WEBHOOK_SECRET"):
+    secret = os.getenv("TELEGRAM_WEBHOOK_SECRET")
+    header = request.headers.get("X-Telegram-Bot-Api-Secret-Token", "")
+    if not secret or not hmac.compare_digest(header, secret):
         raise HTTPException(status_code=401, detail="bad secret")
     token = os.getenv("TELEGRAM_BOT_TOKEN", "")
     update = await request.json()
