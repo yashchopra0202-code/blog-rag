@@ -170,6 +170,34 @@
     "site": "ai2",
     "title": "TutorMoments: Do AI tutors know when to help and when to hold back?"
   },
+  "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/": {
+    "date": "2026-08-08",
+    "file": "data/articles/nvidia__firebird-ai-factory-armenia-blackwell-rubin-dsx.md",
+    "scraped_at": "2026-09-05T05:24:33+00:00",
+    "site": "nvidia",
+    "title": "Firebird Launches CIS Region\u2019s Largest AI Factory in Armenia"
+  },
+  "https://blogs.nvidia.com/blog/geforce-now-thursday-gamescom-2026/": {
+    "date": "2026-08-27",
+    "file": "data/articles/nvidia__geforce-now-thursday-gamescom-2026.md",
+    "scraped_at": "2026-09-05T05:24:59+00:00",
+    "site": "nvidia",
+    "title": "GeForce NOW Gives Gamers More Ways to Play at Gamescom 2026"
+  },
+  "https://blogs.nvidia.com/blog/local-ai-open-source-models-agents-nemotron/": {
+    "date": "2026-08-11",
+    "file": "data/articles/nvidia__local-ai-open-source-models-agents-nemotron.md",
+    "scraped_at": "2026-09-05T05:24:14+00:00",
+    "site": "nvidia",
+    "title": "NVIDIA and Local AI Community Fuel Open Source Models and Intelligent Agents"
+  },
+  "https://blogs.nvidia.com/blog/medical-physics-simulation-open-source/": {
+    "date": "2026-07-22",
+    "file": "data/articles/nvidia__medical-physics-simulation-open-source.md",
+    "scraped_at": "2026-09-05T05:24:50+00:00",
+    "site": "nvidia",
+    "title": "NVIDIA Open Sources First GPU-Accelerated Medical Physics Simulation Framework"
+  },
   "https://blogs.nvidia.com/blog/nvidia-ai-factory-compute/": {
     "date": "2026-08-12",
     "file": "data/articles/nvidia__nvidia-ai-factory-compute.md",
@@ -187,6 +215,13 @@
     "scraped_at": "2026-09-04T21:17:48+00:00",
     "site": "nvidia",
     "title": "NVIDIA to Acquire Hugging Face"
+  },
+  "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/": {
+    "date": "2026-08-04",
+    "file": "data/articles/nvidia__open-secure-ai-alliance-contributions.md",
+    "scraped_at": "2026-09-05T05:24:41+00:00",
+    "site": "nvidia",
+    "title": "AI Leaders Propose SAFE Guidelines for Cybersecurity Transparency"
   },
   "https://blogs.nvidia.com/blog/open-secure-ai-alliance/": {
     "date": "2026-07-27",
@@ -593,6 +628,20 @@
     "site": "huggingface",
     "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps"
   },
+  "https://huggingface.co/blog/open-asr-leaderboard-global-south": {
+    "date": "2026-04-07",
+    "file": "data/articles/huggingface__open-asr-leaderboard-global-south.md",
+    "scraped_at": "2026-09-05T05:23:04+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/open-asr-leaderboard-global-south"
+  },
+  "https://huggingface.co/blog/pwc-search": {
+    "date": "2026-04-20",
+    "file": "data/articles/huggingface__pwc-search.md",
+    "scraped_at": "2026-09-05T05:23:05+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/pwc-search"
+  },
   "https://huggingface.co/blog/train-multi-vector-encoder": {
     "date": "2025-07-04",
     "file": "data/articles/huggingface__train-multi-vector-encoder.md",
@@ -836,6 +885,71 @@
     "site": "mistral",
     "title": "Workflows for work that runs the business"
   },
+  "https://openai.com/index/ai-native-company-workflows/": {
+    "date": "2026-08-25",
+    "file": "data/articles/openai-index__ai-native-company-workflows.md",
+    "scraped_at": "2026-09-05T05:22:26+00:00",
+    "site": "openai-index",
+    "title": "How AI-native companies turn workflows into operating capability"
+  },
+  "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-index__chatgpt-connects-health-records-and-healthcare-sources.md",
+    "scraped_at": "2026-09-05T05:22:35+00:00",
+    "site": "openai-index",
+    "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT"
+  },
+  "https://openai.com/index/chatgpt-for-academic-researchers/": {
+    "date": "2026-06-11",
+    "file": "data/articles/openai-research__chatgpt-for-academic-researchers.md",
+    "scraped_at": "2026-09-05T05:21:59+00:00",
+    "site": "openai-research",
+    "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers"
+  },
+  "https://openai.com/index/daybreak-for-frontline-defenders/": {
+    "date": "2026-09-01",
+    "file": "data/articles/openai-index__daybreak-for-frontline-defenders.md",
+    "scraped_at": "2026-09-05T05:22:18+00:00",
+    "site": "openai-index",
+    "title": "Daybreak for Frontline Defenders: $1B to protect essential services"
+  },
+  "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-index__expanding-access-to-ai-with-chatgpt-ads.md",
+    "scraped_at": "2026-09-05T05:22:43+00:00",
+    "site": "openai-index",
+    "title": "A milestone in expanding access to AI"
+  },
+  "https://openai.com/index/gpt-5-6/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-research__gpt-5-6.md",
+    "scraped_at": "2026-09-05T05:22:09+00:00",
+    "site": "openai-research",
+    "title": "GPT\u20115.6: Frontier intelligence that scales with your ambition"
+  },
+  "https://openai.com/index/gpt-6-astra/": {
+    "date": "",
+    "file": "data/articles/openai-research__gpt-6-astra.md",
+    "nugget": "OpenAI released benchmark results showing GPT-6 Astra's performance across dozens of AI capability and safety tests, demonstrating strong performance on advanced reasoning tasks like FrontierMath (97.6%) and GPQA Diamond (96%), while also showing improved safety metrics compared to previous versions. This matters because it indicates progress toward more capable AI systems while maintaining safety controls, though the mix of metrics also suggests areas like real-world computer automation (AutomationBench at 41.4%) still lag behind theoretical performance.",
+    "nugget_at": "2026-09-05T05:25:14+00:00",
+    "scraped_at": "2026-09-05T05:21:37+00:00",
+    "site": "openai-research",
+    "title": "GPT-6 Astra: A new generation of intelligence"
+  },
+  "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-research__how-two-settings-tripled-our-arc-agi-3-scores.md",
+    "scraped_at": "2026-09-05T05:21:55+00:00",
+    "site": "openai-research",
+    "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark"
+  },
+  "https://openai.com/index/hugging-face-incident-and-the-road-ahead/": {
+    "date": "2026-05-12",
+    "file": "data/articles/openai-research__hugging-face-incident-and-the-road-ahead.md",
+    "scraped_at": "2026-09-05T05:21:42+00:00",
+    "site": "openai-research",
+    "title": "The Hugging Face incident and the road ahead"
+  },
   "https://openai.com/index/introducing-gpt-5-4/": {
     "date": "2026-09-01",
     "file": "data/articles/openai-research__introducing-gpt-5-4.md",
@@ -853,6 +967,48 @@
     "scraped_at": "2026-09-04T13:12:53+00:00",
     "site": "openai-research",
     "title": "Introducing GPT\u20115.5"
+  },
+  "https://openai.com/index/pacing-model-development-cyber-capabilities/": {
+    "date": "2026-08-31",
+    "file": "data/articles/openai-research__pacing-model-development-cyber-capabilities.md",
+    "scraped_at": "2026-09-05T05:21:46+00:00",
+    "site": "openai-research",
+    "title": "Pacing model development in an era of cyber-critical capabilities"
+  },
+  "https://openai.com/index/path-to-astra/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-index__path-to-astra.md",
+    "scraped_at": "2026-09-05T05:22:30+00:00",
+    "site": "openai-index",
+    "title": "Path to Astra: critical capabilities and frontier safeguards"
+  },
+  "https://openai.com/index/safety-overview-gpt-6-astra/": {
+    "date": "2026-09-01",
+    "file": "data/articles/openai-index__safety-overview-gpt-6-astra.md",
+    "scraped_at": "2026-09-05T05:22:22+00:00",
+    "site": "openai-index",
+    "title": "Safety overview: GPT\u20116 Astra"
+  },
+  "https://openai.com/index/scientific-computing-agentic-ai/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-research__scientific-computing-agentic-ai.md",
+    "scraped_at": "2026-09-05T05:22:04+00:00",
+    "site": "openai-research",
+    "title": "Scientific computing in the age of agentic AI"
+  },
+  "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety/": {
+    "date": "2026-08-28",
+    "file": "data/articles/openai-index__supporting-california-bill-advance-ai-youth-safety.md",
+    "scraped_at": "2026-09-05T05:22:39+00:00",
+    "site": "openai-index",
+    "title": "OpenAI supports California\u2019s bill to advance youth AI safety"
+  },
+  "https://openai.com/index/ten-advances-in-mathematics/": {
+    "date": "2026-08-26",
+    "file": "data/articles/openai-research__ten-advances-in-mathematics.md",
+    "scraped_at": "2026-09-05T05:21:50+00:00",
+    "site": "openai-research",
+    "title": "Ten advances in mathematics and theoretical computer science | OpenAI"
   },
   "https://openai.com/index/unlocking-self-improvement-gpt-red/": {
     "date": "2026-09-03",
@@ -1258,6 +1414,13 @@
     "scraped_at": "2026-09-04T13:09:52+00:00",
     "site": "anthropic-engineering",
     "title": "How we built Claude Code auto mode: a safer way to skip permissions"
+  },
+  "https://www.anthropic.com/engineering/claude-code-best-practices": {
+    "date": "",
+    "file": "data/articles/anthropic-engineering__claude-code-best-practices.md",
+    "scraped_at": "2026-09-05T05:21:22+00:00",
+    "site": "anthropic-engineering",
+    "title": "Best practices for Claude Code"
   },
   "https://www.anthropic.com/engineering/claude-code-sandboxing": {
     "date": "",
