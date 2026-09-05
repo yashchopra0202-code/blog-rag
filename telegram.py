@@ -34,3 +34,19 @@ def format_answer(answer, sources):
         lines.append(f"• {link}" + (f" — {name}" if name else ""))
     out = body + ("\n\n<b>Sources</b>\n" + "\n".join(lines) if lines else "")
     return out[:MAX_LEN]
+
+def format_latest(groups, limit=10):
+    rows, n = [], 0
+    for g in (groups or []):
+        for it in g.get("items", []):
+            if n >= limit:
+                break
+            url = str(it.get("url") or "")
+            title = _esc(it.get("title") or url)
+            name = _esc(it.get("label") or it.get("site") or "")
+            link = f'<a href="{_esc(url)}">{title}</a>' if url.startswith("http") else title
+            rows.append(f"• {link}" + (f" — {name}" if name else ""))
+            n += 1
+    if not rows:
+        return "No recent posts in the last week. Ask me a question instead!"
+    return ("<b>Latest from the labs</b>\n" + "\n".join(rows))[:MAX_LEN]

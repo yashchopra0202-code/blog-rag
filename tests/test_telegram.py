@@ -40,3 +40,20 @@ def test_format_answer_caps_sources_at_five():
     srcs = [{"title": f"T{i}", "url": f"https://x/{i}", "site": "s"} for i in range(9)]
     out = telegram.format_answer("ans", srcs)
     assert out.count("<a href=") == 5
+
+def test_format_latest_lists_links():
+    groups = [{"date": "2026-09-06", "items": [
+        {"title": "Big model", "url": "https://x/a", "label": "Mistral", "site": "mistral", "nugget": "n"},
+        {"title": "New agent", "url": "https://x/b", "label": "xAI", "site": "xai", "nugget": "n"},
+    ]}]
+    out = telegram.format_latest(groups)
+    assert '<a href="https://x/a">Big model</a>' in out and "Mistral" in out
+    assert '<a href="https://x/b">New agent</a>' in out
+
+def test_format_latest_empty():
+    assert "no recent" in telegram.format_latest([]).lower()
+
+def test_format_latest_respects_limit():
+    items = [{"title": f"P{i}", "url": f"https://x/{i}", "label": "L", "site": "s", "nugget": "n"} for i in range(20)]
+    out = telegram.format_latest([{"date": "2026-09-06", "items": items}], limit=5)
+    assert out.count("<a href=") == 5
