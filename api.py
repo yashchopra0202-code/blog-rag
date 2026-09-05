@@ -126,24 +126,27 @@ async def telegram_webhook(request: Request):
     cid = chat.get("id")
     if cid is None:
         return {"ok": True}
-    if intent["kind"] == "start":
-        try: store.add_subscriber(chat)
-        except Exception: pass
-        name = " " + chat.get("first_name", "") if chat.get("first_name") else ""
-        telegram_api.send_message(token, cid, WELCOME.format(name=name))
-    elif intent["kind"] == "stop":
-        try: store.deactivate_subscriber(cid)
-        except Exception: pass
-        telegram_api.send_message(token, cid, "You're unsubscribed. Send /start to rejoin.")
-    elif intent["kind"] == "latest":
-        groups = feed_data(7).get("groups", [])
-        telegram_api.send_message(token, cid, tg.format_latest(groups))
-    elif intent["kind"] == "question":
-        result = rag_answer(intent["text"])
-        if "error" in result:
-            telegram_api.send_message(token, cid, "The archive isn't ready yet — please try again shortly.")
-        else:
-            telegram_api.send_message(token, cid, tg.format_answer(result["answer"], result["sources"]))
+    try:
+        if intent["kind"] == "start":
+            try: store.add_subscriber(chat)
+            except Exception: pass
+            name = " " + chat.get("first_name", "") if chat.get("first_name") else ""
+            telegram_api.send_message(token, cid, WELCOME.format(name=name))
+        elif intent["kind"] == "stop":
+            try: store.deactivate_subscriber(cid)
+            except Exception: pass
+            telegram_api.send_message(token, cid, "You're unsubscribed. Send /start to rejoin.")
+        elif intent["kind"] == "latest":
+            groups = feed_data(7).get("groups", [])
+            telegram_api.send_message(token, cid, tg.format_latest(groups))
+        elif intent["kind"] == "question":
+            result = rag_answer(intent["text"])
+            if "error" in result:
+                telegram_api.send_message(token, cid, "The archive isn't ready yet — please try again shortly.")
+            else:
+                telegram_api.send_message(token, cid, tg.format_answer(result["answer"], result["sources"]))
+    except Exception:
+        print("telegram webhook: dispatch failed")
     return {"ok": True}
 
 
