@@ -54,9 +54,18 @@ def test_format_latest_empty():
     assert "no recent" in telegram.format_latest([]).lower()
 
 def test_format_latest_respects_limit():
-    items = [{"title": f"P{i}", "url": f"https://x/{i}", "label": "L", "site": "s", "nugget": "n"} for i in range(20)]
+    # distinct labs so the total limit is what binds (not the per-lab cap)
+    items = [{"title": f"P{i}", "url": f"https://x/{i}", "label": "L", "site": f"lab{i}", "nugget": "n"} for i in range(20)]
     out = telegram.format_latest([{"date": "2026-09-06", "items": items}], limit=5)
     assert out.count("<a href=") == 5
+
+def test_format_latest_caps_per_lab_so_one_lab_cannot_dominate():
+    # 11 NVIDIA posts in a row + one other lab — /latest must not be all NVIDIA
+    items = ([{"title": f"N{i}", "url": f"https://x/n{i}", "site": "nvidia", "label": "NVIDIA", "nugget": "n"} for i in range(11)]
+             + [{"title": "Deep dive", "url": "https://x/d", "site": "deepmind", "label": "DeepMind", "nugget": "n"}])
+    out = telegram.format_latest([{"date": "2026-09-06", "items": items}])
+    assert out.count("— NVIDIA") <= 2   # NVIDIA capped
+    assert "— DeepMind" in out          # another lab still surfaces
 
 def test_format_digest_message_has_links_and_feed():
     entries = [{"title": "A big release", "url": "https://x/a", "site": "mistral", "nugget": "It ships."},

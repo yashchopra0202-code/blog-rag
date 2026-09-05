@@ -54,12 +54,20 @@ def format_answer(answer, sources):
     body = _clip_text(_esc(answer), MAX_LEN - len(suffix))
     return body + suffix
 
-def format_latest(groups, limit=10):
-    rows, n = [], 0
+def format_latest(groups, limit=10, per_lab_cap=2):
+    # Cap posts per lab so a single prolific lab (e.g. NVIDIA publishing a
+    # block at once) can't fill the whole list — newest first, diversified.
+    rows, per_lab, n = [], {}, 0
     for g in (groups or []):
+        if n >= limit:
+            break
         for it in g.get("items", []):
             if n >= limit:
                 break
+            site = it.get("site") or ""
+            if per_lab.get(site, 0) >= per_lab_cap:
+                continue
+            per_lab[site] = per_lab.get(site, 0) + 1
             rows.append(_link_line(it.get("url"), it.get("title"), it.get("label") or it.get("site")))
             n += 1
     if not rows:
