@@ -36,16 +36,21 @@ def _clip_text(s, n):
     return cut
 
 def _link_line(url, title, name):
-    """One '• <a href=..>title</a> — name' line, fully escaped."""
+    """One '• <a href=..>title</a> — name' line, fully escaped (link first)."""
     url = str(url or "")
     t = _esc(title or url or "source")
     link = f'<a href="{_esc(url)}">{t}</a>' if url.startswith("http") else t
-    return "• " + (f"{_esc(name)}: " if name else "") + link
+    return "• " + link + (f" — {_esc(name)}" if name else "")
 
 def format_answer(answer, sources):
-    lines = [_link_line(s.get("url"), s.get("title"), s.get("label") or s.get("site"))
-             for s in (sources or [])[:5]]
-    suffix = ("\n\n<b>Sources</b>\n" + "\n".join(lines)) if lines else ""
+    prefix = "\n\n<b>Sources</b>\n"
+    kept, used = [], len(prefix)
+    for s in (sources or [])[:5]:
+        ln = _link_line(s.get("url"), s.get("title"), s.get("label") or s.get("site"))
+        if used + len(ln) + 1 > MAX_LEN - 1:  # reserve >=1 char for the body
+            break
+        kept.append(ln); used += len(ln) + 1
+    suffix = (prefix + "\n".join(kept)) if kept else ""
     body = _clip_text(_esc(answer), MAX_LEN - len(suffix))
     return body + suffix
 
