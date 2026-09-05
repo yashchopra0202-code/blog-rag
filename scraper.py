@@ -6,6 +6,7 @@ from datetime import datetime, timezone
 from urllib.parse import urljoin
 
 import article_format as af
+from config import enabled_sites, load_config
 from sites import SITES
 
 ARTICLES_DIR = "data/articles"
@@ -218,9 +219,10 @@ def write_scrape_status(sites_total, sites_ok, new_articles, path=SCRAPE_STATUS_
 
 def main():
     manifest = load_manifest(MANIFEST_PATH)
+    sites = enabled_sites(SITES, load_config())  # skip disabled labs entirely
     total = 0
     sites_ok = 0
-    for site in SITES:
+    for site in sites:
         print(f"Scraping {site['name']} ...")
         try:
             n = scrape_site(site, manifest, ARTICLES_DIR, MAX_ARTICLES_PER_SITE)
@@ -231,7 +233,7 @@ def main():
             print(f"  [error] {site['name']} failed: {e}")
         save_manifest(MANIFEST_PATH, manifest)  # checkpoint after each site
     print(f"Done. {total} new articles. Manifest has {len(manifest)} total.")
-    write_scrape_status(len(SITES), sites_ok, total)
+    write_scrape_status(len(sites), sites_ok, total)
 
 
 if __name__ == "__main__":

@@ -3,6 +3,43 @@ from datetime import datetime, timezone
 import digest
 
 
+# --- cadence controls (#4) --------------------------------------------------
+
+def test_should_send_today_daily_always_sends():
+    cfg = {"cadence": "daily", "weekly_day": "mon"}
+    wed = datetime(2026, 9, 9, 13, 0, tzinfo=timezone.utc)  # a Wednesday
+    assert digest.should_send_today(cfg, now=wed) is True
+
+
+def test_should_send_today_weekly_only_on_configured_day():
+    cfg = {"cadence": "weekly", "weekly_day": "mon"}
+    mon = datetime(2026, 9, 7, 13, 0, tzinfo=timezone.utc)   # Monday
+    tue = datetime(2026, 9, 8, 13, 0, tzinfo=timezone.utc)   # Tuesday
+    assert digest.should_send_today(cfg, now=mon) is True
+    assert digest.should_send_today(cfg, now=tue) is False
+
+
+def test_should_send_today_force_overrides_weekly_off_day():
+    cfg = {"cadence": "weekly", "weekly_day": "mon"}
+    tue = datetime(2026, 9, 8, 13, 0, tzinfo=timezone.utc)   # not the send day
+    assert digest.should_send_today(cfg, now=tue, force=True) is True
+
+
+def test_effective_since_weekly_first_run_looks_back_seven_days():
+    fixed_now = datetime(2026, 9, 8, 12, 0, 0, tzinfo=timezone.utc)
+    since = digest.effective_since({}, now=fixed_now, cadence="weekly")
+    assert since == "2026-09-01T12:00:00+00:00"   # 7 days, not 24h
+
+
+def test_select_new_entries_filters_by_enabled_labs():
+    manifest = {
+        "u1": {"nugget": "a", "scraped_at": "2026-09-05T10:00:00+00:00", "title": "A", "site": "xai"},
+        "u2": {"nugget": "b", "scraped_at": "2026-09-05T11:00:00+00:00", "title": "B", "site": "cohere"},
+    }
+    out = digest.select_new_entries(manifest, since=None, enabled_labs=["xai"])
+    assert [e["url"] for e in out] == ["u1"]  # cohere excluded even though it has a nugget
+
+
 def test_effective_since_uses_last_sent_when_present():
     state = {"last_sent": "2026-09-04T12:00:00+00:00"}
     assert digest.effective_since(state) == "2026-09-04T12:00:00+00:00"

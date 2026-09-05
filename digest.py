@@ -6,7 +6,10 @@ from datetime import datetime, timedelta, timezone
 import httpx
 from dotenv import load_dotenv
 
+from config import load_config
 from scraper import load_manifest
+
+_WEEKDAYS = {"mon": 0, "tue": 1, "wed": 2, "thu": 3, "fri": 4, "sat": 5, "sun": 6}
 
 MANIFEST_PATH = "data/manifest.json"
 STATE_PATH = "data/digest_state.json"
@@ -59,10 +62,21 @@ def save_state(state, path=STATE_PATH):
         json.dump(state, f, indent=2)
 
 
-def select_new_entries(manifest, since, limit=None):
+def should_send_today(cfg, now=None, force=False):
+    """Whether an email goes out on this run. Daily always sends; weekly sends
+    only on the configured weekday. `force` (manual run) bypasses the gate."""
+    if force or cfg.get("cadence", "daily") != "weekly":
+        return True
+    now = now or datetime.now(timezone.utc)
+    return now.weekday() == _WEEKDAYS.get(cfg.get("weekly_day", "mon"), 0)
+
+
+def select_new_entries(manifest, since, limit=None, enabled_labs=None):
     out = []
     for url, v in manifest.items():
         if not v.get("nugget"):
+            continue
+        if enabled_labs and v.get("site", "") not in enabled_labs:
             continue
         stamp = v.get("scraped_at", "")
         if since and stamp <= since:
@@ -104,14 +118,15 @@ def curate(entries, min_signal=3, per_lab_cap=3):
     return out
 
 
-def effective_since(state, now=None):
-    """The lower-bound timestamp for a digest: the last-sent time, or 24h ago
-    when no digest has been sent yet (first run)."""
+def effective_since(state, now=None, cadence="daily"):
+    """The lower-bound timestamp for a digest: the last-sent time, or a first-run
+    fallback window (24h daily, 7 days weekly) when no digest has been sent yet."""
     last = state.get("last_sent")
     if last:
         return last
     now = now or datetime.now(timezone.utc)
-    return (now - timedelta(hours=24)).isoformat(timespec="seconds")
+    hours = 24 * 7 if cadence == "weekly" else 24
+    return (now - timedelta(hours=hours)).isoformat(timespec="seconds")
 
 
 def _esc(s):
@@ -223,12 +238,19 @@ def main() -> None:
     feed_url = os.getenv("FEED_URL", "http://127.0.0.1:8000/")
     if not api_key or not to:
         raise SystemExit("Set RESEND_API_KEY and DIGEST_TO in .env")
-    limit = int(os.getenv("DIGEST_LIMIT", "20"))  # total pool; top 5 full, rest grouped by topic
+    cfg = load_config()
+    cadence = cfg.get("cadence", "daily")
+    force = os.getenv("DIGEST_FORCE", "").lower() in ("1", "true", "yes")
+    if not should_send_today(cfg, force=force):
+        print(f"Cadence is {cadence}; today is not the send day. Nothing sent.")
+        return
+    # weekly mode widens the pool; daily uses DIGEST_LIMIT (top 5 full, rest grouped)
+    limit = cfg["weekly_limit"] if cadence == "weekly" else int(os.getenv("DIGEST_LIMIT", "20"))
     manifest = load_manifest(MANIFEST_PATH)
     state = load_state()
-    since = effective_since(state)
+    since = effective_since(state, cadence=cadence)
     # curate: drop low-signal, de-dup, cap per lab; already sorted best-first
-    entries = curate(select_new_entries(manifest, since))[:limit]
+    entries = curate(select_new_entries(manifest, since, enabled_labs=cfg.get("enabled_labs")))[:limit]
     if not entries:
         print("No new high-signal nuggets since last digest. Nothing sent.")
         return

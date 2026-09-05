@@ -1,0 +1,6 @@
+{
+  "cadence": "daily",
+  "weekly_day": "mon",
+  "weekly_limit": 40,
+  "enabled_labs": null
+}

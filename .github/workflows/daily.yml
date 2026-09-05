@@ -2,8 +2,13 @@
 name: daily-nuggets
 on:
   schedule:
-    - cron: "0 13 * * *"   # 13:00 UTC daily
-  workflow_dispatch: {}
+    - cron: "0 13 * * *"   # 13:00 UTC daily; digest.py decides whether to email (see config.json cadence)
+  workflow_dispatch:
+    inputs:
+      force:
+        description: "Send the digest now even if cadence says it's not a send day"
+        type: boolean
+        default: false
 permissions:
   contents: write
 concurrency:
@@ -51,7 +56,8 @@ jobs:
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           DIGEST_TO: ${{ secrets.DIGEST_TO }}
           DIGEST_FROM: ${{ secrets.DIGEST_FROM }}
-          DIGEST_LIMIT: "20"   # one email carries at most the 20 newest nuggets
+          DIGEST_LIMIT: "20"   # daily cap; weekly uses config.json weekly_limit
+          DIGEST_FORCE: ${{ github.event.inputs.force }}
         run: .venv/bin/python digest.py
       - name: Commit refreshed data
         run: |
