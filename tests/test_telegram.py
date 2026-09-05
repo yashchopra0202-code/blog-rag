@@ -57,3 +57,15 @@ def test_format_latest_respects_limit():
     items = [{"title": f"P{i}", "url": f"https://x/{i}", "label": "L", "site": "s", "nugget": "n"} for i in range(20)]
     out = telegram.format_latest([{"date": "2026-09-06", "items": items}], limit=5)
     assert out.count("<a href=") == 5
+
+def test_format_digest_message_has_links_and_feed():
+    entries = [{"title": "A big release", "url": "https://x/a", "site": "mistral", "nugget": "It ships."},
+               {"title": "New research", "url": "https://x/b", "site": "deepmind", "nugget": "Findings."}]
+    out = telegram.format_digest_message(entries, "https://feed/", top=5)
+    assert '<a href="https://x/a">A big release</a>' in out
+    assert "https://feed/" in out
+
+def test_format_digest_message_caps_top():
+    entries = [{"title": f"T{i}", "url": f"https://x/{i}", "site": "s", "nugget": "n"} for i in range(10)]
+    out = telegram.format_digest_message(entries, "https://feed/", top=3)
+    assert out.count("<a href=\"https://x/") == 3

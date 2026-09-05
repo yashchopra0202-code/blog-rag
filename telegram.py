@@ -50,3 +50,18 @@ def format_latest(groups, limit=10):
     if not rows:
         return "No recent posts in the last week. Ask me a question instead!"
     return ("<b>Latest from the labs</b>\n" + "\n".join(rows))[:MAX_LEN]
+
+def format_digest_message(entries, feed_url, top=5):
+    rows = []
+    for e in (entries or [])[:top]:
+        url = str(e.get("url") or "")
+        title = _esc(e.get("title") or url)
+        name = _esc(e.get("label") or e.get("site") or "")
+        link = f'<a href="{_esc(url)}">{title}</a>' if url.startswith("http") else title
+        head = f"• {link}" + (f" — {name}" if name else "")
+        nug = _esc(e.get("nugget") or "")
+        rows.append(head + (f"\n{nug}" if nug else ""))
+    body = "<b>Fresh from the AI labs</b>\n\n" + "\n\n".join(rows)
+    if feed_url:
+        body += f'\n\n<a href="{_esc(feed_url)}">Open the full feed →</a>'
+    return body[:MAX_LEN]
