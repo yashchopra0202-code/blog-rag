@@ -58,6 +58,7 @@ jobs:
           DIGEST_FROM: ${{ secrets.DIGEST_FROM }}
           DIGEST_LIMIT: "20"   # daily cap; weekly uses config.json weekly_limit
           DIGEST_FORCE: ${{ github.event.inputs.force }}
+          FEED_URL: ${{ secrets.FEED_URL }}   # live Render URL; empty -> digest.py falls back to localhost
         run: .venv/bin/python digest.py
       - name: Commit refreshed data
         run: |

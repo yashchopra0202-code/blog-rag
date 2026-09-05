@@ -235,7 +235,9 @@ def main() -> None:
     api_key = os.getenv("RESEND_API_KEY")
     to = os.getenv("DIGEST_TO")
     sender = os.getenv("DIGEST_FROM", "onboarding@resend.dev")
-    feed_url = os.getenv("FEED_URL", "http://127.0.0.1:8000/")
+    # `or` (not getenv default) so an empty/unset FEED_URL secret in CI falls
+    # back to localhost instead of producing a broken empty link in the email.
+    feed_url = os.getenv("FEED_URL") or "http://127.0.0.1:8000/"
     if not api_key or not to:
         raise SystemExit("Set RESEND_API_KEY and DIGEST_TO in .env")
     cfg = load_config()
