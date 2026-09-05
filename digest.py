@@ -1,3 +1,4 @@
+import base64
 import json
 import os
 from datetime import datetime, timedelta, timezone
@@ -9,7 +10,39 @@ from scraper import load_manifest
 
 MANIFEST_PATH = "data/manifest.json"
 STATE_PATH = "data/digest_state.json"
+BANNER_PATH = "static/email-banner.gif"
 RESEND_ENDPOINT = "https://api.resend.com/emails"
+FULL_COUNT = 5  # how many nuggets get a full card; the rest are grouped links
+
+# site slug -> (display label, accent color) for badges/links
+LAB = {
+    "anthropic-research": ("Anthropic · Research", "#C15F3C"),
+    "anthropic-engineering": ("Anthropic · Engineering", "#C15F3C"),
+    "anthropic-news": ("Anthropic · News", "#C15F3C"),
+    "openai-research": ("OpenAI · Research", "#0A7A6B"),
+    "openai-index": ("OpenAI", "#0A7A6B"),
+    "google-research": ("Google Research", "#4285F4"),
+    "deepmind": ("Google DeepMind", "#4285F4"),
+    "meta-ai": ("Meta AI", "#0866FF"),
+    "huggingface": ("Hugging Face", "#E38B00"),
+    "microsoft-research": ("Microsoft Research", "#0067B8"),
+    "mistral": ("Mistral", "#FA5111"),
+    "cohere": ("Cohere", "#39594D"),
+    "xai": ("xAI", "#111827"),
+    "stability": ("Stability AI", "#7A3FF2"),
+    "ai2": ("Allen AI (AI2)", "#E0439A"),
+    "together": ("Together AI", "#1046E4"),
+    "perplexity": ("Perplexity", "#20808D"),
+    "nvidia": ("NVIDIA", "#5F9400"),
+}
+
+
+def lab_label(site):
+    return LAB.get(site, (site.replace("-", " ").title(), "#556155"))[0]
+
+
+def lab_color(site):
+    return LAB.get(site, (site, "#556155"))[1]
 
 
 def load_state(path=STATE_PATH):
@@ -56,32 +89,89 @@ def _esc(s):
     return str(s).replace("&", "&amp;").replace("<", "&lt;").replace(">", "&gt;").replace('"', "&quot;")
 
 
+def _full_card(e):
+    label, color = lab_label(e["site"]), lab_color(e["site"])
+    return (
+        '<div style="border:1px solid #E3E5DC;border-radius:14px;padding:16px 18px;'
+        'margin:0 0 14px;background:#ffffff">'
+        f'<span style="display:inline-block;background:{color};color:#ffffff;font-size:11px;'
+        f'font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.02em">{_esc(label)}</span>'
+        '<div style="font-size:17px;font-weight:700;line-height:1.3;margin:10px 0 7px">'
+        f'<a href="{_esc(e["url"])}" style="color:#15201A;text-decoration:none">{_esc(e["title"])}</a></div>'
+        f'<div style="color:#57615A;font-size:14px;line-height:1.55">{_esc(e["nugget"])}</div>'
+        f'<div style="margin-top:11px"><a href="{_esc(e["url"])}" style="color:{color};font-weight:600;'
+        'font-size:13px;text-decoration:none">Read the full post &rarr;</a></div>'
+        '</div>')
+
+
+def _more_section(rest):
+    if not rest:
+        return ""
+    groups = {}
+    for e in rest:
+        groups.setdefault(e["site"], []).append(e)
+    blocks = []
+    for site, items in groups.items():
+        label, color = lab_label(site), lab_color(site)
+        links = "".join(
+            f'<div style="margin:5px 0"><a href="{_esc(i["url"])}" '
+            'style="color:#15201A;text-decoration:none;font-size:14px">'
+            f'<span style="color:{color};font-weight:700">&rsaquo;</span> {_esc(i["title"])}</a></div>'
+            for i in items)
+        blocks.append(
+            f'<div style="margin:0 0 16px"><div style="font-size:12px;font-weight:700;color:{color};'
+            f'text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px">{_esc(label)}</div>{links}</div>')
+    return (
+        '<div style="margin-top:26px;padding-top:20px;border-top:1px solid #E3E5DC">'
+        '<div style="font-size:15px;font-weight:700;color:#15201A;margin-bottom:14px">'
+        'More from the labs</div>' + "".join(blocks) + '</div>')
+
+
 def build_digest(entries, feed_url="http://127.0.0.1:8000/"):
     day = datetime.now(timezone.utc).date().isoformat()
     subject = f"AI nuggets · {day} · {len(entries)} new"
-    rows = []
-    for e in entries:
-        rows.append(
-            '<div style="margin:0 0 18px;padding:14px 16px;border:1px solid #e3e5dc;border-radius:12px">'
-            f'<div style="color:#0a4b3d;font-size:12px;font-weight:600">{_esc(e["site"])}</div>'
-            '<div style="font-size:16px;font-weight:600;margin:4px 0 6px">'
-            f'<a href="{_esc(e["url"])}" style="color:#15201a;text-decoration:none">{_esc(e["title"])}</a></div>'
-            f'<div style="color:#57615a;font-size:14px;line-height:1.5">{_esc(e["nugget"])}</div>'
-            '</div>')
+    top, rest = entries[:FULL_COUNT], entries[FULL_COUNT:]
+    # Banner: animated GIF (cid attachment) over a gradient fallback that shows
+    # even when the client blocks images.
+    banner = (
+        '<div style="background:linear-gradient(135deg,#0E7C66 0%,#45C79E 100%);'
+        'border-radius:16px;overflow:hidden;margin:0 0 22px;text-align:center">'
+        '<img src="cid:banner" alt="Fresh from the AI labs" width="600" '
+        'style="display:block;width:100%;max-width:600px;height:auto;border:0"></div>')
+    cards = "".join(_full_card(e) for e in top)
     html = (
-        '<div style="font-family:system-ui,-apple-system,Segoe UI,sans-serif;max-width:600px;margin:0 auto">'
-        f'<h2 style="font-size:18px">Fresh from the AI labs · {day}</h2>'
-        f'{"".join(rows)}'
-        f'<p style="font-size:13px"><a href="{_esc(feed_url)}">Open the full feed →</a></p>'
+        '<div style="font-family:-apple-system,BlinkMacSystemFont,Segoe UI,Roboto,sans-serif;'
+        'max-width:600px;margin:0 auto;padding:8px;background:#F5F6F0">'
+        + banner +
+        f'<div style="font-size:19px;font-weight:800;color:#15201A;margin:0 0 4px">Fresh from the AI labs</div>'
+        f'<div style="font-size:13px;color:#7C867E;margin:0 0 18px">{day} · {len(entries)} new nuggets</div>'
+        + cards
+        + _more_section(rest)
+        + f'<div style="margin-top:24px;font-size:12px;color:#7C867E">Generated from '
+          f'{len(entries)} recent posts across the AI labs · '
+          f'<a href="{_esc(feed_url)}" style="color:#0A5F4E">open the feed &rarr;</a></div>'
         '</div>')
     return subject, html
 
 
-def send_digest(subject, html, api_key, sender, to):
+def banner_attachment(path=BANNER_PATH):
+    """Resend inline attachment for the animated banner, or None if absent."""
+    try:
+        with open(path, "rb") as f:
+            content = base64.b64encode(f.read()).decode()
+    except OSError:
+        return None
+    return [{"filename": "banner.gif", "content": content,
+             "content_type": "image/gif", "content_id": "banner"}]
+
+
+def send_digest(subject, html, api_key, sender, to, attachments=None):
+    payload = {"from": sender, "to": [to], "subject": subject, "html": html}
+    if attachments:
+        payload["attachments"] = attachments
     resp = httpx.post(RESEND_ENDPOINT,
                       headers={"Authorization": f"Bearer {api_key}"},
-                      json={"from": sender, "to": [to], "subject": subject, "html": html},
-                      timeout=30)
+                      json=payload, timeout=30)
     resp.raise_for_status()
     return resp.json()
 
@@ -94,7 +184,7 @@ def main() -> None:
     feed_url = os.getenv("FEED_URL", "http://127.0.0.1:8000/")
     if not api_key or not to:
         raise SystemExit("Set RESEND_API_KEY and DIGEST_TO in .env")
-    limit = int(os.getenv("DIGEST_LIMIT", "20"))  # cap one email to the N newest nuggets
+    limit = int(os.getenv("DIGEST_LIMIT", "20"))  # total pool; top 5 full, rest grouped
     manifest = load_manifest(MANIFEST_PATH)
     state = load_state()
     since = effective_since(state)
@@ -103,7 +193,7 @@ def main() -> None:
         print("No new nuggets since last digest. Nothing sent.")
         return
     subject, html = build_digest(entries, feed_url=feed_url)
-    send_digest(subject, html, api_key, sender, to)
+    send_digest(subject, html, api_key, sender, to, attachments=banner_attachment())
     # entries are the newest `limit`; advancing to their max means older in-window
     # nuggets beyond the cap are not re-sent next run (intended: one email = newest N).
     state["last_sent"] = max(e["scraped_at"] for e in entries)

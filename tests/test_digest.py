@@ -50,6 +50,27 @@ def test_build_digest_escapes_and_includes():
     assert '"quoted"' not in html
 
 
+def test_build_digest_top5_full_rest_grouped():
+    entries = [{"url": f"https://x/{i}", "title": f"Post {i}", "site": "nvidia",
+                "nugget": f"nugget {i}", "scraped_at": f"2026-09-05T{10+i:02d}:00:00+00:00"}
+               for i in range(7)]
+    subject, html = digest.build_digest(entries)
+    assert "7 new" in subject
+    assert html.count("Read the full post") == 5           # only 5 full cards
+    assert "More from the labs" in html                    # the rest are grouped
+    assert "Post 1" in html and "Post 0" in html           # tail titles present as links
+    assert "cid:banner" in html                            # banner image referenced
+
+
+def test_banner_attachment_present_and_absent(tmp_path):
+    assert digest.banner_attachment(str(tmp_path / "nope.gif")) is None
+    p = tmp_path / "b.gif"
+    p.write_bytes(b"GIF89a-fake-bytes")
+    att = digest.banner_attachment(str(p))
+    assert att and att[0]["content_id"] == "banner"
+    assert att[0]["content_type"] == "image/gif"
+
+
 def test_send_digest_posts_to_resend(monkeypatch):
     captured = {}
 
