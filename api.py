@@ -67,9 +67,12 @@ def _llm():
     return ChatAnthropic(model=MODEL, max_tokens=1024)
 
 
-def answer_question(question: str) -> dict:
+def rag_answer(question: str) -> dict:
+    """Non-raising RAG core: returns {"answer","sources"} on success, or
+    {"error","status"} when the index is missing. Reused by /ask and by the
+    Telegram webhook, neither of which should have to catch HTTPException."""
     if not os.path.isdir(PERSIST_DIR):
-        raise HTTPException(status_code=503, detail="No index. Run ingest.py first.")
+        return {"error": "No index. Run ingest.py first.", "status": 503}
     store = rag_core.load_index(PERSIST_DIR)
     retriever = rag_core.get_retriever(store, k=4)
     docs = retriever.invoke(question)
@@ -83,6 +86,15 @@ def answer_question(question: str) -> dict:
             sources.append({"title": nice_title(d.metadata.get("title", ""), url),
                             "url": url, "site": d.metadata.get("site", "")})
     return {"answer": answer, "sources": sources}
+
+
+def answer_question(question: str) -> dict:
+    """Raising wrapper over rag_answer, kept for /ask's existing external
+    contract (400/503 via HTTPException) and for direct-call test coverage."""
+    result = rag_answer(question)
+    if "error" in result:
+        raise HTTPException(status_code=result["status"], detail=result["error"])
+    return result
 
 
 @app.post("/ask")

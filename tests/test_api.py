@@ -44,6 +44,11 @@ def test_answer_question_no_index_503(monkeypatch):
         api.answer_question("q?")
     assert ei.value.status_code == 503
 
+def test_rag_answer_returns_error_dict_when_no_index(monkeypatch):
+    monkeypatch.setattr(api.os.path, "isdir", lambda p: False)
+    out = api.rag_answer("anything")
+    assert out.get("status") == 503 and "error" in out
+
 def test_feed_groups_filters_and_clamps(monkeypatch, tmp_path):
     import json as _json
     from datetime import datetime, timezone, timedelta
