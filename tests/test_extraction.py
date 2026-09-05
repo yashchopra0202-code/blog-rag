@@ -32,6 +32,21 @@ def test_extract_escalates_past_share_widget(tmp_path=None):
     assert "Share This Article" not in out["body"]
     assert "Facebook" not in out["body"]
 
+def test_extract_falls_back_to_full_text_when_body_is_not_in_p():
+    # OpenAI/NVIDIA render the body in <div>/<span>, not <p>.
+    html = (
+        "<html><head><title>T</title></head><body>"
+        "<article><h1>Headline</h1>"
+        "<div>The body of this article lives in divs and spans, not p tags, so a "
+        "p-only extractor would miss all of this real content about a new AI model "
+        "and why it matters to developers building on it today.</div>"
+        "<div>A second block of genuine article content continues here with detail.</div>"
+        "</article></body></html>"
+    )
+    out = scraper.extract_article(html, "https://openai.com/index/x/")
+    assert "lives in divs and spans" in out["body"]
+    assert "second block of genuine" in out["body"]
+
 def test_looks_like_boilerplate_detects_cookie_consent():
     cookie = ("Required Cookies. These cookies enable core functionality and cannot be "
               "turned off. Performance Cookies measure visits.")

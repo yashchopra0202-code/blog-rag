@@ -105,6 +105,18 @@ def extract_article(html, url):
         if total > best_len:
             best_len, best = total, paras
     body = "\n\n".join(best)
+    # Fallback: some sites (OpenAI, NVIDIA) render the body in <div>/<span>, not
+    # <p>, so <p>-extraction comes out thin. Use the richest semantic container's
+    # full descendant text instead. Downstream thin/boilerplate guards still
+    # decide whether the result is usable, so a cookie-only page stays skipped.
+    if len(body) < MIN_ARTICLE_CHARS:
+        for selector in ("article", "main", '[role="main"]'):
+            node = sel.css(selector)
+            if not node:
+                continue
+            full = " ".join(t.strip() for t in node.css("::text").getall() if t and t.strip())
+            if len(full) > len(body):
+                body = full
     return {"title": title, "date": date, "body": body}
 
 

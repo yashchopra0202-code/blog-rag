@@ -601,6 +601,24 @@
     "site": "huggingface",
     "title": "https://huggingface.co/blog/asr-benchmark-optimization"
   },
+  "https://huggingface.co/blog/community": {
+    "date": "2026-09-04",
+    "file": "data/articles/huggingface__community.md",
+    "nugget": "This is a collection of recent AI research articles and projects posted to a community platform, covering topics ranging from vision models and multimodal AI systems to language model optimization and specialized applications like machine translation and robot control. It matters because it showcases the rapid pace of AI development across diverse domains, showing that the field is actively advancing in areas like model efficiency, safety, open-source ecosystems, and practical deployment solutions that extend AI capabilities to edge devices and real-world applications.",
+    "nugget_at": "2026-09-05T07:15:48+00:00",
+    "scraped_at": "2026-09-05T07:13:37+00:00",
+    "site": "huggingface",
+    "title": "Hugging Face \u2013 Community Blogs"
+  },
+  "https://huggingface.co/blog/community?sort=trending": {
+    "date": "2026-08-29",
+    "file": "data/articles/huggingface__community-sort-trending.md",
+    "nugget": "This is a curated listing of recent community articles from an AI platform covering topics like open-source AI agent frameworks, robotics research, multimodal models, LLM evaluation, vector search optimization, and various model improvements. It matters because it highlights the rapid pace of innovation across multiple areas of AI development and provides researchers and practitioners with accessible technical resources and datasets to advance their own work.",
+    "nugget_at": "2026-09-05T07:15:50+00:00",
+    "scraped_at": "2026-09-05T07:13:39+00:00",
+    "site": "huggingface",
+    "title": "Hugging Face \u2013 Community Blogs"
+  },
   "https://huggingface.co/blog/funes": {
     "date": "2026-09-03",
     "file": "data/articles/huggingface__funes.md",
