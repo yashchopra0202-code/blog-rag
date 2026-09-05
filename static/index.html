@@ -6,12 +6,12 @@
 <title>Frontier — Ask the AI Labs</title>
 <link rel="preconnect" href="https://fonts.googleapis.com">
 <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
+<link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:wght@500;600;700;800&family=Hanken+Grotesk:wght@400;500;600&display=swap" rel="stylesheet">
 <style>
   /* ---------- palette (light is the base; dark overrides below) ---------- */
   :root {
     --bg: #F5F6F0;
-    --bg-grad: radial-gradient(1200px 520px at 50% -8%, #EAF1EC 0%, rgba(234,241,236,0) 60%);
+    --bg-grad: radial-gradient(1200px 560px at 50% -10%, #E7F0E9 0%, rgba(234,241,236,0) 62%);
     --surface: #FFFFFF;
     --surface-2: #EFF1EA;
     --text: #15201A;
@@ -29,30 +29,34 @@
     --danger-text: #9A3324;
     --danger-soft: #FBE6E1;
     --shadow-sm: 0 1px 2px rgba(21,32,26,.05);
+    --shadow-md: 0 2px 6px rgba(21,32,26,.06), 0 10px 24px -18px rgba(21,32,26,.22);
     --shadow-lg: 0 1px 2px rgba(21,32,26,.05), 0 22px 48px -26px rgba(21,32,26,.30);
     --ring: rgba(14,124,102,.32);
+    --scrim: rgba(21,32,26,.52);
     --font-display: "Bricolage Grotesque", ui-sans-serif, system-ui, "Segoe UI", sans-serif;
     --font-body: "Hanken Grotesk", ui-sans-serif, system-ui, -apple-system, "Segoe UI", Roboto, sans-serif;
     color-scheme: light;
   }
   :root:not([data-theme="light"]) {
     @media (prefers-color-scheme: dark) {
-      --bg: #0E1512; --bg-grad: radial-gradient(1200px 520px at 50% -8%, #12241E 0%, rgba(18,36,30,0) 60%);
+      --bg: #0E1512; --bg-grad: radial-gradient(1200px 560px at 50% -10%, #12261F 0%, rgba(18,36,30,0) 62%);
       --surface: #161F1B; --surface-2: #1C2822;
       --text: #E9F1EC; --text-2: #9FAEA6; --text-3: #7A897F;
-      --border: #253029; --border-strong: #32403799;
+      --border: #253029; --border-strong: #324037;
       --accent: #45C79E; --accent-strong: #5FD6B0; --accent-contrast: #06231B;
       --accent-soft: #10322A; --accent-text: #8FE7CC;
       --amber-text: #E4AF57; --amber-soft: #2A2213;
       --danger-text: #F0977F; --danger-soft: #2E1712;
       --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+      --shadow-md: 0 2px 6px rgba(0,0,0,.4), 0 12px 28px -18px rgba(0,0,0,.6);
       --shadow-lg: 0 1px 2px rgba(0,0,0,.35), 0 26px 52px -26px rgba(0,0,0,.7);
       --ring: rgba(69,199,158,.40);
+      --scrim: rgba(0,0,0,.62);
       color-scheme: dark;
     }
   }
   :root[data-theme="dark"] {
-    --bg: #0E1512; --bg-grad: radial-gradient(1200px 520px at 50% -8%, #12241E 0%, rgba(18,36,30,0) 60%);
+    --bg: #0E1512; --bg-grad: radial-gradient(1200px 560px at 50% -10%, #12261F 0%, rgba(18,36,30,0) 62%);
     --surface: #161F1B; --surface-2: #1C2822;
     --text: #E9F1EC; --text-2: #9FAEA6; --text-3: #7A897F;
     --border: #253029; --border-strong: #324037;
@@ -61,8 +65,10 @@
     --amber-text: #E4AF57; --amber-soft: #2A2213;
     --danger-text: #F0977F; --danger-soft: #2E1712;
     --shadow-sm: 0 1px 2px rgba(0,0,0,.35);
+    --shadow-md: 0 2px 6px rgba(0,0,0,.4), 0 12px 28px -18px rgba(0,0,0,.6);
     --shadow-lg: 0 1px 2px rgba(0,0,0,.35), 0 26px 52px -26px rgba(0,0,0,.7);
     --ring: rgba(69,199,158,.40);
+    --scrim: rgba(0,0,0,.62);
     color-scheme: dark;
   }
 
@@ -85,25 +91,34 @@
   ::-webkit-scrollbar-thumb { background: var(--border-strong); border-radius: 999px; border: 3px solid var(--bg); }
   a { color: var(--accent-text); text-underline-offset: 3px; text-decoration-thickness: 1px; }
 
-  .wrap { max-width: 780px; margin: 0 auto; padding: 0 22px 88px; }
+  .wrap { max-width: 1060px; margin: 0 auto; padding: 0 22px 88px; }
 
   /* ---------- top bar ---------- */
   .topbar {
-    max-width: 780px; margin: 0 auto; padding: 20px 22px 14px;
-    display: flex; align-items: center; justify-content: space-between;
+    max-width: 1060px; margin: 0 auto; padding: 20px 22px 14px;
+    display: flex; align-items: center; justify-content: space-between; gap: 12px;
   }
   .brand { display: inline-flex; align-items: center; gap: 9px; text-decoration: none; color: var(--text); }
-  .brand .mark {
-    width: 27px; height: 27px; display: grid; place-items: center;
-    color: var(--accent); flex: none;
-  }
+  .brand .mark { width: 27px; height: 27px; display: grid; place-items: center; color: var(--accent); flex: none; }
   .brand .name { font-family: var(--font-display); font-weight: 700; font-size: 1.12rem; letter-spacing: -.02em; }
   .brand .name b { color: var(--accent-text); font-weight: 700; }
+  .top-actions { display: inline-flex; align-items: center; gap: 8px; }
+  .ghost-btn {
+    font: inherit; font-size: .9rem; font-weight: 600; cursor: pointer;
+    height: 38px; padding: 0 14px; border-radius: 10px;
+    border: 1px solid var(--border); background: var(--surface); color: var(--text-2);
+    display: inline-flex; align-items: center; gap: 8px;
+    transition: color .15s, border-color .15s, background .15s, transform .12s;
+    box-shadow: var(--shadow-sm);
+  }
+  .ghost-btn:hover { color: var(--accent-text); border-color: var(--accent); background: var(--accent-soft); }
+  .ghost-btn:active { transform: translateY(1px); }
+  .ghost-btn .tb-i { color: var(--accent); flex: none; }
   .icon-btn {
     width: 38px; height: 38px; border-radius: 10px; border: 1px solid var(--border);
     background: var(--surface); color: var(--text-2); cursor: pointer;
     display: grid; place-items: center; transition: color .15s, border-color .15s, background .15s, transform .12s;
-    box-shadow: var(--shadow-sm);
+    box-shadow: var(--shadow-sm); flex: none;
   }
   .icon-btn:hover { color: var(--text); border-color: var(--border-strong); }
   .icon-btn:active { transform: translateY(1px); }
@@ -114,25 +129,26 @@
     :root:not([data-theme="light"]) .icon-btn .sun { display: none; }
     :root:not([data-theme="light"]) .icon-btn .moon { display: block; }
   }
+  @media (max-width: 520px) { .ghost-btn .tb-label { display: none; } .ghost-btn { padding: 0 11px; } }
 
   /* ---------- hero ---------- */
-  .hero { padding: 26px 0 22px; }
+  .hero { padding: 30px 0 8px; text-align: center; }
   h1 {
-    font-family: var(--font-display); font-weight: 600;
-    font-size: clamp(2.15rem, 6.4vw, 3.35rem); line-height: 1.03;
-    letter-spacing: -.035em; margin: 0 0 .5em; max-width: 15ch;
+    font-family: var(--font-display); font-weight: 700;
+    font-size: clamp(2.3rem, 6.6vw, 3.7rem); line-height: 1.02;
+    letter-spacing: -.038em; margin: 0 auto .34em; max-width: 16ch;
   }
-  .lede { margin: 0; color: var(--text-2); font-size: 1.06rem; max-width: 60ch; }
+  .lede { margin: 0 auto; color: var(--text-2); font-size: 1.08rem; max-width: 62ch; }
   .lede b { color: var(--text); font-weight: 600; }
   .lede .dot { color: var(--text-3); margin: 0 .5ch; }
   .lede .updated { color: var(--text-3); white-space: nowrap; }
 
   /* ---------- ask field ---------- */
-  form.ask { margin: 22px 0 0; }
+  form.ask { margin: 26px auto 0; max-width: 720px; }
   .field {
     display: flex; align-items: center; gap: 8px;
     background: var(--surface); border: 1px solid var(--border-strong);
-    border-radius: 15px; padding: 8px 8px 8px 16px;
+    border-radius: 16px; padding: 9px 9px 9px 17px;
     box-shadow: var(--shadow-lg);
     transition: border-color .16s, box-shadow .16s;
   }
@@ -140,13 +156,13 @@
   .field .search-i { color: var(--text-3); flex: none; }
   #q {
     flex: 1; min-width: 0; border: 0; background: transparent; outline: none;
-    color: var(--text); font: inherit; font-size: 1.05rem; padding: 8px 2px; caret-color: var(--accent);
+    color: var(--text); font: inherit; font-size: 1.06rem; padding: 9px 2px; caret-color: var(--accent);
   }
   #q::placeholder { color: var(--text-3); }
   .send {
-    flex: none; height: 44px; min-width: 44px; padding: 0 16px; border: 0; border-radius: 11px;
+    flex: none; height: 46px; min-width: 46px; padding: 0 18px; border: 0; border-radius: 12px;
     background: var(--accent); color: var(--accent-contrast); cursor: pointer;
-    font: inherit; font-weight: 600; font-size: .95rem;
+    font: inherit; font-weight: 600; font-size: .96rem;
     display: inline-flex; align-items: center; gap: 7px;
     transition: background .15s, transform .12s, opacity .15s;
   }
@@ -158,12 +174,10 @@
   .send.busy .arrow { display: none; }
   .send.busy .label { display: none; }
   .send.busy .spinner { display: block; animation: spin .7s linear infinite; }
-  @media (max-width: 460px) {
-    .send { padding: 0; width: 44px; } .send .label { display: none; }
-  }
+  @media (max-width: 460px) { .send { padding: 0; width: 46px; } .send .label { display: none; } }
 
   /* ---------- suggestions ---------- */
-  .suggest { margin: 16px 0 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; }
+  .suggest { margin: 15px auto 0; display: flex; flex-wrap: wrap; gap: 8px; align-items: center; justify-content: center; max-width: 760px; }
   .suggest .lead { font-size: .84rem; color: var(--text-3); margin-right: 2px; }
   .chip {
     font: inherit; font-size: .88rem; cursor: pointer;
@@ -173,27 +187,62 @@
     transition: color .14s, border-color .14s, background .14s, transform .12s;
     box-shadow: var(--shadow-sm);
   }
-  .chip:hover { color: var(--text); border-color: var(--accent); background: var(--accent-soft); }
+  .chip:hover { color: var(--accent-text); border-color: var(--accent); background: var(--accent-soft); }
   .chip:active { transform: translateY(1px); }
   .chip .sparkle { color: var(--accent); flex: none; }
 
-  /* ---------- result panel ---------- */
-  .panel { margin: 26px 0 0; }
+  /* ---------- board: ask column + feed column ---------- */
+  .board {
+    display: grid; grid-template-columns: minmax(0,1.06fr) minmax(0,.94fr);
+    gap: 30px; margin-top: 40px; align-items: start;
+  }
+  .col-head {
+    display: flex; align-items: baseline; gap: 9px; margin: 0 0 14px;
+    font-family: var(--font-display); font-weight: 600; font-size: 1.12rem;
+    letter-spacing: -.02em; color: var(--text);
+  }
+  .col-head .col-hint { font-family: var(--font-body); font-weight: 400; font-size: .86rem; letter-spacing: 0; color: var(--text-3); }
+  .col-head .live-dot {
+    width: 8px; height: 8px; border-radius: 999px; background: var(--accent); flex: none;
+    box-shadow: 0 0 0 4px var(--accent-soft); align-self: center;
+  }
+  @media (max-width: 900px) {
+    .board { grid-template-columns: 1fr; gap: 40px; margin-top: 34px; }
+  }
+
+  /* ---------- demo / example answer ---------- */
+  .demo-card { position: relative; }
+  .demo-top { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin: 0 0 14px; }
+  .ex-tag {
+    font-size: .72rem; font-weight: 600; letter-spacing: .06em; text-transform: uppercase;
+    color: var(--accent-text); background: var(--accent-soft); border-radius: 999px; padding: 4px 10px;
+    display: inline-flex; align-items: center; gap: 6px;
+  }
+  .ex-tag .spark { color: var(--accent); }
+  .dots { display: inline-flex; gap: 7px; }
+  .dot-btn {
+    width: 8px; height: 8px; padding: 0; border: 0; border-radius: 999px; cursor: pointer;
+    background: var(--border-strong); transition: background .18s, transform .18s;
+  }
+  .dot-btn[aria-selected="true"] { background: var(--accent); width: 20px; }
+  .dot-btn:hover { background: var(--accent); }
+
+  /* ---------- result panel (shared demo + live answer) ---------- */
   .answer-card {
     background: var(--surface); border: 1px solid var(--border);
-    border-radius: 16px; padding: 24px 24px 8px; box-shadow: var(--shadow-lg);
+    border-radius: 18px; padding: 22px 24px 10px; box-shadow: var(--shadow-lg);
   }
   .asked {
-    font-family: var(--font-display); font-weight: 600; font-size: 1.12rem;
+    font-family: var(--font-display); font-weight: 600; font-size: 1.14rem;
     letter-spacing: -.02em; color: var(--text); margin: 0 0 14px; line-height: 1.3;
   }
-  .answer { color: var(--text); font-size: 1.03rem; line-height: 1.68; white-space: pre-wrap; word-wrap: break-word; }
+  .answer { color: var(--text); font-size: 1.02rem; line-height: 1.68; word-wrap: break-word; }
   .answer p { margin: 0 0 .85em; }
   .answer strong { font-weight: 600; color: var(--text); }
   .answer code { font-family: ui-monospace, "SF Mono", Menlo, monospace; font-size: .9em;
     background: var(--surface-2); border: 1px solid var(--border); border-radius: 5px; padding: .08em .38em; }
 
-  .sources { margin-top: 20px; border-top: 1px solid var(--border); padding: 18px 0 16px; }
+  .sources { margin-top: 18px; border-top: 1px solid var(--border); padding: 18px 0 16px; }
   .sources h2 {
     display: flex; align-items: center; gap: 8px; margin: 0 0 12px;
     font-family: var(--font-body); font-weight: 600; font-size: .82rem;
@@ -203,7 +252,7 @@
   .sources ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
   .src {
     display: flex; align-items: center; gap: 12px; text-decoration: none;
-    padding: 11px 13px; border-radius: 11px; background: var(--surface-2);
+    padding: 11px 13px; border-radius: 12px; background: var(--surface-2);
     border: 1px solid transparent; transition: border-color .14s, transform .12s, background .14s;
   }
   .src:hover { border-color: var(--accent); background: var(--accent-soft); }
@@ -215,8 +264,8 @@
   .src .src-out { color: var(--text-3); flex: none; transition: color .14s, transform .14s; }
 
   /* ---------- loading ---------- */
-  .loading { margin: 26px 0 0; background: var(--surface); border: 1px solid var(--border);
-    border-radius: 16px; padding: 24px; box-shadow: var(--shadow-lg); }
+  .loading { background: var(--surface); border: 1px solid var(--border);
+    border-radius: 18px; padding: 24px; box-shadow: var(--shadow-lg); }
   .loading .status { display: flex; align-items: center; gap: 10px; color: var(--text-2); font-size: .95rem; margin-bottom: 18px; }
   .loading .status .spinner { width: 17px; height: 17px; color: var(--accent); animation: spin .7s linear infinite; }
   .skel { height: 13px; border-radius: 6px; margin: 10px 0;
@@ -225,19 +274,35 @@
   .skel.s1 { width: 92%; } .skel.s2 { width: 100%; } .skel.s3 { width: 74%; }
 
   /* ---------- error ---------- */
-  .error { margin: 26px 0 0; display: flex; align-items: flex-start; gap: 11px;
+  .error { display: flex; align-items: flex-start; gap: 11px;
     background: var(--danger-soft); border: 1px solid transparent; border-radius: 14px;
     padding: 15px 17px; color: var(--danger-text); }
   .error svg { flex: none; margin-top: 1px; }
   .error .etxt { color: var(--danger-text); font-size: .95rem; }
   .error .etxt b { display: block; margin-bottom: 2px; color: var(--danger-text); font-weight: 600; }
 
-  /* ---------- corpus / what's inside ---------- */
-  .corpus { margin: 46px 0 0; }
-  .corpus h2 {
-    font-family: var(--font-display); font-weight: 600; font-size: 1.12rem;
-    letter-spacing: -.02em; margin: 0 0 4px;
+  /* ---------- feed column ---------- */
+  .feed { display: flex; flex-direction: column; gap: 12px; }
+  .feed-empty { color: var(--text-3); }
+  .feed-day { color: var(--text-3); font-size: .78rem; text-transform: uppercase; letter-spacing: .06em; margin: 12px 0 2px; }
+  .feed-day:first-child { margin-top: 0; }
+  .nugget-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 15px 17px; box-shadow: var(--shadow-sm);
+    transition: border-color .14s, transform .12s, box-shadow .14s; }
+  .nugget-card:hover { border-color: var(--border-strong); box-shadow: var(--shadow-md); }
+  .nugget-card .label { color: var(--accent-text); font-size: .76rem; font-weight: 600; }
+  .nugget-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.0rem; margin: 4px 0 7px; line-height: 1.3; }
+  .nugget-card p { margin: 0 0 10px; color: var(--text-2); font-size: .95rem; }
+  .nugget-card a { font-weight: 600; font-size: .9rem; }
+  .feed-skel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow-sm); }
+  @media (min-width: 901px) {
+    .feed-scroll { max-height: 76vh; overflow: auto; padding-right: 8px; margin-right: -8px;
+      -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px, #000 calc(100% - 22px), transparent 100%);
+      mask-image: linear-gradient(to bottom, transparent 0, #000 14px, #000 calc(100% - 22px), transparent 100%); }
   }
+
+  /* ---------- corpus / what's inside ---------- */
+  .corpus { margin: 52px 0 0; }
+  .corpus h2 { font-family: var(--font-display); font-weight: 600; font-size: 1.18rem; letter-spacing: -.02em; margin: 0 0 4px; }
   .corpus .sub { margin: 0 0 16px; color: var(--text-2); font-size: .92rem; }
   .labs { display: flex; flex-wrap: wrap; gap: 8px; }
   .lab {
@@ -254,29 +319,46 @@
   }
   .lab:hover .count { background: var(--surface); }
 
-  footer { margin: 40px auto 0; max-width: 780px; padding: 22px 22px 0;
+  footer { margin: 44px auto 0; max-width: 1060px; padding: 22px 22px 0;
     border-top: 1px solid var(--border); color: var(--text-3); font-size: .82rem; line-height: 1.6; }
 
+  /* ---------- guided tour ---------- */
+  .tour-scrim { position: fixed; inset: 0; z-index: 80; background: transparent; }
+  .tour-ring {
+    position: fixed; z-index: 81; border-radius: 14px; pointer-events: none;
+    box-shadow: 0 0 0 9999px var(--scrim), 0 0 0 2px var(--accent), 0 0 0 7px var(--ring);
+    transition: top .32s cubic-bezier(.16,1,.3,1), left .32s cubic-bezier(.16,1,.3,1),
+      width .32s cubic-bezier(.16,1,.3,1), height .32s cubic-bezier(.16,1,.3,1);
+  }
+  .tour-pop {
+    position: fixed; z-index: 82; width: min(330px, calc(100vw - 28px));
+    background: var(--surface); border: 1px solid var(--border-strong); border-radius: 15px;
+    box-shadow: var(--shadow-lg); padding: 17px 18px 15px;
+    transition: top .32s cubic-bezier(.16,1,.3,1), left .32s cubic-bezier(.16,1,.3,1);
+  }
+  .tour-pop h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.06rem; letter-spacing: -.02em; margin: 0 0 6px; color: var(--text); }
+  .tour-pop p { margin: 0; color: var(--text-2); font-size: .94rem; line-height: 1.55; }
+  .tour-foot { display: flex; align-items: center; justify-content: space-between; gap: 12px; margin-top: 15px; }
+  .tour-count { font-size: .8rem; color: var(--text-3); font-variant-numeric: tabular-nums; }
+  .tour-btns { display: inline-flex; gap: 8px; }
+  .tour-btns button { font: inherit; font-size: .88rem; font-weight: 600; cursor: pointer; border-radius: 9px; padding: 7px 13px; transition: background .14s, border-color .14s, color .14s, transform .12s; }
+  .tour-btns button:active { transform: translateY(1px); }
+  .t-back { background: transparent; border: 1px solid var(--border); color: var(--text-2); }
+  .t-back:hover { border-color: var(--border-strong); color: var(--text); }
+  .t-next { background: var(--accent); border: 1px solid var(--accent); color: var(--accent-contrast); }
+  .t-next:hover { background: var(--accent-strong); border-color: var(--accent-strong); }
+
   .reveal { animation: reveal .5s cubic-bezier(.16,1,.3,1) both; }
+  .enter { animation: enter .62s cubic-bezier(.16,1,.3,1) both; }
   @keyframes reveal { from { opacity: 0; transform: translateY(10px); filter: blur(6px); } to { opacity: 1; transform: none; filter: blur(0); } }
+  @keyframes enter { from { opacity: 0; transform: translateY(14px); filter: blur(7px); } to { opacity: 1; transform: none; filter: blur(0); } }
   @keyframes spin { to { transform: rotate(360deg); } }
   @keyframes shimmer { from { background-position: 100% 0; } to { background-position: 0 0; } }
   @media (prefers-reduced-motion: reduce) {
-    * { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
+    *, .enter, .reveal { animation-duration: .01ms !important; animation-iteration-count: 1 !important; transition-duration: .01ms !important; }
     .skel { animation: none; }
+    .tour-ring, .tour-pop { transition: none; }
   }
-
-  /* ---------- today feed ---------- */
-  .today { padding: 8px 0 26px; }
-  .today-title { font-family: var(--font-display); font-weight: 700; letter-spacing: -.02em; font-size: 1.15rem; margin: 0 0 12px; }
-  .feed { display: flex; flex-direction: column; gap: 12px; }
-  .feed-empty { color: var(--text-3); }
-  .feed-day { color: var(--text-3); font-size: .82rem; text-transform: uppercase; letter-spacing: .06em; margin: 14px 0 2px; }
-  .nugget-card { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow-sm); }
-  .nugget-card .label { color: var(--accent-text); font-size: .78rem; font-weight: 600; }
-  .nugget-card h3 { font-family: var(--font-display); font-weight: 600; font-size: 1.02rem; margin: 4px 0 8px; line-height: 1.3; }
-  .nugget-card p { margin: 0 0 10px; color: var(--text-2); }
-  .nugget-card a { font-weight: 600; }
 </style>
 </head>
 <body>
@@ -287,62 +369,93 @@
       </span>
       <span class="name">Frontier<b>·</b>Labs</span>
     </a>
-    <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">
-      <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
-      <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.2A7.6 7.6 0 0 1 9.8 4 7.6 7.6 0 1 0 20 14.2Z"/></svg>
-    </button>
+    <div class="top-actions">
+      <button class="ghost-btn" id="tour-start" type="button">
+        <span class="tb-i" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><circle cx="12" cy="12" r="9"/><path d="m14.8 9.2-1.6 4-4 1.6 1.6-4 4-1.6Z"/></svg></span>
+        <span class="tb-label">Take a tour</span>
+      </button>
+      <button class="icon-btn" id="theme" type="button" aria-label="Switch light or dark theme">
+        <svg class="sun" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round"><circle cx="12" cy="12" r="4.2"/><path d="M12 2.5v2.4M12 19.1v2.4M4.4 4.4l1.7 1.7M17.9 17.9l1.7 1.7M2.5 12h2.4M19.1 12h2.4M4.4 19.6l1.7-1.7M17.9 6.1l1.7-1.7"/></svg>
+        <svg class="moon" width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.75" stroke-linecap="round" stroke-linejoin="round"><path d="M20 14.2A7.6 7.6 0 0 1 9.8 4 7.6 7.6 0 1 0 20 14.2Z"/></svg>
+      </button>
+    </div>
   </header>
 
   <main class="wrap">
-    <section id="today" class="today" aria-label="Today's nuggets">
-      <h2 class="today-title">Fresh from the labs</h2>
-      <div id="today-feed" class="feed"></div>
-      <p id="today-empty" class="feed-empty" hidden>No new posts in the last week.</p>
-    </section>
-
     <section class="hero">
-      <h1>Ask the AI labs anything.</h1>
-      <p class="lede">Grounded answers from <b id="stat-articles">the latest posts</b> across <b id="stat-sites">12 research blogs</b> — every claim linked to the source it came from.<span id="stat-updated"></span></p>
+      <h1 class="enter">Ask the AI labs anything.</h1>
+      <p class="lede enter">One question, answered across <b id="stat-sites">18 research blogs</b> — grounded in <b id="stat-articles">the latest posts</b>, with every claim linked to its source.<span id="stat-updated"></span></p>
+
+      <form class="ask enter" id="ask-form" autocomplete="off">
+        <label class="field" for="q">
+          <span class="search-i" aria-hidden="true"><svg width="20" height="20" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></span>
+          <input id="q" name="q" type="text" placeholder="e.g. What are the latest developments in AI agents?" aria-label="Your question">
+          <button class="send" id="send" type="submit">
+            <span class="label">Ask</span>
+            <span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
+            <span class="spinner" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9" opacity=".9"/></svg></span>
+          </button>
+        </label>
+      </form>
+
+      <section class="suggest enter" id="suggest" aria-label="Suggested questions">
+        <span class="lead">Try</span>
+      </section>
     </section>
 
-    <form class="ask" id="ask-form" autocomplete="off">
-      <label class="field" for="q">
-        <span class="search-i" aria-hidden="true"><svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round"><circle cx="11" cy="11" r="7"/><path d="m20 20-3.2-3.2"/></svg></span>
-        <input id="q" name="q" type="text" placeholder="e.g. What did Anthropic find about Claude's quality issues?" aria-label="Your question">
-        <button class="send" id="send" type="submit">
-          <span class="label">Ask</span>
-          <span class="arrow" aria-hidden="true"><svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 12h13M13 6l6 6-6 6"/></svg></span>
-          <span class="spinner" aria-hidden="true"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9" opacity=".9"/></svg></span>
-        </button>
-      </label>
-    </form>
+    <div class="board">
+      <!-- Left: ask & answer (starts with a live example) -->
+      <section class="ask-col" id="ask-col" aria-label="Answers">
+        <div class="col-head" id="ask-head">See it in action<span class="col-hint">— or ask your own above</span></div>
 
-    <section class="suggest" id="suggest" aria-label="Suggested questions">
-      <span class="lead">Try</span>
-    </section>
-
-    <section class="loading" id="loading" hidden aria-hidden="true">
-      <div class="status"><span class="spinner"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9" opacity=".9"/></svg></span><span id="loading-text">Searching the archive…</span></div>
-      <div class="skel s1"></div><div class="skel s2"></div><div class="skel s3"></div>
-    </section>
-
-    <section class="error" id="error" hidden role="alert">
-      <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8.5v4.2M12 16.2v.1"/><path d="M10.3 3.9 2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
-      <span class="etxt"><b>Something went wrong</b><span id="error-msg"></span></span>
-    </section>
-
-    <section class="panel" id="panel" hidden>
-      <div class="answer-card">
-        <p class="asked" id="asked"></p>
-        <div class="answer" id="answer" aria-live="polite"></div>
-        <div class="sources" id="sources" hidden>
-          <h2><span class="badge" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span id="sources-label">Sources</span></h2>
-          <ul id="sources-list"></ul>
+        <div id="demo" class="enter">
+          <article class="answer-card demo-card">
+            <div class="demo-top">
+              <span class="ex-tag"><span class="spark" aria-hidden="true"><svg width="12" height="12" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c.4 3.4 2.2 5.3 5.6 5.7-3.4.4-5.2 2.3-5.6 5.6-.4-3.3-2.2-5.2-5.6-5.6C9.8 8.3 11.6 6.4 12 3Z"/></svg></span>Example answer</span>
+              <div class="dots" id="demo-dots" role="tablist" aria-label="Example questions"></div>
+            </div>
+            <p class="asked" id="demo-asked"></p>
+            <div class="answer" id="demo-answer"></div>
+            <div class="sources" id="demo-sources">
+              <h2><span class="badge" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span>Sources</h2>
+              <ul id="demo-sources-list"></ul>
+            </div>
+          </article>
         </div>
-      </div>
-    </section>
 
-    <section class="corpus">
+        <section class="loading" id="loading" hidden aria-hidden="true">
+          <div class="status"><span class="spinner"><svg width="17" height="17" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round"><path d="M12 3a9 9 0 1 0 9 9" opacity=".9"/></svg></span><span id="loading-text">Searching the archive…</span></div>
+          <div class="skel s1"></div><div class="skel s2"></div><div class="skel s3"></div>
+        </section>
+
+        <section class="error" id="error" hidden role="alert">
+          <svg width="19" height="19" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M12 8.5v4.2M12 16.2v.1"/><path d="M10.3 3.9 2.6 17.4A2 2 0 0 0 4.3 20.4h15.4a2 2 0 0 0 1.7-3L13.7 3.9a2 2 0 0 0-3.4 0Z"/></svg>
+          <span class="etxt"><b>Something went wrong</b><span id="error-msg"></span></span>
+        </section>
+
+        <section class="panel" id="panel" hidden>
+          <article class="answer-card">
+            <p class="asked" id="asked"></p>
+            <div class="answer" id="answer" aria-live="polite"></div>
+            <div class="sources" id="sources" hidden>
+              <h2><span class="badge" aria-hidden="true"><svg width="15" height="15" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"><path d="M20 6 9 17l-5-5"/></svg></span><span id="sources-label">Sources</span></h2>
+              <ul id="sources-list"></ul>
+            </div>
+          </article>
+        </section>
+      </section>
+
+      <!-- Right: browse the latest -->
+      <section class="feed-col" id="feed-col" aria-label="Latest posts">
+        <div class="col-head"><span class="live-dot" aria-hidden="true"></span>What's new</div>
+        <div class="feed-scroll">
+          <div id="today-feed" class="feed" aria-live="polite"></div>
+          <p id="today-empty" class="feed-empty" hidden>No new posts in the last week.</p>
+        </div>
+      </section>
+    </div>
+
+    <section class="corpus" id="corpus">
       <h2>What's inside</h2>
       <p class="sub">The most recent posts from every major lab. Tap one to see what it's been publishing.</p>
       <div class="labs" id="labs" aria-label="Sources by lab"></div>
@@ -357,12 +470,20 @@
 (function () {
   "use strict";
   const $ = (s) => document.querySelector(s);
+  const reduceMotion = matchMedia("(prefers-reduced-motion: reduce)").matches;
   const form = $("#ask-form"), q = $("#q"), send = $("#send");
+  const askHead = $("#ask-head"), demo = $("#demo");
   const panel = $("#panel"), asked = $("#asked"), answerEl = $("#answer");
   const sourcesWrap = $("#sources"), sourcesList = $("#sources-list"), sourcesLabel = $("#sources-label");
   const loading = $("#loading"), loadingText = $("#loading-text");
   const errorEl = $("#error"), errorMsg = $("#error-msg");
   const suggest = $("#suggest"), labs = $("#labs");
+
+  const labelMap = {};
+  function labelForSite(slug) {
+    if (labelMap[slug]) return labelMap[slug];
+    return slug ? String(slug).replace(/-/g, " ").replace(/\b\w/g, (c) => c.toUpperCase()) : "";
+  }
 
   /* ---- theme ---- */
   const theme = $("#theme");
@@ -378,86 +499,8 @@
     try { localStorage.setItem("frontier-theme", next); } catch (e) {}
   });
 
-  /* ---- suggested questions (curated to land in the corpus) ---- */
-  const SUGGESTIONS = [
-    "What caused the recent Claude quality issues?",
-    "What is Voxtral and what can it do?",
-    "What has DeepMind published on weather and science?",
-    "How is Cohere approaching enterprise AI?",
-    "What are the latest ideas on AI agents and tool use?",
-  ];
-  SUGGESTIONS.forEach((text) => {
-    const b = document.createElement("button");
-    b.type = "button"; b.className = "chip";
-    const s = document.createElement("span");
-    s.className = "sparkle"; s.setAttribute("aria-hidden", "true");
-    s.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c.4 3.4 2.2 5.3 5.6 5.7-3.4.4-5.2 2.3-5.6 5.6-.4-3.3-2.2-5.2-5.6-5.6C9.8 8.3 11.6 6.4 12 3Z"/></svg>';
-    b.append(s, document.createTextNode(text));
-    b.addEventListener("click", () => runQuestion(text));
-    suggest.appendChild(b);
-  });
-
-  /* ---- corpus stats + lab chips ---- */
-  fetch("/stats").then((r) => r.ok ? r.json() : null).then((data) => {
-    if (!data) return;
-    const total = data.articles || 0;
-    const nSites = (data.sites || []).length;
-    if (total) $("#stat-articles").textContent = total + " recent article" + (total === 1 ? "" : "s");
-    if (nSites) $("#stat-sites").textContent = nSites + " research blog" + (nSites === 1 ? "" : "s");
-    if (data.updated) {
-      const d = new Date(data.updated + "T00:00:00");
-      if (!isNaN(d)) {
-        const span = $("#stat-updated");
-        span.innerHTML = '<span class="dot">·</span><span class="updated">updated ' +
-          d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + "</span>";
-      }
-    }
-    (data.sites || []).forEach((site) => {
-      const b = document.createElement("button");
-      b.type = "button"; b.className = "lab";
-      const name = document.createElement("span"); name.textContent = site.label || site.name;
-      const c = document.createElement("span"); c.className = "count";
-      c.textContent = site.count; c.setAttribute("aria-label", site.count + " articles");
-      b.append(name, c);
-      b.addEventListener("click", () => browseLab(site.name, site.label || site.name));
-      labs.appendChild(b);
-    });
-  }).catch(() => {});
-
-  /* ---- ask flow ---- */
   function show(el) { el.hidden = false; el.setAttribute("aria-hidden", "false"); }
   function hide(el) { el.hidden = true; el.setAttribute("aria-hidden", "true"); }
-  function setBusy(on) {
-    send.classList.toggle("busy", on); send.disabled = on; q.disabled = on;
-  }
-
-  async function runQuestion(text) {
-    const question = (text != null ? text : q.value).trim();
-    if (!question) { q.focus(); return; }
-    q.value = question;
-    hide(errorEl); hide(panel);
-    loadingText.textContent = "Searching the archive…";
-    show(loading);
-    setBusy(true);
-    try {
-      const r = await fetch("/ask", {
-        method: "POST",
-        headers: { "Content-Type": "application/json" },
-        body: JSON.stringify({ question }),
-      });
-      let data = null;
-      try { data = await r.json(); } catch (e) {}
-      if (!r.ok) throw new Error((data && data.detail) || ("Request failed (" + r.status + ")"));
-      render(question, data);
-    } catch (err) {
-      hide(loading);
-      errorMsg.textContent = " " + (err && err.message ? err.message : "Could not reach the server.");
-      show(errorEl);
-      errorEl.classList.remove("reveal"); void errorEl.offsetWidth; errorEl.classList.add("reveal");
-    } finally {
-      setBusy(false);
-    }
-  }
 
   // Escape HTML first, THEN add only <strong>/<code> around already-escaped
   // text — the model's output can never inject markup this way.
@@ -465,9 +508,11 @@
     const esc = String(text == null ? "" : text)
       .replace(/&/g, "&amp;").replace(/</g, "&lt;").replace(/>/g, "&gt;")
       .replace(/\n{3,}/g, "\n\n");
-    return esc
+    const withInline = esc
       .replace(/\*\*([^*]+)\*\*/g, "<strong>$1</strong>")
       .replace(/`([^`]+)`/g, "<code>$1</code>");
+    // paragraph-ise on blank lines so answers read as prose, not one block
+    return withInline.split(/\n{2,}/).map((p) => "<p>" + p.replace(/\n/g, "<br>") + "</p>").join("");
   }
 
   const OUT_ICON = '<svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="1.9" stroke-linecap="round" stroke-linejoin="round"><path d="M14 4h6v6M20 4l-8.5 8.5M18 14.5V19a1 1 0 0 1-1 1H5a1 1 0 0 1-1-1V7a1 1 0 0 1 1-1h4.5"/></svg>';
@@ -490,10 +535,153 @@
     return li;
   }
 
+  /* ---- baked live-example answers (captured from the real /ask API) ---- */
+  const EXAMPLES = [
+    {
+      q: "What are the latest developments in AI agents?",
+      answer: "AI is moving beyond static Q&A toward autonomous **agents** that plan, reason and act across multi-step tasks — fixing bugs in codebases, navigating the web, and managing calendars and email.\n\n**SIMA 2** (DeepMind) is a general agent that follows instructions across virtual 3D worlds, shipped with open training data and evaluation methods. Microsoft's **Orchard** is an open framework for scalable agentic AI.",
+      sources: [
+        { title: "SIMA 2: An Agent that Plays, Reasons, and Learns With You in Virtual 3D Worlds", url: "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/", label: "Google DeepMind" },
+        { title: "Orchard: An open framework for scalable agentic AI", url: "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/", label: "Microsoft Research" },
+        { title: "How Claude is accelerating protein design and analytical chemistry", url: "https://www.anthropic.com/research/Claude-accelerates-protein-design", label: "Anthropic · Research" },
+      ],
+    },
+    {
+      q: "What are the latest open-weight model releases?",
+      answer: "**OlmoEarth v1.1** (Allen AI) is a more efficient model family with open weights for Base, Tiny and Nano sizes.\n\nStability AI's **Stable Diffusion 3.5**, optimized with TensorRT, delivers 2× faster image generation and 40% less memory on NVIDIA RTX GPUs. Anthropic also published its position on open-weights models.",
+      sources: [
+        { title: "OlmoEarth v1.1: A more efficient family of models", url: "https://allenai.org/blog/olmoearth-v1-1", label: "Allen AI (AI2)" },
+        { title: "Stable Diffusion 3.5 Optimized with TensorRT: 2× Faster, 40% Less Memory on RTX", url: "https://stability.ai/news-updates/stable-diffusion-35-models-optimized-with-tensorrt-deliver-2x-faster-performance-and-40-less-memory-on-nvidia-rtx-gpus", label: "Stability AI" },
+        { title: "Our position on open-weights models", url: "https://www.anthropic.com/news/position-open-weights-models", label: "Anthropic · News" },
+      ],
+    },
+    {
+      q: "What is NVIDIA building for AI?",
+      answer: "NVIDIA frames its compute not as a chip but as a complete **AI factory platform** — accelerated computing, networking, systems software, AI frameworks and a global developer ecosystem.\n\nIt's building AI infrastructure for companies, industries and nations, spanning cloud AI infrastructure, personal AI and physical AI.",
+      sources: [
+        { title: "NVIDIA AI Factory Compute Is Becoming an Investable Asset Class", url: "https://blogs.nvidia.com/blog/nvidia-ai-factory-compute/", label: "NVIDIA" },
+        { title: "At AI Summit, South Korea Outlines Its AI Future With NVIDIA and Partners", url: "https://blogs.nvidia.com/blog/ai-summit-korea-partners-and-nvidia/", label: "NVIDIA" },
+      ],
+    },
+  ];
+  const demoAsked = $("#demo-asked"), demoAnswer = $("#demo-answer");
+  const demoSourcesList = $("#demo-sources-list"), demoDots = $("#demo-dots");
+  let demoIx = 0, demoTimer = null;
+
+  function paintDemo(i) {
+    const ex = EXAMPLES[i];
+    demoAsked.textContent = ex.q;
+    demoAnswer.innerHTML = safeMarkdown(ex.answer);
+    demoSourcesList.textContent = "";
+    ex.sources.forEach((s) => demoSourcesList.appendChild(sourceRow(s.title, s.url, s.label)));
+    Array.from(demoDots.children).forEach((d, k) => d.setAttribute("aria-selected", k === i ? "true" : "false"));
+    demoAnswer.classList.remove("reveal"); void demoAnswer.offsetWidth; demoAnswer.classList.add("reveal");
+  }
+  function goDemo(i) { demoIx = (i + EXAMPLES.length) % EXAMPLES.length; paintDemo(demoIx); }
+  function stopDemoRotation() { if (demoTimer) { clearInterval(demoTimer); demoTimer = null; } }
+  function startDemoRotation() {
+    if (reduceMotion || demoTimer) return;
+    demoTimer = setInterval(() => goDemo(demoIx + 1), 8000);
+  }
+  EXAMPLES.forEach((ex, i) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "dot-btn"; b.setAttribute("role", "tab");
+    b.setAttribute("aria-label", "Example: " + ex.q);
+    b.addEventListener("click", () => { stopDemoRotation(); goDemo(i); startDemoRotation(); });
+    demoDots.appendChild(b);
+  });
+  paintDemo(0);
+  startDemoRotation();
+  demo.addEventListener("pointerenter", stopDemoRotation);
+  demo.addEventListener("pointerleave", startDemoRotation);
+  demo.addEventListener("focusin", stopDemoRotation);
+
+  /* ---- suggested questions (run a real search) ---- */
+  const SUGGESTIONS = [
+    "What are the latest developments in AI agents?",
+    "What are the newest open-weight model releases?",
+    "What is Google DeepMind working on in science?",
+    "How are labs approaching AI safety?",
+    "What's new in AI for coding?",
+  ];
+  SUGGESTIONS.forEach((text) => {
+    const b = document.createElement("button");
+    b.type = "button"; b.className = "chip";
+    const s = document.createElement("span");
+    s.className = "sparkle"; s.setAttribute("aria-hidden", "true");
+    s.innerHTML = '<svg width="13" height="13" viewBox="0 0 24 24" fill="currentColor"><path d="M12 3c.4 3.4 2.2 5.3 5.6 5.7-3.4.4-5.2 2.3-5.6 5.6-.4-3.3-2.2-5.2-5.6-5.6C9.8 8.3 11.6 6.4 12 3Z"/></svg>';
+    b.append(s, document.createTextNode(text));
+    b.addEventListener("click", () => runQuestion(text));
+    suggest.appendChild(b);
+  });
+
+  /* ---- corpus stats + lab chips ---- */
+  fetch("/stats").then((r) => r.ok ? r.json() : null).then((data) => {
+    if (!data) return;
+    const total = data.articles || 0;
+    const nSites = (data.sites || []).length;
+    if (total) $("#stat-articles").textContent = total + " recent post" + (total === 1 ? "" : "s");
+    if (nSites) $("#stat-sites").textContent = nSites + " research blog" + (nSites === 1 ? "" : "s");
+    if (data.updated) {
+      const d = new Date(data.updated + "T00:00:00");
+      if (!isNaN(d)) {
+        $("#stat-updated").innerHTML = '<span class="dot">·</span><span class="updated">updated ' +
+          d.toLocaleDateString(undefined, { month: "short", day: "numeric" }) + "</span>";
+      }
+    }
+    (data.sites || []).forEach((site) => {
+      labelMap[site.name] = site.label || site.name;
+      const b = document.createElement("button");
+      b.type = "button"; b.className = "lab";
+      const name = document.createElement("span"); name.textContent = site.label || site.name;
+      const c = document.createElement("span"); c.className = "count";
+      c.textContent = site.count; c.setAttribute("aria-label", site.count + " articles");
+      b.append(name, c);
+      b.addEventListener("click", () => browseLab(site.name, site.label || site.name));
+      labs.appendChild(b);
+    });
+  }).catch(() => {});
+
+  /* ---- ask flow ---- */
+  function setBusy(on) { send.classList.toggle("busy", on); send.disabled = on; q.disabled = on; }
+
+  function enterAnswerMode() {
+    stopDemoRotation();
+    hide(demo); hide(askHead);
+  }
+
+  async function runQuestion(text) {
+    const question = (text != null ? text : q.value).trim();
+    if (!question) { q.focus(); return; }
+    q.value = question;
+    enterAnswerMode();
+    hide(errorEl); hide(panel);
+    loadingText.textContent = "Searching 18 labs…";
+    show(loading);
+    setBusy(true);
+    try {
+      const r = await fetch("/ask", {
+        method: "POST",
+        headers: { "Content-Type": "application/json" },
+        body: JSON.stringify({ question }),
+      });
+      let data = null;
+      try { data = await r.json(); } catch (e) {}
+      if (!r.ok) throw new Error((data && data.detail) || ("Request failed (" + r.status + ")"));
+      render(question, data);
+    } catch (err) {
+      hide(loading);
+      errorMsg.textContent = " " + (err && err.message ? err.message : "Could not reach the server.");
+      show(errorEl);
+      errorEl.classList.remove("reveal"); void errorEl.offsetWidth; errorEl.classList.add("reveal");
+    } finally {
+      setBusy(false);
+    }
+  }
+
   function revealPanel() {
     show(panel);
     panel.classList.remove("reveal"); void panel.offsetWidth; panel.classList.add("reveal");
-    panel.scrollIntoView({ behavior: "smooth", block: "nearest" });
   }
 
   function niceDate(d) {
@@ -511,7 +699,7 @@
     const sources = (data && data.sources) || [];
     sourcesList.textContent = "";
     if (sources.length) {
-      sources.forEach((s) => sourcesList.appendChild(sourceRow(s.title, s.url, s.site)));
+      sources.forEach((s) => sourcesList.appendChild(sourceRow(s.title, s.url, labelForSite(s.site))));
       show(sourcesWrap);
     } else {
       hide(sourcesWrap);
@@ -522,6 +710,7 @@
   // A lab chip lists that lab's recent posts (metadata) — never a semantic
   // search, so it can never surface another lab's articles.
   async function browseLab(slug, label) {
+    enterAnswerMode();
     hide(errorEl); hide(panel);
     loadingText.textContent = "Loading recent posts from " + label + "…";
     show(loading);
@@ -547,44 +736,136 @@
 
   form.addEventListener("submit", (e) => { e.preventDefault(); runQuestion(); });
 
-  /* ---- today feed ---- */
+  /* ---- what's new feed ---- */
   async function loadFeed() {
-    const wrap = document.getElementById('today-feed');
-    const empty = document.getElementById('today-empty');
+    const wrap = document.getElementById("today-feed");
+    const empty = document.getElementById("today-empty");
+    wrap.innerHTML = '<div class="feed-skel"><div class="skel s1"></div><div class="skel s3"></div></div>'
+      + '<div class="feed-skel"><div class="skel s2"></div><div class="skel s3"></div></div>';
     try {
-      const res = await fetch('/feed?days=7');
+      const res = await fetch("/feed?days=7");
       const data = await res.json();
-      wrap.innerHTML = '';
+      wrap.innerHTML = "";
       if (!data.groups || !data.groups.length) { empty.hidden = false; return; }
       empty.hidden = true;
       for (const group of data.groups) {
-        const day = document.createElement('div');
-        day.className = 'feed-day';
-        day.textContent = new Date(group.date + 'T00:00:00')
-          .toLocaleDateString(undefined, { weekday: 'long', month: 'short', day: 'numeric' });
+        const day = document.createElement("div");
+        day.className = "feed-day";
+        day.textContent = new Date(group.date + "T00:00:00")
+          .toLocaleDateString(undefined, { weekday: "long", month: "short", day: "numeric" });
         wrap.appendChild(day);
         for (const it of group.items) {
-          const card = document.createElement('article');
-          card.className = 'nugget-card';
-          const label = document.createElement('div');
-          label.className = 'label';
+          const card = document.createElement("article");
+          card.className = "nugget-card";
+          const label = document.createElement("div");
+          label.className = "label";
           label.textContent = it.label || it.site;
-          const h = document.createElement('h3');
+          const h = document.createElement("h3");
           h.textContent = it.title;
-          const p = document.createElement('p');
+          const p = document.createElement("p");
           p.textContent = it.nugget;              // textContent escapes model/source text
-          const a = document.createElement('a');
-          a.href = it.url; a.target = '_blank'; a.rel = 'noopener';
-          a.textContent = 'Read source →';
+          const a = document.createElement("a");
+          a.href = it.url; a.target = "_blank"; a.rel = "noopener";
+          a.textContent = "Read source →";
           card.append(label, h, p, a);
           wrap.appendChild(card);
         }
       }
     } catch (e) {
+      wrap.innerHTML = "";
       empty.hidden = false;
     }
   }
   loadFeed();
+
+  /* ---- guided tour ---- */
+  const TOUR = [
+    { sel: "#q", title: "Ask anything", text: "One question, answered across 18 AI labs — grounded in their real posts, not the open web." },
+    { sel: "#suggest", title: "Not sure where to start?", text: "Tap a suggested question to run a real search and see an answer appear instantly." },
+    { sel: "#demo", title: "Every claim is cited", text: "Answers link straight to the source post, so you can verify each point yourself." },
+    { sel: "#feed-col", title: "Or just browse", text: "“What's new” lists the latest posts from every lab, refreshed automatically each day." },
+    { sel: "#corpus", title: "Eighteen labs, one place", text: "Anthropic, OpenAI, Google DeepMind, Meta, Mistral, NVIDIA and more — tap a lab to see its recent posts." },
+  ];
+  let tourIx = -1, scrim = null, ring = null, pop = null;
+
+  function buildTour() {
+    scrim = document.createElement("div"); scrim.className = "tour-scrim";
+    ring = document.createElement("div"); ring.className = "tour-ring";
+    pop = document.createElement("div"); pop.className = "tour-pop"; pop.setAttribute("role", "dialog"); pop.setAttribute("aria-live", "polite");
+    pop.innerHTML =
+      '<h3 id="tour-title"></h3><p id="tour-text"></p>' +
+      '<div class="tour-foot"><span class="tour-count" id="tour-count"></span>' +
+      '<span class="tour-btns"><button type="button" class="t-back" id="tour-back">Back</button>' +
+      '<button type="button" class="t-next" id="tour-next">Next</button></span></div>';
+    scrim.addEventListener("click", endTour);
+    document.body.append(scrim, ring, pop);
+    pop.querySelector("#tour-back").addEventListener("click", () => step(tourIx - 1));
+    pop.querySelector("#tour-next").addEventListener("click", () => step(tourIx + 1));
+  }
+
+  function positionTour() {
+    const s = TOUR[tourIx]; if (!s) return;
+    const el = document.querySelector(s.sel); if (!el) return;
+    const r = el.getBoundingClientRect();
+    const pad = 8;
+    const top = Math.max(6, r.top - pad), left = Math.max(6, r.left - pad);
+    const w = Math.min(window.innerWidth - 12, r.width + pad * 2);
+    const h = r.height + pad * 2;
+    ring.style.top = top + "px"; ring.style.left = left + "px";
+    ring.style.width = w + "px"; ring.style.height = h + "px";
+    const pw = pop.offsetWidth, ph = pop.offsetHeight, gap = 14;
+    let pTop = r.bottom + gap;
+    if (pTop + ph > window.innerHeight - 10) pTop = Math.max(10, r.top - gap - ph);
+    let pLeft = r.left + r.width / 2 - pw / 2;
+    pLeft = Math.min(Math.max(12, pLeft), window.innerWidth - pw - 12);
+    pop.style.top = pTop + "px"; pop.style.left = pLeft + "px";
+  }
+
+  function step(i) {
+    if (i < 0) i = 0;
+    if (i >= TOUR.length) { endTour(); return; }
+    tourIx = i;
+    const s = TOUR[i];
+    const el = document.querySelector(s.sel);
+    if (!el) { step(i + 1); return; }
+    pop.querySelector("#tour-title").textContent = s.title;
+    pop.querySelector("#tour-text").textContent = s.text;
+    pop.querySelector("#tour-count").textContent = (i + 1) + " of " + TOUR.length;
+    pop.querySelector("#tour-back").style.visibility = i === 0 ? "hidden" : "visible";
+    pop.querySelector("#tour-next").textContent = i === TOUR.length - 1 ? "Done" : "Next";
+    el.scrollIntoView({ behavior: reduceMotion ? "auto" : "smooth", block: "center" });
+    setTimeout(() => requestAnimationFrame(positionTour), reduceMotion ? 0 : 260);
+    pop.querySelector("#tour-next").focus();
+  }
+
+  function startTour() {
+    if (!scrim) buildTour();
+    scrim.hidden = ring.hidden = pop.hidden = false;
+    window.addEventListener("resize", positionTour);
+    window.addEventListener("scroll", positionTour, true);
+    document.addEventListener("keydown", onTourKey);
+    step(0);
+  }
+  function endTour() {
+    if (!scrim) return;
+    scrim.remove(); ring.remove(); pop.remove();
+    scrim = ring = pop = null; tourIx = -1;
+    window.removeEventListener("resize", positionTour);
+    window.removeEventListener("scroll", positionTour, true);
+    document.removeEventListener("keydown", onTourKey);
+    try { localStorage.setItem("frontier-tour-done", "1"); } catch (e) {}
+  }
+  function onTourKey(e) {
+    if (e.key === "Escape") endTour();
+    else if (e.key === "ArrowRight" || e.key === "Enter") { e.preventDefault(); step(tourIx + 1); }
+    else if (e.key === "ArrowLeft") { e.preventDefault(); step(tourIx - 1); }
+  }
+  $("#tour-start").addEventListener("click", startTour);
+
+  // Auto-run once for first-time visitors, after content has had a moment to load.
+  let seenTour = false;
+  try { seenTour = localStorage.getItem("frontier-tour-done") === "1"; } catch (e) {}
+  if (!seenTour) setTimeout(startTour, 900);
 })();
 </script>
 </body>
