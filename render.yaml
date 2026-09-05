@@ -1,0 +1,23 @@
+# Render Blueprint for the blog-rag feed + RAG search.
+# Deploy: Render dashboard -> New -> Blueprint -> pick this repo -> it reads
+# this file. Set the two secret keys below when prompted, then deploy.
+#
+# The vector index (chroma_db, ~71 MB) is gitignored and rebuilt on each deploy
+# by `python ingest.py` from the committed data/articles. Your daily GitHub
+# Action commits fresh data, which auto-redeploys this service, so the live feed
+# and index stay current without a persistent disk.
+services:
+  - type: web
+    name: blog-rag
+    runtime: python
+    plan: free            # spins down when idle (~30-60s cold start), 512 MB RAM; bump to "starter" if it OOMs
+    autoDeploy: true       # redeploy on every push to the connected branch (incl. the daily data commit)
+    buildCommand: "pip install -r requirements.txt && python ingest.py"
+    startCommand: "uvicorn api:app --host 0.0.0.0 --port $PORT"
+    envVars:
+      - key: PYTHON_VERSION
+        value: "3.12.14"
+      - key: VOYAGE_API_KEY      # needed at BUILD (ingest embeds) and RUNTIME (query embed)
+        sync: false              # set as a secret in the Render dashboard, not stored here
+      - key: ANTHROPIC_API_KEY   # runtime: the /ask answer LLM
+        sync: false
