@@ -78,9 +78,34 @@ def looks_like_boilerplate(text: str) -> bool:
     return sum(m in t for m in _JUNK_BODY_MARKERS) >= 2
 
 
+def _strip_junk(html):
+    """Remove cookie-consent / script / style subtrees so their text (esp.
+    OneTrust's cookie <p> tags on NVIDIA) can't be mistaken for the article."""
+    import lxml.html as LH
+    try:
+        tree = LH.fromstring(html)
+    except Exception:  # noqa: BLE001 - malformed HTML: extract from the original
+        return html
+
+    def lc(attr):
+        return (f"translate(@{attr},'ABCDEFGHIJKLMNOPQRSTUVWXYZ',"
+                "'abcdefghijklmnopqrstuvwxyz')")
+
+    xpaths = ["//script", "//style"]
+    for kw in ("onetrust", "cookie", "consent"):
+        xpaths.append(f"//*[contains({lc('id')},'{kw}')]")
+        xpaths.append(f"//*[contains({lc('class')},'{kw}')]")
+    for xp in xpaths:
+        for el in tree.xpath(xp):
+            parent = el.getparent()
+            if parent is not None:
+                parent.remove(el)
+    return LH.tostring(tree, encoding="unicode")
+
+
 def extract_article(html, url):
     from scrapling.parser import Selector
-    sel = Selector(html)
+    sel = Selector(_strip_junk(html))
 
     title = (sel.css("article h1::text").get()
              or sel.css("h1::text").get()

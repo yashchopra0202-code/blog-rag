@@ -47,6 +47,20 @@ def test_extract_falls_back_to_full_text_when_body_is_not_in_p():
     assert "lives in divs and spans" in out["body"]
     assert "second block of genuine" in out["body"]
 
+def test_extract_strips_cookie_consent_then_recovers_body():
+    # NVIDIA-style: a OneTrust cookie subtree full of <p> tags, real body in a <div>.
+    html = (
+        '<html><body>'
+        '<div id="onetrust-consent-sdk"><p>These cookies are required and cannot be '
+        'turned off.</p><p>Performance cookies measure visits to the website.</p></div>'
+        '<main><h1>Title</h1><div>The genuine article body about a new chip lives here '
+        'in a div with plenty of real sentences describing the announcement and why it '
+        'matters to the industry.</div></main></body></html>'
+    )
+    out = scraper.extract_article(html, "https://blogs.nvidia.com/blog/x/")
+    assert "genuine article body" in out["body"]
+    assert "cookies" not in out["body"].lower()
+
 def test_looks_like_boilerplate_detects_cookie_consent():
     cookie = ("Required Cookies. These cookies enable core functionality and cannot be "
               "turned off. Performance Cookies measure visits.")
