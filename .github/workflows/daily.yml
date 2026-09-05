@@ -60,11 +60,21 @@ jobs:
           DIGEST_FORCE: ${{ github.event.inputs.force }}
           FEED_URL: ${{ secrets.FEED_URL }}   # live Render URL; empty -> digest.py falls back to localhost
         run: .venv/bin/python digest.py
+      - name: Telegram broadcast
+        id: telegram
+        continue-on-error: true
+        env:
+          TELEGRAM_BOT_TOKEN: ${{ secrets.TELEGRAM_BOT_TOKEN }}
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+          FEED_URL: ${{ secrets.FEED_URL }}
+          DIGEST_FORCE: ${{ github.event.inputs.force }}
+        run: .venv/bin/python telegram_digest.py
       - name: Commit refreshed data
         run: |
           git config user.name "yashchopra0202-code"
           git config user.email "yashchopra0202@gmail.com"
-          git add data/articles data/manifest.json data/digest_state.json
+          git add data/articles data/manifest.json data/digest_state.json data/telegram_state.json
           git diff --cached --quiet || git commit -m "chore: daily nugget refresh [skip ci]"
           git push
       - name: Health check & alert
