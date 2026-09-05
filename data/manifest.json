@@ -170,96 +170,6 @@
     "site": "ai2",
     "title": "TutorMoments: Do AI tutors know when to help and when to hold back?"
   },
-  "https://blogs.nvidia.com/blog/ai-summit-korea-partners-and-nvidia/": {
-    "date": "2026-07-24",
-    "file": "data/articles/nvidia__ai-summit-korea-partners-and-nvidia.md",
-    "nugget": "I don't see a blog post included in your message\u2014only a header with share options and dates \"October 20-22\". Could you please paste the actual content of the AI blog post you'd like me to summarize?",
-    "nugget_at": "2026-09-04T21:20:00+00:00",
-    "scraped_at": "2026-09-04T21:18:40+00:00",
-    "site": "nvidia",
-    "title": "At AI Summit, South Korea Outlines Its AI Future With NVIDIA and Partners"
-  },
-  "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/": {
-    "date": "2026-08-08",
-    "file": "data/articles/nvidia__firebird-ai-factory-armenia-blackwell-rubin-dsx.md",
-    "nugget": "Firebird, an AI infrastructure company, announced plans to build approximately 2 gigawatts of computing capacity globally over the next two years, with a particular focus on expanding into frontier markets. This matters because AI companies are racing to secure massive computing infrastructure to support increasingly powerful models, and Firebird's expansion into underserved regions could reshape how AI capabilities are distributed globally while potentially offering cost advantages in emerging economies.",
-    "nugget_at": "2026-09-04T21:20:02+00:00",
-    "scraped_at": "2026-09-04T21:18:11+00:00",
-    "site": "nvidia",
-    "title": "Firebird Launches CIS Region\u2019s Largest AI Factory in Armenia"
-  },
-  "https://blogs.nvidia.com/blog/gamescom-rtx-spark-pc-games-technology/": {
-    "date": "2026-08-25",
-    "file": "data/articles/nvidia__gamescom-rtx-spark-pc-games-technology.md",
-    "nugget": "I don't see a blog post included in your message - just a header showing a date range (October 20-22) and sharing options. Could you please paste the actual content of the AI blog post you'd like me to summarize? Once you provide the full text, I'll be happy to create a 2-3 sentence summary for your reading digest.",
-    "nugget_at": "2026-09-04T21:20:03+00:00",
-    "scraped_at": "2026-09-04T21:19:07+00:00",
-    "site": "nvidia",
-    "title": "Leading Publishers Bring Blockbuster PC Games and Technology to NVIDIA RTX Spark"
-  },
-  "https://blogs.nvidia.com/blog/geforce-now-thursday-gamescom-2026/": {
-    "date": "2026-08-27",
-    "file": "data/articles/nvidia__geforce-now-thursday-gamescom-2026.md",
-    "nugget": "I don't see a blog post in your message - you've only provided what appears to be sharing options and a date range (October 20-22). Could you please paste the actual content of the AI blog post you'd like me to summarize?",
-    "nugget_at": "2026-09-04T21:20:05+00:00",
-    "scraped_at": "2026-09-04T21:18:56+00:00",
-    "site": "nvidia",
-    "title": "GeForce NOW Gives Gamers More Ways to Play at Gamescom 2026"
-  },
-  "https://blogs.nvidia.com/blog/geforce-now-thursday-september-2026-games-list/": {
-    "date": "2026-09-03",
-    "file": "data/articles/nvidia__geforce-now-thursday-september-2026-games-list.md",
-    "nugget": "I don't see a blog post included in your message - you've provided a header with social sharing options and a date range (October 20-22), but no actual content to summarize. Could you please paste the full text of the AI blog post you'd like me to summarize?",
-    "nugget_at": "2026-09-04T21:20:06+00:00",
-    "scraped_at": "2026-09-04T21:18:51+00:00",
-    "site": "nvidia",
-    "title": "\u2018NBA 2K27\u2019 With NVIDIA DLSS 5 Leads 28 New Games Coming to GeForce NOW"
-  },
-  "https://blogs.nvidia.com/blog/local-ai-ifa-next-gen-agents-nv-pair-rtx-spark/": {
-    "date": "2026-09-03",
-    "file": "data/articles/nvidia__local-ai-ifa-next-gen-agents-nv-pair-rtx-spark.md",
-    "nugget": "I don't see a blog post in your message to summarize. You've shared what appears to be navigation/sharing elements (social media buttons and a date range), but no actual article content. Could you please paste the full blog post text that you'd like me to summarize?",
-    "nugget_at": "2026-09-04T21:20:09+00:00",
-    "scraped_at": "2026-09-04T21:17:28+00:00",
-    "site": "nvidia",
-    "title": "Sparks Fly: NVIDIA Accelerates Local AI at IFA 2026"
-  },
-  "https://blogs.nvidia.com/blog/local-ai-open-source-models-agents-nemotron/": {
-    "date": "2026-08-11",
-    "file": "data/articles/nvidia__local-ai-open-source-models-agents-nemotron.md",
-    "nugget": "I'm unable to summarize the blog post because the content you provided only contains navigation elements and a date header, not the actual article text. To create a meaningful summary for your reading digest, I would need the full content of the blog post about NVIDIA Sync Resource Monitor. Could you please share the complete article text?",
-    "nugget_at": "2026-09-04T21:20:11+00:00",
-    "scraped_at": "2026-09-04T21:17:45+00:00",
-    "site": "nvidia",
-    "title": "NVIDIA and Local AI Community Fuel Open Source Models and Intelligent Agents"
-  },
-  "https://blogs.nvidia.com/blog/medical-physics-simulation-open-source/": {
-    "date": "2026-07-22",
-    "file": "data/articles/nvidia__medical-physics-simulation-open-source.md",
-    "nugget": "I'd be happy to help summarize this AI blog post, but the text you've provided appears to be incomplete or corrupted. It only contains navigation elements and partial headers (like \"CMR Surgical,\" \"Cambridge Consultants,\" \"Johnson & Johnson MedTech\") along with a date reference, but no actual article content describing what happened or the main points discussed. Could you please provide the full text of the blog post so I can create an accurate 2-3 sentence summary?",
-    "nugget_at": "2026-09-04T21:20:13+00:00",
-    "scraped_at": "2026-09-04T21:18:45+00:00",
-    "site": "nvidia",
-    "title": "NVIDIA Open Sources First GPU-Accelerated Medical Physics Simulation Framework"
-  },
-  "https://blogs.nvidia.com/blog/nemotron-lightning-switchyard-rtx-dgx/": {
-    "date": "2026-08-11",
-    "file": "data/articles/nvidia__nemotron-lightning-switchyard-rtx-dgx.md",
-    "nugget": "I don't see a blog post to summarize in your message. You've shared what appears to be a header with social sharing options and a date range (October 20-22), but the actual content of the AI blog post is missing. Could you please provide the full text of the article you'd like me to summarize?",
-    "nugget_at": "2026-09-04T21:20:14+00:00",
-    "scraped_at": "2026-09-04T21:18:07+00:00",
-    "site": "nvidia",
-    "title": "NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI"
-  },
-  "https://blogs.nvidia.com/blog/nsf-state-regional-ai-hub-program/": {
-    "date": "2026-08-04",
-    "file": "data/articles/nvidia__nsf-state-regional-ai-hub-program.md",
-    "nugget": "I don't have a blog post to summarize. You've provided only a heading \"Share This Article\" with social media options and a date range \"October 20-22,\" but no actual article content. Please share the full text of the blog post you'd like me to summarize, and I'll provide a 2-3 sentence summary explaining what happened and why it matters.",
-    "nugget_at": "2026-09-04T21:20:16+00:00",
-    "scraped_at": "2026-09-04T21:18:27+00:00",
-    "site": "nvidia",
-    "title": "NVIDIA Joins NSF State and Regional AI Hubs Program to Expand AI Research and Education Across the US"
-  },
   "https://blogs.nvidia.com/blog/nvidia-ai-factory-compute/": {
     "date": "2026-08-12",
     "file": "data/articles/nvidia__nvidia-ai-factory-compute.md",
@@ -269,15 +179,6 @@
     "site": "nvidia",
     "title": "NVIDIA AI Factory Compute Is Becoming an Investable Asset Class"
   },
-  "https://blogs.nvidia.com/blog/nvidia-crowdstrike-fal-con-2026/": {
-    "date": "2026-09-01",
-    "file": "data/articles/nvidia__nvidia-crowdstrike-fal-con-2026.md",
-    "nugget": "I don't see a blog post in your message to summarize. You've provided a header with sharing options and a date range (October 20-22), but the actual content of the AI blog post is missing. Could you please share the full text of the article you'd like me to summarize?",
-    "nugget_at": "2026-09-04T21:20:20+00:00",
-    "scraped_at": "2026-09-04T21:17:33+00:00",
-    "site": "nvidia",
-    "title": "NVIDIA and CrowdStrike Strengthen Agentic Cybersecurity Frontier"
-  },
   "https://blogs.nvidia.com/blog/nvidia-to-acquire-hugging-face/": {
     "date": "2026-09-03",
     "file": "data/articles/nvidia__nvidia-to-acquire-hugging-face.md",
@@ -286,24 +187,6 @@
     "scraped_at": "2026-09-04T21:17:48+00:00",
     "site": "nvidia",
     "title": "NVIDIA to Acquire Hugging Face"
-  },
-  "https://blogs.nvidia.com/blog/nvlink-fusion-nvhbm-custom-high-bandwidth-memory/": {
-    "date": "2026-08-26",
-    "file": "data/articles/nvidia__nvlink-fusion-nvhbm-custom-high-bandwidth-memory.md",
-    "nugget": "I'm unable to summarize the blog post because only the header information and date range (October 20-22) were provided, not the actual content of the article. To create an accurate summary for your daily reading digest, I would need the full text of the blog post itself, including its title and body content.",
-    "nugget_at": "2026-09-04T21:20:24+00:00",
-    "scraped_at": "2026-09-04T21:19:01+00:00",
-    "site": "nvidia",
-    "title": "NVIDIA NVLink Fusion Expands With NVHBM Custom High-Bandwidth Memory"
-  },
-  "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/": {
-    "date": "2026-08-04",
-    "file": "data/articles/nvidia__open-secure-ai-alliance-contributions.md",
-    "nugget": "Mistral released Mistral Large 2, its most advanced AI model to date, as open weights under the Apache 2.0 license, making it freely available for commercial and research use. This move matters because it democratizes access to state-of-the-art AI capabilities, enabling developers and organizations to build and deploy powerful AI applications without vendor lock-in or licensing restrictions, while intensifying competition in the AI market by offering a credible open alternative to proprietary models from larger tech companies.",
-    "nugget_at": "2026-09-04T21:20:26+00:00",
-    "scraped_at": "2026-09-04T21:18:31+00:00",
-    "site": "nvidia",
-    "title": "AI Leaders Propose SAFE Guidelines for Cybersecurity Transparency"
   },
   "https://blogs.nvidia.com/blog/open-secure-ai-alliance/": {
     "date": "2026-07-27",
@@ -322,15 +205,6 @@
     "scraped_at": "2026-09-04T21:18:21+00:00",
     "site": "nvidia",
     "title": "Into the Omniverse: How Open World Models Push the Frontier of Physical AI"
-  },
-  "https://blogs.nvidia.com/blog/ugm-indosat-nvidia-ai-technology-center/": {
-    "date": "2026-08-14",
-    "file": "data/articles/nvidia__ugm-indosat-nvidia-ai-technology-center.md",
-    "nugget": "I don't see a blog post to summarize in your message. You've included sharing buttons and a date range (October 20-22), but the actual content of the article isn't provided. Could you please paste the full text of the AI blog post you'd like me to summarize?",
-    "nugget_at": "2026-09-04T21:20:31+00:00",
-    "scraped_at": "2026-09-04T21:17:40+00:00",
-    "site": "nvidia",
-    "title": "Universitas Gadjah Mada, Indosat and NVIDIA Open Indonesia\u2019s First University AI Center to Develop Local AI Talent"
   },
   "https://cohere.com/blog/a-day-in-the-life-of-a-wealth-manager-with-and-without-ai": {
     "date": "",
@@ -575,6 +449,33 @@
     "site": "deepmind",
     "title": "AlphaGenome: AI for better understanding the genome"
   },
+  "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/": {
+    "date": "2026-07-14",
+    "file": "data/articles/deepmind__empowering-indias-next-generation-of-innovators-with-atl-saathi.md",
+    "nugget": "Google has launched ATL Saathi, a Gemini-powered AI assistant designed to support educators at India's Atal Tinkering Labs by providing 24/7 planning, training resources, and project generation in multiple languages. This matters because it aims to reduce teachers' administrative burden and enable them to focus on mentoring over 1.1 crore students in robotics, coding, and innovation across India, while making high-quality STEM education more scalable and accessible in local languages.",
+    "nugget_at": "2026-09-05T05:12:14+00:00",
+    "scraped_at": "2026-09-05T05:07:38+00:00",
+    "site": "deepmind",
+    "title": "Empowering India\u2019s next generation of innovators with ATL Saathi"
+  },
+  "https://deepmind.google/blog/from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games/": {
+    "date": "2026-08-21",
+    "file": "data/articles/deepmind__from-atari-to-eve-online-building-on-15-years-of-ai-research-in-games.md",
+    "nugget": "Google DeepMind is partnering with game developers, particularly the creators of EVE Online, to develop advanced AI agents like SIMA that can learn and play complex games using only visual input and natural language instructions, building on decades of AI breakthroughs achieved through gaming research. This matters because creating general-purpose AI agents that understand game worlds could revolutionize both game development\u2014enabling smarter NPCs and robust testing\u2014and advance frontier AI capabilities that might eventually solve real-world problems through the same learning mechanisms that master complex virtual environments.",
+    "nugget_at": "2026-09-05T05:12:16+00:00",
+    "scraped_at": "2026-09-05T05:07:09+00:00",
+    "site": "deepmind",
+    "title": "From Atari to EVE Online: Building on 15 Years of AI Research in Games"
+  },
+  "https://deepmind.google/blog/gemini-robotics-2-brings-whole-body-intelligence-to-robots/": {
+    "date": "2026-07-30",
+    "file": "data/articles/deepmind__gemini-robotics-2-brings-whole-body-intelligence-to-robots.md",
+    "nugget": "Google has released Gemini Robotics 2, an AI model that enables robots to perform complex physical tasks with whole-body coordination, fine dexterity, and multi-robot collaboration across different robot designs. This matters because it represents a major step toward general-purpose robots that can adapt to unpredictable real-world environments, learn new tasks quickly, and work alongside humans safely\u2014moving beyond the current limitations of pre-programmed machines that can only handle narrow, repetitive tasks.",
+    "nugget_at": "2026-09-05T05:12:19+00:00",
+    "scraped_at": "2026-09-05T05:07:25+00:00",
+    "site": "deepmind",
+    "title": "Gemini Robotics 2 brings whole body intelligence to robots"
+  },
   "https://deepmind.google/blog/introducing-gemini-3-5-flash-cyber/": {
     "date": "2026-07-21",
     "file": "data/articles/deepmind__introducing-gemini-3-5-flash-cyber.md",
@@ -592,6 +493,15 @@
     "scraped_at": "2026-09-04T13:17:53+00:00",
     "site": "deepmind",
     "title": "Investing in multi-agent AI safety research"
+  },
+  "https://deepmind.google/blog/our-approach-to-bioresilience/": {
+    "date": "2026-07-16",
+    "file": "data/articles/deepmind__our-approach-to-bioresilience.md",
+    "nugget": "Google DeepMind and Isomorphic Labs announced a partnership to develop AI safety measures and tools for biosecurity, combining efforts to prevent misuse of AI models while making them available to trusted partners in government and research to detect and respond to disease outbreaks more quickly. The initiative matters because AI breakthroughs like AlphaFold can dramatically accelerate vaccine design and pathogen detection, but require robust safeguards to prevent malicious actors from weaponizing these same capabilities, making responsible AI deployment critical for pandemic preparedness.",
+    "nugget_at": "2026-09-05T05:12:21+00:00",
+    "scraped_at": "2026-09-05T05:07:31+00:00",
+    "site": "deepmind",
+    "title": "Our approach to bioresilience"
   },
   "https://deepmind.google/blog/piloting-the-worlds-first-double-blind-ai-evaluations/": {
     "date": "2026-08-27",
@@ -620,6 +530,33 @@
     "site": "deepmind",
     "title": "Securing the future of AI agents"
   },
+  "https://deepmind.google/blog/sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds/": {
+    "date": "2025-11-13",
+    "file": "data/articles/deepmind__sima-2-an-agent-that-plays-reasons-and-learns-with-you-in-virtual-3d-worlds.md",
+    "nugget": "Google has unveiled SIMA 2, an upgraded AI agent that builds on its predecessor by integrating advanced reasoning capabilities to move beyond simple instruction-following into interactive problem-solving and self-improvement. Unlike the original SIMA, which could only follow basic commands across video games, SIMA 2 can now understand complex goals, reason about its actions, converse with users, and adapt to entirely new environments it has never encountered before. This advancement represents a significant milestone toward artificial general intelligence with potential applications for robotics and embodied AI systems.",
+    "nugget_at": "2026-09-05T05:12:23+00:00",
+    "scraped_at": "2026-09-05T05:07:02+00:00",
+    "site": "deepmind",
+    "title": "SIMA 2: An Agent that Plays, Reasons, and Learns With You in Virtual 3D Worlds"
+  },
+  "https://deepmind.google/blog/unlocking-uk-house-building-with-ai-accelerated-planning/": {
+    "date": "2026-06-16",
+    "file": "data/articles/deepmind__unlocking-uk-house-building-with-ai-accelerated-planning.md",
+    "nugget": "Google DeepMind is partnering with the UK government to develop an AI-powered planning assistant built with Gemini that aims to cut the time planning officers spend processing homeowner applications in half, allowing them to focus on complex cases instead of routine paperwork. The tool, being tested in Barnet, Camden, and Dorset before rolling out nationally in 2027, will automate data extraction and preliminary analysis while keeping planning officers as final decision-makers with full audit trails. This matters because it could significantly accelerate the UK's goal to build 1.5 million new homes by 2029 by removing administrative bottlenecks that currently slow down the processing of the nearly 70% of applications that are straightforward cases like extensions and loft conversions.",
+    "nugget_at": "2026-09-05T05:12:26+00:00",
+    "scraped_at": "2026-09-05T05:07:43+00:00",
+    "site": "deepmind",
+    "title": "Unlocking UK house-building with AI-accelerated planning"
+  },
+  "https://deepmind.google/blog/weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones/": {
+    "date": "2026-08-06",
+    "file": "data/articles/deepmind__weathernext-ai-model-achieves-breakthrough-in-forecasting-cyclones.md",
+    "nugget": "Google DeepMind's WeatherNext AI model can now predict cyclone tracks, intensity, and wind structure with unprecedented accuracy, providing an extra day of warning compared to previous forecasting methods\u2014equivalent to a decade of meteorological progress. The team has open-sourced the model to empower meteorological agencies and researchers worldwide, and it's already proven its value by helping predict rapid intensification during the 2025 hurricane season. This matters because cyclones kill over 700,000 people and cause $1.4 trillion in economic losses globally every 50 years, so even one additional day of accurate warning can save lives and give communities critical time to prepare.",
+    "nugget_at": "2026-09-05T05:12:29+00:00",
+    "scraped_at": "2026-09-05T05:07:16+00:00",
+    "site": "deepmind",
+    "title": "WeatherNext: AI model achieves breakthrough in forecasting cyclones"
+  },
   "https://huggingface.co/blog/asr-benchmark-optimization": {
     "date": "2026-06-10",
     "file": "data/articles/huggingface__asr-benchmark-optimization.md",
@@ -628,6 +565,15 @@
     "scraped_at": "2026-09-04T13:20:29+00:00",
     "site": "huggingface",
     "title": "https://huggingface.co/blog/asr-benchmark-optimization"
+  },
+  "https://huggingface.co/blog/funes": {
+    "date": "2026-09-03",
+    "file": "data/articles/huggingface__funes.md",
+    "nugget": "A new tool called funes provides a local memory system for coding agents by indexing and retrieving their session logs, allowing agents to recall past decisions, rationale, and findings without losing context across long projects. This matters because it solves the problem of context bloat in long agent sessions\u2014funes-enhanced recall proved 4-8x cheaper than alternative approaches like session compaction or handoffs, and the shared memories can follow your work across different machines and agent platforms.",
+    "nugget_at": "2026-09-05T05:12:31+00:00",
+    "scraped_at": "2026-09-05T05:08:07+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/funes"
   },
   "https://huggingface.co/blog/gradio-workflow-guide": {
     "date": "2025-07-08",
@@ -638,23 +584,23 @@
     "site": "huggingface",
     "title": "https://huggingface.co/blog/gradio-workflow-guide"
   },
-  "https://huggingface.co/blog/open-asr-leaderboard-global-south": {
-    "date": "2026-04-07",
-    "file": "data/articles/huggingface__open-asr-leaderboard-global-south.md",
-    "nugget": "I don't see a blog post provided in your message. You've included a title \"Explore ASR model performance across datasets\" but not the actual content of the post. Could you please share the full blog post text so I can summarize it for your daily reading digest?",
-    "nugget_at": "2026-09-04T21:21:56+00:00",
-    "scraped_at": "2026-09-04T13:20:21+00:00",
+  "https://huggingface.co/blog/grpo-with-trl-ifstruct": {
+    "date": "2026-08-05",
+    "file": "data/articles/huggingface__grpo-with-trl-ifstruct.md",
+    "nugget": "A blog post demonstrates how to fine-tune a small 350M parameter language model to reliably output structured data in valid JSON and YAML formats using a technique called GRPO training. This matters because while LLMs are increasingly used in production systems that require predictable, parseable output, most models struggle with schema compliance, and this approach shows that even modest fine-tuning can dramatically improve a small model's structured output reliability \u2014 boosting JSON pass rates from 22.6% to 29.7% with just 500 training samples.",
+    "nugget_at": "2026-09-05T05:12:33+00:00",
+    "scraped_at": "2026-09-05T05:08:05+00:00",
     "site": "huggingface",
-    "title": "https://huggingface.co/blog/open-asr-leaderboard-global-south"
+    "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps"
   },
-  "https://huggingface.co/blog/pwc-search": {
-    "date": "2026-04-20",
-    "file": "data/articles/huggingface__pwc-search.md",
-    "nugget": "I don't see any blog post content provided for me to summarize. Could you please share the actual text of the blog post about the Embedding Leaderboard? Once you provide the full content, I'll be happy to create a 2-3 sentence summary following your formatting requirements.",
-    "nugget_at": "2026-09-04T21:21:57+00:00",
-    "scraped_at": "2026-09-04T13:20:27+00:00",
+  "https://huggingface.co/blog/train-multi-vector-encoder": {
+    "date": "2025-07-04",
+    "file": "data/articles/huggingface__train-multi-vector-encoder.md",
+    "nugget": "This blog post provides a comprehensive guide to finetuning multi-vector retrieval models, breaking down the essential components like datasets, loss functions, and training procedures, with practical examples showing how to build domain-specific models on a single consumer GPU. It matters because multi-vector models preserve fine-grained token-level matching that outperforms dense embeddings on specialized domains, and the author demonstrates that a model finetuned for medical retrieval in 14.5 hours significantly outperforms all existing general-purpose retrieval models, showing that custom domain adaptation is both practical and highly effective.",
+    "nugget_at": "2026-09-05T05:12:36+00:00",
+    "scraped_at": "2026-09-05T05:08:11+00:00",
     "site": "huggingface",
-    "title": "https://huggingface.co/blog/pwc-search"
+    "title": "https://huggingface.co/blog/train-multi-vector-encoder"
   },
   "https://huggingface.co/blog/train-to-paint-with-code": {
     "date": "2026-09-03",
@@ -890,87 +836,6 @@
     "site": "mistral",
     "title": "Workflows for work that runs the business"
   },
-  "https://openai.com/index/ai-native-company-workflows/": {
-    "date": "2026-08-25",
-    "file": "data/articles/openai-index__ai-native-company-workflows.md",
-    "nugget": "AI agents are now being deployed by companies like Basis, Clay, and Exa Labs to handle customer onboarding, account management, and developer integrations, demonstrating practical applications of autonomous AI in business workflows. This matters because it provides a blueprint for enterprise leaders looking to implement AI agents, showing that autonomous systems can successfully manage customer-facing and operational tasks that traditionally required human oversight. The success of these companies suggests that AI agents are moving beyond experimental proof-of-concepts into reliable business tools that can deliver measurable value in real customer scenarios.",
-    "nugget_at": "2026-09-04T21:23:06+00:00",
-    "scraped_at": "2026-09-04T13:13:21+00:00",
-    "site": "openai-index",
-    "title": "How AI-native companies turn workflows into operating capability"
-  },
-  "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": {
-    "date": "2026-08-31",
-    "file": "data/articles/openai-index__chatgpt-connects-health-records-and-healthcare-sources.md",
-    "nugget": "ChatGPT for Healthcare now includes a new Epic integration and Healthcare Public Data plugin that allow medical teams to review authorized patient information and access structured data from official sources directly within the platform. This matters because it streamlines workflows for healthcare professionals by consolidating patient context and reliable medical data in one tool, potentially reducing time spent switching between systems while maintaining proper data authorization and compliance.",
-    "nugget_at": "2026-09-04T21:23:08+00:00",
-    "scraped_at": "2026-09-04T13:13:31+00:00",
-    "site": "openai-index",
-    "title": "Healthcare organizations can now connect EHR and additional industry data to ChatGPT"
-  },
-  "https://openai.com/index/chatgpt-for-academic-researchers/": {
-    "date": "2026-06-11",
-    "file": "data/articles/openai-research__chatgpt-for-academic-researchers.md",
-    "nugget": "OpenAI announced it is providing free access to its frontier AI models and tools to 100,000 scientists, mathematicians, and engineers. This matters because it democratizes access to advanced AI capabilities for researchers who might otherwise lack resources, potentially accelerating scientific breakthroughs and innovation across multiple disciplines while expanding the real-world testing ground for frontier AI systems.",
-    "nugget_at": "2026-09-04T21:23:10+00:00",
-    "scraped_at": "2026-09-04T13:12:23+00:00",
-    "site": "openai-research",
-    "title": "Accelerating scientific discovery with ChatGPT for Academic Researchers"
-  },
-  "https://openai.com/index/daybreak-for-frontline-defenders/": {
-    "date": "2026-09-01",
-    "file": "data/articles/openai-index__daybreak-for-frontline-defenders.md",
-    "nugget": "OpenAI announced a $1 billion commitment to provide subsidized access to its Daybreak AI system, along with training, technical support, and partnerships for frontline defenders protecting critical infrastructure. This matters because it aims to strengthen cybersecurity and resilience of essential services that millions of people depend on daily, while potentially expanding the real-world impact of AI technology beyond commercial applications.",
-    "nugget_at": "2026-09-04T21:23:11+00:00",
-    "scraped_at": "2026-09-04T13:13:10+00:00",
-    "site": "openai-index",
-    "title": "Daybreak for Frontline Defenders: $1B to protect essential services"
-  },
-  "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/": {
-    "date": "2026-09-01",
-    "file": "data/articles/openai-index__expanding-access-to-ai-with-chatgpt-ads.md",
-    "nugget": "I don't have access to any blog post or article to summarize. You've provided a date and headline about ChatGPT Ads reaching $1 billion in revenue, but no actual post content that I could read and summarize.\n\nIf you'd like me to summarize a blog post, please share the full text and I'll be happy to create a 2-3 sentence summary in the format you requested.",
-    "nugget_at": "2026-09-04T21:23:13+00:00",
-    "scraped_at": "2026-09-04T13:13:41+00:00",
-    "site": "openai-index",
-    "title": "A milestone in expanding access to AI"
-  },
-  "https://openai.com/index/gpt-5-6/": {
-    "date": "2026-09-01",
-    "file": "data/articles/openai-research__gpt-5-6.md",
-    "nugget": "I can't summarize this post because what you've shared appears to be incomplete. The text only contains a header date, some marketing tagline about token efficiency and model capabilities, and a headline indicating there's an \"OpenAI's latest model\" to learn about, but the actual content describing the model or what happened is missing. To provide an accurate summary for your digest, I'd need the full article text.",
-    "nugget_at": "2026-09-04T21:23:15+00:00",
-    "scraped_at": "2026-09-04T13:12:39+00:00",
-    "site": "openai-research",
-    "title": "GPT\u20115.6: Frontier intelligence that scales with your ambition"
-  },
-  "https://openai.com/index/gpt-6-astra/": {
-    "date": "",
-    "file": "data/articles/openai-research__gpt-6-astra.md",
-    "nugget": "I don't have any blog post content to summarize. The text you provided appears to be an error message rather than an article. Please share the actual blog post you'd like me to summarize, and I'll be happy to condense it into 2-3 sentences for your daily digest.",
-    "nugget_at": "2026-09-04T21:23:16+00:00",
-    "scraped_at": "2026-09-04T13:12:47+00:00",
-    "site": "openai-research",
-    "title": "This page couldn\u2019t load"
-  },
-  "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/": {
-    "date": "2026-08-26",
-    "file": "data/articles/openai-research__how-two-settings-tripled-our-arc-agi-3-scores.md",
-    "nugget": "I appreciate you wanting me to summarize a blog post, but I don't see any actual post content provided in your message - only a date (July 29, 2026). Could you please share the text of the AI blog post you'd like me to summarize? Once you provide the article content, I'll be happy to create a 2-3 sentence summary following your requested format.",
-    "nugget_at": "2026-09-04T21:23:18+00:00",
-    "scraped_at": "2026-09-04T13:12:18+00:00",
-    "site": "openai-research",
-    "title": "How enabling two settings tripled our scores on the ARC-AGI-3 benchmark"
-  },
-  "https://openai.com/index/hugging-face-incident-and-the-road-ahead/": {
-    "date": "2026-05-12",
-    "file": "data/articles/openai-research__hugging-face-incident-and-the-road-ahead.md",
-    "nugget": "I don't see any blog post content in your message to summarize. You've only provided a date (August 26, 2026) but no actual article text, headline, or link. Could you please share the full blog post you'd like me to summarize for your daily reading digest?",
-    "nugget_at": "2026-09-04T21:23:19+00:00",
-    "scraped_at": "2026-09-04T13:12:02+00:00",
-    "site": "openai-research",
-    "title": "The Hugging Face incident and the road ahead"
-  },
   "https://openai.com/index/introducing-gpt-5-4/": {
     "date": "2026-09-01",
     "file": "data/articles/openai-research__introducing-gpt-5-4.md",
@@ -988,69 +853,6 @@
     "scraped_at": "2026-09-04T13:12:53+00:00",
     "site": "openai-research",
     "title": "Introducing GPT\u20115.5"
-  },
-  "https://openai.com/index/our-decision-on-cursor-following-its-acquisition-by-spacex/": {
-    "date": "2026-08-31",
-    "file": "data/articles/openai-index__our-decision-on-cursor-following-its-acquisition-by-spacex.md",
-    "nugget": "I don't see a blog post included in your message to summarize. You've provided a date (August 28, 2026) but no actual content. Could you please paste the full text of the AI blog post you'd like me to summarize for your reading digest?",
-    "nugget_at": "2026-09-04T21:23:26+00:00",
-    "scraped_at": "2026-09-04T13:13:47+00:00",
-    "site": "openai-index",
-    "title": "Our decision on Cursor following its acquisition by SpaceX"
-  },
-  "https://openai.com/index/pacing-model-development-cyber-capabilities/": {
-    "date": "2026-08-31",
-    "file": "data/articles/openai-research__pacing-model-development-cyber-capabilities.md",
-    "nugget": "I don't see any blog post content in your message to summarize. You've provided only a date (August 18, 2026) without the actual article text. Could you please share the blog post content you'd like me to summarize?",
-    "nugget_at": "2026-09-04T21:23:27+00:00",
-    "scraped_at": "2026-09-04T13:12:06+00:00",
-    "site": "openai-research",
-    "title": "Pacing model development in an era of cyber-critical capabilities"
-  },
-  "https://openai.com/index/path-to-astra/": {
-    "date": "2026-09-03",
-    "file": "data/articles/openai-index__path-to-astra.md",
-    "nugget": "I don't see the blog post content in your message. You've provided the date (September 1, 2026) but not the actual text of the AI blog post you'd like me to summarize. Could you please share the full blog post content so I can create a 2-3 sentence summary for your daily digest?",
-    "nugget_at": "2026-09-04T21:23:28+00:00",
-    "scraped_at": "2026-09-04T13:13:26+00:00",
-    "site": "openai-index",
-    "title": "Path to Astra: critical capabilities and frontier safeguards"
-  },
-  "https://openai.com/index/safety-overview-gpt-6-astra/": {
-    "date": "2026-09-01",
-    "file": "data/articles/openai-index__safety-overview-gpt-6-astra.md",
-    "nugget": "I appreciate your interest, but I don't see any blog post text in your message. You've included a date (September 3, 2026) but no actual post content to summarize. Could you please share the full text of the AI blog post you'd like me to summarize? Once you provide it, I'll be happy to create a 2-3 sentence summary in the format you've requested.",
-    "nugget_at": "2026-09-04T21:23:30+00:00",
-    "scraped_at": "2026-09-04T13:13:16+00:00",
-    "site": "openai-index",
-    "title": "Safety overview: GPT\u20116 Astra"
-  },
-  "https://openai.com/index/scientific-computing-agentic-ai/": {
-    "date": "2026-08-26",
-    "file": "data/articles/openai-research__scientific-computing-agentic-ai.md",
-    "nugget": "Scientists are increasingly deploying AI coding agents to update and improve legacy scientific software used in genomics and other data-intensive research areas, as detailed in a new field report. This matters because modernizing these critical tools can accelerate research productivity, improve data accuracy, and make complex scientific computing more accessible to researchers who may lack extensive programming expertise.",
-    "nugget_at": "2026-09-04T21:23:32+00:00",
-    "scraped_at": "2026-09-04T13:12:28+00:00",
-    "site": "openai-research",
-    "title": "Scientific computing in the age of agentic AI"
-  },
-  "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety/": {
-    "date": "2026-08-28",
-    "file": "data/articles/openai-index__supporting-california-bill-advance-ai-youth-safety.md",
-    "nugget": "I don't see any blog post content in your message - you've only provided a date (August 31, 2026). Could you please share the actual text of the AI blog post you'd like me to summarize? Once you provide the full post content, I'll be happy to create a 2-3 sentence summary in the format you requested.",
-    "nugget_at": "2026-09-04T21:23:33+00:00",
-    "scraped_at": "2026-09-04T13:13:36+00:00",
-    "site": "openai-index",
-    "title": "OpenAI supports California\u2019s bill to advance youth AI safety"
-  },
-  "https://openai.com/index/ten-advances-in-mathematics/": {
-    "date": "2026-08-26",
-    "file": "data/articles/openai-research__ten-advances-in-mathematics.md",
-    "nugget": "I appreciate you wanting me to summarize a blog post, but I don't see any actual content provided in your message. You've shared a date and timestamp (August 1, 2026, 00:00) but there's no blog post text for me to summarize. Could you please paste the actual blog post content that you'd like me to condense for your reading digest?",
-    "nugget_at": "2026-09-04T21:23:35+00:00",
-    "scraped_at": "2026-09-04T13:12:13+00:00",
-    "site": "openai-research",
-    "title": "Ten advances in mathematics and theoretical computer science | OpenAI"
   },
   "https://openai.com/index/unlocking-self-improvement-gpt-red/": {
     "date": "2026-09-03",
@@ -1331,6 +1133,15 @@
     "site": "stability",
     "title": "Stability AI\u2019s Annual Integrity Transparency Report"
   },
+  "https://stability.ai/news-updates/stable-diffusion-35-large-is-now-available-on-microsoft-ai-foundry": {
+    "date": "Feb 12",
+    "file": "data/articles/stability__stable-diffusion-35-large-is-now-available-on-microsoft-ai-foundry.md",
+    "nugget": "Stability AI has launched Stable Diffusion 3.5 Large, Stable Image Ultra, and Stable Image Core on Microsoft Azure AI Foundry, making advanced image generation tools accessible to businesses within Microsoft's ecosystem. The new models feature improved text-to-image capabilities, diverse representation, and specialized versions optimized for photorealism and cost-efficiency. This matters because it democratizes professional-grade AI image generation for enterprises while integrating with existing Microsoft workflows and platforms.",
+    "nugget_at": "2026-09-05T05:12:38+00:00",
+    "scraped_at": "2026-09-05T05:09:30+00:00",
+    "site": "stability",
+    "title": "Stable Diffusion 3.5 Large is Now Available on Microsoft Azure AI Foundry"
+  },
   "https://stability.ai/news-updates/stable-diffusion-35-models-optimized-with-tensorrt-deliver-2x-faster-performance-and-40-less-memory-on-nvidia-rtx-gpus": {
     "date": "Jun 12",
     "file": "data/articles/stability__stable-diffusion-35-models-optimized-with-tensorrt-deliver-2x-faster-performance.md",
@@ -1447,15 +1258,6 @@
     "scraped_at": "2026-09-04T13:09:52+00:00",
     "site": "anthropic-engineering",
     "title": "How we built Claude Code auto mode: a safer way to skip permissions"
-  },
-  "https://www.anthropic.com/engineering/claude-code-best-practices": {
-    "date": "",
-    "file": "data/articles/anthropic-engineering__claude-code-best-practices.md",
-    "nugget": "The post provides guidance on how to effectively use Claude Code, covering setup configuration and techniques for managing multiple parallel sessions to maximize productivity. This matters because it helps developers streamline their workflow when using Claude for coding tasks, enabling them to work more efficiently by understanding best practices for environment setup, task planning, and scaling operations across multiple sessions.",
-    "nugget_at": "2026-09-04T21:25:15+00:00",
-    "scraped_at": "2026-09-04T13:10:48+00:00",
-    "site": "anthropic-engineering",
-    "title": "Best practices for Claude Code"
   },
   "https://www.anthropic.com/engineering/claude-code-sandboxing": {
     "date": "",
@@ -1934,6 +1736,15 @@
     "site": "microsoft-research",
     "title": "SkillOpt: Agent skills as trainable parameters"
   },
+  "https://www.microsoft.com/en-us/research/blog/verifying-rust-cryptography-in-symcrypt-from-standards-to-code/": {
+    "date": "2026-07-13",
+    "file": "data/articles/microsoft-research__verifying-rust-cryptography-in-symcrypt-from-standards-to-code.md",
+    "nugget": "Microsoft has open-sourced a formally verified version of SymCrypt, its cryptographic library used across Windows and Azure, by combining safe Rust implementations with mathematical proofs written in the Lean framework. This matters because cryptographic code is security-critical and optimized implementations are difficult to verify through testing alone, so this methodology of machine-checked proofs ensures correctness against formal specifications derived from official standards, currently covering algorithms like ML-KEM and SHA3 being deployed in Windows.",
+    "nugget_at": "2026-09-05T05:12:41+00:00",
+    "scraped_at": "2026-09-05T05:08:33+00:00",
+    "site": "microsoft-research",
+    "title": "Verifying Rust cryptography in SymCrypt, from standards to code"
+  },
   "https://www.perplexity.ai/hub/blog/a-local-first-agent-for-private-and-cost-effective-knowledge-work": {
     "date": "2026-08-25",
     "file": "data/articles/perplexity__a-local-first-agent-for-private-and-cost-effective-knowledge-work.md",
@@ -2401,6 +2212,15 @@
     "scraped_at": "2026-09-04T21:06:50+00:00",
     "site": "xai",
     "title": "Grok Bot is now included with more plans"
+  },
+  "https://x.ai/news/grok-bot-procurement": {
+    "date": "",
+    "file": "data/articles/xai__grok-bot-procurement.md",
+    "nugget": "Grok Bot, an AI agent platform, was given access to company spend and contract data, and its specialized \"Haggle Bot\" identified over $100,000 in cost savings across SaaS subscriptions, vendor renewals, and recurring purchases like office supplies. This matters because much valuable procurement work\u2014like auditing unused software seats or negotiating better prices\u2014is often skipped by companies due to the manual effort required, and AI agents can now handle this work autonomously while still requiring human approval on final decisions.",
+    "nugget_at": "2026-09-05T05:12:43+00:00",
+    "scraped_at": "2026-09-05T05:08:54+00:00",
+    "site": "xai",
+    "title": "Setting Grok Bot loose on procurement"
   },
   "https://x.ai/news/grok-build-for-everyone": {
     "date": "",
