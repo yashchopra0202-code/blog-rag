@@ -50,16 +50,35 @@ def test_build_digest_escapes_and_includes():
     assert '"quoted"' not in html
 
 
-def test_build_digest_top5_full_rest_grouped():
+def test_build_digest_top5_full_rest_grouped_by_topic():
     entries = [{"url": f"https://x/{i}", "title": f"Post {i}", "site": "nvidia",
-                "nugget": f"nugget {i}", "scraped_at": f"2026-09-05T{10+i:02d}:00:00+00:00"}
+                "nugget": f"nugget {i}", "topic": "Models", "signal": 4,
+                "scraped_at": f"2026-09-05T{10+i:02d}:00:00+00:00"}
                for i in range(7)]
     subject, html = digest.build_digest(entries)
     assert "7 new" in subject
     assert html.count("Read the full post") == 5           # only 5 full cards
-    assert "More from the labs" in html                    # the rest are grouped
-    assert "Post 1" in html and "Post 0" in html           # tail titles present as links
+    assert "More by topic" in html and "Models" in html    # the rest grouped by topic
+    assert "Post 6" in html and "Post 5" in html           # tail titles present as links
     assert "cid:banner" in html                            # banner image referenced
+
+
+def test_curate_drops_low_signal_dedups_and_caps():
+    def e(u, sig, title="T", site="mistral"):
+        return {"url": u, "title": title, "site": site, "nugget": "n",
+                "topic": "Models", "signal": sig, "scraped_at": "2026-09-05T10:00:00+00:00"}
+    entries = [
+        e("a", 5, "Big model release"),
+        e("b", 2, "Routine PR"),                # dropped: low signal
+        e("c", 4, "Big model release!!!"),      # dropped: dup title of 'a' (normalized)
+        e("d", 4, "Infra post", "together"),
+        e("f", 4, "Cap two", "together"),
+        e("g", 4, "Cap three", "together"),
+        e("h", 4, "Cap four", "together"),      # dropped: together already at cap 3
+    ]
+    urls = [x["url"] for x in digest.curate(entries, min_signal=3, per_lab_cap=3)]
+    assert "b" not in urls and "c" not in urls
+    assert [urls.count(x) for x in ("d", "f", "g")] == [1, 1, 1] and "h" not in urls
 
 
 def test_banner_attachment_present_and_absent(tmp_path):

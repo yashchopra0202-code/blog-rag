@@ -67,11 +67,40 @@ def select_new_entries(manifest, since, limit=None):
         stamp = v.get("scraped_at", "")
         if since and stamp <= since:
             continue
+        try:
+            signal = int(v.get("signal", 3))
+        except (TypeError, ValueError):
+            signal = 3
         out.append({"url": url, "title": v.get("title", url), "site": v.get("site", ""),
-                    "nugget": v["nugget"], "scraped_at": stamp})
-    out.sort(key=lambda e: e["scraped_at"], reverse=True)  # newest first
+                    "nugget": v["nugget"], "topic": v.get("topic", "Other"),
+                    "signal": signal, "scraped_at": stamp})
+    out.sort(key=lambda e: (e["signal"], e["scraped_at"]), reverse=True)  # signal, then recency
     if limit is not None:
         out = out[:limit]
+    return out
+
+
+def _title_key(title):
+    import re
+    return re.sub(r"[^a-z0-9]+", " ", str(title).lower()).strip()
+
+
+def curate(entries, min_signal=3, per_lab_cap=3):
+    """Drop low-signal items, de-duplicate near-identical titles, and cap how
+    many any single lab contributes — so one lab's benchmark-post flood or a
+    re-post can't dominate. Input is assumed sorted best-first."""
+    seen, per_lab, out = set(), {}, []
+    for e in entries:
+        if e["signal"] < min_signal:
+            continue
+        key = _title_key(e["title"])
+        if key in seen:
+            continue
+        if per_lab.get(e["site"], 0) >= per_lab_cap:
+            continue
+        seen.add(key)
+        per_lab[e["site"]] = per_lab.get(e["site"], 0) + 1
+        out.append(e)
     return out
 
 
@@ -104,27 +133,37 @@ def _full_card(e):
         '</div>')
 
 
+_TOPIC_ORDER = ("Models", "Research", "Safety & Policy", "Infrastructure",
+                "Product & Tools", "Business", "Other")
+
+
 def _more_section(rest):
     if not rest:
         return ""
     groups = {}
     for e in rest:
-        groups.setdefault(e["site"], []).append(e)
+        groups.setdefault(e.get("topic", "Other"), []).append(e)
     blocks = []
-    for site, items in groups.items():
-        label, color = lab_label(site), lab_color(site)
+    for topic in _TOPIC_ORDER:
+        items = groups.get(topic)
+        if not items:
+            continue
         links = "".join(
             f'<div style="margin:5px 0"><a href="{_esc(i["url"])}" '
             'style="color:#15201A;text-decoration:none;font-size:14px">'
-            f'<span style="color:{color};font-weight:700">&rsaquo;</span> {_esc(i["title"])}</a></div>'
+            f'<span style="color:{lab_color(i["site"])};font-weight:700">&rsaquo;</span> '
+            f'{_esc(i["title"])} '
+            f'<span style="color:#9AA39C;font-size:12px">&middot; {_esc(lab_label(i["site"]))}</span>'
+            '</a></div>'
             for i in items)
         blocks.append(
-            f'<div style="margin:0 0 16px"><div style="font-size:12px;font-weight:700;color:{color};'
-            f'text-transform:uppercase;letter-spacing:.05em;margin-bottom:7px">{_esc(label)}</div>{links}</div>')
+            '<div style="margin:0 0 16px"><div style="font-size:12px;font-weight:700;'
+            'color:#0A5F4E;text-transform:uppercase;letter-spacing:.05em;'
+            f'margin-bottom:7px">{_esc(topic)}</div>{links}</div>')
     return (
         '<div style="margin-top:26px;padding-top:20px;border-top:1px solid #E3E5DC">'
         '<div style="font-size:15px;font-weight:700;color:#15201A;margin-bottom:14px">'
-        'More from the labs</div>' + "".join(blocks) + '</div>')
+        'More by topic</div>' + "".join(blocks) + '</div>')
 
 
 def build_digest(entries, feed_url="http://127.0.0.1:8000/"):
@@ -184,13 +223,14 @@ def main() -> None:
     feed_url = os.getenv("FEED_URL", "http://127.0.0.1:8000/")
     if not api_key or not to:
         raise SystemExit("Set RESEND_API_KEY and DIGEST_TO in .env")
-    limit = int(os.getenv("DIGEST_LIMIT", "20"))  # total pool; top 5 full, rest grouped
+    limit = int(os.getenv("DIGEST_LIMIT", "20"))  # total pool; top 5 full, rest grouped by topic
     manifest = load_manifest(MANIFEST_PATH)
     state = load_state()
     since = effective_since(state)
-    entries = select_new_entries(manifest, since, limit=limit)
+    # curate: drop low-signal, de-dup, cap per lab; already sorted best-first
+    entries = curate(select_new_entries(manifest, since))[:limit]
     if not entries:
-        print("No new nuggets since last digest. Nothing sent.")
+        print("No new high-signal nuggets since last digest. Nothing sent.")
         return
     subject, html = build_digest(entries, feed_url=feed_url)
     send_digest(subject, html, api_key, sender, to, attachments=banner_attachment())

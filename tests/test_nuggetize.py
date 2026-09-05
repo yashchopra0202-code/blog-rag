@@ -22,14 +22,36 @@ def _write(tmp_path, name, body):
     return str(p)
 
 
-def test_skips_entries_that_already_have_a_nugget(tmp_path):
+def test_skips_entries_that_already_have_nugget_and_topic(tmp_path):
     f = _write(tmp_path, "a.md", LONG)
-    manifest = {"https://x/a": {"file": f, "nugget": "old"}}
+    manifest = {"https://x/a": {"file": f, "nugget": "old", "topic": "Models"}}
     llm = _LLM()
     n = nuggetize.nuggetize_manifest(manifest, str(tmp_path), llm)
     assert n == 0
     assert llm.calls == 0
     assert manifest["https://x/a"]["nugget"] == "old"
+
+
+def test_backfills_topic_signal_for_nugget_only_entry(tmp_path):
+    # migration: an entry with a nugget but no topic gets re-processed
+    f = _write(tmp_path, "a.md", LONG)
+    manifest = {"https://x/a": {"file": f, "nugget": "old"}}
+    llm = _LLM('{"nugget": "fresh summary", "topic": "Research", "signal": 4}')
+    n = nuggetize.nuggetize_manifest(manifest, str(tmp_path), llm)
+    assert n == 1
+    assert manifest["https://x/a"]["topic"] == "Research"
+    assert manifest["https://x/a"]["signal"] == 4
+
+
+def test_parse_nugget_structured_and_fallback():
+    good = nuggetize.parse_nugget('{"nugget": "n", "topic": "Models", "signal": 5}')
+    assert good == {"nugget": "n", "topic": "Models", "signal": 5}
+    # invalid topic -> Other; signal clamped
+    odd = nuggetize.parse_nugget('{"nugget": "n", "topic": "Nonsense", "signal": 9}')
+    assert odd["topic"] == "Other" and odd["signal"] == 5
+    # non-JSON -> treat raw as nugget
+    fb = nuggetize.parse_nugget("just a plain summary")
+    assert fb == {"nugget": "just a plain summary", "topic": "Other", "signal": 3}
 
 
 def test_writes_nugget_for_entry_without_one(tmp_path):
