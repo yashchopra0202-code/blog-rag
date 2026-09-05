@@ -5,12 +5,23 @@ from langchain_anthropic import ChatAnthropic
 
 import article_format as af
 import rag_core
-from scraper import load_manifest, save_manifest
+from scraper import load_manifest, save_manifest, looks_like_boilerplate
 
 MANIFEST_PATH = "data/manifest.json"
 ARTICLES_DIR = "data/articles"
 MODEL = "claude-haiku-4-5"
 MAX_BODY_CHARS = 8000  # cap tokens/cost; the intro carries the gist
+MIN_BODY_CHARS = 300   # below this the body is too thin to summarize — skip it
+# Phrases that mean the model refused (thin/empty body) — never store these as a nugget.
+_REFUSAL_MARKERS = ("unable to summarize", "don't see a blog post", "do not see a blog post",
+                    "no blog post", "wasn't provided", "was not provided", "provide the full",
+                    "paste the actual", "actual content of the article", "only the header",
+                    "no actual content", "i don't have the")
+
+
+def looks_like_refusal(nugget: str) -> bool:
+    n = nugget.lower()
+    return any(m in n for m in _REFUSAL_MARKERS)
 
 NUGGET_PROMPT = (
     "Summarize this AI blog post in 2-3 sentences for a daily reading digest. "
@@ -36,9 +47,13 @@ def nuggetize_manifest(manifest, articles_dir, llm, save=None) -> int:
             continue
         try:
             _, body = af.parse_article(entry.get("file", ""))
-            if not body.strip():
-                continue
-            entry["nugget"] = summarize_article(body, llm)
+            if len(body.strip()) < MIN_BODY_CHARS or looks_like_boilerplate(body):
+                continue  # too thin / cookie-consent junk — leave un-nuggeted
+            nugget = summarize_article(body, llm)
+            if looks_like_refusal(nugget):
+                print(f"  [warn] refusal-style summary, skipping {url}")
+                continue  # don't store the model's "I can't summarize this" text
+            entry["nugget"] = nugget
             entry["nugget_at"] = datetime.now(timezone.utc).isoformat(timespec="seconds")
             written += 1
             if save:

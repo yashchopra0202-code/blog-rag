@@ -45,6 +45,39 @@ def new_urls(candidates, manifest):
     return [u for u in candidates if u not in manifest]
 
 
+# Share-widget / social boilerplate that some sites (e.g. NVIDIA) wrap inside
+# <article>, which otherwise fools a naive "first container" extractor.
+BOILERPLATE = {"share this article", "share", "x", "twitter", "facebook", "linkedin",
+               "copy link", "email", "reddit", "whatsapp", "print"}
+# If a semantic container yields at least this much *non-boilerplate* text it is
+# the real body; NVIDIA's <article> collapses to ~13 chars once the share widget
+# is filtered, which triggers escalation to <section>/<body>.
+MIN_ARTICLE_CHARS = 40
+
+
+def _paragraphs(node):
+    """Non-boilerplate paragraph texts from a container node."""
+    out = []
+    for t in node.css("p::text").getall():
+        t = (t or "").strip()
+        if len(t) > 1 and t.lower() not in BOILERPLATE:
+            out.append(t)
+    return out
+
+
+# Cookie/consent text some sites (e.g. NVIDIA) render as the only readable <p>
+# content when the real article body is JS-rendered elsewhere. Treat a body
+# dominated by these as junk — better no article than a "summary about cookies".
+_JUNK_BODY_MARKERS = ("these cookies", "required cookies", "performance cookies",
+                      "personalization cookies", "advertising cookies", "cookie policy",
+                      "accept all cookies", "enable core functionality", "cannot be turned off")
+
+
+def looks_like_boilerplate(text: str) -> bool:
+    t = (text or "").lower()
+    return sum(m in t for m in _JUNK_BODY_MARKERS) >= 2
+
+
 def extract_article(html, url):
     from scrapling.parser import Selector
     sel = Selector(html)
@@ -56,15 +89,22 @@ def extract_article(html, url):
     date = (sel.css('meta[property="article:published_time"]::attr(content)').get()
             or sel.css("time::attr(datetime)").get() or "").strip()[:10]
 
-    container = None
-    for selector in ("article", "main", '[role="main"]'):
+    # Prefer the first semantic container that clearly holds the article body.
+    # Some sites wrap only a share widget in <article>/<main>, so if the chosen
+    # container is too thin, escalate to <section>/<body> and keep the richest.
+    best, best_len = [], 0
+    for selector in ("article", "main", '[role="main"]', "section", "body"):
         node = sel.css(selector)
-        if node:
-            container = node
+        if not node:
+            continue
+        paras = _paragraphs(node)
+        total = sum(len(p) for p in paras)
+        if total >= MIN_ARTICLE_CHARS:
+            best = paras
             break
-    node = container if container else sel
-    paras = [t.strip() for t in node.css("p::text").getall() if t and t.strip()]
-    body = "\n\n".join(paras)
+        if total > best_len:
+            best_len, best = total, paras
+    body = "\n\n".join(best)
     return {"title": title, "date": date, "body": body}
 
 
@@ -115,8 +155,8 @@ def scrape_site(site, manifest, articles_dir, max_articles):
         if not html:
             continue
         data = extract_article(html, url)
-        if not data["body"]:
-            print(f"  [warn] empty body, skipping {url}")
+        if not data["body"] or looks_like_boilerplate(data["body"]):
+            print(f"  [warn] empty/boilerplate body, skipping {url}")
             continue
         now = datetime.now(timezone.utc).isoformat(timespec="seconds")
         meta = {"url": url, "title": data["title"] or url, "site": site["name"],
