@@ -76,7 +76,7 @@
   [hidden] { display: none !important; }
   html { -webkit-text-size-adjust: 100%; }
   body {
-    margin: 0; min-height: 100vh;
+    margin: 0; min-height: 100vh; overflow-x: hidden;
     background: var(--bg-grad), var(--bg);
     color: var(--text);
     font-family: var(--font-body);
@@ -206,7 +206,7 @@
     width: 8px; height: 8px; border-radius: 999px; background: var(--accent); flex: none;
     box-shadow: 0 0 0 4px var(--accent-soft); align-self: center;
   }
-  @media (max-width: 900px) {
+  @media (max-width: 1024px) {
     .board { grid-template-columns: 1fr; gap: 40px; margin-top: 34px; }
   }
 
@@ -294,7 +294,7 @@
   .nugget-card p { margin: 0 0 10px; color: var(--text-2); font-size: .95rem; }
   .nugget-card a { font-weight: 600; font-size: .9rem; }
   .feed-skel { background: var(--surface); border: 1px solid var(--border); border-radius: 14px; padding: 16px 18px; box-shadow: var(--shadow-sm); }
-  @media (min-width: 901px) {
+  @media (min-width: 1025px) {
     .feed-scroll { max-height: 76vh; overflow: auto; padding-right: 8px; margin-right: -8px;
       -webkit-mask-image: linear-gradient(to bottom, transparent 0, #000 14px, #000 calc(100% - 22px), transparent 100%);
       mask-image: linear-gradient(to bottom, transparent 0, #000 14px, #000 calc(100% - 22px), transparent 100%); }
