@@ -1317,6 +1317,17 @@
     "site": "openai-index",
     "title": "Path to Astra: critical capabilities and frontier safeguards"
   },
+  "https://openai.com/index/research-acceleration-view-inside-openai/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-research__research-acceleration-view-inside-openai.md",
+    "nugget": "OpenAI has achieved its goal of developing an automated research intern that can handle complex research tasks under human supervision, with coding agents now accounting for 3.1 agent-workdays of effort for every human workday in their research organization as of mid-August 2026. The post details how agents are accelerating research velocity while emphasizing OpenAI's commitment to maintaining human control and pausing development when safety risks become unacceptable, citing their recent pause of RL training following the Hugging Face incident.",
+    "nugget_at": "2026-09-06T16:02:53+00:00",
+    "scraped_at": "2026-09-06T16:01:48+00:00",
+    "signal": 4,
+    "site": "openai-research",
+    "title": "Research acceleration: The view inside OpenAI",
+    "topic": "Research"
+  },
   "https://openai.com/index/safety-overview-gpt-6-astra/": {
     "date": "2026-09-01",
     "file": "data/articles/openai-index__safety-overview-gpt-6-astra.md",
