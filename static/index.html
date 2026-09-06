@@ -249,9 +249,10 @@
     letter-spacing: .04em; text-transform: uppercase; color: var(--accent-text);
   }
   .sources h2 .badge { color: var(--accent); }
-  .sources ul { list-style: none; margin: 0; padding: 0; display: grid; gap: 8px; }
+  .sources ul { list-style: none; margin: 0; padding: 0; display: grid; grid-template-columns: minmax(0, 1fr); gap: 8px; }
+  .sources li { min-width: 0; }
   .src {
-    display: flex; align-items: center; gap: 12px; text-decoration: none;
+    min-width: 0; display: flex; align-items: center; gap: 12px; text-decoration: none;
     padding: 11px 13px; border-radius: 12px; background: var(--surface-2);
     border: 1px solid transparent; transition: border-color .14s, transform .12s, background .14s;
   }
