@@ -1221,6 +1221,13 @@
     "site": "openai-index",
     "title": "How AI-native companies turn workflows into operating capability"
   },
+  "https://openai.com/index/an-alien-mind/": {
+    "date": "2026-09-06",
+    "file": "data/articles/openai-index__an-alien-mind.md",
+    "scraped_at": "2026-09-07T01:21:13+00:00",
+    "site": "openai-index",
+    "title": "An Alien Mind"
+  },
   "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": {
     "date": "2026-09-03",
     "file": "data/articles/openai-index__chatgpt-connects-health-records-and-healthcare-sources.md",
