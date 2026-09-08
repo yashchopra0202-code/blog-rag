@@ -125,3 +125,38 @@ def test_unsubscribe_endpoint(monkeypatch):
     client = TestClient(api.app)
     r = client.get("/unsubscribe", params={"token": "UT"})
     assert r.status_code == 200 and "unsubscribed" in r.text.lower()
+
+def _svix_headers(secret_b64key, body: str):
+    import base64, hmac, hashlib
+    key = base64.b64decode(secret_b64key)
+    sid, ts = "msg_1", "1700000000"
+    sig = base64.b64encode(hmac.new(key, f"{sid}.{ts}.{body}".encode(), hashlib.sha256).digest()).decode()
+    return {"svix-id": sid, "svix-timestamp": ts, "svix-signature": f"v1,{sig}"}
+
+def test_resend_webhook_marks_bounced(monkeypatch):
+    import base64, json as _json
+    b64key = base64.b64encode(b"secretkey").decode()
+    monkeypatch.setenv("RESEND_WEBHOOK_SECRET", "whsec_" + b64key)
+    marked = {}
+    monkeypatch.setattr(api.store, "mark_email_status",
+                        lambda email, status: marked.update(email=email, status=status))
+    body = _json.dumps({"type": "email.bounced", "data": {"to": ["x@y.com"]}})
+    client = TestClient(api.app)
+    r = client.post("/resend/webhook", content=body, headers=_svix_headers(b64key, body))
+    assert r.status_code == 200
+    assert marked == {"email": "x@y.com", "status": "bounced"}
+
+def test_resend_webhook_rejects_bad_signature(monkeypatch):
+    import base64
+    monkeypatch.setenv("RESEND_WEBHOOK_SECRET", "whsec_" + base64.b64encode(b"secretkey").decode())
+    client = TestClient(api.app)
+    r = client.post("/resend/webhook", content='{"type":"email.bounced"}',
+                    headers={"svix-id": "m", "svix-timestamp": "1", "svix-signature": "v1,deadbeef"})
+    assert r.status_code == 401
+
+def test_resend_webhook_fails_closed_without_secret(monkeypatch):
+    monkeypatch.delenv("RESEND_WEBHOOK_SECRET", raising=False)
+    client = TestClient(api.app)
+    r = client.post("/resend/webhook", content="{}",
+                    headers={"svix-id": "m", "svix-timestamp": "1", "svix-signature": "v1,x"})
+    assert r.status_code == 401

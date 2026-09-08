@@ -1,4 +1,6 @@
+import base64
 import glob
+import hashlib
 import hmac
 import json
 import os
@@ -267,6 +269,50 @@ def unsubscribe(token: str):
     except Exception:
         pass
     return _page("Unsubscribed", "You won't receive the digest anymore. You can re-subscribe any time.")
+
+
+def _verify_svix(secret, svix_id, svix_ts, svix_sig, body):
+    """Verify a Resend (Svix) webhook signature. Fail-closed on any gap."""
+    if not (secret and svix_id and svix_ts and svix_sig):
+        return False
+    try:
+        key = base64.b64decode(secret.split("_", 1)[1] if "_" in secret else secret)
+    except Exception:
+        return False
+    expected = base64.b64encode(
+        hmac.new(key, f"{svix_id}.{svix_ts}.{body}".encode(), hashlib.sha256).digest()).decode()
+    for part in svix_sig.split():           # space-separated "v1,<sig>" tokens
+        _, _, sig = part.partition(",")
+        if sig and hmac.compare_digest(sig, expected):
+            return True
+    return False
+
+
+_RESEND_STATUS = {"email.bounced": "bounced", "email.complained": "complained"}
+
+
+@app.post("/resend/webhook")
+async def resend_webhook(request: Request):
+    secret = os.getenv("RESEND_WEBHOOK_SECRET")
+    raw = (await request.body()).decode("utf-8")
+    if not _verify_svix(secret, request.headers.get("svix-id", ""),
+                        request.headers.get("svix-timestamp", ""),
+                        request.headers.get("svix-signature", ""), raw):
+        raise HTTPException(status_code=401, detail="bad signature")
+    try:
+        event = json.loads(raw or "{}")
+    except ValueError:
+        return {"ok": True}
+    status = _RESEND_STATUS.get(event.get("type", ""))
+    data = event.get("data") or {}
+    recips = data.get("to") or ([data["email"]] if data.get("email") else [])
+    if status:
+        for e in recips:
+            try:
+                store.mark_email_status(e, status)
+            except Exception:
+                print("resend webhook: mark_email_status failed")
+    return {"ok": True}
 
 
 @app.get("/stats")
