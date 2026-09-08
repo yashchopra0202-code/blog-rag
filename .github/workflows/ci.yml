@@ -1,0 +1,38 @@
+# .github/workflows/ci.yml
+# Test gate: runs on every push and PR, separate from the daily.yml cron pipeline.
+name: ci
+on:
+  push:
+  pull_request:
+permissions:
+  contents: read
+jobs:
+  tests:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install RAG deps
+        run: |
+          python -m venv .venv
+          .venv/bin/pip install -r requirements.txt
+      # test_extraction.py imports scrapling (separate venv, not in requirements.txt),
+      # so it is covered by the non-blocking scraper-tests job below, not here.
+      - name: Run test suite
+        run: .venv/bin/python -m pytest -q --ignore=tests/test_extraction.py
+  scraper-tests:
+    runs-on: ubuntu-latest
+    continue-on-error: true   # scrapling's stealth stack is fiddly on CI; visible but never blocks
+    steps:
+      - uses: actions/checkout@v4
+      - uses: actions/setup-python@v5
+        with:
+          python-version: "3.12"
+      - name: Install scraper (scrapling) deps
+        run: |
+          python -m venv .venv-scrapling
+          .venv-scrapling/bin/pip install "scrapling[fetchers]" click pytest
+      - name: Run extraction tests
+        run: .venv-scrapling/bin/python -m pytest -q tests/test_extraction.py
