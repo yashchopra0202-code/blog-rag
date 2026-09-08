@@ -72,3 +72,97 @@ def test_feed_groups_filters_and_clamps(monkeypatch, tmp_path):
     assert g["date"] == today
     assert [i["url"] for i in g["items"]] == ["https://x/a"]
     assert g["items"][0]["label"] == "Anthropic · News"
+
+def test_subscribe_valid_sends_confirmation(monkeypatch):
+    sent = {}
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: True)
+    monkeypatch.setattr(api.store, "add_email_subscriber",
+                        lambda e: {"email": e, "status": "pending",
+                                   "confirm_token": "CT", "unsub_token": "UT"})
+    monkeypatch.setattr(api.emailer, "send_email",
+                        lambda to, subject, html, **k: sent.update(to=to, html=html))
+    client = TestClient(api.app)
+    r = client.post("/subscribe", json={"email": "a@b.com"})
+    assert r.status_code == 200 and r.json()["ok"] is True
+    assert sent["to"] == "a@b.com" and "token=CT" in sent["html"]
+
+def test_subscribe_rejects_bad_email(monkeypatch):
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: True)
+    client = TestClient(api.app)
+    r = client.post("/subscribe", json={"email": "not-an-email"})
+    assert r.status_code == 400
+
+def test_subscribe_rate_limited(monkeypatch):
+    calls = {"sent": 0}
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: False)
+    monkeypatch.setattr(api.emailer, "send_email",
+                        lambda *a, **k: calls.__setitem__("sent", calls["sent"] + 1))
+    client = TestClient(api.app)
+    r = client.post("/subscribe", json={"email": "a@b.com"})
+    assert r.status_code == 429 and calls["sent"] == 0
+
+def test_subscribe_no_enumeration_for_existing(monkeypatch):
+    sent = {"n": 0}
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: True)
+    monkeypatch.setattr(api.store, "add_email_subscriber",
+                        lambda e: {"email": e, "status": "confirmed",
+                                   "confirm_token": "CT", "unsub_token": "UT"})
+    monkeypatch.setattr(api.emailer, "send_email",
+                        lambda *a, **k: sent.__setitem__("n", sent["n"] + 1))
+    client = TestClient(api.app)
+    r = client.post("/subscribe", json={"email": "a@b.com"})
+    assert r.status_code == 200 and r.json()["ok"] is True   # same body as a new sub
+    assert sent["n"] == 0   # already confirmed -> no confirmation email re-sent
+
+def test_confirm_endpoint(monkeypatch):
+    monkeypatch.setattr(api.store, "confirm_email", lambda t: True)
+    client = TestClient(api.app)
+    r = client.get("/confirm", params={"token": "CT"})
+    assert r.status_code == 200 and "confirmed" in r.text.lower()
+
+def test_unsubscribe_endpoint(monkeypatch):
+    monkeypatch.setattr(api.store, "unsubscribe_email", lambda t: True)
+    client = TestClient(api.app)
+    r = client.get("/unsubscribe", params={"token": "UT"})
+    assert r.status_code == 200 and "unsubscribed" in r.text.lower()
+
+def _svix_headers(secret_b64key, body: str):
+    import base64, hmac, hashlib
+    key = base64.b64decode(secret_b64key)
+    sid, ts = "msg_1", "1700000000"
+    sig = base64.b64encode(hmac.new(key, f"{sid}.{ts}.{body}".encode(), hashlib.sha256).digest()).decode()
+    return {"svix-id": sid, "svix-timestamp": ts, "svix-signature": f"v1,{sig}"}
+
+def test_resend_webhook_marks_bounced(monkeypatch):
+    import base64, json as _json
+    b64key = base64.b64encode(b"secretkey").decode()
+    monkeypatch.setenv("RESEND_WEBHOOK_SECRET", "whsec_" + b64key)
+    marked = {}
+    monkeypatch.setattr(api.store, "mark_email_status",
+                        lambda email, status: marked.update(email=email, status=status))
+    body = _json.dumps({"type": "email.bounced", "data": {"to": ["x@y.com"]}})
+    client = TestClient(api.app)
+    r = client.post("/resend/webhook", content=body, headers=_svix_headers(b64key, body))
+    assert r.status_code == 200
+    assert marked == {"email": "x@y.com", "status": "bounced"}
+
+def test_resend_webhook_rejects_bad_signature(monkeypatch):
+    import base64
+    monkeypatch.setenv("RESEND_WEBHOOK_SECRET", "whsec_" + base64.b64encode(b"secretkey").decode())
+    client = TestClient(api.app)
+    r = client.post("/resend/webhook", content='{"type":"email.bounced"}',
+                    headers={"svix-id": "m", "svix-timestamp": "1", "svix-signature": "v1,deadbeef"})
+    assert r.status_code == 401
+
+def test_resend_webhook_fails_closed_without_secret(monkeypatch):
+    monkeypatch.delenv("RESEND_WEBHOOK_SECRET", raising=False)
+    client = TestClient(api.app)
+    r = client.post("/resend/webhook", content="{}",
+                    headers={"svix-id": "m", "svix-timestamp": "1", "svix-signature": "v1,x"})
+    assert r.status_code == 401
+
+def test_index_html_has_subscribe_form():
+    with open("static/index.html", encoding="utf-8") as f:
+        html = f.read()
+    assert 'id="subscribe-form"' in html
+    assert "/subscribe" in html
