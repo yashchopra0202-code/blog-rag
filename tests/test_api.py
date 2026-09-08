@@ -160,3 +160,9 @@ def test_resend_webhook_fails_closed_without_secret(monkeypatch):
     r = client.post("/resend/webhook", content="{}",
                     headers={"svix-id": "m", "svix-timestamp": "1", "svix-signature": "v1,x"})
     assert r.status_code == 401
+
+def test_index_html_has_subscribe_form():
+    with open("static/index.html", encoding="utf-8") as f:
+        html = f.read()
+    assert 'id="subscribe-form"' in html
+    assert "/subscribe" in html
