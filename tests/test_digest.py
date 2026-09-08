@@ -1,6 +1,7 @@
 from datetime import datetime, timezone
 
 import digest
+import store as _store  # for monkeypatching in these tests
 
 
 # --- cadence controls (#4) --------------------------------------------------
@@ -143,3 +144,42 @@ def test_send_digest_posts_to_resend(monkeypatch):
     assert captured["url"] == digest.RESEND_ENDPOINT
     assert captured["json"]["to"] == ["to@y"]
     assert captured["headers"]["Authorization"] == "Bearer key"
+
+
+# --- broadcast and delivery (#5) ---------------------------------------------------
+
+def test_broadcast_email_best_effort_and_footer(monkeypatch):
+    calls = []
+    def fake_send(to, subject, html, attachments=None, **k):
+        if to == "boom@x.com":
+            raise RuntimeError("bounce")
+        calls.append((to, html))
+    monkeypatch.setattr(digest.emailer, "send_email", fake_send)
+    recipients = [
+        {"email": "a@x.com", "unsub_url": "https://app/unsubscribe?token=A"},
+        {"email": "boom@x.com", "unsub_url": "https://app/unsubscribe?token=B"},
+        {"email": "c@x.com", "unsub_url": None},
+    ]
+    out = digest.broadcast_email("Subj", "<p>body</p>", recipients)
+    assert out == {"sent": 2, "failed": 1}
+    a_html = dict(calls)["a@x.com"]
+    assert "unsubscribe?token=A" in a_html          # footer appended
+    assert "unsubscribe" not in dict(calls)["c@x.com"].lower()  # no footer when no token
+
+
+def test_deliver_if_new_skips_when_already_sent(monkeypatch):
+    monkeypatch.setattr(digest.store, "digest_already_sent", lambda k: True)
+    sent = {"n": 0}
+    monkeypatch.setattr(digest, "broadcast_email",
+                        lambda *a, **k: sent.__setitem__("n", sent["n"] + 1))
+    out = digest.deliver_if_new("2026-09-08", "S", "<p>x</p>", [{"email": "a@x.com", "unsub_url": None}])
+    assert out == {"skipped": True} and sent["n"] == 0
+
+
+def test_deliver_if_new_sends_and_marks(monkeypatch):
+    monkeypatch.setattr(digest.store, "digest_already_sent", lambda k: False)
+    marked = {}
+    monkeypatch.setattr(digest.store, "mark_digest_sent", lambda k: marked.update(k=k))
+    monkeypatch.setattr(digest, "broadcast_email", lambda *a, **k: {"sent": 1, "failed": 0})
+    out = digest.deliver_if_new("2026-09-08", "S", "<p>x</p>", [{"email": "a@x.com", "unsub_url": None}])
+    assert out == {"sent": 1, "failed": 0} and marked["k"] == "2026-09-08"

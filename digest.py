@@ -7,6 +7,7 @@ import httpx
 from dotenv import load_dotenv
 
 import emailer
+import store
 from config import load_config
 from scraper import load_manifest
 
@@ -225,6 +226,32 @@ def send_digest(subject, html, api_key, sender, to, attachments=None):
                               api_key=api_key, sender=sender)
 
 
+def broadcast_email(subject, html, recipients, banner=None):
+    """Send `html` to each recipient, best-effort (one failure never aborts the
+    rest). recipients: [{"email", "unsub_url"}]; unsub footer appended when set."""
+    sent = failed = 0
+    for r in recipients:
+        body = html + (emailer.unsubscribe_footer(r["unsub_url"]) if r.get("unsub_url") else "")
+        try:
+            emailer.send_email(r["email"], subject, body, attachments=banner)
+            sent += 1
+        except Exception as e:  # noqa: BLE001 - best effort per recipient
+            print(f"  [warn] digest send to {r.get('email')} failed: {e}")
+            failed += 1
+    return {"sent": sent, "failed": failed}
+
+
+def deliver_if_new(key, subject, html, recipients, banner=None):
+    """Idempotency guard: skip if this digest key was already sent; else send
+    then record the key (durable, in Supabase — survives a CI retry)."""
+    if store.digest_already_sent(key):
+        print(f"Digest {key} already sent. Nothing sent.")
+        return {"skipped": True}
+    result = broadcast_email(subject, html, recipients, banner=banner)
+    store.mark_digest_sent(key)
+    return result
+
+
 def main() -> None:
     load_dotenv()
     api_key = os.getenv("RESEND_API_KEY")
@@ -252,12 +279,25 @@ def main() -> None:
         print("No new high-signal nuggets since last digest. Nothing sent.")
         return
     subject, html = build_digest(entries, feed_url=feed_url)
-    send_digest(subject, html, api_key, sender, to, attachments=banner_attachment())
-    # entries are the newest `limit`; advancing to their max means older in-window
-    # nuggets beyond the cap are not re-sent next run (intended: one email = newest N).
+    base = os.getenv("PUBLIC_BASE_URL") or feed_url.rstrip("/")
+    try:
+        subs = store.confirmed_email_subscribers()
+    except Exception:
+        subs = []
+    recipients = [{"email": s["email"],
+                   "unsub_url": f'{base}/unsubscribe?token={s["unsub_token"]}'} for s in subs]
+    if not recipients and to:   # owner fallback while there are no confirmed subscribers
+        recipients = [{"email": to, "unsub_url": None}]
+    if not recipients:
+        print("No confirmed subscribers and no DIGEST_TO. Nothing sent.")
+        return
+    key = datetime.now(timezone.utc).date().isoformat()
+    result = deliver_if_new(key, subject, html, recipients, banner=banner_attachment())
+    if result.get("skipped"):
+        return
     state["last_sent"] = max(e["scraped_at"] for e in entries)
     save_state(state)
-    print(f"Sent digest with {len(entries)} nugget(s) to {to}.")
+    print(f"Digest {key}: sent {result['sent']}, failed {result['failed']}.")
 
 
 if __name__ == "__main__":
