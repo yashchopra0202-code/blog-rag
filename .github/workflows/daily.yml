@@ -43,6 +43,13 @@ jobs:
         id: scrape
         continue-on-error: true
         run: .venv-scrapling/bin/python scraper.py
+      - name: Upload articles to Storage
+        id: upload_articles
+        continue-on-error: true
+        env:
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
+        run: .venv/bin/python upload_articles.py
       - name: Nuggetize
         id: nuggetize
         continue-on-error: true

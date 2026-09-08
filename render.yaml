@@ -21,3 +21,7 @@ services:
         sync: false              # set as a secret in the Render dashboard, not stored here
       - key: ANTHROPIC_API_KEY   # runtime: the /ask answer LLM
         sync: false
+      - key: SUPABASE_URL          # ingest.py downloads the article archive at BUILD
+        sync: false
+      - key: SUPABASE_SERVICE_KEY  # service-role; build + runtime, dashboard secret
+        sync: false
