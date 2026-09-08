@@ -20,6 +20,13 @@ Take blog-rag from a working personal tool to a **production-grade public produc
 | Cost / access | Free + **hard rate limits** (per-IP `/ask` quota + global daily spend cap) | `/ask` is the only unbounded-cost surface and it is now secondary. |
 | Auth (v1) | **Anonymous**; accounts later | Simplest safe launch; IP limits + global cap contain abuse at this scale. |
 
+## Scope correction (2026-09-08, after reading the code)
+
+Before writing the Phase 0/1 implementation plan, the actual code was traced and two spec assumptions were corrected (kept here for traceability):
+
+1. **Pipeline-failure alerting already exists.** `alert.py` (`check_health` + `send_alert`) runs in `daily.yml`'s `if: always()` "Health check & alert" step. Phase 0's real, missing work is a **CI `pytest` gate on push/PR** (none exists today) plus **wiring the Telegram broadcast outcome** into `alert.py` (currently only `scrape`/`nuggetize`/`digest` outcomes are checked, so a broadcast failure is silent).
+2. **Original Phase 1 dissolved.** Every `*_state.json` file (`digest_state`, `telegram_state`, `scrape_status`) is written **only by CI pipeline scripts** — never by a live HTTP request — so there is no concurrent-write race to fix. The only genuinely live-written state not already in Postgres is the **email subscriber list, which does not exist yet**; it is built in Phase 2 with the subscribe box. `rate_limits` moves to Phase 5 with `/ask`. This keeps to the spec's own principle: *migrate by write-concurrency, not importance.*
+
 ## Non-goals (v1 / YAGNI)
 
 - **No Next.js + Supabase-app rewrite.** The hybrid migration (Next.js frontend, Supabase-served data, user accounts) is a *later growth phase*, triggered when usage exceeds the current architecture (~>200 users, or when web/`/ask`/accounts become a priority).
@@ -69,9 +76,9 @@ The shape stays Python. Three things change *where they live*; the edges get har
 ### Supabase Postgres (PostgREST + httpx, same pattern as `store.py`)
 
 - **`telegram_subscribers`** — *exists.* `chat_id` (pk), `first_name`, `username`, `subscribed_at`, `active`.
-- **`email_subscribers`** *(new)* — `email` (pk/unique), `status` (`pending` | `confirmed` | `unsubscribed` | `bounced` | `complained`), `confirm_token`, `unsub_token`, `subscribed_at`, `confirmed_at`. Double opt-in: created `pending` with a `confirm_token`; `/confirm` flips to `confirmed`. One-click unsubscribe via `unsub_token`.
-- **`pipeline_state`** *(new)* — replaces `digest_state.json`, `telegram_state.json`, `scrape_status.json`. Single-row-per-key: `key`, `value` (jsonb), `updated_at`. Removes the JSON-committed-by-CI state entirely, so a live process and the pipeline can never race on it.
-- **`rate_limits`** *(new)* — `bucket` (e.g. `ask:{ip}`), `window_start`, `count`. Fixed-window counters for `/ask`; plus a `bucket = 'ask:global:{date}'` row for the **global daily spend/'call' cap**.
+- **`email_subscribers`** *(new — built in **Phase 2**, not Phase 1)* — `email` (pk/unique), `status` (`pending` | `confirmed` | `unsubscribed` | `bounced` | `complained`), `confirm_token`, `unsub_token`, `subscribed_at`, `confirmed_at`. Double opt-in: created `pending` with a `confirm_token`; `/confirm` flips to `confirmed`. One-click unsubscribe via `unsub_token`. This is the **only genuinely live-written** state not already in Postgres, so it is the real migration — and it belongs with the subscribe box that writes it.
+- **`pipeline_state`** *(deferred — see Scope correction)* — would consolidate `digest_state.json`, `telegram_state.json`, `scrape_status.json` into single-row-per-key (`key`, `value` jsonb, `updated_at`). **Not done now:** all three files are single-writer (CI-only), so there is no race to fix; migrating them is cosmetic until Phase 2's per-subscriber send ledger genuinely needs a store, at which point the digest send-state moves as part of that work.
+- **`rate_limits`** *(deferred to **Phase 5**)* — `bucket` (e.g. `ask:{ip}`), `window_start`, `count`, plus a `bucket = 'ask:global:{date}'` row for the **global daily cap**. Built when `/ask` is hardened, since that is the only surface it protects.
 
 Service-role key stays **server-side only** (FastAPI + CI); never shipped to the browser.
 
@@ -127,8 +134,8 @@ Service-role key stays **server-side only** (FastAPI + CI); never shipped to the
 
 | Phase | Ships | Why here |
 |---|---|---|
-| **0 — Safety net** | Commit baseline; wire **pipeline-failure alerting**; ensure the full test suite runs in CI on every push | Cannot go public blind to breakage |
-| **1 — Postgres for all writable state** | Add `email_subscribers`, `pipeline_state`, `rate_limits` tables (extend the `store.py` PostgREST pattern); migrate the `*_state.json` files into `pipeline_state`; retire JSON-in-git for writable state | Removes the concurrent-write race — foundational public-safety fix |
+| **0 — Safety net** | **CI test gate** (`pytest` on every push/PR — currently missing) + wire the **Telegram broadcast outcome** into the existing `alert.py` health check | Cannot go public blind to breakage. NB: `alert.py` pipeline-failure alerting **already exists** and runs in `daily.yml`; the test gate does not. |
+| ~~**1 — Postgres for all writable state**~~ **— dissolved (see Scope correction)** | `email_subscribers` folded into **Phase 2** (built with the subscribe box); `rate_limits` folded into **Phase 5** (built with `/ask` guardrails); `pipeline_state` migration **deferred** | Code review showed all three `*_state.json` files are **single-writer (CI-only) — no race**. Only the email list is genuinely live-written, and it doesn't exist yet, so it belongs with the surface that creates it. |
 | **2 — Email digest hardened** | Double opt-in subscribe/confirm/unsubscribe, deliverability (domain + SPF/DKIM/DMARC), idempotent sends, bounce/complaint suppression, **+ privacy/consent** | First hero surface |
 | **3 — Telegram hardened** | Enforce webhook auth, broadcast throttle + backoff, 403/block handling, per-recipient outcome logging | Second hero surface |
 | **4 — Cold storage** | Article archive in Supabase Storage; manifest stores pointers; git slims; backfill ~291 articles | User's explicit early priority |
