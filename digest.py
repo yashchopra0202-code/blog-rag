@@ -248,7 +248,8 @@ def deliver_if_new(key, subject, html, recipients, banner=None):
         print(f"Digest {key} already sent. Nothing sent.")
         return {"skipped": True}
     result = broadcast_email(subject, html, recipients, banner=banner)
-    store.mark_digest_sent(key)
+    if result.get("sent", 0) > 0:
+        store.mark_digest_sent(key)
     return result
 
 
@@ -295,8 +296,9 @@ def main() -> None:
     result = deliver_if_new(key, subject, html, recipients, banner=banner_attachment())
     if result.get("skipped"):
         return
-    state["last_sent"] = max(e["scraped_at"] for e in entries)
-    save_state(state)
+    if result.get("sent", 0) > 0:
+        state["last_sent"] = max(e["scraped_at"] for e in entries)
+        save_state(state)
     print(f"Digest {key}: sent {result['sent']}, failed {result['failed']}.")
 
 

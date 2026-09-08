@@ -183,3 +183,14 @@ def test_deliver_if_new_sends_and_marks(monkeypatch):
     monkeypatch.setattr(digest, "broadcast_email", lambda *a, **k: {"sent": 1, "failed": 0})
     out = digest.deliver_if_new("2026-09-08", "S", "<p>x</p>", [{"email": "a@x.com", "unsub_url": None}])
     assert out == {"sent": 1, "failed": 0} and marked["k"] == "2026-09-08"
+
+
+def test_deliver_if_new_does_not_mark_on_total_failure(monkeypatch):
+    monkeypatch.setattr(digest.store, "digest_already_sent", lambda k: False)
+    marked = {"called": False}
+    def spy_mark(k):
+        marked["called"] = True
+    monkeypatch.setattr(digest.store, "mark_digest_sent", spy_mark)
+    monkeypatch.setattr(digest, "broadcast_email", lambda *a, **k: {"sent": 0, "failed": 2})
+    out = digest.deliver_if_new("2026-09-08", "S", "<p>x</p>", [{"email": "a@x.com", "unsub_url": None}])
+    assert out == {"sent": 0, "failed": 2} and not marked["called"]
