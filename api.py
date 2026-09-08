@@ -239,12 +239,12 @@ def subscribe(payload: Subscribe, request: Request):
         raise HTTPException(status_code=429, detail="Too many attempts. Try again later.")
     try:
         row = store.add_email_subscriber(email)
-        if row.get("status") == "pending":
-            url = f'{_base_url(request)}/confirm?token={row["confirm_token"]}'
+        if row.get("status") == "pending" and row.get("confirm_token"):
+            url = f'{_base_url(request)}/confirm?token={row.get("confirm_token")}'
             emailer.send_email(email, "Confirm your blog-rag subscription",
                                emailer.confirmation_html(url))
-    except Exception:
-        print("subscribe: store/email failed")   # generic success regardless (no enumeration)
+    except Exception as e:
+        print(f"subscribe: store/email failed: {e!r}")   # generic success regardless (no enumeration)
     return {"ok": True, "message": "Check your inbox to confirm your subscription."}
 
 
