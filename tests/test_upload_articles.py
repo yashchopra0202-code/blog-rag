@@ -14,3 +14,16 @@ def test_upload_dir_best_effort(monkeypatch, tmp_path):
     out = upload_articles.upload_dir(str(tmp_path))
     assert out == {"uploaded": 1, "failed": 1}
     assert any(p.endswith("a__x.md") for p in uploaded)
+
+
+def test_backfill_delegates_to_upload_dir(monkeypatch):
+    import importlib.util, os
+    spec = importlib.util.spec_from_file_location(
+        "backfill_articles", os.path.join("scripts", "backfill_articles.py"))
+    mod = importlib.util.module_from_spec(spec); spec.loader.exec_module(mod)
+    called = {}
+    monkeypatch.setattr(mod.upload_articles, "upload_dir",
+                        lambda d="data/articles": called.setdefault("d", d) or {"uploaded": 3, "failed": 0})
+    monkeypatch.setattr(mod, "load_dotenv", lambda: None)
+    mod.main()
+    assert called["d"] == "data/articles"
