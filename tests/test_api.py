@@ -72,3 +72,56 @@ def test_feed_groups_filters_and_clamps(monkeypatch, tmp_path):
     assert g["date"] == today
     assert [i["url"] for i in g["items"]] == ["https://x/a"]
     assert g["items"][0]["label"] == "Anthropic · News"
+
+def test_subscribe_valid_sends_confirmation(monkeypatch):
+    sent = {}
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: True)
+    monkeypatch.setattr(api.store, "add_email_subscriber",
+                        lambda e: {"email": e, "status": "pending",
+                                   "confirm_token": "CT", "unsub_token": "UT"})
+    monkeypatch.setattr(api.emailer, "send_email",
+                        lambda to, subject, html, **k: sent.update(to=to, html=html))
+    client = TestClient(api.app)
+    r = client.post("/subscribe", json={"email": "a@b.com"})
+    assert r.status_code == 200 and r.json()["ok"] is True
+    assert sent["to"] == "a@b.com" and "token=CT" in sent["html"]
+
+def test_subscribe_rejects_bad_email(monkeypatch):
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: True)
+    client = TestClient(api.app)
+    r = client.post("/subscribe", json={"email": "not-an-email"})
+    assert r.status_code == 400
+
+def test_subscribe_rate_limited(monkeypatch):
+    calls = {"sent": 0}
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: False)
+    monkeypatch.setattr(api.emailer, "send_email",
+                        lambda *a, **k: calls.__setitem__("sent", calls["sent"] + 1))
+    client = TestClient(api.app)
+    r = client.post("/subscribe", json={"email": "a@b.com"})
+    assert r.status_code == 429 and calls["sent"] == 0
+
+def test_subscribe_no_enumeration_for_existing(monkeypatch):
+    sent = {"n": 0}
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: True)
+    monkeypatch.setattr(api.store, "add_email_subscriber",
+                        lambda e: {"email": e, "status": "confirmed",
+                                   "confirm_token": "CT", "unsub_token": "UT"})
+    monkeypatch.setattr(api.emailer, "send_email",
+                        lambda *a, **k: sent.__setitem__("n", sent["n"] + 1))
+    client = TestClient(api.app)
+    r = client.post("/subscribe", json={"email": "a@b.com"})
+    assert r.status_code == 200 and r.json()["ok"] is True   # same body as a new sub
+    assert sent["n"] == 0   # already confirmed -> no confirmation email re-sent
+
+def test_confirm_endpoint(monkeypatch):
+    monkeypatch.setattr(api.store, "confirm_email", lambda t: True)
+    client = TestClient(api.app)
+    r = client.get("/confirm", params={"token": "CT"})
+    assert r.status_code == 200 and "confirmed" in r.text.lower()
+
+def test_unsubscribe_endpoint(monkeypatch):
+    monkeypatch.setattr(api.store, "unsubscribe_email", lambda t: True)
+    client = TestClient(api.app)
+    r = client.get("/unsubscribe", params={"token": "UT"})
+    assert r.status_code == 200 and "unsubscribed" in r.text.lower()

@@ -2,12 +2,13 @@ import glob
 import hmac
 import json
 import os
+import re
 from collections import Counter
 from datetime import datetime, timezone, timedelta
 
 from dotenv import load_dotenv
 from fastapi import FastAPI, HTTPException, Request
-from fastapi.responses import FileResponse
+from fastapi.responses import FileResponse, HTMLResponse
 from pydantic import BaseModel
 from langchain_anthropic import ChatAnthropic
 
@@ -15,6 +16,7 @@ import rag_core
 import telegram as tg
 import telegram_api
 import store
+import emailer
 
 load_dotenv()
 PERSIST_DIR = "chroma_db"
@@ -65,6 +67,34 @@ app = FastAPI(title="blog-rag")
 
 class Ask(BaseModel):
     question: str
+
+
+SUBSCRIBE_LIMIT = 5   # confirmation-email attempts per IP per hour
+_EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
+
+
+class Subscribe(BaseModel):
+    email: str
+
+
+def _valid_email(s: str) -> bool:
+    return bool(_EMAIL_RE.match((s or "").strip()))
+
+
+def _base_url(request: Request) -> str:
+    # PUBLIC_BASE_URL (or FEED_URL) in prod; fall back to the request's own base.
+    return (os.getenv("PUBLIC_BASE_URL") or os.getenv("FEED_URL")
+            or str(request.base_url)).rstrip("/")
+
+
+def _page(title: str, body: str) -> HTMLResponse:
+    return HTMLResponse(
+        '<!doctype html><meta charset="utf-8">'
+        '<meta name="viewport" content="width=device-width,initial-scale=1">'
+        '<div style="font-family:-apple-system,Segoe UI,sans-serif;max-width:520px;'
+        'margin:12vh auto;padding:0 20px;color:#15201A;text-align:center">'
+        f'<h1 style="color:#0A5F4E">{title}</h1><p>{body}</p>'
+        '<p><a href="/" style="color:#0A5F4E">← Back to blog-rag</a></p></div>')
 
 
 def _llm():
@@ -192,6 +222,51 @@ def feed_data(days: int = 7) -> dict:
             "label": SITE_LABELS.get(site, site), "nugget": nugget})
     ordered = [{"date": d, "items": groups[d]} for d in sorted(groups, reverse=True)]
     return {"days": days, "groups": ordered}
+
+
+@app.post("/subscribe")
+def subscribe(payload: Subscribe, request: Request):
+    email = (payload.email or "").strip().lower()
+    if not _valid_email(email):
+        raise HTTPException(status_code=400, detail="Enter a valid email address.")
+    ip = request.client.host if request.client else "unknown"
+    bucket = f"subscribe:{ip}:{datetime.now(timezone.utc):%Y%m%d%H}"
+    try:
+        allowed = store.rate_limit_ok(bucket, SUBSCRIBE_LIMIT)
+    except Exception:
+        allowed = True   # never let a limiter outage block a legit signup
+    if not allowed:
+        raise HTTPException(status_code=429, detail="Too many attempts. Try again later.")
+    try:
+        row = store.add_email_subscriber(email)
+        if row.get("status") == "pending":
+            url = f'{_base_url(request)}/confirm?token={row["confirm_token"]}'
+            emailer.send_email(email, "Confirm your blog-rag subscription",
+                               emailer.confirmation_html(url))
+    except Exception:
+        print("subscribe: store/email failed")   # generic success regardless (no enumeration)
+    return {"ok": True, "message": "Check your inbox to confirm your subscription."}
+
+
+@app.get("/confirm")
+def confirm(token: str):
+    try:
+        ok = store.confirm_email(token)
+    except Exception:
+        ok = False
+    if ok:
+        return _page("Subscription confirmed", "You'll get the daily AI-labs digest. 🎉")
+    return _page("Link expired or already confirmed",
+                 "This confirmation link is no longer valid. If you already confirmed, you're all set.")
+
+
+@app.get("/unsubscribe")
+def unsubscribe(token: str):
+    try:
+        store.unsubscribe_email(token)
+    except Exception:
+        pass
+    return _page("Unsubscribed", "You won't receive the digest anymore. You can re-subscribe any time.")
 
 
 @app.get("/stats")
