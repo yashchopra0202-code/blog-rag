@@ -83,6 +83,7 @@ jobs:
           SCRAPE_OUTCOME: ${{ steps.scrape.outcome }}
           NUGGETIZE_OUTCOME: ${{ steps.nuggetize.outcome }}
           DIGEST_OUTCOME: ${{ steps.digest.outcome }}
+          TELEGRAM_OUTCOME: ${{ steps.telegram.outcome }}
           RESEND_API_KEY: ${{ secrets.RESEND_API_KEY }}
           DIGEST_TO: ${{ secrets.DIGEST_TO }}
           DIGEST_FROM: ${{ secrets.DIGEST_FROM }}
