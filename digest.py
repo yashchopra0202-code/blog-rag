@@ -280,7 +280,7 @@ def main() -> None:
         print("No new high-signal nuggets since last digest. Nothing sent.")
         return
     subject, html = build_digest(entries, feed_url=feed_url)
-    base = os.getenv("PUBLIC_BASE_URL") or feed_url.rstrip("/")
+    base = (os.getenv("PUBLIC_BASE_URL") or feed_url).rstrip("/")
     try:
         subs = store.confirmed_email_subscribers()
     except Exception:
