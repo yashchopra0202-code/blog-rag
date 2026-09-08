@@ -166,3 +166,20 @@ def test_index_html_has_subscribe_form():
         html = f.read()
     assert 'id="subscribe-form"' in html
     assert "/subscribe" in html
+
+def test_corpus_stats_counts_from_manifest(monkeypatch, tmp_path):
+    import json as _json
+    manifest = {
+        "https://x/a": {"site": "anthropic-news", "scraped_at": "2026-09-07T10:00:00+00:00"},
+        "https://x/b": {"site": "anthropic-news", "scraped_at": "2026-09-06T10:00:00+00:00"},
+        "https://x/c": {"site": "openai-index", "scraped_at": "2026-09-08T09:00:00+00:00"},
+    }
+    mf = tmp_path / "manifest.json"
+    mf.write_text(_json.dumps(manifest), encoding="utf-8")
+    monkeypatch.setattr(api, "MANIFEST_PATH", str(mf))
+    out = api.corpus_stats()
+    assert out["articles"] == 3
+    counts = {s["name"]: s["count"] for s in out["sites"]}
+    assert counts == {"anthropic-news": 2, "openai-index": 1}
+    assert out["updated"] == "2026-09-08"
+    assert {s["label"] for s in out["sites"]} >= {"Anthropic · News", "OpenAI · Index"}

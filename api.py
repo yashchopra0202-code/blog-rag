@@ -1,5 +1,4 @@
 import base64
-import glob
 import hashlib
 import hmac
 import json
@@ -183,21 +182,19 @@ async def telegram_webhook(request: Request):
 
 
 def corpus_stats() -> dict:
-    """Counts + freshness for the discovery UI, read from disk (no index load)."""
-    files = glob.glob(os.path.join(ARTICLES_DIR, "*.md"))
-    counts = Counter(os.path.basename(f).split("__", 1)[0] for f in files)
-    sites = [{"name": s, "label": SITE_LABELS.get(s, s), "count": n}
-             for s, n in counts.most_common()]
-    updated = ""
+    """Counts + freshness for the discovery UI, read from the manifest (no
+    article files needed — they live in Storage, not on the Render fs)."""
     try:
         with open(MANIFEST_PATH, encoding="utf-8") as f:
             manifest = json.load(f)
-        dates = [v.get("scraped_at", "")[:10] for v in manifest.values()
-                 if v.get("scraped_at")]
-        updated = max(dates) if dates else ""
     except (OSError, ValueError):
-        pass
-    return {"articles": len(files), "sites": sites, "updated": updated}
+        return {"articles": 0, "sites": [], "updated": ""}
+    counts = Counter(v.get("site", "") for v in manifest.values() if v.get("site"))
+    sites = [{"name": s, "label": SITE_LABELS.get(s, s), "count": n}
+             for s, n in counts.most_common()]
+    dates = [(v.get("scraped_at", "") or "")[:10] for v in manifest.values() if v.get("scraped_at")]
+    updated = max(dates) if dates else ""
+    return {"articles": len(manifest), "sites": sites, "updated": updated}
 
 
 def feed_data(days: int = 7) -> dict:
