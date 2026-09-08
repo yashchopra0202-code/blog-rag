@@ -6,6 +6,7 @@ from datetime import datetime, timedelta, timezone
 import httpx
 from dotenv import load_dotenv
 
+import emailer
 from config import load_config
 from scraper import load_manifest
 
@@ -220,14 +221,8 @@ def banner_attachment(path=BANNER_PATH):
 
 
 def send_digest(subject, html, api_key, sender, to, attachments=None):
-    payload = {"from": sender, "to": [to], "subject": subject, "html": html}
-    if attachments:
-        payload["attachments"] = attachments
-    resp = httpx.post(RESEND_ENDPOINT,
-                      headers={"Authorization": f"Bearer {api_key}"},
-                      json=payload, timeout=30)
-    resp.raise_for_status()
-    return resp.json()
+    return emailer.send_email(to, subject, html, attachments=attachments,
+                              api_key=api_key, sender=sender)
 
 
 def main() -> None:
