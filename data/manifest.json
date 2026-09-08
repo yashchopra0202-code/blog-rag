@@ -562,6 +562,17 @@
     "title": "Introducing North Automations: Intelligent workflow orchestration",
     "topic": "Product & Tools"
   },
+  "https://cohere.com/blog/megakernels": {
+    "date": "",
+    "file": "data/articles/cohere__megakernels.md",
+    "nugget": "Cohere released a new LLM serving engine built around a decode megakernel that achieves 1.25-1.41\u00d7 faster end-to-end performance than vLLM on H100 GPUs by running the entire forward pass as a single persistent kernel instead of sequential kernels. This matters because it solves the memory-bandwidth bottleneck in autoregressive decoding at small batch sizes, where GPUs typically waste significant compute cycles waiting between kernel launches, and demonstrates that megakernels can be practical for production serving systems with continuous batching and paged attention.",
+    "nugget_at": "2026-09-08T17:09:36+00:00",
+    "scraped_at": "2026-09-08T17:08:44+00:00",
+    "signal": 4,
+    "site": "cohere",
+    "title": "Inside the megakernel serving engine for North Mini Code",
+    "topic": "Infrastructure"
+  },
   "https://cohere.com/blog/north-mini-code": {
     "date": "",
     "file": "data/articles/cohere__north-mini-code.md",
@@ -703,6 +714,17 @@
     "signal": 5,
     "site": "deepmind",
     "title": "AlphaGenome: AI for better understanding the genome",
+    "topic": "Research"
+  },
+  "https://deepmind.google/blog/alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-human-genome/": {
+    "date": "2026-09-08",
+    "file": "data/articles/deepmind__alphagenome-atlas-a-predictive-map-of-every-possible-dna-letter-change-in-the-hu.md",
+    "nugget": "Google DeepMind released AlphaGenome Atlas, a free platform containing precomputed predictions for how all 9 billion possible single-letter DNA variants affect molecular biology across the human genome. This 1-petabyte resource, combined with a new AlphaGenome Variant Impact (AVI) score that ranks variants by impact, enables researchers to rapidly identify disease-causing mutations and genetic associations that were previously difficult to detect in rare disease and population studies.",
+    "nugget_at": "2026-09-08T17:09:39+00:00",
+    "scraped_at": "2026-09-08T17:08:12+00:00",
+    "signal": 4,
+    "site": "deepmind",
+    "title": "AlphaGenome Atlas: A predictive map of every possible DNA letter change in the human genome",
     "topic": "Research"
   },
   "https://deepmind.google/blog/empowering-indias-next-generation-of-innovators-with-atl-saathi/": {
@@ -1049,6 +1071,28 @@
     "title": "Your Prompts and Skills need a system of record.",
     "topic": "Product & Tools"
   },
+  "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-makes-sovereign-open-weight-ai-to-frontier.md",
+    "nugget": "Mistral raised \u20ac3 billion in Series D funding at a \u20ac21 billion valuation, making it the largest equity round by a European tech company, led by Samsung Electronics alongside EQT and PSG Equity. The funding positions Mistral to scale its full-stack sovereign AI infrastructure\u2014combining open-weight models, compute capacity, and products\u2014addressing enterprise demand for AI that maintains data control and avoids vendor lock-in.",
+    "nugget_at": "2026-09-08T17:09:41+00:00",
+    "scraped_at": "2026-09-08T17:08:33+00:00",
+    "signal": 4,
+    "site": "mistral",
+    "title": "Making sovereign, open-weight AI the technology frontier | Mistral",
+    "topic": "Business"
+  },
+  "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier/": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-makes-sovereign-open-weight-ai-to-frontier.md",
+    "nugget": "Mistral raised \u20ac3 billion in Series D funding at a \u20ac21+ billion valuation, making it the largest equity round for a European tech company and attracting Samsung, EQT, and other major investors. The funding underscores growing demand for open-weight AI models and sovereign infrastructure that lets enterprises maintain control over data and compute without vendor lock-in.",
+    "nugget_at": "2026-09-08T17:09:42+00:00",
+    "scraped_at": "2026-09-08T17:08:39+00:00",
+    "signal": 4,
+    "site": "mistral",
+    "title": "Making sovereign, open-weight AI the technology frontier | Mistral",
+    "topic": "Business"
+  },
   "https://mistral.ai/news/mistral-small-4/": {
     "date": "",
     "file": "data/articles/mistral__mistral-small-4.md",
@@ -1356,12 +1400,37 @@
     "site": "openai-index",
     "title": "OpenAI supports California\u2019s bill to advance youth AI safety"
   },
+  "https://openai.com/index/supporting-journalism-from-classrooms-to-newsrooms/": {
+    "date": "2026-09-08",
+    "file": "data/articles/openai-index__supporting-journalism-from-classrooms-to-newsrooms.md",
+    "nugget": "OpenAI is providing free access to its AI tools for students and faculty at CUNY's Newmark J-School and Northwestern's Medill School of Journalism to prepare the next generation of journalists for an AI-transformed media landscape. This partnership aims to democratize access to AI technology in journalism education while keeping human expertise central to reporting.",
+    "nugget_at": "2026-09-08T17:09:44+00:00",
+    "scraped_at": "2026-09-08T17:08:00+00:00",
+    "signal": 2,
+    "site": "openai-index",
+    "title": "OpenAI expands initiatives to support journalism from classrooms to newsrooms",
+    "topic": "Product & Tools"
+  },
+  "https://openai.com/index/teen-development-research-grants/": {
+    "date": "",
+    "file": "data/articles/openai-index__teen-development-research-grants.md",
+    "scraped_at": "2026-09-08T17:07:56+00:00",
+    "site": "openai-index",
+    "title": "Funding grants for new research into AI and teen development"
+  },
   "https://openai.com/index/ten-advances-in-mathematics/": {
     "date": "2026-08-26",
     "file": "data/articles/openai-research__ten-advances-in-mathematics.md",
     "scraped_at": "2026-09-05T05:21:50+00:00",
     "site": "openai-research",
     "title": "Ten advances in mathematics and theoretical computer science | OpenAI"
+  },
+  "https://openai.com/index/the-work-now-within-reach/": {
+    "date": "",
+    "file": "data/articles/openai-index__the-work-now-within-reach.md",
+    "scraped_at": "2026-09-08T17:07:52+00:00",
+    "site": "openai-index",
+    "title": "The Work Now Within Reach"
   },
   "https://openai.com/index/unlocking-self-improvement-gpt-red/": {
     "date": "2026-09-03",
@@ -2480,6 +2549,17 @@
     "site": "perplexity",
     "title": "How to Spot AI Hallucinations: 7 Red Flags",
     "topic": "Safety & Policy"
+  },
+  "https://www.perplexity.ai/hub/blog/ai-integration": {
+    "date": "2026-09-07",
+    "file": "data/articles/perplexity__ai-integration.md",
+    "nugget": "This post explains how businesses can integrate AI into existing systems and workflows to accelerate work, reduce costs, and improve decision-making across departments like marketing, finance, HR, and customer service. Proper implementation with governance, clear sourcing, and human oversight is critical to avoid hallucinations, model drift, and other risks while capturing value.",
+    "nugget_at": "2026-09-08T17:09:46+00:00",
+    "scraped_at": "2026-09-08T17:09:27+00:00",
+    "signal": 2,
+    "site": "perplexity",
+    "title": "AI integration: Getting ROI from your AI investment",
+    "topic": "Product & Tools"
   },
   "https://www.perplexity.ai/hub/blog/ai-personal-assistants": {
     "date": "2026-09-01",
