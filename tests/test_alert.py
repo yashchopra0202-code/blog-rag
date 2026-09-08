@@ -32,6 +32,14 @@ def test_healthy_when_no_status_but_scrape_succeeded():
     assert alert.check_health(None, {"scrape": "success", "nuggetize": "success", "digest": "success"}) == []
 
 
+def test_flags_telegram_failure():
+    status = {"sites_total": 18, "sites_ok": 18, "new_articles": 1}
+    outcomes = {"scrape": "success", "nuggetize": "success",
+                "digest": "success", "telegram": "failure"}
+    problems = alert.check_health(status, outcomes)
+    assert any("telegram" in p for p in problems)
+
+
 def test_send_alert_posts_to_resend(monkeypatch):
     captured = {}
 

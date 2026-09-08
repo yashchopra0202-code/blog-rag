@@ -24,7 +24,7 @@ def check_health(status, outcomes):
     A run can be 'green' yet broken, so we also inspect the scrape status file.
     """
     problems = []
-    for step in ("nuggetize", "digest"):
+    for step in ("nuggetize", "digest", "telegram"):
         if outcomes.get(step) == "failure":
             problems.append(f"the {step} step failed")
     if status is None:
@@ -53,7 +53,7 @@ def send_alert(problems, api_key, sender, to, run_url=""):
 def main():
     load_dotenv()
     outcomes = {k: os.getenv(f"{k.upper()}_OUTCOME", "")
-                for k in ("scrape", "nuggetize", "digest")}
+                for k in ("scrape", "nuggetize", "digest", "telegram")}
     problems = check_health(load_status(), outcomes)
     if not problems:
         print("Health check: healthy.")
