@@ -21,7 +21,6 @@ import emailer
 
 load_dotenv()
 PERSIST_DIR = "chroma_db"
-ARTICLES_DIR = "data/articles"
 MANIFEST_PATH = "data/manifest.json"
 MODEL = "claude-haiku-4-5"
 FEED_MAX_DAYS = 30
