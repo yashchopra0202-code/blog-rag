@@ -2,7 +2,7 @@
 name: daily-nuggets
 on:
   schedule:
-    - cron: "0 13 * * *"   # 13:00 UTC daily; digest.py decides whether to email (see config.json cadence)
+    - cron: "0 4 * * *"    # 04:00 UTC = 09:30 IST daily; digest.py decides whether to email (see config.json cadence)
   workflow_dispatch:
     inputs:
       force:
@@ -66,6 +66,8 @@ jobs:
           DIGEST_LIMIT: "20"   # daily cap; weekly uses config.json weekly_limit
           DIGEST_FORCE: ${{ github.event.inputs.force }}
           FEED_URL: ${{ secrets.FEED_URL }}   # live Render URL; empty -> digest.py falls back to localhost
+          SUPABASE_URL: ${{ secrets.SUPABASE_URL }}          # digest.py tracks send-state in Postgres via store.py
+          SUPABASE_SERVICE_KEY: ${{ secrets.SUPABASE_SERVICE_KEY }}
         run: .venv/bin/python digest.py
       - name: Telegram broadcast
         id: telegram
