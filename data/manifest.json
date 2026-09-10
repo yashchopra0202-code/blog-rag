@@ -219,6 +219,13 @@
     "title": "At AI Summit, South Korea Outlines Its AI Future With NVIDIA and Partners",
     "topic": "Infrastructure"
   },
+  "https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/": {
+    "date": "2026-09-10",
+    "file": "data/articles/nvidia__d-matrix-nvlink-fusion.md",
+    "scraped_at": "2026-09-10T16:58:00+00:00",
+    "site": "nvidia",
+    "title": "d-Matrix Adopts NVIDIA NVLink Fusion for Rack-Scale XPU Deployment"
+  },
   "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/": {
     "date": "2026-08-08",
     "file": "data/articles/nvidia__firebird-ai-factory-armenia-blackwell-rubin-dsx.md",
@@ -254,6 +261,13 @@
     "site": "nvidia",
     "title": "\u2018NBA 2K27\u2019 With NVIDIA DLSS 5 Leads 28 New Games Coming to GeForce NOW",
     "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/geforce-now-thursday-wardogs/": {
+    "date": "2026-09-10",
+    "file": "data/articles/nvidia__geforce-now-thursday-wardogs.md",
+    "scraped_at": "2026-09-10T16:58:06+00:00",
+    "site": "nvidia",
+    "title": "Boots on the Ground: \u2018WARDOGS\u2019 Goes All Out on GeForce NOW at Early-Access Launch"
   },
   "https://blogs.nvidia.com/blog/ibc-news-2026/": {
     "date": "2026-09-09",
@@ -396,6 +410,13 @@
     "site": "nvidia",
     "title": "Into the Omniverse: How Open World Models Push the Frontier of Physical AI",
     "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/skild-ai-s1-physical-ai/": {
+    "date": "2026-09-10",
+    "file": "data/articles/nvidia__skild-ai-s1-physical-ai.md",
+    "scraped_at": "2026-09-10T16:57:55+00:00",
+    "site": "nvidia",
+    "title": "Skild AI Taps NVIDIA Physical AI to Teach Robots New Tasks From a Single Video"
   },
   "https://blogs.nvidia.com/blog/ugm-indosat-nvidia-ai-technology-center/": {
     "date": "2026-08-14",
@@ -594,6 +615,13 @@
     "site": "cohere",
     "title": "Introducing North Mini Code: Cohere\u2019s first model for developers",
     "topic": "Product & Tools"
+  },
+  "https://cohere.com/blog/north-small-translate": {
+    "date": "",
+    "file": "data/articles/cohere__north-small-translate.md",
+    "scraped_at": "2026-09-10T16:57:17+00:00",
+    "site": "cohere",
+    "title": "Introducing North Small Translate: A leading sovereign open-weight machine translation model"
   },
   "https://cohere.com/blog/parse": {
     "date": "",
@@ -914,6 +942,13 @@
     "title": "https://huggingface.co/blog/funes",
     "topic": "Product & Tools"
   },
+  "https://huggingface.co/blog/gradio-workflow-1111": {
+    "date": "2026-09-04",
+    "file": "data/articles/huggingface__gradio-workflow-1111.md",
+    "scraped_at": "2026-09-10T16:56:47+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/gradio-workflow-1111"
+  },
   "https://huggingface.co/blog/gradio-workflow-guide": {
     "date": "2025-07-08",
     "file": "data/articles/huggingface__gradio-workflow-guide.md",
@@ -1071,6 +1106,20 @@
     "title": "Leanstral 1.5: Proof Abundance for All",
     "topic": "Models"
   },
+  "https://mistral.ai/news/legacy-code-modernization": {
+    "date": "",
+    "file": "data/articles/mistral__legacy-code-modernization.md",
+    "scraped_at": "2026-09-10T16:57:03+00:00",
+    "site": "mistral",
+    "title": "Modernizing complex legacy code with AI agents."
+  },
+  "https://mistral.ai/news/legacy-code-modernization/": {
+    "date": "",
+    "file": "data/articles/mistral__legacy-code-modernization.md",
+    "scraped_at": "2026-09-10T16:57:12+00:00",
+    "site": "mistral",
+    "title": "Modernizing complex legacy code with AI agents."
+  },
   "https://mistral.ai/news/manage-prompts-and-skills-in-studio/": {
     "date": "",
     "file": "data/articles/mistral__manage-prompts-and-skills-in-studio.md",
@@ -1114,6 +1163,20 @@
     "site": "mistral",
     "title": "Introducing Mistral Small 4",
     "topic": "Models"
+  },
+  "https://mistral.ai/news/mistral-x-cloudera": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-x-cloudera.md",
+    "scraped_at": "2026-09-10T16:56:59+00:00",
+    "site": "mistral",
+    "title": "Cloudera and Mistral Partner to Bring Specialized, Sovereign Intelligence to Enterprise Data"
+  },
+  "https://mistral.ai/news/mistral-x-cloudera/": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-x-cloudera.md",
+    "scraped_at": "2026-09-10T16:57:09+00:00",
+    "site": "mistral",
+    "title": "Cloudera and Mistral Partner to Bring Specialized, Sovereign Intelligence to Enterprise Data"
   },
   "https://mistral.ai/news/mistral-x-humain": {
     "date": "",
@@ -1325,6 +1388,13 @@
     "site": "openai-research",
     "title": "GPT\u20115.6: Frontier intelligence that scales with your ambition"
   },
+  "https://openai.com/index/gpt-6-astra-next-generation-work/": {
+    "date": "",
+    "file": "data/articles/openai-index__gpt-6-astra-next-generation-work.md",
+    "scraped_at": "2026-09-10T16:56:30+00:00",
+    "site": "openai-index",
+    "title": "GPT\u20116 Astra: The next generation in intelligence for work"
+  },
   "https://openai.com/index/gpt-6-astra/": {
     "date": "",
     "file": "data/articles/openai-research__gpt-6-astra.md",
@@ -1411,6 +1481,13 @@
     "site": "openai-index",
     "title": "Paul Christiano joins OpenAI Foundation Board"
   },
+  "https://openai.com/index/put-data-to-work/": {
+    "date": "2026-09-09",
+    "file": "data/articles/openai-index__put-data-to-work.md",
+    "scraped_at": "2026-09-10T16:56:23+00:00",
+    "site": "openai-index",
+    "title": "Now everyone can put data to work"
+  },
   "https://openai.com/index/research-acceleration-view-inside-openai/": {
     "date": "2026-09-03",
     "file": "data/articles/openai-research__research-acceleration-view-inside-openai.md",
@@ -1485,6 +1562,13 @@
     "site": "openai-research",
     "title": "GPT\u2011Red: Unlocking Self-Improvement for Robustness",
     "topic": "Safety & Policy"
+  },
+  "https://openai.com/index/using-codex-chatgpt-to-search-for-new-antimicrobials/": {
+    "date": "2026-09-08",
+    "file": "data/articles/openai-index__using-codex-chatgpt-to-search-for-new-antimicrobials.md",
+    "scraped_at": "2026-09-10T16:56:17+00:00",
+    "site": "openai-index",
+    "title": "How a researcher uses Codex and ChatGPT to search for new antimicrobial molecules"
   },
   "https://research.google/blog/a-connectomics-milestone-mapping-the-complete-male-fruit-fly-brain/": {
     "date": "",
@@ -2306,6 +2390,13 @@
     "site": "anthropic-research",
     "title": "How Claude is accelerating protein design and analytical chemistry",
     "topic": "Research"
+  },
+  "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents": {
+    "date": "",
+    "file": "data/articles/anthropic-research__alignment-assessment-cybersecurity-incidents.md",
+    "scraped_at": "2026-09-10T16:55:57+00:00",
+    "site": "anthropic-research",
+    "title": "An alignment assessment of recent cybersecurity incidents"
   },
   "https://www.anthropic.com/research/automated-researchers-mitigate-alignment-failures": {
     "date": "",
