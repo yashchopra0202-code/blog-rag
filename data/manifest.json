@@ -3149,6 +3149,17 @@
     "title": "Serving MiniMax-M3 for efficient inference: Unlocking 1M-Token Context and Multimodality Without Regrets",
     "topic": "Infrastructure"
   },
+  "https://www.together.ai/blog/the-open-source-ai-stack": {
+    "date": "",
+    "file": "data/articles/together__the-open-source-ai-stack.md",
+    "nugget": "A blog post breaks down the open-source AI stack for developers building agentic software, explaining how to choose between large and small models based on task complexity and cost tradeoffs. This matters because open models are now competitive with closed alternatives, enabling developers to experiment with different models easily and optimize for their specific workflows rather than being locked into a single provider.",
+    "nugget_at": "2026-09-10T20:17:40+00:00",
+    "scraped_at": "2026-09-10T20:15:28+00:00",
+    "signal": 3,
+    "site": "together",
+    "title": "The Open Source AI Stack",
+    "topic": "Product & Tools"
+  },
   "https://www.together.ai/blog/the-production-platform-for-open-weight-ai-inference": {
     "date": "",
     "file": "data/articles/together__the-production-platform-for-open-weight-ai-inference.md",
