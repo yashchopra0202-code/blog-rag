@@ -1767,6 +1767,18 @@
     "title": "TimesFM-3: A zero-shot foundation model for multivariate forecasting",
     "topic": "Models"
   },
+  "https://research.google/blog/toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients/": {
+    "date": "",
+    "file": "data/articles/google-research__toolgrad-efficient-tool-use-dataset-generation-with-textual-gradients.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "Google researchers introduced ToolGrad, a data generation framework that reverses the typical approach by creating tool-use solutions first, then generating corresponding user queries, rather than the other way around. This method produces higher-quality training data more efficiently and enables smaller LLMs fine-tuned on ToolGrad data to match or exceed the performance of larger proprietary models like GPT and Claude on tool-use tasks.",
+    "nugget_at": "2026-09-11T08:29:18+00:00",
+    "scraped_at": "2026-09-11T08:26:11+00:00",
+    "signal": 4,
+    "site": "google-research",
+    "title": "ToolGrad: Efficient tool-use dataset generation with textual \"gradients\"",
+    "topic": "Research"
+  },
   "https://research.google/blog/transfer-learning-for-genomic-prediction-in-underrepresented-populations/": {
     "date": "",
     "file": "data/articles/google-research__transfer-learning-for-genomic-prediction-in-underrepresented-populations.md",
