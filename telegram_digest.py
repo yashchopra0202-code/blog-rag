@@ -3,6 +3,7 @@ email step, gated by config.json cadence. Best-effort per recipient."""
 import os
 import time
 from dotenv import load_dotenv
+import observability
 
 import config
 import digest
@@ -75,6 +76,7 @@ def broadcast(now=None, sleep=None, delay=SEND_DELAY):
 
 def main():
     load_dotenv()
+    observability.init_sentry("telegram_digest")
     broadcast()
 
 if __name__ == "__main__":

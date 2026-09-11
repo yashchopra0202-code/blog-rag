@@ -17,6 +17,8 @@ concurrency:
 jobs:
   run:
     runs-on: ubuntu-latest
+    env:
+      SENTRY_DSN: ${{ secrets.SENTRY_DSN }}   # optional; unset -> Sentry is a no-op
     steps:
       - uses: actions/checkout@v4
       - uses: actions/setup-python@v5

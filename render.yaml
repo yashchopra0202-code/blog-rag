@@ -26,3 +26,5 @@ services:
         sync: false
       - key: SUPABASE_SERVICE_KEY  # service-role; build + runtime, dashboard secret
         sync: false
+      - key: SENTRY_DSN            # optional error tracking; unset -> no-op
+        sync: false

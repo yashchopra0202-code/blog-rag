@@ -18,8 +18,10 @@ import telegram as tg
 import telegram_api
 import store
 import emailer
+import observability
 
 load_dotenv()
+observability.init_sentry("api")   # no-op unless SENTRY_DSN is set
 PERSIST_DIR = "chroma_db"
 MANIFEST_PATH = "data/manifest.json"
 MODEL = "claude-haiku-4-5"
