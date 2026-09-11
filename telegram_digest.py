@@ -1,5 +1,6 @@
 """Broadcast the daily digest to Telegram subscribers. Run by CI after the
 email step, gated by config.json cadence. Best-effort per recipient."""
+import html
 import os
 import time
 from dotenv import load_dotenv
@@ -39,11 +40,23 @@ def broadcast(now=None, sleep=None, delay=SEND_DELAY):
     token = os.environ["TELEGRAM_BOT_TOKEN"]
     feed_url = os.getenv("FEED_URL") or "https://blog-rag.onrender.com/"
     msg = tg.format_digest_message(entries, feed_url)
+    # Lead image: the highest-ranked nugget that has one, sent as a photo above
+    # the text digest. Best-effort — a photo failure never blocks the digest.
+    lead = next((e for e in entries if e.get("image")), None)
+    caption = None
+    if lead:
+        caption = (f'<b>{html.escape(lead["title"])}</b>\n'
+                   f'<a href="{html.escape(lead["url"])}">Read the full post &rarr;</a>')
     sent = failed = dropped = 0
     for i, sub in enumerate(store.active_subscribers()):
         cid = sub.get("chat_id")
         if i:
             sleep(delay)   # pace between sends (not before the first)
+        if lead:
+            try:
+                telegram_api.send_photo(token, cid, lead["image"], caption)
+            except Exception:  # noqa: BLE001 - the lead photo is a bonus; never block the text
+                pass
         try:
             telegram_api.send_message(token, cid, msg)
             sent += 1

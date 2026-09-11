@@ -34,5 +34,10 @@ def send_message(token, chat_id, html):
     return _call("sendMessage", token, {"chat_id": chat_id, "text": html,
                                         "parse_mode": "HTML", "disable_web_page_preview": True})
 
+def send_photo(token, chat_id, photo, caption):
+    """Send a photo (a URL Telegram fetches) with an HTML caption (<=1024 chars)."""
+    return _call("sendPhoto", token, {"chat_id": chat_id, "photo": photo,
+                                      "caption": caption, "parse_mode": "HTML"})
+
 def set_webhook(token, url, secret):
     return _call("setWebhook", token, {"url": url, "secret_token": secret})
