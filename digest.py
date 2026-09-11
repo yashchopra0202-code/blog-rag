@@ -89,7 +89,7 @@ def select_new_entries(manifest, since, limit=None, enabled_labs=None):
             signal = 3
         out.append({"url": url, "title": v.get("title", url), "site": v.get("site", ""),
                     "nugget": v["nugget"], "topic": v.get("topic", "Other"),
-                    "signal": signal, "scraped_at": stamp})
+                    "signal": signal, "scraped_at": stamp, "image": v.get("image", "")})
     out.sort(key=lambda e: (e["signal"], e["scraped_at"]), reverse=True)  # signal, then recency
     if limit is not None:
         out = out[:limit]
@@ -137,10 +137,16 @@ def _esc(s):
 
 def _full_card(e):
     label, color = lab_label(e["site"]), lab_color(e["site"])
+    # Hero image (the article's own og:image). Omitted entirely when absent so
+    # an empty src never renders a broken-image icon in the email client.
+    img = (f'<img src="{_esc(e["image"])}" alt="" width="100%" '
+           'style="width:100%;max-height:280px;object-fit:cover;border-radius:10px;'
+           'display:block;margin:0 0 12px" />') if e.get("image") else ""
     return (
         '<div style="border:1px solid #E3E5DC;border-radius:14px;padding:16px 18px;'
         'margin:0 0 14px;background:#ffffff">'
-        f'<span style="display:inline-block;background:{color};color:#ffffff;font-size:11px;'
+        + img
+        + f'<span style="display:inline-block;background:{color};color:#ffffff;font-size:11px;'
         f'font-weight:700;padding:3px 10px;border-radius:999px;letter-spacing:.02em">{_esc(label)}</span>'
         '<div style="font-size:17px;font-weight:700;line-height:1.3;margin:10px 0 7px">'
         f'<a href="{_esc(e["url"])}" style="color:#15201A;text-decoration:none">{_esc(e["title"])}</a></div>'

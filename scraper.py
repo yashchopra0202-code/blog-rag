@@ -115,6 +115,10 @@ def extract_article(html, url):
     date = (sel.css('meta[property="article:published_time"]::attr(content)').get()
             or sel.css("time::attr(datetime)").get() or "").strip()[:10]
 
+    # Hero image: the article's own og:image (twitter:image as fallback).
+    image = (sel.css('meta[property="og:image"]::attr(content)').get()
+             or sel.css('meta[name="twitter:image"]::attr(content)').get() or "").strip()
+
     # Prefer the first semantic container that clearly holds the article body.
     # Some sites wrap only a share widget in <article>/<main>, so if the chosen
     # container is too thin, escalate to <section>/<body> and keep the richest.
@@ -143,7 +147,7 @@ def extract_article(html, url):
             full = " ".join(t.strip() for t in node.css("::text").getall() if t and t.strip())
             if len(full) > len(body):
                 body = full
-    return {"title": title, "date": date, "body": body}
+    return {"title": title, "date": date, "body": body, "image": image}
 
 
 def fetch_html(url, render_js):
@@ -201,7 +205,8 @@ def scrape_site(site, manifest, articles_dir, max_articles):
                 "date": data["date"], "scraped_at": now}
         path = af.write_article(articles_dir, meta, data["body"])
         manifest[url] = {"title": meta["title"], "date": meta["date"],
-                         "site": site["name"], "file": path, "scraped_at": now}
+                         "site": site["name"], "file": path, "scraped_at": now,
+                         "image": data.get("image", "")}
         saved += 1
     return saved
 

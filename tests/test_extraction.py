@@ -16,6 +16,22 @@ def test_extract_article_empty_body_when_no_paragraphs():
     out = scraper.extract_article(html, "https://x.com/p")
     assert out["body"] == ""
 
+def test_extract_article_pulls_og_image():
+    html = ('<html><head><title>T</title>'
+            '<meta property="og:image" content="https://x.com/hero.jpg"></head>'
+            '<body><article><h1>Title</h1>'
+            '<p>A genuine article paragraph with enough real content to keep it.</p>'
+            '</article></body></html>')
+    out = scraper.extract_article(html, "https://x.com/post")
+    assert out["image"] == "https://x.com/hero.jpg"
+
+def test_extract_article_image_empty_when_absent():
+    html = ('<html><head><title>T</title></head><body><article><h1>Title</h1>'
+            '<p>A genuine article paragraph with enough real content to keep it.</p>'
+            '</article></body></html>')
+    out = scraper.extract_article(html, "https://x.com/post")
+    assert out["image"] == ""
+
 def test_extract_escalates_past_share_widget(tmp_path=None):
     # NVIDIA-style: <article> holds only a share widget; the real body is in <section>.
     html = (
