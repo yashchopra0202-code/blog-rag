@@ -4,6 +4,7 @@ import sys
 
 import httpx
 from dotenv import load_dotenv
+import observability
 
 RESEND_ENDPOINT = "https://api.resend.com/emails"
 STATUS_PATH = "data/scrape_status.json"
@@ -52,6 +53,7 @@ def send_alert(problems, api_key, sender, to, run_url=""):
 
 def main():
     load_dotenv()
+    observability.init_sentry("alert")
     outcomes = {k: os.getenv(f"{k.upper()}_OUTCOME", "")
                 for k in ("scrape", "nuggetize", "digest", "telegram")}
     problems = check_health(load_status(), outcomes)

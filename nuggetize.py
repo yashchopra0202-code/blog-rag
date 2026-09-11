@@ -2,6 +2,7 @@ import json
 from datetime import datetime, timezone
 
 from dotenv import load_dotenv
+import observability
 from langchain_anthropic import ChatAnthropic
 
 import article_format as af
@@ -97,6 +98,7 @@ def nuggetize_manifest(manifest, articles_dir, llm, save=None) -> int:
 
 def main() -> None:
     load_dotenv()
+    observability.init_sentry("nuggetize")
     rag_core.require_env("ANTHROPIC_API_KEY")
     manifest = load_manifest(MANIFEST_PATH)
     if not manifest:

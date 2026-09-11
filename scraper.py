@@ -8,6 +8,7 @@ from urllib.parse import urljoin
 import article_format as af
 from config import enabled_sites, load_config
 from sites import SITES
+import observability
 
 ARTICLES_DIR = "data/articles"
 MANIFEST_PATH = "data/manifest.json"
@@ -223,6 +224,7 @@ def write_scrape_status(sites_total, sites_ok, new_articles, path=SCRAPE_STATUS_
 
 
 def main():
+    observability.init_sentry("scraper")   # no-op in the scrapling venv (no sentry-sdk)
     manifest = load_manifest(MANIFEST_PATH)
     sites = enabled_sites(SITES, load_config())  # skip disabled labs entirely
     total = 0

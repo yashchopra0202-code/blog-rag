@@ -5,6 +5,7 @@ from datetime import datetime, timedelta, timezone
 
 import httpx
 from dotenv import load_dotenv
+import observability
 
 import emailer
 import store
@@ -261,6 +262,7 @@ def deliver_if_new(key, subject, html, recipients, banner=None):
 
 def main() -> None:
     load_dotenv()
+    observability.init_sentry("digest")
     api_key = os.getenv("RESEND_API_KEY")
     to = os.getenv("DIGEST_TO")
     sender = os.getenv("DIGEST_FROM", "onboarding@resend.dev")
