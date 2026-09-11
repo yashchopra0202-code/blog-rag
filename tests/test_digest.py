@@ -76,6 +76,32 @@ def test_select_caps_to_newest_limit():
     assert [e["url"] for e in out] == ["new", "mid"]  # newest first, capped to 2
 
 
+def test_select_new_entries_carries_image():
+    manifest = {
+        "u1": {"nugget": "a", "scraped_at": "2026-09-05T10:00:00+00:00", "title": "A",
+               "site": "xai", "image": "https://x.ai/hero.jpg"},
+        "u2": {"nugget": "b", "scraped_at": "2026-09-05T11:00:00+00:00", "title": "B",
+               "site": "cohere"},  # no image
+    }
+    out = {e["url"]: e for e in digest.select_new_entries(manifest, since=None)}
+    assert out["u1"]["image"] == "https://x.ai/hero.jpg"
+    assert out["u2"]["image"] == ""  # missing image is empty, never KeyError
+
+
+def test_full_card_renders_image_when_present():
+    e = {"url": "https://x/a", "title": "T", "site": "xai", "nugget": "n",
+         "image": "https://x.ai/hero.jpg"}
+    card = digest._full_card(e)
+    assert "<img" in card
+    assert "https://x.ai/hero.jpg" in card
+
+
+def test_full_card_omits_image_when_absent():
+    e = {"url": "https://x/a", "title": "T", "site": "xai", "nugget": "n", "image": ""}
+    card = digest._full_card(e)
+    assert "<img" not in card  # no empty-src broken image
+
+
 def test_build_digest_escapes_and_includes():
     entries = [{"url": 'https://x/a?q="quoted"', "title": "Big <news>", "site": "lab",
                 "nugget": "why & how", "scraped_at": "2026-09-05T10:00:00+00:00"}]
