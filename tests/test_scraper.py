@@ -1,3 +1,4 @@
+import pytest
 import scraper
 
 def test_filter_article_links_resolves_and_filters():
@@ -25,6 +26,7 @@ def test_write_scrape_status(tmp_path):
     assert s == {"sites_total": 18, "sites_ok": 17, "new_articles": 5}
 
 def test_scrape_site_stores_og_image_in_manifest(tmp_path, monkeypatch):
+    pytest.importorskip("scrapling")  # extract_article needs it; RAG-venv gate skips this
     html = ('<html><head><title>T</title>'
             '<meta property="og:image" content="https://x.com/hero.jpg"></head>'
             '<body><article><h1>Real Title</h1>'
