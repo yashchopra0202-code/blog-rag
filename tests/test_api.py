@@ -28,10 +28,52 @@ def test_answer_question_returns_answer_and_dedup_sources(monkeypatch):
 
 def test_ask_endpoint(monkeypatch):
     monkeypatch.setattr(api, "answer_question", lambda q: {"answer": "OK", "sources": []})
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: True)
     client = TestClient(api.app)
     r = client.post("/ask", json={"question": "hi"})
     assert r.status_code == 200
     assert r.json()["answer"] == "OK"
+
+
+def test_ask_rate_limited_per_ip_returns_429(monkeypatch):
+    called = {"llm": False}
+    monkeypatch.setattr(api, "answer_question",
+                        lambda q: called.__setitem__("llm", True) or {"answer": "X", "sources": []})
+    monkeypatch.setattr(api.store, "rate_limit_ok", lambda bucket, limit: False)  # per-IP blocks
+    client = TestClient(api.app)
+    r = client.post("/ask", json={"question": "hi"})
+    assert r.status_code == 429
+    assert called["llm"] is False  # blocked before the expensive LLM call
+
+
+def test_ask_global_cap_returns_graceful_and_skips_llm(monkeypatch):
+    called = {"llm": False}
+
+    def fake_answer(q):
+        called["llm"] = True
+        return {"answer": "X", "sources": []}
+
+    monkeypatch.setattr(api, "answer_question", fake_answer)
+    # per-IP ok, but the global daily cap is exceeded
+    monkeypatch.setattr(api.store, "rate_limit_ok",
+                        lambda bucket, limit: not bucket.startswith("ask:global"))
+    client = TestClient(api.app)
+    r = client.post("/ask", json={"question": "hi"})
+    assert r.status_code == 200
+    assert r.json().get("capped") is True
+    assert called["llm"] is False  # global cap skips the LLM -> no spend
+
+
+def test_ask_fails_open_when_limiter_errors(monkeypatch):
+    def boom(bucket, limit):
+        raise RuntimeError("supabase down")
+
+    monkeypatch.setattr(api.store, "rate_limit_ok", boom)
+    monkeypatch.setattr(api, "answer_question", lambda q: {"answer": "OK", "sources": []})
+    client = TestClient(api.app)
+    r = client.post("/ask", json={"question": "hi"})
+    assert r.status_code == 200
+    assert r.json()["answer"] == "OK"  # limiter outage must not block legit users
 
 def test_ask_endpoint_rejects_empty():
     client = TestClient(api.app)

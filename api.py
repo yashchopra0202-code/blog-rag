@@ -70,6 +70,10 @@ class Ask(BaseModel):
 
 
 SUBSCRIBE_LIMIT = 5   # confirmation-email attempts per IP per hour
+ASK_IP_HOURLY_LIMIT = int(os.getenv("ASK_IP_HOURLY_LIMIT", "20"))          # /ask per IP per hour (fairness)
+ASK_GLOBAL_DAILY_LIMIT = int(os.getenv("ASK_GLOBAL_DAILY_LIMIT", "200"))   # /ask total per day (budget cap)
+ASK_CAP_MESSAGE = ("I've reached today's question limit for this small free demo. "
+                   "Please check back tomorrow — the daily digest still arrives in the meantime.")
 _EMAIL_RE = re.compile(r"^[^@\s]+@[^@\s]+\.[^@\s]+$")
 
 
@@ -132,10 +136,27 @@ def answer_question(question: str) -> dict:
 
 
 @app.post("/ask")
-def ask(payload: Ask):
+def ask(payload: Ask, request: Request):
     q = payload.question.strip()
     if not q:
         raise HTTPException(status_code=400, detail="Question is empty.")
+    now = datetime.now(timezone.utc)
+    ip = request.client.host if request.client else "unknown"
+    # Per-IP hourly limit (fairness). Fail open so a limiter outage never blocks.
+    try:
+        ip_ok = store.rate_limit_ok(f"ask:{ip}:{now:%Y%m%d%H}", ASK_IP_HOURLY_LIMIT)
+    except Exception:
+        ip_ok = True
+    if not ip_ok:
+        raise HTTPException(status_code=429, detail="Too many questions. Try again shortly.")
+    # Global daily cap (budget backstop). Over the cap returns a graceful message
+    # that SKIPS the LLM, so a flood costs a Postgres read, not Claude calls.
+    try:
+        global_ok = store.rate_limit_ok(f"ask:global:{now:%Y%m%d}", ASK_GLOBAL_DAILY_LIMIT)
+    except Exception:
+        global_ok = True
+    if not global_ok:
+        return {"answer": ASK_CAP_MESSAGE, "sources": [], "capped": True}
     return answer_question(q)
 
 
