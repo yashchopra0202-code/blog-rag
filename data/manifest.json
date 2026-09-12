@@ -1582,6 +1582,18 @@
     "site": "openai-index",
     "title": "Safety overview: GPT\u20116 Astra"
   },
+  "https://openai.com/index/scaling-storage-one-billion-users-part-one/": {
+    "date": "2026-08-25",
+    "file": "data/articles/openai-index__scaling-storage-one-billion-users-part-one.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/5D3TSOEPUfq7vsrX6Vsp0Q/3ac45b90943bcbcdd0eac9b80e0f679a/SEO.png?w=1600&h=900&fit=fill",
+    "nugget": "OpenAI's Habitat storage platform was optimized to handle massive growth by decoupling storage logic into a standalone service and addressing Python asyncio bottlenecks through connection pooling and HTTP/2 multiplexing. This infrastructure improvement enables their products to reliably serve millions of weekly users with improved request latencies and load balancing.",
+    "nugget_at": "2026-09-12T08:18:48+00:00",
+    "scraped_at": "2026-09-12T08:14:57+00:00",
+    "signal": 3,
+    "site": "openai-index",
+    "title": "Rapidly scaling online storage to serve over 1 billion ChatGPT users",
+    "topic": "Infrastructure"
+  },
   "https://openai.com/index/scientific-computing-agentic-ai/": {
     "date": "2026-09-03",
     "file": "data/articles/openai-research__scientific-computing-agentic-ai.md",
