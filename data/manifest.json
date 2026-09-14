@@ -738,6 +738,18 @@
     "title": "Meet Cohere Transcribe Arabic",
     "topic": "Product & Tools"
   },
+  "https://cohere.com/blog/who-gets-to-define-the-rules-for-ai": {
+    "date": "",
+    "file": "data/articles/cohere__who-gets-to-define-the-rules-for-ai.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/aad920dfe8b269bfea7f77111be06fd7196ce23c-4522x2532.png?rect=0,79,4522,2374&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "An AI company executive criticizes Anthropic's proposed safety framework, arguing it amounts to an antitrust-exempted cartel that would let a few Silicon Valley labs set global AI rules without public input. The author draws parallels to past regulatory failures (bond rating agencies, automotive standards) where safety justifications masked anti-competitive gatekeeping that benefited incumbents.",
+    "nugget_at": "2026-09-14T09:27:37+00:00",
+    "scraped_at": "2026-09-14T09:24:41+00:00",
+    "signal": 4,
+    "site": "cohere",
+    "title": "Who Gets to Define the Rules for AI?",
+    "topic": "Safety & Policy"
+  },
   "https://cohere.com/blog/why-cultural-awareness-is-essential-for-global-ai": {
     "date": "",
     "file": "data/articles/cohere__why-cultural-awareness-is-essential-for-global-ai.md",
@@ -935,6 +947,14 @@
     "site": "huggingface",
     "title": "https://huggingface.co/blog/asr-benchmark-optimization",
     "topic": "Product & Tools"
+  },
+  "https://huggingface.co/blog/asyncgrpo-lora-hfjobs": {
+    "date": "2025-02-24",
+    "file": "data/articles/huggingface__asyncgrpo-lora-hfjobs.md",
+    "image": "https://huggingface.co/blog/assets/asyncgrpo-lora-hfjobs/thumbnail.png",
+    "scraped_at": "2026-09-14T09:24:27+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs"
   },
   "https://huggingface.co/blog/community": {
     "date": "2026-09-04",
