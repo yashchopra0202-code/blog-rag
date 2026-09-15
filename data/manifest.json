@@ -306,6 +306,18 @@
     "site": "nvidia",
     "title": "NVIDIA and Local AI Community Fuel Open Source Models and Intelligent Agents"
   },
+  "https://blogs.nvidia.com/blog/local-ai-perplexity-windows-pcs/": {
+    "date": "2026-09-14",
+    "file": "data/articles/nvidia__local-ai-perplexity-windows-pcs.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/Local-AI_Perplexity-on-Windows_Blog_Feature.jpg",
+    "nugget": "Perplexity launched Portable Computer for Windows PCs with NVIDIA RTX GPUs, enabling users to run AI agents locally for multistep tasks while keeping sensitive data on-device. This matters because it expands access to private, credit-free AI workflows and demonstrates the growing capability of local models to handle complex work without cloud dependency.",
+    "nugget_at": "2026-09-15T09:08:55+00:00",
+    "scraped_at": "2026-09-15T09:06:09+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "Perplexity Portable Computer Is Now Available on Windows, Powered by NVIDIA RTX",
+    "topic": "Product & Tools"
+  },
   "https://blogs.nvidia.com/blog/medical-physics-simulation-open-source/": {
     "date": "2026-07-22",
     "file": "data/articles/nvidia__medical-physics-simulation-open-source.md",
@@ -2852,6 +2864,18 @@
     "title": "Brain: Agentic Memory as a Knowledge Wiki",
     "topic": "Infrastructure"
   },
+  "https://www.perplexity.ai/hub/blog/cobbledb": {
+    "date": "2026-09-14",
+    "file": "data/articles/perplexity__cobbledb.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/48485bc15e3765b22314a0c149444e0953f36dd2-2057x1080.jpg?w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "Perplexity rebuilt its search infrastructure storage layer with a new architecture separating durable state (Pillar), batched updates (Lorry), and query-time serving (CobbleDB), replacing DynamoDB. The redesign achieves 5\u00d7 lower batch-read latency and an estimated 20% cost savings while enabling independent optimization of processing and serving workloads.",
+    "nugget_at": "2026-09-15T09:08:58+00:00",
+    "scraped_at": "2026-09-15T09:05:58+00:00",
+    "signal": 4,
+    "site": "perplexity",
+    "title": "CobbleDB: Rebuilding AI Search Storage for Lower Latency and Cost",
+    "topic": "Infrastructure"
+  },
   "https://www.perplexity.ai/hub/blog/computer-connects-to-20-new-licensed-finance-data-sources": {
     "date": "2026-08-25",
     "file": "data/articles/perplexity__computer-connects-to-20-new-licensed-finance-data-sources.md",
@@ -2928,6 +2952,18 @@
     "site": "perplexity",
     "title": "PII-TRACE: Detecting Personal Data Before It Leaves the Device",
     "topic": "Safety & Policy"
+  },
+  "https://www.perplexity.ai/hub/blog/portable-computer-for-windows-is-here": {
+    "date": "2026-09-14",
+    "file": "data/articles/perplexity__portable-computer-for-windows-is-here.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/6802042b63af225df4db4c770a0bfca6d69c1b67-1675x939.png?rect=0,31,1675,879&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "Perplexity launched Portable Computer for Windows, allowing users to run AI models locally on their own hardware for sensitive work without sending data to the cloud or consuming credits. The tool enables scheduled recurring workflows, integrates with desktop applications via Model Context Protocol, and can optionally pull in web search results or frontier models when needed.",
+    "nugget_at": "2026-09-15T09:08:59+00:00",
+    "scraped_at": "2026-09-15T09:06:02+00:00",
+    "signal": 3,
+    "site": "perplexity",
+    "title": "Portable Computer for Windows is here",
+    "topic": "Product & Tools"
   },
   "https://www.perplexity.ai/hub/blog/q2d-web": {
     "date": "2026-09-09",
