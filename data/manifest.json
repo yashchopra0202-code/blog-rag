@@ -208,6 +208,18 @@
     "title": "TutorMoments: Do AI tutors know when to help and when to hold back?",
     "topic": "Research"
   },
+  "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/": {
+    "date": "2026-09-15",
+    "file": "data/articles/nvidia__ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/gpu-social-vera-rubin-pod-1920x1080-4983951-1.jpg",
+    "nugget": "NVIDIA showcased efficiency advancements at the AI Infra Summit, with partners demonstrating major improvements in tokens-per-watt metrics across its Vera Rubin and DSX platforms. Lambda achieved 23% better performance per watt, while Vera Rubin NVL72 delivered up to 30x higher throughput per megawatt on agentic workloads\u2014a critical shift as AI factories optimize for energy efficiency rather than peak performance.",
+    "nugget_at": "2026-09-16T09:02:23+00:00",
+    "scraped_at": "2026-09-16T08:58:48+00:00",
+    "signal": 4,
+    "site": "nvidia",
+    "title": "AI Infra Summit: NVIDIA Vera Rubin and DSX Platform Advancements Showcase Energy Efficiencies of Optimizing Tokens Per Watt for AI Factories",
+    "topic": "Infrastructure"
+  },
   "https://blogs.nvidia.com/blog/ai-summit-korea-partners-and-nvidia/": {
     "date": "2026-07-24",
     "file": "data/articles/nvidia__ai-summit-korea-partners-and-nvidia.md",
@@ -218,6 +230,18 @@
     "site": "nvidia",
     "title": "At AI Summit, South Korea Outlines Its AI Future With NVIDIA and Partners",
     "topic": "Infrastructure"
+  },
+  "https://blogs.nvidia.com/blog/childrens-hospital-open-source-ai-cardiac-care/": {
+    "date": "2026-09-15",
+    "file": "data/articles/nvidia__childrens-hospital-open-source-ai-cardiac-care.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/CHOP_still.png",
+    "nugget": "NVIDIA showcased multiple AI applications across healthcare, enterprise, and consumer segments: the University of Manchester deployed Earth-2 for UK air pollution forecasting to address public health risks, Perplexity launched a local AI PC tool on Windows for on-device processing, and NVIDIA demonstrated real-time AI capabilities for broadcast and streaming at industry conferences. These announcements signal NVIDIA's expanding ecosystem positioning AI infrastructure across enterprise, consumer, and specialized domain applications.",
+    "nugget_at": "2026-09-16T09:02:25+00:00",
+    "scraped_at": "2026-09-16T08:58:41+00:00",
+    "signal": 2,
+    "site": "nvidia",
+    "title": "Heart of the Matter: How a Major Children\u2019s Hospital Uses Open Source NVIDIA AI for Cardiac Care",
+    "topic": "Product & Tools"
   },
   "https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/": {
     "date": "2026-09-10",
@@ -236,6 +260,14 @@
     "scraped_at": "2026-09-05T05:24:33+00:00",
     "site": "nvidia",
     "title": "Firebird Launches CIS Region\u2019s Largest AI Factory in Armenia"
+  },
+  "https://blogs.nvidia.com/blog/from-megawatts-to-tokens-how-nvidia-maximizes-ai-factory-production/": {
+    "date": "2026-09-15",
+    "file": "data/articles/nvidia__from-megawatts-to-tokens-how-nvidia-maximizes-ai-factory-production.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/3026/09/end-to-end-tech-blog-dsx-ee-kv-1920x1080-5601273.jpg",
+    "scraped_at": "2026-09-16T08:58:44+00:00",
+    "site": "nvidia",
+    "title": "From Megawatts to Tokens: How NVIDIA Maximizes AI Factory Production"
   },
   "https://blogs.nvidia.com/blog/gamescom-rtx-spark-pc-games-technology/": {
     "date": "2026-08-25",
@@ -286,6 +318,18 @@
     "signal": 1,
     "site": "nvidia",
     "title": "NVIDIA Brings Real-Time AI to Broadcast, Sports and Global Streaming at IBC",
+    "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/jensen-huang-dreamforce/": {
+    "date": "2026-09-15",
+    "file": "data/articles/nvidia__jensen-huang-dreamforce.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/DF26-SF-260915-EL2_6006-1-scaled.jpg",
+    "nugget": "Salesforce announced Koa, a CRM reasoning model built by fine-tuning NVIDIA's open Nemotron model on 27 years of proprietary CRM data, which matches leading models with 3x fewer errors and runs entirely within Salesforce's infrastructure without using customer data. The partnership exemplifies how enterprises are building custom AI models on open foundations, with Koa entering customer pilots in October and general availability expected in winter 2026.",
+    "nugget_at": "2026-09-16T09:02:27+00:00",
+    "scraped_at": "2026-09-16T08:58:37+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "\u2018Now We Can Know Everything and Do Anything,\u2019 Jensen Huang Says at Dreamforce",
     "topic": "Product & Tools"
   },
   "https://blogs.nvidia.com/blog/local-ai-ifa-next-gen-agents-nv-pair-rtx-spark/": {
@@ -463,6 +507,18 @@
     "site": "nvidia",
     "title": "Universitas Gadjah Mada, Indosat and NVIDIA Open Indonesia\u2019s First University AI Center to Develop Local AI Talent",
     "topic": "Infrastructure"
+  },
+  "https://blogs.nvidia.com/blog/uk-air-pollution-research-earth-2/": {
+    "date": "2026-09-16",
+    "file": "data/articles/nvidia__uk-air-pollution-research-earth-2.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/Is-AI-Poll-01_1920x1080.jpg",
+    "nugget": "Researchers at the University of Manchester successfully adapted NVIDIA's Earth-2 generative models to forecast air pollution across the UK, achieving high-resolution predictions in just two days on a national supercomputer and now running inference on a desktop system. This breakthrough enables faster, more accessible air quality forecasting that could inform public health interventions and allow clinicians to proactively alert patients about pollution risks.",
+    "nugget_at": "2026-09-16T09:02:30+00:00",
+    "scraped_at": "2026-09-16T08:58:34+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "University of Manchester Uses NVIDIA Earth-2 to Forecast Air Pollution Across the UK",
+    "topic": "Research"
   },
   "https://blogs.nvidia.com/blog/vera-cpu-delivery/": {
     "date": "2026-08-27",
@@ -1279,6 +1335,30 @@
     "title": "Mistral x HUMAIN",
     "topic": "Business"
   },
+  "https://mistral.ai/news/mistral-x-mozilla": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-x-mozilla.md",
+    "image": "https://mistral.ai/cms-media/api/media/file/Linkedin-Partnership-Firefox%20copie.jpg",
+    "nugget": "Mistral and Mozilla announced a partnership to power Mozilla's Smart Window AI browsing assistant with Mistral's models, starting with France and North America. The collaboration emphasizes open-source AI, regional language support, and privacy-first design with zero data retention, positioning both companies as alternatives to proprietary AI ecosystems.",
+    "nugget_at": "2026-09-16T09:02:31+00:00",
+    "scraped_at": "2026-09-16T08:57:47+00:00",
+    "signal": 3,
+    "site": "mistral",
+    "title": "Mistral and Mozilla are bringing open, private and multilingual AI to your web browser",
+    "topic": "Product & Tools"
+  },
+  "https://mistral.ai/news/mistral-x-mozilla/": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-x-mozilla.md",
+    "image": "https://mistral.ai/cms-media/api/media/file/Linkedin-Partnership-Firefox%20copie.jpg",
+    "nugget": "Mistral and Mozilla announced a partnership to power Firefox Smart Window, an AI browsing assistant, with Mistral's models across France, North America, and soon the UK and Germany. The collaboration emphasizes open-source AI, regional language customization, privacy-first design with zero data retention, and positioning open models as an alternative to single-company AI pipelines in web browsers.",
+    "nugget_at": "2026-09-16T09:02:32+00:00",
+    "scraped_at": "2026-09-16T08:57:52+00:00",
+    "signal": 3,
+    "site": "mistral",
+    "title": "Mistral and Mozilla are bringing open, private and multilingual AI to your web browser",
+    "topic": "Product & Tools"
+  },
   "https://mistral.ai/news/more-control-over-connectors/": {
     "date": "",
     "file": "data/articles/mistral__more-control-over-connectors.md",
@@ -1732,6 +1812,18 @@
     "signal": 4,
     "site": "google-research",
     "title": "An AI tool for prioritizing candidate biomarkers from wearable sensor data",
+    "topic": "Research"
+  },
+  "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/": {
+    "date": "",
+    "file": "data/articles/google-research__bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "Google Research introduced Retrieve-for-Train, a framework that uses offline reinforcement learning to train a lightweight diffusion model for efficient search result slate generation, replacing expensive inference-time reasoning. By distilling reward-optimized behaviors into a 53.9M-parameter diffusion model, the approach achieves 12-20x speedup over autoregressive methods while maintaining diverse, coherent, database-grounded results.",
+    "nugget_at": "2026-09-16T09:02:34+00:00",
+    "scraped_at": "2026-09-16T08:57:22+00:00",
+    "signal": 4,
+    "site": "google-research",
+    "title": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train",
     "topic": "Research"
   },
   "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/": {
@@ -2820,6 +2912,18 @@
     "title": "A Local-First Agent for Private and Cost-Effective Knowledge Work",
     "topic": "Product & Tools"
   },
+  "https://www.perplexity.ai/hub/blog/ai-detector": {
+    "date": "2026-09-15",
+    "file": "data/articles/perplexity__ai-detector.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/e0e6267f014295bbd70e508ee8865250e17d5665-3000x2000.png?rect=0,213,3000,1575&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "This post explains how AI detectors work, what their percentage scores mean, and why they're often misunderstood. It matters because AI detection scores are frequently used to make consequential decisions about academic integrity and credibility, yet the same percentage can mean different things depending on the detector, and scores require proper calibration and context to be reliable.",
+    "nugget_at": "2026-09-16T09:02:36+00:00",
+    "scraped_at": "2026-09-16T08:58:27+00:00",
+    "signal": 2,
+    "site": "perplexity",
+    "title": "How AI detectors work and why a score alone can\u2019t prove authorship",
+    "topic": "Safety & Policy"
+  },
   "https://www.perplexity.ai/hub/blog/ai-hallucination": {
     "date": "2026-09-01",
     "file": "data/articles/perplexity__ai-hallucination.md",
@@ -2942,6 +3046,14 @@
     "title": "Optimizing On-Device Inference for Apple Silicon",
     "topic": "Infrastructure"
   },
+  "https://www.perplexity.ai/hub/blog/perplexity-comes-to-more-windows-pcs-with-hp": {
+    "date": "",
+    "file": "data/articles/perplexity__perplexity-comes-to-more-windows-pcs-with-hp.md",
+    "image": "",
+    "scraped_at": "2026-09-16T08:58:20+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
+  },
   "https://www.perplexity.ai/hub/blog/pii-trace-detecting-personal-data-before-it-leaves-the-device": {
     "date": "2026-09-01",
     "file": "data/articles/perplexity__pii-trace-detecting-personal-data-before-it-leaves-the-device.md",
@@ -2997,6 +3109,18 @@
     "site": "perplexity",
     "title": "Self-improving memory for agents",
     "topic": "Product & Tools"
+  },
+  "https://www.perplexity.ai/hub/blog/shadow-ai": {
+    "date": "2026-09-15",
+    "file": "data/articles/perplexity__shadow-ai.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/cb14e602a6c7a356e9522e161c5e7446eca8140c-3000x2000.png?rect=0,213,3000,1575&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "Shadow AI\u2014unapproved AI tools employees use at work\u2014is widespread, with about half of employees violating company policies by pasting sensitive data into public chatbots. The trend reflects a supply problem: when official tools meet employee needs for speed and capability, shadow AI use drops, but unsanctioned tools create serious security, compliance, and data protection risks including breaches, regulatory fines, and loss of trade secret protections.",
+    "nugget_at": "2026-09-16T09:02:38+00:00",
+    "scraped_at": "2026-09-16T08:58:23+00:00",
+    "signal": 4,
+    "site": "perplexity",
+    "title": "Shadow AI: Why employees go around IT, and what ends It",
+    "topic": "Safety & Policy"
   },
   "https://www.perplexity.ai/hub/blog/spaces-are-now-projects": {
     "date": "2026-07-30",
