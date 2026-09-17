@@ -208,6 +208,18 @@
     "title": "TutorMoments: Do AI tutors know when to help and when to hold back?",
     "topic": "Research"
   },
+  "https://blogs.nvidia.com/blog/ai-energy-management-alliance/": {
+    "date": "2026-09-16",
+    "file": "data/articles/nvidia__ai-energy-management-alliance.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/aema-main-feature-1280x720.png",
+    "nugget": "Emerald AI, Google, and NVIDIA launched the AI Energy Management Alliance (AEMA), a coalition focused on building data centers that dynamically adjust electricity use based on grid conditions. This addresses power constraints on AI infrastructure expansion by enabling facilities to shift workloads and reduce demand during grid stress, making more efficient use of existing infrastructure while accelerating deployment timelines.",
+    "nugget_at": "2026-09-17T09:05:37+00:00",
+    "scraped_at": "2026-09-17T09:03:21+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "Emerald AI, Google and NVIDIA Launch Alliance to Advance Flexible AI Data Centers",
+    "topic": "Infrastructure"
+  },
   "https://blogs.nvidia.com/blog/ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories/": {
     "date": "2026-09-15",
     "file": "data/articles/nvidia__ai-infra-summit-vera-rubin-dsx-energy-efficiencies-tokens-per-watt-ai-factories.md",
@@ -531,6 +543,18 @@
     "title": "Delivering Vera: NVIDIA\u2019s First CPU Built for Agents Is Shipping Now",
     "topic": "Infrastructure"
   },
+  "https://blogs.nvidia.com/blog/vera-rubin-nvl72-mlperf-inference/": {
+    "date": "2026-09-16",
+    "file": "data/articles/nvidia__vera-rubin-nvl72-mlperf-inference.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/mlperf-inference-6-1.png",
+    "nugget": "NVIDIA's new Vera Rubin NVL72 GPU system achieved leading performance in MLPerf Inference v6.1 benchmarks, delivering up to 3.7x better throughput than the previous GB300 NVL72 on demanding tasks like Qwen3-VL inference. This matters because higher inference throughput directly translates to more tokens generated per rack, lower cost-per-token, and better returns on AI infrastructure investments\u2014key factors determining the economics of deploying large language models at scale.",
+    "nugget_at": "2026-09-17T09:05:39+00:00",
+    "scraped_at": "2026-09-17T09:03:18+00:00",
+    "signal": 4,
+    "site": "nvidia",
+    "title": "NVIDIA Vera Rubin NVL72 Delivers Leading Performance in MLPerf Inference v6.1 Debut",
+    "topic": "Infrastructure"
+  },
   "https://cohere.com/blog/a-day-in-the-life-of-a-wealth-manager-with-and-without-ai": {
     "date": "",
     "file": "data/articles/cohere__a-day-in-the-life-of-a-wealth-manager-with-and-without-ai.md",
@@ -563,6 +587,30 @@
     "site": "cohere",
     "title": "Automation\u2019s Early Footprint",
     "topic": "Research"
+  },
+  "https://cohere.com/blog/cohere-and-aleph-alpha-sign-agreement": {
+    "date": "",
+    "file": "data/articles/cohere__cohere-and-aleph-alpha-sign-agreement.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/1015e4cfeb3009a23361f6f6c9a26c29fec5dda0-7680x4320.png?rect=0,144,7680,4032&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "Cohere is acquiring Aleph Alpha in a business combination that will create a transatlantic AI company with dual headquarters in Toronto and Berlin, over 1,000 employees, and deep roots in both Canada and Europe. This positions Cohere as the first foundational model developer aligned with sovereignty requirements of both jurisdictions, addressing growing demand for compliant AI solutions.",
+    "nugget_at": "2026-09-17T09:05:40+00:00",
+    "scraped_at": "2026-09-17T09:02:38+00:00",
+    "signal": 3,
+    "site": "cohere",
+    "title": "Cohere and Aleph Alpha sign agreement to become the first  transatlantic sovereign AI solution",
+    "topic": "Business"
+  },
+  "https://cohere.com/blog/cohere-and-open-text-partner-to-bring-trusted-ai": {
+    "date": "",
+    "file": "data/articles/cohere__cohere-and-open-text-partner-to-bring-trusted-ai.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/9a3bf3d4a87634f83ae3d11adbc11f2e65b778e3-3840x2160.png?rect=0,72,3840,2016&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "Cohere and OpenText partnered to deploy agentic AI systems for governments and regulated industries, integrating Cohere's North platform with OpenText's Aviator AI agents to enable secure, on-premises or sovereign cloud deployment. This matters because it addresses enterprise concerns around data security and compliance while moving AI agents from experimental pilots into production use.",
+    "nugget_at": "2026-09-17T09:05:42+00:00",
+    "scraped_at": "2026-09-17T09:02:40+00:00",
+    "signal": 3,
+    "site": "cohere",
+    "title": "Cohere and OpenText partner to bring trusted agentic AI to governments and regulated industries",
+    "topic": "Product & Tools"
   },
   "https://cohere.com/blog/cohere-security-ai-agent-north-wiz": {
     "date": "",
@@ -1565,6 +1613,14 @@
     "title": "GPT-6 Astra: A new generation of intelligence",
     "topic": "Models"
   },
+  "https://openai.com/index/how-to-connect-ai-usage-to-business-value/": {
+    "date": "2026-09-16",
+    "file": "data/articles/openai-index__how-to-connect-ai-usage-to-business-value.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/3Ias4lDCBufY7UbBmXDNjz/b72b7e773296ca0c7e74151f9c5447a2/seo-018.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-09-17T09:02:03+00:00",
+    "site": "openai-index",
+    "title": "How to connect AI usage to business value"
+  },
   "https://openai.com/index/how-two-settings-tripled-our-arc-agi-3-scores/": {
     "date": "2026-09-03",
     "file": "data/articles/openai-research__how-two-settings-tripled-our-arc-agi-3-scores.md",
@@ -1633,6 +1689,18 @@
     "site": "openai-index",
     "title": "Introducing the Agents API"
   },
+  "https://openai.com/index/model-misalignment-reporting-framework/": {
+    "date": "2026-09-08",
+    "file": "data/articles/openai-index__model-misalignment-reporting-framework.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/1ZIYnl31jt9gPO8qCbMGBZ/aaf74083a5332be1cb265dbdb6e652e0/model-misalignment-reporting-framework--seo-v002.png?w=1600&h=900&fit=fill",
+    "nugget": "OpenAI released a new framework for systematically tracking, investigating, and disclosing instances of model misalignment, along with six concrete reports on concerning behaviors observed during training and evaluation. The framework aims to accelerate transparency around AI safety issues, enable industry-wide standards for disclosure, and provide evidence that external researchers can examine to build consensus on alignment progress.",
+    "nugget_at": "2026-09-17T09:05:44+00:00",
+    "scraped_at": "2026-09-17T09:02:06+00:00",
+    "signal": 4,
+    "site": "openai-index",
+    "title": "Our framework for reporting model misalignment",
+    "topic": "Safety & Policy"
+  },
   "https://openai.com/index/navier-stokes-solution/": {
     "date": "2026-09-06",
     "file": "data/articles/openai-research__navier-stokes-solution.md",
@@ -1675,6 +1743,14 @@
     "site": "openai-index",
     "title": "Now everyone can put data to work",
     "topic": "Product & Tools"
+  },
+  "https://openai.com/index/reimagining-advertising-with-ai/": {
+    "date": "2026-09-16",
+    "file": "data/articles/openai-index__reimagining-advertising-with-ai.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/55OzfM3w5QnfYsHGeqQPwD/da59df4251ec09b27e1855f4710f0c39/reimagining-advertising-with-ai-seo.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-09-17T09:01:59+00:00",
+    "site": "openai-index",
+    "title": "Reimagining advertising with AI"
   },
   "https://openai.com/index/research-acceleration-view-inside-openai/": {
     "date": "2026-09-03",
@@ -3320,6 +3396,18 @@
     "title": "Kimi K3 vs GPT-5.6 Sol on DeepSWE: Cost, Coding, and Routing",
     "topic": "Models"
   },
+  "https://www.together.ai/blog/migrating-from-closed-to-open-source-models": {
+    "date": "",
+    "file": "data/articles/together__migrating-from-closed-to-open-source-models.md",
+    "image": "https://cdn.prod.website-files.com/69654e88dce9154b5f12070c/6aaa2194c7f1b60b86e8fde5_OG-image_202600828_GLM53vsGLM53Flash.png",
+    "nugget": "A blog post outlines a practical strategy for migrating from closed-source to open-source AI models, emphasizing that modern managed services make such migrations faster (weeks to months rather than years) and less risky. The key is defining your use case clearly, benchmarking candidates against real workload data rather than generic leaderboards, evaluating both accuracy and performance metrics, and iteratively tuning prompts and parameters until open models match closed-source performance.",
+    "nugget_at": "2026-09-17T09:05:46+00:00",
+    "scraped_at": "2026-09-17T09:03:07+00:00",
+    "signal": 3,
+    "site": "together",
+    "title": "Migrating from closed to open source models, Together",
+    "topic": "Product & Tools"
+  },
   "https://www.together.ai/blog/new-in-together-gpu-clusters-reliability-and-control-for-production-gpu-clusters": {
     "date": "",
     "file": "data/articles/together__new-in-together-gpu-clusters-reliability-and-control-for-production-gpu-clusters.md",
@@ -3582,6 +3670,18 @@
     "signal": 3,
     "site": "xai",
     "title": "Grok Build on web and mobile",
+    "topic": "Product & Tools"
+  },
+  "https://x.ai/news/grok-build-memory": {
+    "date": "2026-09-16",
+    "file": "data/articles/xai__grok-build-memory.md",
+    "image": "https://x.ai/images/news/grok-build-memory-og.webp",
+    "nugget": "Grok Build, an AI coding assistant, now has persistent memory that tracks project conventions, decisions, and facts across sessions. The system automatically captures and organizes this information in markdown files, then applies relevant context when developers return to work, improving consistency and reducing repetition.",
+    "nugget_at": "2026-09-17T09:05:47+00:00",
+    "scraped_at": "2026-09-17T09:02:47+00:00",
+    "signal": 3,
+    "site": "xai",
+    "title": "Memory in Grok Build",
     "topic": "Product & Tools"
   },
   "https://x.ai/news/grok-build-mode": {
