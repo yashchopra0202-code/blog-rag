@@ -292,6 +292,18 @@
     "title": "Leading Publishers Bring Blockbuster PC Games and Technology to NVIDIA RTX Spark",
     "topic": "Product & Tools"
   },
+  "https://blogs.nvidia.com/blog/geforce-now-thursday-aniimo/": {
+    "date": "2026-09-17",
+    "file": "data/articles/nvidia__geforce-now-thursday-aniimo.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/gfn-thursday-9-17-blog-1920x1080-logo.jpg",
+    "nugget": "GeForce NOW announced 11 new games joining its cloud streaming service this week, headlined by creature-catching RPG Aniimo and an enhanced version of 007 First Light with path-tracing technology. The update demonstrates NVIDIA's expansion of cloud gaming capabilities with high-performance streaming features like DLSS 4.5 and RTX 5080-class performance for premium subscribers.",
+    "nugget_at": "2026-09-18T08:41:23+00:00",
+    "scraped_at": "2026-09-18T08:38:26+00:00",
+    "signal": 2,
+    "site": "nvidia",
+    "title": "Cute Critters Come to the Cloud: \u2018Aniimo\u2019 Launches on GeForce NOW",
+    "topic": "Product & Tools"
+  },
   "https://blogs.nvidia.com/blog/geforce-now-thursday-gamescom-2026/": {
     "date": "2026-08-27",
     "file": "data/articles/nvidia__geforce-now-thursday-gamescom-2026.md",
@@ -1553,6 +1565,18 @@
     "site": "openai-index",
     "title": "An Alien Mind"
   },
+  "https://openai.com/index/astra-for-law/": {
+    "date": "2026-09-09",
+    "file": "data/articles/openai-index__astra-for-law.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/5nKwJBPqWZBjTJ2BWxguU/96ed72fb0f3b5f4c468e1a1009bbf30f/introducing-astra-for-law-seo-image.png?w=1600&h=900&fit=fill",
+    "nugget": "An AI legal foundation was deployed to analyze a misrepresentation claim in a manufacturing contract dispute, where a client was told historical supplier orders averaged $8 million but received only $2 million annually after signing. The AI reviewed relevant case law (Paragon Metals, Oliver Wyman) and concluded the client has a viable fraudulent inducement claim based on the false historical figure, though faces a weak reliance defense given knowledge of the retailer's changing allocation methodology.",
+    "nugget_at": "2026-09-18T08:41:24+00:00",
+    "scraped_at": "2026-09-18T08:37:22+00:00",
+    "signal": 2,
+    "site": "openai-index",
+    "title": "Introducing Astra for Law",
+    "topic": "Product & Tools"
+  },
   "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": {
     "date": "2026-09-03",
     "file": "data/articles/openai-index__chatgpt-connects-health-records-and-healthcare-sources.md",
@@ -1967,6 +1991,18 @@
     "site": "google-research",
     "title": "Seeing beyond BMI: Estimating cardiometabolic risk with smartphone imagery",
     "topic": "Research"
+  },
+  "https://research.google/blog/the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-generative-ui/": {
+    "date": "",
+    "file": "data/articles/google-research__the-future-of-practice-enabling-teachers-to-create-learning-interactives-with-ge.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "Google Research unveiled a system using generative UI and learning design guardrails that allows teachers to create custom, interactive educational simulations for any STEM topic, with an initial library of 30+ AI-generated interactives already pilot-tested in schools. This matters because interactive, hands-on learning has been proven to improve student understanding and retention, yet creating such experiences has historically been expensive and time-consuming\u2014this system could democratize access to high-quality simulations tailored to individual classrooms.",
+    "nugget_at": "2026-09-18T08:41:27+00:00",
+    "scraped_at": "2026-09-18T08:37:28+00:00",
+    "signal": 3,
+    "site": "google-research",
+    "title": "The future of practice: Enabling teachers to create learning interactives with generative UI",
+    "topic": "Product & Tools"
   },
   "https://research.google/blog/timesfm-3-a-zero-shot-foundation-model-for-multivariate-forecasting/": {
     "date": "",
@@ -2636,6 +2672,18 @@
     "title": "Investigating three real-world incidents in our cybersecurity evaluations",
     "topic": "Safety & Policy"
   },
+  "https://www.anthropic.com/news/life-sciences-verification-program": {
+    "date": "",
+    "file": "data/articles/anthropic-news__life-sciences-verification-program.md",
+    "image": "https://www.anthropic.com/api/opengraph-illustration?name=Object%20DoubleHelix&backgroundColor=cactus",
+    "nugget": "Anthropic launched the Life Sciences Verification Program (LSVP), a gated access initiative that gives verified researchers and institutions more permissive safeguards when using Claude models for biology work like drug discovery and clinical development. The program uses offline monitoring and shared responsibility with organizations rather than real-time blocking, aiming to balance legitimate research needs against biosafety risks including insider threats and dual-use research concerns.",
+    "nugget_at": "2026-09-18T08:41:29+00:00",
+    "scraped_at": "2026-09-18T08:37:10+00:00",
+    "signal": 3,
+    "site": "anthropic-news",
+    "title": "Introducing the Life Sciences Verification Program",
+    "topic": "Product & Tools"
+  },
   "https://www.anthropic.com/news/model-hardware-standard-research-preview": {
     "date": "",
     "file": "data/articles/anthropic-news__model-hardware-standard-research-preview.md",
@@ -2712,6 +2760,18 @@
     "site": "anthropic-research",
     "title": "Automated researchers can reliably mitigate alignment failures",
     "topic": "Safety & Policy"
+  },
+  "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling": {
+    "date": "",
+    "file": "data/articles/anthropic-research__claude-uplifts-biomolecular-modeling.md",
+    "image": "https://cdn.sanity.io/images/4zrzovbb/website/a65d1913ec56de3b90beadf1be2609b03898b42d-3800x1522.png",
+    "nugget": "Anthropic demonstrated that Claude can optimize over 30 open-source biology models for up to 4x faster inference with minimal precision loss, and developed FlashPairformer kernels that outperform existing solutions by 2.7-3.2x for protein structure prediction. The company open-sourced the optimized code and is sponsoring a $1M+ protein design competition, making advanced computational biology tools significantly more accessible to researchers worldwide.",
+    "nugget_at": "2026-09-18T08:41:31+00:00",
+    "scraped_at": "2026-09-18T08:37:02+00:00",
+    "signal": 4,
+    "site": "anthropic-research",
+    "title": "How Claude is uplifting biomolecular modeling",
+    "topic": "Research"
   },
   "https://www.anthropic.com/research/claude-values-models-languages": {
     "date": "",
@@ -3011,6 +3071,18 @@
     "title": "How to Spot AI Hallucinations: 7 Red Flags",
     "topic": "Safety & Policy"
   },
+  "https://www.perplexity.ai/hub/blog/ai-in-the-workplace": {
+    "date": "2026-09-17",
+    "file": "data/articles/perplexity__ai-in-the-workplace.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/aef6bbd283e92449c10a893a60f7ed1fff15de51-3840x2152.png?rect=0,68,3840,2016&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "This article provides practical guidance for knowledge workers to implement AI in 10 recurring workplace tasks\u2014like meeting recaps, status updates, scheduling, and expense categorization\u2014with ready-to-use prompts and a structured two-week pilot methodology. It matters because it offers a concrete framework to move beyond one-off AI use to systematic time savings on predictable tasks, while emphasizing safety practices like output verification and data governance to avoid common pitfalls.",
+    "nugget_at": "2026-09-18T08:41:33+00:00",
+    "scraped_at": "2026-09-18T08:38:15+00:00",
+    "signal": 2,
+    "site": "perplexity",
+    "title": "AI in the workplace: A practical guide for knowledge workers",
+    "topic": "Product & Tools"
+  },
   "https://www.perplexity.ai/hub/blog/ai-integration": {
     "date": "2026-09-07",
     "file": "data/articles/perplexity__ai-integration.md",
@@ -3055,6 +3127,18 @@
     "site": "perplexity",
     "title": "CobbleDB: Rebuilding AI Search Storage for Lower Latency and Cost",
     "topic": "Infrastructure"
+  },
+  "https://www.perplexity.ai/hub/blog/computer-adds-effort-mode-for-model-selection": {
+    "date": "2026-09-17",
+    "file": "data/articles/perplexity__computer-adds-effort-mode-for-model-selection.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/5b988648f04ca8c295b763ed06e9184ac7929bc8-1920x1080.webp?rect=0,36,1920,1008&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "Perplexity launched effort controls for its Computer product, allowing users to select from Light to Ultra settings via a slider that automatically matches model selection and reasoning depth to each task. This gives users budget control and task-appropriate resource allocation without manually choosing specific models, while power users retain custom model selection options.",
+    "nugget_at": "2026-09-18T08:41:35+00:00",
+    "scraped_at": "2026-09-18T08:38:19+00:00",
+    "signal": 3,
+    "site": "perplexity",
+    "title": "Computer adds effort controls for model selection",
+    "topic": "Product & Tools"
   },
   "https://www.perplexity.ai/hub/blog/computer-connects-to-20-new-licensed-finance-data-sources": {
     "date": "2026-08-25",
