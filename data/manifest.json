@@ -1577,6 +1577,14 @@
     "title": "Introducing Astra for Law",
     "topic": "Product & Tools"
   },
+  "https://openai.com/index/australian-youth-safety-blueprint/": {
+    "date": "2026-09-17",
+    "file": "data/articles/openai-index__australian-youth-safety-blueprint.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/11NZvnxIWqXyYxeVZn7RVi/75a29b61ef84d54e91c850bee1e5f444/introducing-the-australian-youth-safety-blueprint-seo.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-09-19T08:24:30+00:00",
+    "site": "openai-index",
+    "title": "Introducing the Australian Youth Safety Blueprint"
+  },
   "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": {
     "date": "2026-09-03",
     "file": "data/articles/openai-index__chatgpt-connects-health-records-and-healthcare-sources.md",
@@ -1968,6 +1976,18 @@
     "signal": 4,
     "site": "google-research",
     "title": "Mapping global methane emissions from space with deep learning",
+    "topic": "Research"
+  },
+  "https://research.google/blog/millemiglia-a-realistic-instance-generator-for-middle-mile-logistics/": {
+    "date": "",
+    "file": "data/articles/google-research__millemiglia-a-realistic-instance-generator-for-middle-mile-logistics.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "Google Research and collaborators introduced MilleMiglia, an open-source C++ benchmark generator for middle-mile logistics optimization\u2014the overlooked segment between regional distribution centers that handles bulk shipments over multi-day, multi-vehicle journeys. This addresses a critical research gap by providing realistic, privacy-preserving synthetic data that captures middle-mile constraints (time windows, vehicle schedules, consolidation points) that standard vehicle routing solvers cannot handle, enabling better supply chain efficiency.",
+    "nugget_at": "2026-09-19T08:27:49+00:00",
+    "scraped_at": "2026-09-19T08:24:36+00:00",
+    "signal": 3,
+    "site": "google-research",
+    "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
     "topic": "Research"
   },
   "https://research.google/blog/planetary-prediction-engine-automating-global-models-via-earth-ai/": {
@@ -2583,6 +2603,18 @@
     "site": "anthropic-engineering",
     "title": "Writing effective tools for agents \u2014 with agents",
     "topic": "Product & Tools"
+  },
+  "https://www.anthropic.com/news/accenture-embedded-evaluation": {
+    "date": "",
+    "file": "data/articles/anthropic-news__accenture-embedded-evaluation.md",
+    "image": "https://cdn.sanity.io/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+    "nugget": "Anthropic is partnering with Accenture to embed independent evaluators inside the company with employee-level access to assess model safety, alignment, and safeguards\u2014a novel approach where evaluators can observe model development, training decisions, and company operations from within. The partnership represents a significant step toward third-party oversight of frontier AI development, though standards for embedded evaluator access and reporting remain unsettled, and both companies plan to invest at least $1 billion each over five years.",
+    "nugget_at": "2026-09-19T08:27:51+00:00",
+    "scraped_at": "2026-09-19T08:24:17+00:00",
+    "signal": 4,
+    "site": "anthropic-news",
+    "title": "Partnering with Accenture on embedded evaluation",
+    "topic": "Safety & Policy"
   },
   "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy": {
     "date": "",
@@ -3822,6 +3854,18 @@
     "site": "xai",
     "title": "Introducing Grok Voice Think Fast 2.0",
     "topic": "Models"
+  },
+  "https://x.ai/news/grok-voice-transcribe-2": {
+    "date": "2026-09-18",
+    "file": "data/articles/xai__grok-voice-transcribe-2.md",
+    "image": "https://x.ai/images/news/og-grok-voice-transcribe-2-0.webp",
+    "nugget": "SpaceXAI released Grok Voice Transcribe 2.0, a speech-to-text model that doubles accuracy over its predecessor while maintaining the same price, with particular improvements in handling noisy real-world audio, multilingual content, and specialized tasks like transcribing phone numbers. The model ranks first on public benchmarks and powers tens of thousands of customer support calls daily, making it significant for enterprises relying on speech recognition at scale.",
+    "nugget_at": "2026-09-19T08:27:53+00:00",
+    "scraped_at": "2026-09-19T08:25:08+00:00",
+    "signal": 3,
+    "site": "xai",
+    "title": "Introducing Grok Voice Transcribe 2.0",
+    "topic": "Product & Tools"
   },
   "https://x.ai/news/introducing-excel-addin": {
     "date": "",
