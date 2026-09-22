@@ -232,6 +232,18 @@
     "title": "AI Infra Summit: NVIDIA Vera Rubin and DSX Platform Advancements Showcase Energy Efficiencies of Optimizing Tokens Per Watt for AI Factories",
     "topic": "Infrastructure"
   },
+  "https://blogs.nvidia.com/blog/ai-security-agent-stack/": {
+    "date": "2026-09-21",
+    "file": "data/articles/nvidia__ai-security-agent-stack.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/security-thought-leadership-1920x1080-1.jpg",
+    "nugget": "NVIDIA and partners argue that AI agent security requires engineering discipline across the full stack\u2014from models to runtime environments\u2014with enforceable boundaries, clear ownership, and continuous testing rather than relying on agent reasoning alone. This matters because as AI agents gain autonomy and access to critical systems, defenders need systematic controls (like sandboxed execution, identity-based permissions, and audit logs) plus open tools and shared research to keep pace with threats.",
+    "nugget_at": "2026-09-22T08:59:57+00:00",
+    "scraped_at": "2026-09-22T08:56:34+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "AI Security Is an Engineering Problem \u2014 How to Solve It at Every Layer of the Agent Stack",
+    "topic": "Safety & Policy"
+  },
   "https://blogs.nvidia.com/blog/ai-summit-korea-partners-and-nvidia/": {
     "date": "2026-07-24",
     "file": "data/articles/nvidia__ai-summit-korea-partners-and-nvidia.md",
@@ -255,6 +267,18 @@
     "title": "Heart of the Matter: How a Major Children\u2019s Hospital Uses Open Source NVIDIA AI for Cardiac Care",
     "topic": "Product & Tools"
   },
+  "https://blogs.nvidia.com/blog/clean-energy-nvidia-ai/": {
+    "date": "2026-09-21",
+    "file": "data/articles/nvidia__clean-energy-nvidia-ai.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/clean-energy-key-visual-1920x1080-1.jpg",
+    "nugget": "NVIDIA highlighted five companies using its AI platforms to accelerate clean energy adoption, including grid optimization via digital twins, AI-assisted nuclear operations, recycled EV battery storage for data centers, advanced reactor design, and fusion energy development. The applications demonstrate how AI is compressing research timelines and reducing infrastructure bottlenecks, with concrete wins like reducing grid interconnection evaluation from 45 days to 2 minutes.",
+    "nugget_at": "2026-09-22T09:00:00+00:00",
+    "scraped_at": "2026-09-22T08:56:38+00:00",
+    "signal": 2,
+    "site": "nvidia",
+    "title": "5 Companies Using NVIDIA AI for Clean Energy",
+    "topic": "Product & Tools"
+  },
   "https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/": {
     "date": "2026-09-10",
     "file": "data/articles/nvidia__d-matrix-nvlink-fusion.md",
@@ -264,6 +288,30 @@
     "signal": 4,
     "site": "nvidia",
     "title": "d-Matrix Adopts NVIDIA NVLink Fusion for Rack-Scale XPU Deployment",
+    "topic": "Infrastructure"
+  },
+  "https://blogs.nvidia.com/blog/dsx-ready-ai-factories-power-cooling/": {
+    "date": "2026-09-21",
+    "file": "data/articles/nvidia__dsx-ready-ai-factories-power-cooling.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/end-to-end-press-dsx-ready-kv-1920x1080-1.png",
+    "nugget": "NVIDIA launched DSX Ready, a qualification program that certifies power and cooling products meeting NVIDIA's AI factory design standards, starting with battery energy storage systems and cooling distribution units from partners like Tesla, LG, and Vertiv. This standardizes the selection process for AI infrastructure builders, reducing integration risk and helping them optimize complete factory systems rather than individual components.",
+    "nugget_at": "2026-09-22T09:00:02+00:00",
+    "scraped_at": "2026-09-22T08:56:42+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "NVIDIA Launches DSX Ready to Qualify Power and Cooling Products for AI Factories",
+    "topic": "Infrastructure"
+  },
+  "https://blogs.nvidia.com/blog/egypt-africa-ai-ecosystem/": {
+    "date": "2026-09-21",
+    "file": "data/articles/nvidia__egypt-africa-ai-ecosystem.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/5696800-ent-egypt-ecosystem-blog-image-1280x720.png",
+    "nugget": "Africa's AI infrastructure is rapidly transitioning from potential to production, with AI factories now operational or announced across Egypt, South Africa, Morocco, and Nigeria, providing local compute capacity for developers previously reliant on overseas cloud services. This shift is backed by major investments (including $400M in Egypt and $1.2B in Morocco), growing developer training (85,000+ trained across Africa), and proven demand from startups building applications in healthcare, robotics, and financial services.",
+    "nugget_at": "2026-09-22T09:00:04+00:00",
+    "scraped_at": "2026-09-22T08:56:31+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "From Enablement to Execution, Egypt\u2019s AI Ecosystem Reaches Production Scale",
     "topic": "Infrastructure"
   },
   "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/": {
@@ -498,6 +546,14 @@
     "site": "nvidia",
     "title": "Into the Omniverse: How Open World Models Push the Frontier of Physical AI",
     "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/physical-ai-halos-safety/": {
+    "date": "2026-09-21",
+    "file": "data/articles/nvidia__physical-ai-halos-safety.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/robotics-pr-halos-1600x900-1.png",
+    "scraped_at": "2026-09-22T08:56:45+00:00",
+    "site": "nvidia",
+    "title": "Why Deploying Physical AI at Scale Demands Safety at Every Layer"
   },
   "https://blogs.nvidia.com/blog/robotaxi-leaders-full-stack-open-platform/": {
     "date": "2026-09-10",
@@ -1150,6 +1206,18 @@
     "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps",
     "topic": "Product & Tools"
   },
+  "https://huggingface.co/blog/omlx": {
+    "date": "2026-09-22",
+    "file": "data/articles/huggingface__omlx.md",
+    "image": "https://huggingface.co/blog/assets/omlx/omlx-hf.jpg",
+    "nugget": "Hugging Face announced that MLX, Apple's local AI framework for Apple Silicon, is graduating from a side project to a fully-funded initiative led by Jun, with Apache 2.0 licensing maintained. This shift provides stability and resources for faster development, enabling the community to more easily run and optimize open-source models locally across different inference engines.",
+    "nugget_at": "2026-09-22T09:00:06+00:00",
+    "scraped_at": "2026-09-22T08:55:33+00:00",
+    "signal": 3,
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/omlx",
+    "topic": "Product & Tools"
+  },
   "https://huggingface.co/blog/open-asr-leaderboard-global-south": {
     "date": "2026-04-07",
     "file": "data/articles/huggingface__open-asr-leaderboard-global-south.md",
@@ -1163,6 +1231,18 @@
     "scraped_at": "2026-09-05T05:23:05+00:00",
     "site": "huggingface",
     "title": "https://huggingface.co/blog/pwc-search"
+  },
+  "https://huggingface.co/blog/tokenizers-v1": {
+    "date": "2026-09-21",
+    "file": "data/articles/huggingface__tokenizers-v1.md",
+    "image": "https://huggingface.co/blog/assets/tokenizers-v1/thumbnail.png",
+    "nugget": "Hugging Face released a performance-focused v1 of their tokenizers library, achieving 10-100x speedups over v0.23 through optimizations including hand-written regex splitters using SIMD instructions, pre-token result caching, and a more efficient BPE merge loop. This matters because tokenization can become a bottleneck at scale, and these improvements ensure GPUs aren't starved waiting for CPU-bound text processing.",
+    "nugget_at": "2026-09-22T09:00:08+00:00",
+    "scraped_at": "2026-09-22T08:55:35+00:00",
+    "signal": 3,
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/tokenizers-v1",
+    "topic": "Infrastructure"
   },
   "https://huggingface.co/blog/train-multi-vector-encoder": {
     "date": "2025-07-04",
@@ -1551,6 +1631,18 @@
     "title": "Workflows for work that runs the business",
     "topic": "Product & Tools"
   },
+  "https://openai.com/index/advisory-group-on-mathematics-and-ai/": {
+    "date": "2026-09-21",
+    "file": "data/articles/openai-index__advisory-group-on-mathematics-and-ai.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/11yqmSO7D1dfYveBnOdmJt/e451277f37f82f51d6d20f2b86826590/advisory-group-on-mathematics-and-artificial-intelligence-seo.png?w=1600&h=900&fit=fill",
+    "nugget": "OpenAI trained a new model that solved the Navier\u2013Stokes Millennium Prize problem and over 100 other long-standing open math problems, surprising internal mathematicians with its pace of progress. The company is establishing an independent mathematics advisory group hosted at the Institute for Advanced Study to responsibly guide deployment of these capabilities and ensure the math community shapes how AI tools are developed.",
+    "nugget_at": "2026-09-22T09:00:09+00:00",
+    "scraped_at": "2026-09-22T08:55:13+00:00",
+    "signal": 4,
+    "site": "openai-index",
+    "title": "Advisory Group on Mathematics and Artificial Intelligence",
+    "topic": "Safety & Policy"
+  },
   "https://openai.com/index/ai-native-company-workflows/": {
     "date": "2026-08-25",
     "file": "data/articles/openai-index__ai-native-company-workflows.md",
@@ -1619,6 +1711,14 @@
     "scraped_at": "2026-09-05T05:22:43+00:00",
     "site": "openai-index",
     "title": "A milestone in expanding access to AI"
+  },
+  "https://openai.com/index/expanding-openai-academy-with-new-learning-paths/": {
+    "date": "2026-09-21",
+    "file": "data/articles/openai-index__expanding-openai-academy-with-new-learning-paths.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/5SPnjyTz9kRLLejGLGKq3e/4d59d634845854176234cd0cdefcf3b4/expanding-openai-academy-with-new-learning-paths-seo.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-09-22T08:55:18+00:00",
+    "site": "openai-index",
+    "title": "Expanding OpenAI Academy with new learning paths"
   },
   "https://openai.com/index/gpt-5-6/": {
     "date": "2026-09-03",
@@ -3003,6 +3103,18 @@
     "title": "GigaPath-Flash and GigaTIME-Flash: Toward population-scale discovery with efficient pathology foundation models",
     "topic": "Models"
   },
+  "https://www.microsoft.com/en-us/research/blog/improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera/": {
+    "date": "2026-09-21",
+    "file": "data/articles/microsoft-research__improving-synthesis-prediction-of-small-molecules-at-scale-with-retrochimera.md",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/RetroChimera-TWLIFB-1200x627-1.jpg",
+    "nugget": "RetroChimera is a new AI model that automatically plans chemical synthesis routes by combining two complementary approaches\u2014one good at predicting novel reactions and one good at using known reaction patterns. In blind tests with PhD chemists, it produced better synthesis predictions than individual models and existing methods, potentially speeding up drug discovery and materials design.",
+    "nugget_at": "2026-09-22T09:00:11+00:00",
+    "scraped_at": "2026-09-22T08:55:43+00:00",
+    "signal": 4,
+    "site": "microsoft-research",
+    "title": "Improving synthesis prediction of small molecules at scale with RetroChimera",
+    "topic": "Research"
+  },
   "https://www.microsoft.com/en-us/research/blog/introducing-care-x-towards-clinically-useful-radiology-vlms-with-auxiliary-supervision-reward-aligned-learning-and-tool-augmented-measurement/": {
     "date": "2026-08-11",
     "file": "data/articles/microsoft-research__introducing-care-x-towards-clinically-useful-radiology-vlms-with-auxiliary-super.md",
@@ -3226,6 +3338,18 @@
     "site": "perplexity",
     "title": "Introducing Portable Computer for local-first AI",
     "topic": "Product & Tools"
+  },
+  "https://www.perplexity.ai/hub/blog/learning-from-real-world-mistakes": {
+    "date": "2026-09-21",
+    "file": "data/articles/perplexity__learning-from-real-world-mistakes.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/5f1db94f01a2eaa1014cadb9dc174493655a512c-1200x630.png?w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "Perplexity developed a post-training method combining rejection sampling fine-tuning with hint-guided self-distillation to learn from real-world user sessions, using both successful and failed interactions to correct intermediate mistakes. The approach reduced tool-call failures by 21.2% relative to previous checkpoints, showing that mining user corrections and tool errors alongside task outcomes provides richer training signals than standard synthetic environment approaches.",
+    "nugget_at": "2026-09-22T09:00:14+00:00",
+    "scraped_at": "2026-09-22T08:56:24+00:00",
+    "signal": 4,
+    "site": "perplexity",
+    "title": "Learning from Real-World Mistakes",
+    "topic": "Research"
   },
   "https://www.perplexity.ai/hub/blog/optimizing-on-device-inference-for-apple-silicon": {
     "date": "2026-09-01",
@@ -3720,6 +3844,18 @@
     "signal": 3,
     "site": "xai",
     "title": "Grok 4.6 on Gemini Enterprise Agent Platform",
+    "topic": "Product & Tools"
+  },
+  "https://x.ai/news/grok-4-7": {
+    "date": "2026-09-21",
+    "file": "data/articles/xai__grok-4-7.md",
+    "image": "https://x.ai/images/news/grok-4-7-og.webp",
+    "nugget": "SpaceX's Grok 4.7 model launches as a high-performance option for coding and knowledge work, offering competitive pricing ($2/$6 per million tokens) and twice the speed of comparable models. The model features improved long-context handling, better self-verification, and a new safeguard stack with strong performance on safety benchmarks including biosafety and cybersecurity tasks.",
+    "nugget_at": "2026-09-22T09:00:15+00:00",
+    "scraped_at": "2026-09-22T08:56:01+00:00",
+    "signal": 3,
+    "site": "xai",
+    "title": "Introducing Grok 4.7",
     "topic": "Product & Tools"
   },
   "https://x.ai/news/grok-automations": {
