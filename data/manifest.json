@@ -208,6 +208,18 @@
     "title": "TutorMoments: Do AI tutors know when to help and when to hold back?",
     "topic": "Research"
   },
+  "https://blogs.nvidia.com/blog/ai-day-singapore/": {
+    "date": "2026-09-23",
+    "file": "data/articles/nvidia__ai-day-singapore.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/ai-day-singapore-key-visul-1920x1080-1.jpg",
+    "nugget": "NVIDIA is hosting an AI and high-performance computing event in Southeast Asia on September 22-23, featuring hands-on training, expert sessions, and tools for attendees. The event showcases regional AI breakthroughs from NVIDIA and partners, though specific announcements are deferred to additional coverage.",
+    "nugget_at": "2026-09-23T09:01:31+00:00",
+    "scraped_at": "2026-09-23T08:59:04+00:00",
+    "signal": 1,
+    "site": "nvidia",
+    "title": "At AI Day Singapore, NVIDIA and Partners Showcase AI Advancements Across Southeast Asia",
+    "topic": "Product & Tools"
+  },
   "https://blogs.nvidia.com/blog/ai-energy-management-alliance/": {
     "date": "2026-09-16",
     "file": "data/articles/nvidia__ai-energy-management-alliance.md",
@@ -390,6 +402,18 @@
     "signal": 1,
     "site": "nvidia",
     "title": "NVIDIA Brings Real-Time AI to Broadcast, Sports and Global Streaming at IBC",
+    "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/isaac-ros-5-0-agentic-open-source-robotics/": {
+    "date": "2026-09-22",
+    "file": "data/articles/nvidia__isaac-ros-5-0-agentic-open-source-robotics.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/robotics-blog-corp-blog-ROSCon26-1920x1080-1.jpeg",
+    "nugget": "NVIDIA released Isaac ROS 5.0, adding AI agent capabilities to the open-source robotics development framework with support for newer ROS versions, GPU-accelerated perception models, and reusable skills for common robotics tasks. This matters because it integrates agentic AI workflows into robotics development, enabling developers and AI agents to build sophisticated robotic applications faster across the 1.3 million ROS users while maintaining compatibility with NVIDIA's Jetson edge AI hardware.",
+    "nugget_at": "2026-09-23T09:01:34+00:00",
+    "scraped_at": "2026-09-23T08:59:07+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "NVIDIA Isaac ROS 5.0 Advances Agentic, Open Source Robotics Development",
     "topic": "Product & Tools"
   },
   "https://blogs.nvidia.com/blog/jensen-huang-dreamforce/": {
@@ -632,6 +656,18 @@
     "signal": 2,
     "site": "cohere",
     "title": "A day in the life of a wealth manager, with and without AI",
+    "topic": "Product & Tools"
+  },
+  "https://cohere.com/blog/ai-change-management": {
+    "date": "",
+    "file": "data/articles/cohere__ai-change-management.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/3e36f6ca4822fe67021f9136945a18643ec61b3f-3840x2160.png?rect=0,72,3840,2016&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "A new blog post argues that AI should be treated as an active participant in organizational workflows rather than just another software tool to deploy. This matters because AI's unique capabilities for context-dependent, collaborative work require rethinking change management, governance, and role design \u2014 treating AI adoption more like onboarding a new employee than installing enterprise software.",
+    "nugget_at": "2026-09-23T09:01:37+00:00",
+    "scraped_at": "2026-09-23T08:58:18+00:00",
+    "signal": 3,
+    "site": "cohere",
+    "title": "AI change management: A human-centric approach",
     "topic": "Product & Tools"
   },
   "https://cohere.com/blog/automating-fork-maintenance-with-ai-agents": {
@@ -1162,6 +1198,18 @@
     "title": "Hugging Face \u2013 Community Blogs",
     "topic": "Research"
   },
+  "https://huggingface.co/blog/evaleval-aisi": {
+    "date": "",
+    "file": "data/articles/huggingface__evaleval-aisi.md",
+    "image": "https://huggingface.co/blog/assets/evaleval-aisi/thumbnail.png",
+    "nugget": "AISI and EvalEval are collaborating to standardize AI model evaluation reporting through a shared schema (EEE) and open platform (Evaluation Cards), releasing verified results from five benchmarks tested on frontier models like Claude and GPT variants. This matters because AI evaluations are currently scattered across incompatible formats, making reproduction difficult and preventing reliable cross-study comparisons needed for informed AI policy and deployment decisions.",
+    "nugget_at": "2026-09-23T09:01:38+00:00",
+    "scraped_at": "2026-09-23T08:58:02+00:00",
+    "signal": 3,
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/evaleval-aisi",
+    "topic": "Safety & Policy"
+  },
   "https://huggingface.co/blog/funes": {
     "date": "2026-09-03",
     "file": "data/articles/huggingface__funes.md",
@@ -1265,6 +1313,18 @@
     "site": "huggingface",
     "title": "https://huggingface.co/blog/train-to-paint-with-code",
     "topic": "Product & Tools"
+  },
+  "https://huggingface.co/blog/transformers-llama-cpp-quants": {
+    "date": "2026-03-02",
+    "file": "data/articles/huggingface__transformers-llama-cpp-quants.md",
+    "image": "https://huggingface.co/blog/assets/transformers_llama_cpp_quants/thumbnail.png",
+    "nugget": "Hugging Face has integrated GGUF format support into transformers, enabling efficient local model inference on consumer hardware like MacBook Pro with performance approaching llama.cpp. This integration combines specialized GPU kernels with optimized generation loops, making quantized models practical to run locally while maintaining compatibility with the broader transformers ecosystem.",
+    "nugget_at": "2026-09-23T09:01:40+00:00",
+    "scraped_at": "2026-09-23T08:58:04+00:00",
+    "signal": 4,
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/transformers-llama-cpp-quants",
+    "topic": "Infrastructure"
   },
   "https://huggingface.co/blog/webgpu-kernels": {
     "date": "2026-09-01",
@@ -1677,6 +1737,14 @@
     "site": "openai-index",
     "title": "Introducing the Australian Youth Safety Blueprint"
   },
+  "https://openai.com/index/better-prompt-caching-for-gpt-6/": {
+    "date": "2026-09-22",
+    "file": "data/articles/openai-index__better-prompt-caching-for-gpt-6.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/1GCXJNDUwggbqNGnGCATR3/7d3f2fc8ca3457597bcefc7fe30f5a64/7kneoqlc2qh37z1utkmtfk-seo-v1.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-09-23T08:57:43+00:00",
+    "site": "openai-index",
+    "title": "Better prompt caching for GPT\u20116"
+  },
   "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": {
     "date": "2026-09-03",
     "file": "data/articles/openai-index__chatgpt-connects-health-records-and-healthcare-sources.md",
@@ -1803,6 +1871,18 @@
     "title": "Introducing GPT\u20115.5",
     "topic": "Models"
   },
+  "https://openai.com/index/introducing-gpt-6-sol-and-luna/": {
+    "date": "2026-09-22",
+    "file": "data/articles/openai-research__introducing-gpt-6-sol-and-luna.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/7fvmMcBIvMTXxVJh7NEMt1/48a75e624699bb1e218366c1d3522048/gpt-6-sol-luna-seo.png?w=1600&h=900&fit=fill",
+    "nugget": "OpenAI announced price cuts for GPT-5.6 models (50% cheaper across Sol and Luna variants) and released performance benchmarks comparing GPT-6 Sol, Claude Opus 5, and other models on various tasks. The pricing reductions make frontier AI models more accessible for everyday work applications.",
+    "nugget_at": "2026-09-23T09:01:42+00:00",
+    "scraped_at": "2026-09-23T08:57:36+00:00",
+    "signal": 3,
+    "site": "openai-research",
+    "title": "Introducing GPT\u20116 Sol and Luna",
+    "topic": "Product & Tools"
+  },
   "https://openai.com/index/introducing-gpt-live-1-in-the-api/": {
     "date": "2026-09-10",
     "file": "data/articles/openai-research__introducing-gpt-live-1-in-the-api.md",
@@ -1864,6 +1944,18 @@
     "scraped_at": "2026-09-09T17:04:54+00:00",
     "site": "openai-index",
     "title": "Paul Christiano joins OpenAI Foundation Board"
+  },
+  "https://openai.com/index/priorities-principles-third-party-assessments/": {
+    "date": "2026-09-16",
+    "file": "data/articles/openai-index__priorities-principles-third-party-assessments.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/6gxDxFoqp9XAfelckRh7eX/e6a570fc70dc10f05000e4010c2b9694/priorities-and-principles-for-effective-third-party-assessments-seo.png?w=1600&h=900&fit=fill",
+    "nugget": "The post defines key concepts for AI safety documentation: 'claims' that assert specific capabilities or safeguards tied to evidence, and 'safety cases' that build structured arguments connecting claims to supporting evidence while making assumptions explicit. This framework matters because it provides standardized language for rigorously assessing whether AI systems are safe enough for particular uses.",
+    "nugget_at": "2026-09-23T09:01:43+00:00",
+    "scraped_at": "2026-09-23T08:57:47+00:00",
+    "signal": 2,
+    "site": "openai-index",
+    "title": "Priorities and principles for effective third party assessments",
+    "topic": "Safety & Policy"
   },
   "https://openai.com/index/put-data-to-work/": {
     "date": "2026-09-09",
@@ -3238,6 +3330,18 @@
     "title": "AI integration: Getting ROI from your AI investment",
     "topic": "Product & Tools"
   },
+  "https://www.perplexity.ai/hub/blog/ai-literacy": {
+    "date": "2026-09-22",
+    "file": "data/articles/perplexity__ai-literacy.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/5fa8ba2af8b837b72c5244309f6e5a2b3382eb30-3000x2000.png?rect=0,213,3000,1575&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "This post defines AI literacy as the ability to understand, use, and critically evaluate AI output\u2014with evaluation being the skill that separates experts from novices. It argues that most AI training focuses on prompt-writing rather than verification, then provides a practical Trace \u2192 Verify \u2192 Decide framework with examples for evaluating AI claims across business domains like pricing, legal compliance, and financial decisions.",
+    "nugget_at": "2026-09-23T09:01:45+00:00",
+    "scraped_at": "2026-09-23T08:58:57+00:00",
+    "signal": 2,
+    "site": "perplexity",
+    "title": "The AI literacy gap is growing. Here\u2019s how to close it.",
+    "topic": "Safety & Policy"
+  },
   "https://www.perplexity.ai/hub/blog/ai-personal-assistants": {
     "date": "2026-09-01",
     "file": "data/articles/perplexity__ai-personal-assistants.md",
@@ -3338,6 +3442,18 @@
     "site": "perplexity",
     "title": "Introducing Portable Computer for local-first AI",
     "topic": "Product & Tools"
+  },
+  "https://www.perplexity.ai/hub/blog/learning-from-real-world-experience": {
+    "date": "2026-09-21",
+    "file": "data/articles/perplexity__learning-from-real-world-experience.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/5f1db94f01a2eaa1014cadb9dc174493655a512c-1200x630.png?w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "Perplexity developed a post-training method combining rejection sampling fine-tuning with hint-guided self-distillation to learn from real-world user sessions, treating successful and failed interactions differently to correct specific mistakes rather than just imitating whole trajectories. In live deployment, this approach reduced tool-call failures by 21.2% compared to earlier models by leveraging both user corrections and tool errors as supervision signals.",
+    "nugget_at": "2026-09-23T09:01:47+00:00",
+    "scraped_at": "2026-09-23T08:58:52+00:00",
+    "signal": 4,
+    "site": "perplexity",
+    "title": "Learning from Real-World Experience",
+    "topic": "Research"
   },
   "https://www.perplexity.ai/hub/blog/learning-from-real-world-mistakes": {
     "date": "2026-09-21",
@@ -3502,6 +3618,18 @@
     "signal": 3,
     "site": "together",
     "title": "Autoscaling endpoints for LLM inference",
+    "topic": "Infrastructure"
+  },
+  "https://www.together.ai/blog/canary-rollouts-upgrade-models-in-production-without-downtime": {
+    "date": "",
+    "file": "data/articles/together__canary-rollouts-upgrade-models-in-production-without-downtime.md",
+    "image": "https://cdn.prod.website-files.com/69654e88dce9154b5f12070c/6ab2084d400cf06357fcb03e_OG-image_202600921_canary-rollouts.png",
+    "nugget": "A platform has released a new rollout system for safely migrating between ML model deployments in production, using staged traffic shifts with automatic health checks and metric gates that can pause or reverse migrations if performance regressions are detected. This matters because it removes manual safety mechanisms and lets teams swap models (like upgrading from Qwen2.5-7B to Qwen3.5-9B) without downtime or failed requests, with a real example showing a gate catching a 137% latency regression at 10% traffic.",
+    "nugget_at": "2026-09-23T09:01:50+00:00",
+    "scraped_at": "2026-09-23T08:58:44+00:00",
+    "signal": 3,
+    "site": "together",
+    "title": "Canary rollouts: upgrade models in production without downtime",
     "topic": "Infrastructure"
   },
   "https://www.together.ai/blog/configuring-dedicated-model-inference": {
@@ -3878,6 +4006,18 @@
     "signal": 2,
     "site": "xai",
     "title": "Grok Bot now works with X",
+    "topic": "Product & Tools"
+  },
+  "https://x.ai/news/grok-bot-customer-support": {
+    "date": "2026-09-22",
+    "file": "data/articles/xai__grok-bot-customer-support.md",
+    "image": "https://x.ai/images/news/grok-bot-customer-support-og.webp",
+    "nugget": "SpaceXAI deployed Grok Bot across its combined customer support operation after acquiring Cursor, handling a 175% increase in support tickets without hiring new staff. The AI agent reduced per-ticket resolution costs to $0.20-$0.30 (vs. industry standard $1-$4), autonomously handles common issues, analyzes patterns to spot emerging problems, and continuously improves itself and other bots through feedback loops.",
+    "nugget_at": "2026-09-23T09:01:52+00:00",
+    "scraped_at": "2026-09-23T08:58:24+00:00",
+    "signal": 4,
+    "site": "xai",
+    "title": "How SpaceXAI is using Grok Bot to scale customer support",
     "topic": "Product & Tools"
   },
   "https://x.ai/news/grok-bot-for-enterprise": {
