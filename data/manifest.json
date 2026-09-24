@@ -981,6 +981,18 @@
     "title": "Why Cultural Awareness is Essential for Global AI",
     "topic": "Safety & Policy"
   },
+  "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/": {
+    "date": "2026-09-23",
+    "file": "data/articles/deepmind__advancing-private-ai-compute-with-secure-server-side-memory.md",
+    "image": "https://lh3.googleusercontent.com/CsJavGl89SJwjdXVDdaKtAEpLbqHa_nzOW89VTThwA8rgYr9Gf3CSiUWk18i5thA57k8zhwdwmvf3F2yagtJ-P1ag-9ppxsPXcUe99DRY9asIRP2yA=w1200-h630-n-nu-rw",
+    "nugget": "Google announced an update to its Private AI Compute architecture that enables persistent, cross-device AI memory while maintaining on-device privacy standards through encrypted cloud storage with cryptographic keys held only on user devices. This solves a key challenge in AI systems: providing long-term continuity and cloud-scale computing power without compromising privacy, supported by hardware-enforced secure enclaves and independent security audits.",
+    "nugget_at": "2026-09-24T08:57:24+00:00",
+    "scraped_at": "2026-09-24T08:53:12+00:00",
+    "signal": 4,
+    "site": "deepmind",
+    "title": "Advancing Private AI Compute with secure, server-side memory",
+    "topic": "Infrastructure"
+  },
   "https://deepmind.google/blog/alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail/": {
     "date": "2025-07-30",
     "file": "data/articles/deepmind__alphaearth-foundations-helps-map-our-planet-in-unprecedented-detail.md",
@@ -1710,6 +1722,18 @@
     "site": "openai-index",
     "title": "How AI-native companies turn workflows into operating capability"
   },
+  "https://openai.com/index/airbnb-gpt-6-astra/": {
+    "date": "2026-09-23",
+    "file": "data/articles/openai-index__airbnb-gpt-6-astra.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/4EjU7S9AFpxyMlaAUQAoiu/9ad3eb003d32e0f6857f2e0e41d40e84/airbnb-widens-access-to-gpt-6-astra-and-openai-frontier-models-seo.png?w=1600&h=900&fit=fill",
+    "nugget": "Airbnb has expanded access to OpenAI's frontier models, including GPT-6 Astra, across its engineering and product teams through a new agreement. The move is driving measurable gains\u2014Airbnb reports shipping 80% more features year-over-year and achieving strong results on non-coding work like bug-tracking and system design, with GPT-6 Astra completing strategic document tasks in 3-4 passes versus 20+ with other models.",
+    "nugget_at": "2026-09-24T08:57:25+00:00",
+    "scraped_at": "2026-09-24T08:53:03+00:00",
+    "signal": 3,
+    "site": "openai-index",
+    "title": "Airbnb widens access to GPT\u20116 Astra and OpenAI frontier models",
+    "topic": "Business"
+  },
   "https://openai.com/index/an-alien-mind/": {
     "date": "2026-09-06",
     "file": "data/articles/openai-index__an-alien-mind.md",
@@ -1744,6 +1768,14 @@
     "scraped_at": "2026-09-23T08:57:43+00:00",
     "site": "openai-index",
     "title": "Better prompt caching for GPT\u20116"
+  },
+  "https://openai.com/index/chatgpt-ads-expands-southeast-asia-taiwan/": {
+    "date": "2026-09-22",
+    "file": "data/articles/openai-index__chatgpt-ads-expands-southeast-asia-taiwan.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/7FJ6xwUhzfqnyoSn9ciPcS/2f477db82efadb6e10ace70da6498bb3/chatgpt-ads-expands-to-southeast-asia-and-taiwan-seo.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-09-24T08:53:00+00:00",
+    "site": "openai-index",
+    "title": "ChatGPT Ads expands to Southeast Asia and Taiwan"
   },
   "https://openai.com/index/chatgpt-connects-health-records-and-healthcare-sources/": {
     "date": "2026-09-03",
@@ -1894,6 +1926,18 @@
     "title": "Build more natural voice experiences with GPT\u2011Live\u20111 in the API",
     "topic": "Product & Tools"
   },
+  "https://openai.com/index/introducing-mentalhealthbench/": {
+    "date": "2026-09-08",
+    "file": "data/articles/openai-research__introducing-mentalhealthbench.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/5KrG4TnUmqAhgDo0zdLrUk/5dda4aa9e8fe694141b9fff6926ca82e/SEO_Card.png?w=1600&h=900&fit=fill",
+    "nugget": "A new open benchmark called MentalHealthBench was created with input from over 80 licensed mental health experts to evaluate how AI systems respond to realistic mental health conversations. This matters because it addresses a critical gap in AI safety by establishing standardized evaluation criteria for a sensitive domain where poor responses could cause real harm to vulnerable users.",
+    "nugget_at": "2026-09-24T08:57:26+00:00",
+    "scraped_at": "2026-09-24T08:52:44+00:00",
+    "signal": 3,
+    "site": "openai-research",
+    "title": "Introducing MentalHealthBench",
+    "topic": "Safety & Policy"
+  },
   "https://openai.com/index/introducing-the-agents-api/": {
     "date": "2026-09-10",
     "file": "data/articles/openai-index__introducing-the-agents-api.md",
@@ -1994,6 +2038,18 @@
     "site": "openai-index",
     "title": "Safety overview: GPT\u20116 Astra"
   },
+  "https://openai.com/index/sam-altman-un-security-council-remarks/": {
+    "date": "2026-09-23",
+    "file": "data/articles/openai-index__sam-altman-un-security-council-remarks.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/MD52BCLFjD4H7Kf1wiCnz/56e1b7f4a0eaa3f90e62d36799987269/sam-altman-s-remarks-at-the-united-nations-security-council-seo.png?w=1600&h=900&fit=fill",
+    "nugget": "Sam Altman addressed the UN Security Council on AI governance, emphasizing the need to keep powerful AI systems under human control while enabling broad access to prevent power concentration. He framed AI as potentially either a new Renaissance of human capability or a source of societal upheaval, and outlined OpenAI's three principles: keeping humans central to AI decisions, distributing benefits broadly, and empowering individuals rather than automating human judgment.",
+    "nugget_at": "2026-09-24T08:57:28+00:00",
+    "scraped_at": "2026-09-24T08:52:57+00:00",
+    "signal": 4,
+    "site": "openai-index",
+    "title": "Sam Altman\u2019s remarks at the United Nations Security Council",
+    "topic": "Safety & Policy"
+  },
   "https://openai.com/index/scaling-storage-one-billion-users-part-one/": {
     "date": "2026-08-25",
     "file": "data/articles/openai-index__scaling-storage-one-billion-users-part-one.md",
@@ -2051,6 +2107,14 @@
     "scraped_at": "2026-09-08T17:07:52+00:00",
     "site": "openai-index",
     "title": "The Work Now Within Reach"
+  },
+  "https://openai.com/index/two-years-of-openai-academy/": {
+    "date": "2026-09-23",
+    "file": "data/articles/openai-index__two-years-of-openai-academy.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/6A4AcxrMdo5oOri7Wm8qNg/34228cf221e3af874539412f71b28a44/two-years-of-openai-academy-seo.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-09-24T08:52:53+00:00",
+    "site": "openai-index",
+    "title": "Two years of OpenAI Academy"
   },
   "https://openai.com/index/unlocking-self-improvement-gpt-red/": {
     "date": "2026-09-03",
@@ -2819,6 +2883,18 @@
     "title": "Announcing our updated Responsible Scaling Policy",
     "topic": "Safety & Policy"
   },
+  "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system": {
+    "date": "",
+    "file": "data/articles/anthropic-news__claude-discovers-novel-enzyme-system.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/394de337d8a5d8db93a1c048fa1cb53e16a09625-2048x1240.jpg",
+    "nugget": "Anthropic's Claude AI autonomously discovered a novel enzyme system called array-associated reverse transcriptases (ARTs) by analyzing massive DNA sequence databases, potentially opening new possibilities for programmable gene-editing tools similar to CRISPR. The discovery demonstrates AI's capability to systematically identify biological patterns that humans might miss, with Claude narrowing 200,000+ reverse transcriptases down to compelling candidates in work that would normally take researchers weeks or months.",
+    "nugget_at": "2026-09-24T08:57:30+00:00",
+    "scraped_at": "2026-09-24T08:52:37+00:00",
+    "signal": 5,
+    "site": "anthropic-news",
+    "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
+    "topic": "Research"
+  },
   "https://www.anthropic.com/news/claude-opus-5": {
     "date": "",
     "file": "data/articles/anthropic-news__claude-opus-5.md",
@@ -3239,6 +3315,18 @@
     "site": "microsoft-research",
     "title": "MindTopo reveals VLMs\u2019 spatial reasoning abilities",
     "topic": "Research"
+  },
+  "https://www.microsoft.com/en-us/research/blog/offloaded-inference-for-real-world-physical-ai-robotics/": {
+    "date": "2026-09-23",
+    "file": "data/articles/microsoft-research__offloaded-inference-for-real-world-physical-ai-robotics.md",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/PhysicalAI-TWLIFB-1200x627-1.jpg",
+    "nugget": "Microsoft researchers conducted the first systematic study of robotics inference workloads and found that offloading AI model inference from onboard robot GPUs to edge or cloud servers significantly improves performance, accuracy, battery life, and cost. The company released new open-source tools within its Physical AI Toolchain that enable developers to automatically offload robotic AI inference using Kubernetes, addressing a critical infrastructure gap for scaling physical AI systems.",
+    "nugget_at": "2026-09-24T08:57:32+00:00",
+    "scraped_at": "2026-09-24T08:53:26+00:00",
+    "signal": 4,
+    "site": "microsoft-research",
+    "title": "Offloaded inference for real-world physical AI robotics",
+    "topic": "Infrastructure"
   },
   "https://www.microsoft.com/en-us/research/blog/orchard-an-open-framework-for-scalable-agentic-ai/": {
     "date": "2026-08-03",
