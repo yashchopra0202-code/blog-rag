@@ -2190,6 +2190,18 @@
     "title": "Bypassing inference bottlenecks: Accelerating complex AI search with Retrieve-for-Train",
     "topic": "Research"
   },
+  "https://research.google/blog/coherent-long-form-video-generation/": {
+    "date": "",
+    "file": "data/articles/google-research__coherent-long-form-video-generation.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "Google researchers introduced a multi-agent AI framework that autonomously generates long-form video narratives with temporal consistency, solving problems like character drift and cascading errors that plague current linear pipelines. The system uses hierarchical planning, persistent visual memory, and closed-loop refinement to produce minutes-long coherent videos while maintaining character identity and environmental stability.",
+    "nugget_at": "2026-09-25T09:17:02+00:00",
+    "scraped_at": "2026-09-25T09:13:52+00:00",
+    "signal": 4,
+    "site": "google-research",
+    "title": "Automating coherent long-form video generation",
+    "topic": "Models"
+  },
   "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/": {
     "date": "",
     "file": "data/articles/google-research__empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality.md",
@@ -3170,6 +3182,18 @@
     "signal": 4,
     "site": "anthropic-research",
     "title": "Project Pilot: Can AI control a drone?",
+    "topic": "Research"
+  },
+  "https://www.anthropic.com/research/project-swap": {
+    "date": "",
+    "file": "data/articles/anthropic-research__project-swap.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/98a29c28bc80505540f64da96f899288b380fbf0-1200x630.jpg",
+    "nugget": "Anthropic conducted a controlled experiment with 201 employees and Claude-powered agents to study how AI agents could facilitate real-world marketplaces by running a book-trading barter economy. The experiment reveals key challenges ahead: ensuring agents accurately understand their users' preferences, establishing clear marketplace rules, and deciding between centralized versus decentralized market structures\u2014insights that matter as AI agents increasingly participate in real economic transactions.",
+    "nugget_at": "2026-09-25T09:17:04+00:00",
+    "scraped_at": "2026-09-25T09:13:33+00:00",
+    "signal": 3,
+    "site": "anthropic-research",
+    "title": "Project Swap: What happens when agents trade for us?",
     "topic": "Research"
   },
   "https://www.anthropic.com/research/reviewing-the-evidence-on-worker-retraining-programs": {
