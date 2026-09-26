@@ -771,6 +771,18 @@
     "title": "Introducing Command A+: Making sovereign agentic capabilities available to all",
     "topic": "Product & Tools"
   },
+  "https://cohere.com/blog/compass-cloud-beta": {
+    "date": "",
+    "file": "data/articles/cohere__compass-cloud-beta.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/3ff9058d77d0a46ac36c66e586eecb01128c3bba-3840x2160.png?rect=0,72,3840,2016&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "Cohere launched Compass Cloud, a managed retrieval platform for enterprise RAG and agentic AI applications, entering private beta after previously being available only self-hosted. The platform consolidates document processing, hybrid search, and reranking into one service, demonstrating 14-16 point accuracy improvements over traditional search infrastructure on financial benchmarks.",
+    "nugget_at": "2026-09-26T09:01:04+00:00",
+    "scraped_at": "2026-09-26T08:57:33+00:00",
+    "signal": 3,
+    "site": "cohere",
+    "title": "Compass is coming to the cloud",
+    "topic": "Product & Tools"
+  },
   "https://cohere.com/blog/enterprise-ai-maturity-model": {
     "date": "",
     "file": "data/articles/cohere__enterprise-ai-maturity-model.md",
@@ -3228,6 +3240,18 @@
     "site": "anthropic-research",
     "title": "Teaching Claude why",
     "topic": "Safety & Policy"
+  },
+  "https://www.anthropic.com/research/yes-claude-can-do-nine-loops": {
+    "date": "",
+    "file": "data/articles/anthropic-research__yes-claude-can-do-nine-loops.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/2ed453f8c87d2166b09940a859cd193b29678a88-3840x2160.png",
+    "nugget": "A theoretical physicist challenged AI to solve a hard problem in particle physics (computing 9-loop scattering amplitudes), and Anthropic's Claude solved it in a month using a relatively modest setup called Claude Science. This matters because it's concrete evidence that LLMs can tackle genuine frontier problems in specialized scientific domains, settling some of the expert disagreement about AI capabilities.",
+    "nugget_at": "2026-09-26T09:01:06+00:00",
+    "scraped_at": "2026-09-26T08:56:54+00:00",
+    "signal": 4,
+    "site": "anthropic-research",
+    "title": "Yes, Claude can do Nine Loops",
+    "topic": "Research"
   },
   "https://www.microsoft.com/en-us/research/blog/aurora-1-5-extending-open-foundation-models-for-weather-and-earth-system-applications/": {
     "date": "2026-07-09",
