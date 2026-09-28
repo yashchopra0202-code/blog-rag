@@ -3420,6 +3420,14 @@
     "title": "A Local-First Agent for Private and Cost-Effective Knowledge Work",
     "topic": "Product & Tools"
   },
+  "https://www.perplexity.ai/hub/blog/ai-alignment": {
+    "date": "",
+    "file": "data/articles/perplexity__ai-alignment.md",
+    "image": "",
+    "scraped_at": "2026-09-28T10:20:31+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
+  },
   "https://www.perplexity.ai/hub/blog/ai-detector": {
     "date": "2026-09-15",
     "file": "data/articles/perplexity__ai-detector.md",
@@ -3431,6 +3439,14 @@
     "site": "perplexity",
     "title": "How AI detectors work and why a score alone can\u2019t prove authorship",
     "topic": "Safety & Policy"
+  },
+  "https://www.perplexity.ai/hub/blog/ai-for-market-research": {
+    "date": "",
+    "file": "data/articles/perplexity__ai-for-market-research.md",
+    "image": "",
+    "scraped_at": "2026-09-28T10:20:33+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
   },
   "https://www.perplexity.ai/hub/blog/ai-hallucination": {
     "date": "2026-09-01",
@@ -3535,6 +3551,14 @@
     "title": "Computer Connects to 20+ New Licensed Finance Data Sources",
     "topic": "Product & Tools"
   },
+  "https://www.perplexity.ai/hub/blog/escaping-space-part-i": {
+    "date": "",
+    "file": "data/articles/perplexity__escaping-space-part-i.md",
+    "image": "",
+    "scraped_at": "2026-09-28T10:20:36+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
+  },
   "https://www.perplexity.ai/hub/blog/fast-embeddings-on-gpus": {
     "date": "2026-09-04",
     "file": "data/articles/perplexity__fast-embeddings-on-gpus.md",
@@ -3622,6 +3646,14 @@
     "site": "perplexity",
     "title": "www.perplexity.ai"
   },
+  "https://www.perplexity.ai/hub/blog/photon": {
+    "date": "",
+    "file": "data/articles/perplexity__photon.md",
+    "image": "",
+    "scraped_at": "2026-09-28T10:20:24+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
+  },
   "https://www.perplexity.ai/hub/blog/pii-trace-detecting-personal-data-before-it-leaves-the-device": {
     "date": "2026-09-01",
     "file": "data/articles/perplexity__pii-trace-detecting-personal-data-before-it-leaves-the-device.md",
@@ -3632,6 +3664,18 @@
     "site": "perplexity",
     "title": "PII-TRACE: Detecting Personal Data Before It Leaves the Device",
     "topic": "Safety & Policy"
+  },
+  "https://www.perplexity.ai/hub/blog/portable-computer-comes-to-amd-powered-agentic-pcs": {
+    "date": "2026-09-24",
+    "file": "data/articles/perplexity__portable-computer-comes-to-amd-powered-agentic-pcs.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/bb1d80965e598072fa6857f30c84376e3d349f7f-1920x1080.png?rect=0,36,1920,1008&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "Perplexity has expanded its Portable Computer local AI service to run on AMD Ryzen AI Max processors, allowing users to run AI tasks on their own hardware without consuming cloud credits. This addresses privacy concerns by keeping sensitive files on-device while still enabling escalation to cloud models for complex tasks when needed.",
+    "nugget_at": "2026-09-28T10:23:46+00:00",
+    "scraped_at": "2026-09-28T10:20:28+00:00",
+    "signal": 3,
+    "site": "perplexity",
+    "title": "Portable Computer comes to AMD-powered agentic PCs",
+    "topic": "Product & Tools"
   },
   "https://www.perplexity.ai/hub/blog/portable-computer-for-windows-is-here": {
     "date": "2026-09-14",
