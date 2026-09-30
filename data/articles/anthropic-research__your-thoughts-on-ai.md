@@ -1,0 +1,153 @@
+---
+url: https://www.anthropic.com/research/your-thoughts-on-ai
+title: What do you want from AI?
+site: anthropic-research
+date: 2026-09-29
+scraped_at: 2026-09-30T10:07:06+00:00
+---
+
+We are at a pivotal moment in the development of AI, as its growing capabilities mean it becomes potentially more useful and more dangerous. Frontier AI is rapidly accelerating discoveries in
+
+and
+
+, while at the same time the cost of its misuse grows
+
+can cause far more damage than it did a year ago.
+
+How to weigh these benefits and risks shouldn’t be left to AI companies alone. Your voice can help guide us, other AI labs, and policymakers as we navigate this uncertain future together. Our big questions are:
+
+This project builds on a similar study conducted last December, in which
+
+told us their hopes and worries about AI. That study shaped
+
+, was presented at the World Economic Forum to international leaders and decision-makers, and continues to guide our ongoing
+
+and
+
+AI and Anthropic have changed a lot since then. AI has improved, more people use Claude, and people’s feelings toward the technology have shifted. For the previous study, only the high-level results and a small number of quotes were made public. This time, we want your thoughts to be made widely available so that anyone can learn from them.
+
+We’ve written a FAQ so you can make an informed decision about whether to make your interview public and what to share. You can choose to
+
+The interview asks about your experiences with AI and what you want from it. We’ll ask about the moments with AI that have mattered most to you, both positive and negative, whether there’s anything about how the world works that you’d like AI to help change, and what you want from the companies developing AI, including Anthropic. There are no right answers; we want to hear about your experiences in your own words… And we don’t want to give too much away before you take it!
+
+No. It’s optional.
+
+We will publish your complete interview and the country associated with your conversation. We will not include your Claude account information, such as name or email address.
+
+Your perspective will be heard not just by us, but by anyone interested in studying and improving AI. We want anyone to be able to study how AI is impacting people and how AI development should progress.
+
+Researchers and policymakers around the world can read interviews in their own languages, read responses shared from different regions, and ask questions we didn’t think to ask. Many bring expertise we don't have on staff, and they may have insights we didn’t think to look for. Anyone can check whether our published findings actually reflect what participants said.
+
+Your interview also becomes part of the public record of this moment in AI, open to future historians, journalists, and researchers, and can inform how society responds to this moment. That record is also hard for AI companies and others shaping AI development to ignore. If many participants say companies like Anthropic should do something differently, that language stays public where anyone can reference it.
+
+While we won’t publish your Claude account information, such as your name or email address, we encourage participants to consider that anyone can read a public interview. This includes employers, friends and relatives, as well as governments and other companies. Depending on what a participant shares, others may be able to link the participant back to their interview. Details that seem harmless on their own, such as age, job, city, or where you studied, can make it easier to identify you. We don’t ask for these details in the interview and encourage participants to avoid sharing them.
+
+Once public, an interview could be used in ways a participant does not intend, including by scammers and other people who may seek to misuse personal information. We can remove our copy of your interview on request, but we can’t delete what people have already saved. For that reason, treat your decision to make your interview public as permanent.
+
+We won’t attach your name or account information, but we don’t edit interviews, so we can’t guarantee you won’t be re-identified from what you say. Someone could use AI to combine small details, like employers or past projects, to work out who a participant is. Researchers
+
+this can work with interviews from Anthropic Interviewer.
+
+The best protection is to not share information that could identify you or others. During the interview, we show examples of information you shouldn’t share, and you review your full interview before deciding whether to make it public.
+
+Before the interview, we explain what making an interview public involves. We tell participants that we will not include their Claude account information in the public release, but that others may be able to identify them from what they share. We also explain that making an interview public means anyone can read, save, and use it. We can remove our copy on request, but we can’t delete what people have already saved.
+
+During the interview, you will see examples of the types of sensitive information we advise not to share. After the interview, you can reread what you said before deciding whether to share it publicly. You will be reminded of both the benefits and risks, and if you choose to share, we will confirm your decision one last time.
+
+We’ll still analyze it as part of our Societal Impacts research, but your full interview won’t be published. We may still publish and share aggregated or de-identified findings resulting from your interview. If you don’t want us to analyze it either, you can end the interview early (see “Can I decide to end the interview early and delete the record?” below for more detail).
+
+Not fully. Once your interview is public, anyone can read, save, and use it. We can remove our copy of your interview on request, but we can’t delete what people have already saved. Treat the decision as permanent.
+
+No, we don’t plan to edit interviews before publishing them. Once the study is complete, we’ll do a final review and may remove interviews we don't believe would be responsible to publish, such as interviews with confidential information or ones that violate our
+
+or
+
+We'll analyze interviews as part of our Societal Impacts research, share our findings publicly, and use the results to inform how we develop our models and products.
+
+Yes, you can stop at any time by clicking the “End interview” button. If you end early, your partial interview will be permanently deleted, and won’t be analyzed or published, including by Anthropic.
+
+This study will run from September 29 to October 6, 2026, and is open to Free, Pro, and Max users on Claude and Claude Code whose accounts are at least two weeks old. Each interview takes roughly 15 minutes and is conducted by
+
+, an AI that asks you questions.
+
+We updated the questions, the study is open on more Claude products, and for the first time you can choose to make your interview public.
+
+The interviews will be published online once we have completed the study and our initial analysis.
+
+Participants in this study will all be people who use Claude, which is not a representative sample of the public. Published interviews are a further subset, since people who opt in for public release may differ from those who don’t. And as with any interview, the questions we ask shape what people share. Even so, nothing like this has been public before. We believe it can significantly advance the study of how AI is changing people’s lives.
+
+Like Claude Mythos Preview, GLM-5.3 has strong capabilities for autonomously building end-to-end cyber exploits. But GLM-5.3 is unlike other frontier models in that it has been released without meaningful safeguards to limit misuse.
+
+Guest writer and physicist Matt von Hippel shares what happened when he issued a challenge to AI companies to solve a problem in his former subfield of theoretical physics.
+
+To see what works and what breaks when agents are sent into a market, we made a miniature market of Claudes.
+
+We are at a pivotal moment in the development of AI, as its growing capabilities mean it becomes potentially more useful and more dangerous. Frontier AI is rapidly accelerating discoveries in
+
+and
+
+, while at the same time the cost of its misuse grows
+
+can cause far more damage than it did a year ago.
+
+How to weigh these benefits and risks shouldn’t be left to AI companies alone. Your voice can help guide us, other AI labs, and policymakers as we navigate this uncertain future together. Our big questions are:
+
+This project builds on a similar study conducted last December, in which
+
+told us their hopes and worries about AI. That study shaped
+
+, was presented at the World Economic Forum to international leaders and decision-makers, and continues to guide our ongoing
+
+and
+
+AI and Anthropic have changed a lot since then. AI has improved, more people use Claude, and people’s feelings toward the technology have shifted. For the previous study, only the high-level results and a small number of quotes were made public. This time, we want your thoughts to be made widely available so that anyone can learn from them.
+
+We’ve written a FAQ so you can make an informed decision about whether to make your interview public and what to share. You can choose to
+
+The interview asks about your experiences with AI and what you want from it. We’ll ask about the moments with AI that have mattered most to you, both positive and negative, whether there’s anything about how the world works that you’d like AI to help change, and what you want from the companies developing AI, including Anthropic. There are no right answers; we want to hear about your experiences in your own words… And we don’t want to give too much away before you take it!
+
+No. It’s optional.
+
+We will publish your complete interview and the country associated with your conversation. We will not include your Claude account information, such as name or email address.
+
+Your perspective will be heard not just by us, but by anyone interested in studying and improving AI. We want anyone to be able to study how AI is impacting people and how AI development should progress.
+
+Researchers and policymakers around the world can read interviews in their own languages, read responses shared from different regions, and ask questions we didn’t think to ask. Many bring expertise we don't have on staff, and they may have insights we didn’t think to look for. Anyone can check whether our published findings actually reflect what participants said.
+
+Your interview also becomes part of the public record of this moment in AI, open to future historians, journalists, and researchers, and can inform how society responds to this moment. That record is also hard for AI companies and others shaping AI development to ignore. If many participants say companies like Anthropic should do something differently, that language stays public where anyone can reference it.
+
+While we won’t publish your Claude account information, such as your name or email address, we encourage participants to consider that anyone can read a public interview. This includes employers, friends and relatives, as well as governments and other companies. Depending on what a participant shares, others may be able to link the participant back to their interview. Details that seem harmless on their own, such as age, job, city, or where you studied, can make it easier to identify you. We don’t ask for these details in the interview and encourage participants to avoid sharing them.
+
+Once public, an interview could be used in ways a participant does not intend, including by scammers and other people who may seek to misuse personal information. We can remove our copy of your interview on request, but we can’t delete what people have already saved. For that reason, treat your decision to make your interview public as permanent.
+
+We won’t attach your name or account information, but we don’t edit interviews, so we can’t guarantee you won’t be re-identified from what you say. Someone could use AI to combine small details, like employers or past projects, to work out who a participant is. Researchers
+
+this can work with interviews from Anthropic Interviewer.
+
+The best protection is to not share information that could identify you or others. During the interview, we show examples of information you shouldn’t share, and you review your full interview before deciding whether to make it public.
+
+Before the interview, we explain what making an interview public involves. We tell participants that we will not include their Claude account information in the public release, but that others may be able to identify them from what they share. We also explain that making an interview public means anyone can read, save, and use it. We can remove our copy on request, but we can’t delete what people have already saved.
+
+During the interview, you will see examples of the types of sensitive information we advise not to share. After the interview, you can reread what you said before deciding whether to share it publicly. You will be reminded of both the benefits and risks, and if you choose to share, we will confirm your decision one last time.
+
+We’ll still analyze it as part of our Societal Impacts research, but your full interview won’t be published. We may still publish and share aggregated or de-identified findings resulting from your interview. If you don’t want us to analyze it either, you can end the interview early (see “Can I decide to end the interview early and delete the record?” below for more detail).
+
+Not fully. Once your interview is public, anyone can read, save, and use it. We can remove our copy of your interview on request, but we can’t delete what people have already saved. Treat the decision as permanent.
+
+No, we don’t plan to edit interviews before publishing them. Once the study is complete, we’ll do a final review and may remove interviews we don't believe would be responsible to publish, such as interviews with confidential information or ones that violate our
+
+or
+
+We'll analyze interviews as part of our Societal Impacts research, share our findings publicly, and use the results to inform how we develop our models and products.
+
+Yes, you can stop at any time by clicking the “End interview” button. If you end early, your partial interview will be permanently deleted, and won’t be analyzed or published, including by Anthropic.
+
+This study will run from September 29 to October 6, 2026, and is open to Free, Pro, and Max users on Claude and Claude Code whose accounts are at least two weeks old. Each interview takes roughly 15 minutes and is conducted by
+
+, an AI that asks you questions.
+
+We updated the questions, the study is open on more Claude products, and for the first time you can choose to make your interview public.
+
+The interviews will be published online once we have completed the study and our initial analysis.
+
+Participants in this study will all be people who use Claude, which is not a representative sample of the public. Published interviews are a further subset, since people who opt in for public release may differ from those who don’t. And as with any interview, the questions we ask shape what people share. Even so, nothing like this has been public before. We believe it can significantly advance the study of how AI is changing people’s lives.

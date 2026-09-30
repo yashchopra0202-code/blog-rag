@@ -1841,6 +1841,14 @@
     "site": "openai-index",
     "title": "Daybreak for Frontline Defenders: $1B to protect essential services"
   },
+  "https://openai.com/index/devday-2026-recap/": {
+    "date": "2026-09-29",
+    "file": "data/articles/openai-index__devday-2026-recap.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/6elORm6Tf9SptdH3mlnJBW/a0bea759a911cd9f04afe135835063bc/DevDay_Blog_ArtCard_16x9.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-09-30T10:07:28+00:00",
+    "site": "openai-index",
+    "title": "DevDay 2026 Recap"
+  },
   "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/": {
     "date": "2026-09-03",
     "file": "data/articles/openai-index__expanding-access-to-ai-with-chatgpt-ads.md",
@@ -1929,6 +1937,18 @@
     "site": "openai-index",
     "title": "Introducing ChatGPT Images 2.5 | OpenAI"
   },
+  "https://openai.com/index/introducing-dots/": {
+    "date": "2026-09-29",
+    "file": "data/articles/openai-index__introducing-dots.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/3SQQ9jqSm3aytzUPKuNS3X/e30d9ff756987b178e2b141de5c64a35/Art_Card___Landscape___16_9___1920_1080.png?w=1600&h=900&fit=fill",
+    "nugget": "OpenAI launched 'dots,' autonomous AI agents powered by GPT-6 Astra that run 24/7 on their own cloud computers, learn from user feedback, and can handle tasks across 4,000+ apps via ChatGPT, Slack, and Teams. The product represents a shift toward always-on AI assistants that proactively work on behalf of users while maintaining human control through built-in safeguards, permissions, and approval workflows.",
+    "nugget_at": "2026-09-30T10:12:47+00:00",
+    "scraped_at": "2026-09-30T10:07:31+00:00",
+    "signal": 4,
+    "site": "openai-index",
+    "title": "Introducing dots",
+    "topic": "Product & Tools"
+  },
   "https://openai.com/index/introducing-gpt-5-4/": {
     "date": "2026-09-01",
     "file": "data/articles/openai-research__introducing-gpt-5-4.md",
@@ -1950,6 +1970,18 @@
     "site": "openai-research",
     "title": "Introducing GPT\u20115.5",
     "topic": "Models"
+  },
+  "https://openai.com/index/introducing-gpt-6-1-sol/": {
+    "date": "2026-09-22",
+    "file": "data/articles/openai-research__introducing-gpt-6-1-sol.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/1Xa7inzcCfsGE5aV3QqeN3/4f3689ae92e04b18569f9eaf919e7174/GPT-6-1-Sol_16x9.png?w=1600&h=900&fit=fill",
+    "nugget": "OpenAI released GPT-6.1 Sol, an upgraded model that matches GPT-6 Astra's intelligence on coding, computer use, and professional work while costing one-fifth as much, with cached input tokens priced at $0.10 per million (95% cheaper than standard pricing). The model shows substantial improvements across benchmarks for software engineering, document analysis, business workflows, computer interaction, and scientific research while maintaining strong safety and factuality performance.",
+    "nugget_at": "2026-09-30T10:12:49+00:00",
+    "scraped_at": "2026-09-30T10:07:21+00:00",
+    "signal": 4,
+    "site": "openai-research",
+    "title": "Introducing GPT-6.1 Sol | OpenAI",
+    "topic": "Product & Tools"
   },
   "https://openai.com/index/introducing-gpt-6-sol-and-luna/": {
     "date": "2026-09-22",
@@ -2294,6 +2326,18 @@
     "signal": 4,
     "site": "google-research",
     "title": "GlucoFM: Foundation model for continuous glucose monitoring",
+    "topic": "Research"
+  },
+  "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/": {
+    "date": "",
+    "file": "data/articles/google-research__how-diffusion-controller-unifies-and-simplifies-ai-image-generation.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "Google Research introduced Diffusion Controller, a lightweight adapter network that steers image generation models toward better prompt alignment without modifying the underlying model weights. This matters because it enables precise control over closed-source, proprietary models and unifies fragmented approaches to model guidance under a single mathematical framework, solving a major practical problem for AI developers.",
+    "nugget_at": "2026-09-30T10:12:51+00:00",
+    "scraped_at": "2026-09-30T10:07:38+00:00",
+    "signal": 4,
+    "site": "google-research",
+    "title": "How Diffusion Controller unifies and simplifies AI image generation",
     "topic": "Research"
   },
   "https://research.google/blog/how-mobility-gives-language-models-a-deeper-understanding-of-place/": {
@@ -3201,6 +3245,18 @@
     "title": "Formalizing Fermat's Last Theorem",
     "topic": "Research"
   },
+  "https://www.anthropic.com/research/glm-5-3-and-the-spread-of-advanced-cyber-capabilities": {
+    "date": "2026-09-29",
+    "file": "data/articles/anthropic-research__glm-5-3-and-the-spread-of-advanced-cyber-capabilities.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+    "nugget": "Anthropic released analysis showing that Zhipu AI's GLM-5.3 model has dangerous cyber exploitation capabilities comparable to Claude Mythos Preview, but with severely weakened safeguards that can be bypassed 64-100% of the time using simple techniques. This matters because GLM-5.3 is publicly available as open-weight, while safer US models are restricted to vetted users, potentially giving malicious actors easy access to sophisticated exploit development tools.",
+    "nugget_at": "2026-09-30T10:12:53+00:00",
+    "scraped_at": "2026-09-30T10:07:09+00:00",
+    "signal": 5,
+    "site": "anthropic-research",
+    "title": "GLM-5.3 and the spread of advanced cyber capabilities",
+    "topic": "Safety & Policy"
+  },
   "https://www.anthropic.com/research/global-workspace": {
     "date": "",
     "file": "data/articles/anthropic-research__global-workspace.md",
@@ -3313,6 +3369,18 @@
     "title": "Yes, Claude can do Nine Loops",
     "topic": "Research"
   },
+  "https://www.anthropic.com/research/your-thoughts-on-ai": {
+    "date": "2026-09-29",
+    "file": "data/articles/anthropic-research__your-thoughts-on-ai.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+    "nugget": "Anthropic is launching a new study inviting Claude users to share their experiences with AI through optional public interviews, building on a previous survey that informed their safety work and was presented at Davos. The initiative aims to create a public record of how AI is impacting people and to give researchers, policymakers, and the public direct access to user perspectives on AI development, though participants should be aware that published interviews are permanent and could potentially allow re-identification despite anonymization efforts.",
+    "nugget_at": "2026-09-30T10:12:55+00:00",
+    "scraped_at": "2026-09-30T10:07:06+00:00",
+    "signal": 3,
+    "site": "anthropic-research",
+    "title": "What do you want from AI?",
+    "topic": "Safety & Policy"
+  },
   "https://www.microsoft.com/en-us/research/blog/aurora-1-5-extending-open-foundation-models-for-weather-and-earth-system-applications/": {
     "date": "2026-07-09",
     "file": "data/articles/microsoft-research__aurora-1-5-extending-open-foundation-models-for-weather-and-earth-system-applica.md",
@@ -3400,6 +3468,18 @@
     "signal": 4,
     "site": "microsoft-research",
     "title": "Introducing\u202fCARE-X: Towards Clinically Useful Radiology VLMs with Auxiliary Supervision, Reward-Aligned Learning, and Tool-Augmented Measurement",
+    "topic": "Research"
+  },
+  "https://www.microsoft.com/en-us/research/blog/introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology/": {
+    "date": "2026-09-29",
+    "file": "data/articles/microsoft-research__introducing-quine-an-ai-research-system-designed-for-the-complexity-of-biology.md",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/ProjectQuine-BlogHeroFeature-1400x788-2.jpg",
+    "nugget": "Microsoft Research unveiled Quine, an AI system designed to accelerate biological discovery by creating a unified \"world model\" that integrates knowledge across biological scales and modalities\u2014from genes to cells to tissues\u2014and connects it with scientific tools, literature, and wet-lab experiments. In a pancreatic cancer case study, Quine predicted and prioritized drug compounds in a weekend, potentially saving months of experimental work, demonstrating how AI can help scientists design experiments more efficiently rather than replacing them.",
+    "nugget_at": "2026-09-30T10:12:57+00:00",
+    "scraped_at": "2026-09-30T10:07:58+00:00",
+    "signal": 4,
+    "site": "microsoft-research",
+    "title": "Introducing Quine: An AI research system designed for the complexity of biology",
     "topic": "Research"
   },
   "https://www.microsoft.com/en-us/research/blog/memora-a-harmonic-memory-representation-balancing-abstraction-and-specificity/": {
@@ -3608,6 +3688,14 @@
     "title": "CobbleDB: Rebuilding AI Search Storage for Lower Latency and Cost",
     "topic": "Infrastructure"
   },
+  "https://www.perplexity.ai/hub/blog/computer-adds-automations-for-ongoing-work": {
+    "date": "",
+    "file": "data/articles/perplexity__computer-adds-automations-for-ongoing-work.md",
+    "image": "",
+    "scraped_at": "2026-09-30T10:08:35+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
+  },
   "https://www.perplexity.ai/hub/blog/computer-adds-effort-mode-for-model-selection": {
     "date": "2026-09-17",
     "file": "data/articles/perplexity__computer-adds-effort-mode-for-model-selection.md",
@@ -3649,6 +3737,14 @@
     "site": "perplexity",
     "title": "Fast Embeddings on GPUs",
     "topic": "Infrastructure"
+  },
+  "https://www.perplexity.ai/hub/blog/how-we-engineer-safer-agents": {
+    "date": "",
+    "file": "data/articles/perplexity__how-we-engineer-safer-agents.md",
+    "image": "",
+    "scraped_at": "2026-09-30T10:08:38+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
   },
   "https://www.perplexity.ai/hub/blog/introducing-finance-search-in-the-agent-api": {
     "date": "2026-05-06",
