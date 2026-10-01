@@ -267,6 +267,18 @@
     "title": "At AI Summit, South Korea Outlines Its AI Future With NVIDIA and Partners",
     "topic": "Infrastructure"
   },
+  "https://blogs.nvidia.com/blog/applications-open-graduate-fellowship-awards-2026/": {
+    "date": "2026-09-30",
+    "file": "data/articles/nvidia__applications-open-graduate-fellowship-awards-2026.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/graduate-fellowship-2026-updated-1280x720.png",
+    "nugget": "NVIDIA has opened applications for its 2027-2028 Graduate Fellowship Program, offering awards up to $60,000 to doctoral students conducting research in AI, machine learning, robotics, and related fields. The 26-year-old program aims to support breakthrough research by connecting talented students with mentorship and technical resources, with a mandatory summer 2027 internship at an NVIDIA research office.",
+    "nugget_at": "2026-10-01T10:40:14+00:00",
+    "scraped_at": "2026-10-01T10:36:48+00:00",
+    "signal": 1,
+    "site": "nvidia",
+    "title": "NVIDIA Opens Applications for 2027\u20132028 Graduate Fellowships With Awards Up to $60,000",
+    "topic": "Business"
+  },
   "https://blogs.nvidia.com/blog/childrens-hospital-open-source-ai-cardiac-care/": {
     "date": "2026-09-15",
     "file": "data/articles/nvidia__childrens-hospital-open-source-ai-cardiac-care.md",
@@ -290,6 +302,18 @@
     "site": "nvidia",
     "title": "5 Companies Using NVIDIA AI for Clean Energy",
     "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/coreweave-agentic-ai-vera-rubin/": {
+    "date": "2026-09-30",
+    "file": "data/articles/nvidia__coreweave-agentic-ai-vera-rubin.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/48AA46C8-A24C-44DA-8C2B-C48E21A510FE_1_201_a-scaled.jpeg",
+    "nugget": "NVIDIA and CoreWeave announced new AI infrastructure including Vera Rubin NVL72 GPUs and Vera CPUs purpose-built for agentic AI, with early customer Cognition achieving 4.8x higher token throughput on Vera Rubin. CoreWeave also launched Forge, a unified platform connecting training, evaluation, and production for continuous model improvement, bringing together tools from Weights & Biases, OpenPipe, and others.",
+    "nugget_at": "2026-10-01T10:40:16+00:00",
+    "scraped_at": "2026-10-01T10:36:52+00:00",
+    "signal": 4,
+    "site": "nvidia",
+    "title": "From Training to Production, NVIDIA and CoreWeave Close the Loop on Agentic AI",
+    "topic": "Infrastructure"
   },
   "https://blogs.nvidia.com/blog/d-matrix-nvlink-fusion/": {
     "date": "2026-09-10",
@@ -362,6 +386,18 @@
     "signal": 2,
     "site": "nvidia",
     "title": "Cute Critters Come to the Cloud: \u2018Aniimo\u2019 Launches on GeForce NOW",
+    "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/geforce-now-thursday-control-resonant/": {
+    "date": "2026-09-24",
+    "file": "data/articles/nvidia__geforce-now-thursday-control-resonant.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/GFN_Thursday-Sept_24.jpg",
+    "nugget": "NVIDIA's GeForce NOW cloud gaming service is launching support for the game CONTROL Resonant and expanding to Google's new Googlebooks laptops, while adding nine new games to its library this week. This represents incremental expansion of GeForce NOW's platform reach and game catalog, but is primarily a promotional announcement for existing cloud gaming infrastructure.",
+    "nugget_at": "2026-10-01T10:40:19+00:00",
+    "scraped_at": "2026-10-01T10:36:56+00:00",
+    "signal": 2,
+    "site": "nvidia",
+    "title": "Contain the Chaos: \u2018CONTROL Resonant\u2019 Launches on GeForce NOW",
     "topic": "Product & Tools"
   },
   "https://blogs.nvidia.com/blog/geforce-now-thursday-gamescom-2026/": {
@@ -541,6 +577,18 @@
     "site": "nvidia",
     "title": "NVIDIA NVLink Fusion Expands With NVHBM Custom High-Bandwidth Memory",
     "topic": "Infrastructure"
+  },
+  "https://blogs.nvidia.com/blog/open-protein-dataset/": {
+    "date": "2026-09-24",
+    "file": "data/articles/nvidia__open-protein-dataset.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/AF-0000000212056767-master-black-background-scaled.png",
+    "nugget": "NVIDIA, Google DeepMind, and international research organizations released predicted 3D structures for 2,800+ viral protein complexes via the AlphaFold Database, with 30% representing entirely new scientific knowledge. This open-access dataset aims to accelerate pandemic preparedness by giving scientists advance structural knowledge of viral proteins that could inform vaccine and drug development for future outbreaks.",
+    "nugget_at": "2026-10-01T10:40:20+00:00",
+    "scraped_at": "2026-10-01T10:36:45+00:00",
+    "signal": 4,
+    "site": "nvidia",
+    "title": "How Open Science Can Help Researchers Prepare for the Next Pandemic",
+    "topic": "Research"
   },
   "https://blogs.nvidia.com/blog/open-secure-ai-alliance-contributions/": {
     "date": "2026-08-04",
@@ -783,6 +831,18 @@
     "title": "Compass is coming to the cloud",
     "topic": "Product & Tools"
   },
+  "https://cohere.com/blog/embed-5": {
+    "date": "",
+    "file": "data/articles/cohere__embed-5.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/41d88204536fff8725e7903da17dd79d5c76ccdc-1770x720.png?rect=200,0,1371,720&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "Cohere released Embed 5, a new family of embedding models with Pro and Fast tiers optimized for enterprise retrieval across multimodal, multilingual, and financial data. The Pro model achieves state-of-the-art performance on multiple benchmarks while Fast offers competitive quality at lower latency and cost, with both models sharing a single embedding space for flexible deployment.",
+    "nugget_at": "2026-10-01T10:40:22+00:00",
+    "scraped_at": "2026-10-01T10:36:14+00:00",
+    "signal": 3,
+    "site": "cohere",
+    "title": "Introducing Embed 5\u2014A New Family of Frontier Embedding Models",
+    "topic": "Product & Tools"
+  },
   "https://cohere.com/blog/enterprise-ai-maturity-model": {
     "date": "",
     "file": "data/articles/cohere__enterprise-ai-maturity-model.md",
@@ -892,6 +952,18 @@
     "site": "cohere",
     "title": "Introducing Parse: Enterprise document intelligence at scale",
     "topic": "Product & Tools"
+  },
+  "https://cohere.com/blog/rcp-ndcg": {
+    "date": "",
+    "file": "data/articles/cohere__rcp-ndcg.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/ef9d5d5c1ab3414923df1fa97e3754ecc0a8f393-2912x1630.png?rect=0,51,2912,1529&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "Cohere introduced RCP-nDCG@10, a new evaluation metric for search systems that uses calibrated AI judges to assess document relevance against explicit rubrics, addressing limitations of traditional nDCG which relies on incomplete human-labeled datasets. In human validation studies, RCP-nDCG@10 aligned with human preferences 77% of the time versus 52% for conventional nDCG, making it better suited for evaluating modern retrieval systems that discover relevant documents outside original benchmark pools.",
+    "nugget_at": "2026-10-01T10:40:24+00:00",
+    "scraped_at": "2026-10-01T10:36:16+00:00",
+    "signal": 3,
+    "site": "cohere",
+    "title": "RCP-nDCG@10: A more complete way to measure retrieval relevance",
+    "topic": "Research"
   },
   "https://cohere.com/blog/state-of-sovereign-ai-adoption-2026": {
     "date": "",
@@ -1092,6 +1164,18 @@
     "site": "deepmind",
     "title": "Introducing Gemini 3.5 Flash Cyber",
     "topic": "Product & Tools"
+  },
+  "https://deepmind.google/blog/introducing-synthid-bio/": {
+    "date": "2026-09-30",
+    "file": "data/articles/deepmind__introducing-synthid-bio.md",
+    "image": "https://lh3.googleusercontent.com/wNhpZFcXYLXFb6alIt0H5NRvEoso2ONZDhPKz6MYEcGltHPbDeHddzkvv5GXl3abW1PZ5ci1Y9lKoYOIjMuHLxATXfWp88-Al6eEmDENrpejIFeimw=w1200-h630-n-nu-rw",
+    "nugget": "Google DeepMind introduced SynthID Bio, a watermarking technology that embeds imperceptible signatures directly into AI-generated protein sequences and structures while preserving their biological function, verified through lab testing on protein binders and bacteriophages. This addresses critical biosecurity gaps by enabling automated verification of AI-designed proteins at DNA synthesis screening checkpoints and helping maintain database integrity, complementing existing layered safety approaches.",
+    "nugget_at": "2026-10-01T10:40:26+00:00",
+    "scraped_at": "2026-10-01T10:35:47+00:00",
+    "signal": 4,
+    "site": "deepmind",
+    "title": "Introducing SynthID Bio",
+    "topic": "Safety & Policy"
   },
   "https://deepmind.google/blog/investing-in-multi-agent-ai-safety-research/": {
     "date": "2026-06-11",
@@ -1296,6 +1380,18 @@
     "scraped_at": "2026-09-05T05:23:04+00:00",
     "site": "huggingface",
     "title": "https://huggingface.co/blog/open-asr-leaderboard-global-south"
+  },
+  "https://huggingface.co/blog/open-tts-leaderboard": {
+    "date": "2026-02-03",
+    "file": "data/articles/huggingface__open-tts-leaderboard.md",
+    "image": "https://huggingface.co/blog/assets/open-tts-leaderboard/thumbnail.png",
+    "nugget": "A new platform allows users to compare text-to-speech voices and speech recognition models across different datasets and languages through side-by-side listening and voting. This crowdsourced evaluation approach helps identify which TTS and speech recognition systems perform best for different use cases and languages.",
+    "nugget_at": "2026-10-01T10:40:27+00:00",
+    "scraped_at": "2026-10-01T10:35:55+00:00",
+    "signal": 2,
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/open-tts-leaderboard",
+    "topic": "Product & Tools"
   },
   "https://huggingface.co/blog/pwc-search": {
     "date": "2026-04-20",
@@ -1848,6 +1944,18 @@
     "scraped_at": "2026-09-30T10:07:28+00:00",
     "site": "openai-index",
     "title": "DevDay 2026 Recap"
+  },
+  "https://openai.com/index/disrupting-a-coordinated-model-distillation-campaign/": {
+    "date": "2026-09-03",
+    "file": "data/articles/openai-index__disrupting-a-coordinated-model-distillation-campaign.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/7MP5Bq8wKRpAAnnhqfdA8o/3ca1f00ae7ec16c5a569eb6195e24c90/disrupting-a-coordinated-model-distillation-campaign-seo.png?w=1600&h=900&fit=fill",
+    "nugget": "OpenAI discovered and disrupted a coordinated campaign starting in July 2026 where attackers systematically extracted protected reasoning from its models through prompt manipulation and encryption replay techniques, with a core cluster attributed to Moonshot AI. The incident highlights adversarial distillation as a major security risk across the frontier AI industry, as extracted reasoning could be used to train competing models while bypassing safety guardrails, prompting OpenAI to share findings with industry partners and government.",
+    "nugget_at": "2026-10-01T10:40:31+00:00",
+    "scraped_at": "2026-10-01T10:35:36+00:00",
+    "signal": 4,
+    "site": "openai-index",
+    "title": "Disrupting a coordinated model-distillation campaign",
+    "topic": "Safety & Policy"
   },
   "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/": {
     "date": "2026-09-03",
@@ -3011,6 +3119,18 @@
     "title": "Announcing our updated Responsible Scaling Policy",
     "topic": "Safety & Policy"
   },
+  "https://www.anthropic.com/news/barclays-scales-claude": {
+    "date": "2026-10-01",
+    "file": "data/articles/anthropic-news__barclays-scales-claude.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+    "nugget": "Barclays is significantly expanding its use of Claude across the bank, with plans to reach 50% of developers by end of 2026 and a majority by 2027, while already deploying it in production systems handling customer support and processing 120,000 emails daily. This represents a major enterprise-scale AI adoption milestone that demonstrates both the commercial viability of Claude in regulated industries and Anthropic's ability to scale with proper governance frameworks.",
+    "nugget_at": "2026-10-01T10:40:32+00:00",
+    "scraped_at": "2026-10-01T10:35:24+00:00",
+    "signal": 4,
+    "site": "anthropic-news",
+    "title": "Barclays scales Claude to upgrade operations and improve client experience",
+    "topic": "Business"
+  },
   "https://www.anthropic.com/news/claude-discovers-novel-enzyme-system": {
     "date": "",
     "file": "data/articles/anthropic-news__claude-discovers-novel-enzyme-system.md",
@@ -3357,6 +3477,18 @@
     "title": "Teaching Claude why",
     "topic": "Safety & Policy"
   },
+  "https://www.anthropic.com/research/what-work-can-robots-do": {
+    "date": "2026-09-30",
+    "file": "data/articles/anthropic-research__what-work-can-robots-do.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+    "nugget": "Anthropic researchers used Claude to assess which jobs are exposed to robot automation based on current capabilities, finding robots can perform 74% of US physical tasks but cost-competitiveness remains extremely low at just 0.3% of work. The analysis suggests automation will follow existing robot capabilities rather than future technological breakthroughs, with jobs like taxi drivers and warehouse workers at higher near-term risk than nurses and mechanics.",
+    "nugget_at": "2026-10-01T10:40:35+00:00",
+    "scraped_at": "2026-10-01T10:35:16+00:00",
+    "signal": 4,
+    "site": "anthropic-research",
+    "title": "What work can robots do?",
+    "topic": "Research"
+  },
   "https://www.anthropic.com/research/yes-claude-can-do-nine-loops": {
     "date": "",
     "file": "data/articles/anthropic-research__yes-claude-can-do-nine-loops.md",
@@ -3435,6 +3567,18 @@
     "site": "microsoft-research",
     "title": "Flint: A visualization language for the AI era",
     "topic": "Product & Tools"
+  },
+  "https://www.microsoft.com/en-us/research/blog/forecasting-space-weather-risks-on-power-grids/": {
+    "date": "2026-09-30",
+    "file": "data/articles/microsoft-research__forecasting-space-weather-risks-on-power-grids.md",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/ForecastingSpace-TWLIFB-1200x627-1.jpg",
+    "nugget": "Researchers at Microsoft developed a machine learning system that forecasts geomagnetic storm impacts on 66,935 U.S. power substations 30-60 minutes in advance by combining solar-wind observations, magnetic indices, geological data, and grid infrastructure information. This physics-informed approach enables utilities to move from broad space-weather warnings to precise, location-specific risk assessments that could support targeted protective actions before grid damage occurs.",
+    "nugget_at": "2026-10-01T10:40:36+00:00",
+    "scraped_at": "2026-10-01T10:36:04+00:00",
+    "signal": 3,
+    "site": "microsoft-research",
+    "title": "Forecasting space weather risks on power grids",
+    "topic": "Research"
   },
   "https://www.microsoft.com/en-us/research/blog/gigapath-flash-and-gigatime-flash-toward-population-scale-discovery-with-efficient-pathology-foundation-models/": {
     "date": "2026-08-31",
