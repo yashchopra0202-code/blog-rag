@@ -164,6 +164,18 @@
     "title": "olmo-eval: An evaluation workbench for the model development loop",
     "topic": "Infrastructure"
   },
+  "https://allenai.org/blog/olmocore3": {
+    "date": "",
+    "file": "data/articles/ai2__olmocore3.md",
+    "image": "https://www.datocms-assets.com/64837/1790798606-olmo-core-3-blog-draft-google-docs-image-1.png",
+    "nugget": "AI2 released Olmo-core 3, an open-source framework for training mixture-of-experts (MoE) language models at trillion-parameter scale while maintaining computational efficiency. The system achieves 2.7\u00d7 higher throughput than previous implementations and has been benchmarked on models up to 2.38 trillion parameters, making large-scale model development more accessible to researchers with limited compute resources.",
+    "nugget_at": "2026-10-02T10:14:40+00:00",
+    "scraped_at": "2026-10-02T10:11:00+00:00",
+    "signal": 4,
+    "site": "ai2",
+    "title": "Introducing Olmo-core 3: Open, scalable training infrastructure for large MoEs",
+    "topic": "Infrastructure"
+  },
   "https://allenai.org/blog/olmoearth-infrastructure": {
     "date": "",
     "file": "data/articles/ai2__olmoearth-infrastructure.md",
@@ -407,6 +419,18 @@
     "site": "nvidia",
     "title": "GeForce NOW Gives Gamers More Ways to Play at Gamescom 2026"
   },
+  "https://blogs.nvidia.com/blog/geforce-now-thursday-october-2026-games-list/": {
+    "date": "2026-10-01",
+    "file": "data/articles/nvidia__geforce-now-thursday-october-2026-games-list.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/GFN_Thursday-Oct_1.jpg",
+    "nugget": "NVIDIA's GeForce NOW cloud gaming service is adding 25 new games throughout October 2026, including The Witcher 3: Wild Hunt \u2013 Remastered and Gears of War: E-Day. This is routine product marketing announcing periodic game library updates for a cloud gaming subscription service.",
+    "nugget_at": "2026-10-02T10:14:42+00:00",
+    "scraped_at": "2026-10-02T10:11:26+00:00",
+    "signal": 1,
+    "site": "nvidia",
+    "title": "Fall Into 25 New Games on GeForce NOW This October",
+    "topic": "Product & Tools"
+  },
   "https://blogs.nvidia.com/blog/geforce-now-thursday-september-2026-games-list/": {
     "date": "2026-09-03",
     "file": "data/articles/nvidia__geforce-now-thursday-september-2026-games-list.md",
@@ -427,6 +451,18 @@
     "signal": 1,
     "site": "nvidia",
     "title": "Boots on the Ground: \u2018WARDOGS\u2019 Goes All Out on GeForce NOW at Early-Access Launch",
+    "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/gpus-openai-gpt-6-astra-ultrafast/": {
+    "date": "2026-10-01",
+    "file": "data/articles/nvidia__gpus-openai-gpt-6-astra-ultrafast.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/twitter-gif-2104993966043320759-v5.png",
+    "nugget": "OpenAI launched GPT-6 Astra Ultrafast, which runs on NVIDIA Blackwell GPUs and delivers up to 8x faster token generation than standard mode through inference optimizations. This matters because faster response times reduce latency in agentic workflows where models repeatedly write code, call tools, and iterate\u2014making interactive applications more responsive and practical for developers.",
+    "nugget_at": "2026-10-02T10:14:43+00:00",
+    "scraped_at": "2026-10-02T10:11:23+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "How NVIDIA GPUs Help Accelerate OpenAI\u2019s GPT-6 Astra Ultrafast",
     "topic": "Product & Tools"
   },
   "https://blogs.nvidia.com/blog/ibc-news-2026/": {
@@ -626,6 +662,18 @@
     "scraped_at": "2026-09-22T08:56:45+00:00",
     "site": "nvidia",
     "title": "Why Deploying Physical AI at Scale Demands Safety at Every Layer"
+  },
+  "https://blogs.nvidia.com/blog/productive-durable-fungible-ai-factories/": {
+    "date": "2026-10-01",
+    "file": "data/articles/nvidia__productive-durable-fungible-ai-factories.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/09/fungibility-blog-1280x680-1.jpg",
+    "nugget": "NVIDIA published a framework for maximizing AI factory returns across three dimensions: productivity (tokens per megawatt), durability (hardware lifespan), and fungibility (workload versatility). The analysis argues that NVIDIA's full-stack optimization\u2014from hardware through CUDA software\u2014enables older GPU generations to remain economically viable for years while handling diverse AI and non-AI workloads, reducing operator risk from rapid hardware obsolescence.",
+    "nugget_at": "2026-10-02T10:14:46+00:00",
+    "scraped_at": "2026-10-02T10:11:28+00:00",
+    "signal": 2,
+    "site": "nvidia",
+    "title": "Productive, Durable, Fungible: How NVIDIA AI Factories Maximize Return on Investment",
+    "topic": "Product & Tools"
   },
   "https://blogs.nvidia.com/blog/robotaxi-leaders-full-stack-open-platform/": {
     "date": "2026-09-10",
@@ -1866,6 +1914,14 @@
     "title": "Airbnb widens access to GPT\u20116 Astra and OpenAI frontier models",
     "topic": "Business"
   },
+  "https://openai.com/index/albertsons-reimagining-retail/": {
+    "date": "2026-09-29",
+    "file": "data/articles/openai-index__albertsons-reimagining-retail.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/6sZopZBu8aHeeYeb8H6IS1/945a5ed2fcd3a837554c8ac49a38cdf6/how-albertsons-companies-is-reimagining-retail-from-the-inside-out-seo.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-10-02T10:10:18+00:00",
+    "site": "openai-index",
+    "title": "How Albertsons Companies is reimagining retail from the inside out"
+  },
   "https://openai.com/index/an-alien-mind/": {
     "date": "2026-09-06",
     "file": "data/articles/openai-index__an-alien-mind.md",
@@ -2300,6 +2356,14 @@
     "scraped_at": "2026-09-05T05:21:50+00:00",
     "site": "openai-research",
     "title": "Ten advances in mathematics and theoretical computer science | OpenAI"
+  },
+  "https://openai.com/index/the-eternal-complement/": {
+    "date": "2026-08-20",
+    "file": "data/articles/openai-index__the-eternal-complement.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/2lnidMsGW3gfP6p4fYJZTg/be8ebadd2bf9e9d83adea7a6f28f0501/eternal-complement-seo-white-preview.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-10-02T10:10:15+00:00",
+    "site": "openai-index",
+    "title": "The eternal complement"
   },
   "https://openai.com/index/the-work-now-within-reach/": {
     "date": "",
@@ -3309,6 +3373,18 @@
     "title": "Automated researchers can reliably mitigate alignment failures",
     "topic": "Safety & Policy"
   },
+  "https://www.anthropic.com/research/claude-shaped-science": {
+    "date": "2026-10-01",
+    "file": "data/articles/anthropic-research__claude-shaped-science.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/5dca367673e615ac7abbbdac9f44733d1f52638a-2000x1125.jpg",
+    "nugget": "A researcher describes BootLoops, an open-source framework that acts as a harness between LLMs and scientific work, addressing the \"impedance mismatch\" where AI models are capable but poorly matched to how scientists actually work. By repositioning Claude to tackle problems suited to its strengths\u2014broad knowledge, coding, mathematics\u2014rather than deep conceptual thinking, the framework achieved novel scientific results including 15 previously uncomputed elliptic Feynman integrals.",
+    "nugget_at": "2026-10-02T10:14:48+00:00",
+    "scraped_at": "2026-10-02T10:10:02+00:00",
+    "signal": 3,
+    "site": "anthropic-research",
+    "title": "Claude-shaped science",
+    "topic": "Product & Tools"
+  },
   "https://www.anthropic.com/research/claude-uplifts-biomolecular-modeling": {
     "date": "",
     "file": "data/articles/anthropic-research__claude-uplifts-biomolecular-modeling.md",
@@ -3809,6 +3885,18 @@
     "title": "AI personal assistants: What digital helpers can and can\u2019t do",
     "topic": "Product & Tools"
   },
+  "https://www.perplexity.ai/hub/blog/ai-tools-for-consultants": {
+    "date": "2026-10-01",
+    "file": "data/articles/perplexity__ai-tools-for-consultants.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/0e204d345a0676996da2ff2e7e20b4e009d9384a-1320x740.png?rect=0,24,1320,693&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "A blog post reviewed 10 AI tools designed to help management consultants automate research, data analysis, presentations, proposals, and administrative work\u2014including AlphaSense for market intelligence, Tableau AI for data visualization, Zapier for workflow automation, and Otter.ai for meeting transcription. The tools aim to free up consultant time from manual tasks so they can focus on applying expertise to client problems.",
+    "nugget_at": "2026-10-02T10:14:50+00:00",
+    "scraped_at": "2026-10-02T10:11:17+00:00",
+    "signal": 2,
+    "site": "perplexity",
+    "title": "10 AI Tools for Consultants: Use Cases, Key Features, Pricing & Alternatives",
+    "topic": "Product & Tools"
+  },
   "https://www.perplexity.ai/hub/blog/brain-agentic-memory-as-a-knowledge-wiki": {
     "date": "2026-08-19",
     "file": "data/articles/perplexity__brain-agentic-memory-as-a-knowledge-wiki.md",
@@ -3862,6 +3950,18 @@
     "site": "perplexity",
     "title": "Computer Connects to 20+ New Licensed Finance Data Sources",
     "topic": "Product & Tools"
+  },
+  "https://www.perplexity.ai/hub/blog/contextual-embedding-beyond-the-gold-passage": {
+    "date": "2026-09-30",
+    "file": "data/articles/perplexity__contextual-embedding-beyond-the-gold-passage.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/da56f0aaa45bf8ae0cecdd1fbf9c88de16a693a3-2400x1260.png?w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "A new contextual embedding model trained with a novel distillation approach retrieves both answer chunks and their supporting context, rather than just single gold passages. The method uses an LLM teacher to assign token-level relevance scores across documents, enabling the embedding model to understand how chunks depend on surrounding context and achieve state-of-the-art results on a new private benchmark and public evaluations.",
+    "nugget_at": "2026-10-02T10:14:52+00:00",
+    "scraped_at": "2026-10-02T10:11:11+00:00",
+    "signal": 4,
+    "site": "perplexity",
+    "title": "Contextual embedding beyond the gold passage",
+    "topic": "Models"
   },
   "https://www.perplexity.ai/hub/blog/escaping-space-part-i": {
     "date": "",
@@ -3965,6 +4065,18 @@
     "site": "perplexity",
     "title": "Optimizing On-Device Inference for Apple Silicon",
     "topic": "Infrastructure"
+  },
+  "https://www.perplexity.ai/hub/blog/perplexity-and-american-express-make-ai-easier-for-growing-businesses": {
+    "date": "2026-10-01",
+    "file": "data/articles/perplexity__perplexity-and-american-express-make-ai-easier-for-growing-businesses.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/c61f855afffc2d7b9cb74feb69ef0b7b73cbf1a1-1920x1080.png?rect=0,36,1920,1008&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "Perplexity and American Express launched a curated collection of AI-powered business Skills for cash flow forecasting, marketing, hiring, and tax preparation, available exclusively to U.S. American Express Business Card Members with Perplexity Enterprise subscriptions. The pre-built workflows let business owners input task details through forms rather than writing custom prompts, with results drawing from connected bank accounts and accounting tools via Plaid.",
+    "nugget_at": "2026-10-02T10:14:53+00:00",
+    "scraped_at": "2026-10-02T10:11:14+00:00",
+    "signal": 2,
+    "site": "perplexity",
+    "title": "Perplexity and American Express make AI easier for growing businesses",
+    "topic": "Product & Tools"
   },
   "https://www.perplexity.ai/hub/blog/perplexity-comes-to-more-windows-pcs-with-hp": {
     "date": "",
