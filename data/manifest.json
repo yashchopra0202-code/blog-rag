@@ -109,6 +109,18 @@
     "title": "Mapping the World's Forests with Greater Precision: Introducing Canopy Height Maps v2",
     "topic": "Product & Tools"
   },
+  "https://allenai.org/blog/astabrief": {
+    "date": "",
+    "file": "data/articles/ai2__astabrief.md",
+    "image": "https://www.datocms-assets.com/64837/1790891256-asta-report-generation-model-blog-astabrief-google-docs-image-1.png",
+    "nugget": "Anthropic's AI2 released AstaBrief, an open-weights language model specifically trained for scientific report generation that matches proprietary model quality while running 3.5\u00d7 faster. The model was trained on 47K real scientific queries and is being open-sourced alongside training data and infrastructure code, enabling researchers to run scientific synthesis locally on sensitive work.",
+    "nugget_at": "2026-10-03T09:37:52+00:00",
+    "scraped_at": "2026-10-03T09:33:42+00:00",
+    "signal": 4,
+    "site": "ai2",
+    "title": "Open-sourcing AstaBrief, the fast report-generation model in Asta",
+    "topic": "Product & Tools"
+  },
   "https://allenai.org/blog/benchmirt": {
     "date": "",
     "file": "data/articles/ai2__benchmirt.md",
@@ -2245,6 +2257,14 @@
     "site": "openai-index",
     "title": "Paul Christiano joins OpenAI Foundation Board"
   },
+  "https://openai.com/index/practical-guide-building-gpt-6/": {
+    "date": "2026-09-29",
+    "file": "data/articles/openai-index__practical-guide-building-gpt-6.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/30yfQUtDoZo9YOON0QB57H/7c53ac242cc32ab9a9dc05930bdc2034/6tbusrroo8ljxic8ceybig-seo.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-10-03T09:32:54+00:00",
+    "site": "openai-index",
+    "title": "A model guide for the GPT\u20116 family"
+  },
   "https://openai.com/index/priorities-principles-third-party-assessments/": {
     "date": "2026-09-16",
     "file": "data/articles/openai-index__priorities-principles-third-party-assessments.md",
@@ -2602,6 +2622,18 @@
     "site": "google-research",
     "title": "ToolGrad: Efficient tool-use dataset generation with textual \"gradients\"",
     "topic": "Research"
+  },
+  "https://research.google/blog/toward-provably-private-learning-from-federated-data/": {
+    "date": "",
+    "file": "data/articles/google-research__toward-provably-private-learning-from-federated-data.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "Google announced a new Federated Learning system using Trusted Execution Environments (TEEs) that provides externally verifiable privacy guarantees while moving computation to servers, resulting in faster training, better accuracy, and improved device coverage. This advancement matters because it removes the need to trust server operators, enables external auditors to verify privacy practices through public transparency logs, and has already been deployed in Gboard for next-word prediction models.",
+    "nugget_at": "2026-10-03T09:37:54+00:00",
+    "scraped_at": "2026-10-03T09:33:01+00:00",
+    "signal": 4,
+    "site": "google-research",
+    "title": "Toward provably private learning from federated data",
+    "topic": "Safety & Policy"
   },
   "https://research.google/blog/transfer-learning-for-genomic-prediction-in-underrepresented-populations/": {
     "date": "",
@@ -3206,6 +3238,18 @@
     "site": "anthropic-news",
     "title": "Claude discovers a novel enzyme system with CRISPR-like repeats",
     "topic": "Research"
+  },
+  "https://www.anthropic.com/news/claude-frontier-academy": {
+    "date": "2026-10-02",
+    "file": "data/articles/anthropic-news__claude-frontier-academy.md",
+    "image": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Build&backgroundColor=heather",
+    "nugget": "Anthropic launched Claude Frontier Academy with a $100 million commitment to train 10,000 enterprise AI engineers by end of 2027, following a medical residency model with in-person training and 12-week supervised projects at partner organizations. This addresses the critical bottleneck of AI talent in enterprise deployment, with major consulting firms and financial institutions already participating in initial cohorts.",
+    "nugget_at": "2026-10-03T09:37:56+00:00",
+    "scraped_at": "2026-10-03T09:32:44+00:00",
+    "signal": 3,
+    "site": "anthropic-news",
+    "title": "Anthropic invests $100 million to train 10,000 engineers and tackle the enterprise AI talent gap",
+    "topic": "Product & Tools"
   },
   "https://www.anthropic.com/news/claude-opus-5": {
     "date": "",
@@ -3873,6 +3917,14 @@
     "site": "perplexity",
     "title": "The AI literacy gap is growing. Here\u2019s how to close it.",
     "topic": "Safety & Policy"
+  },
+  "https://www.perplexity.ai/hub/blog/ai-maturity": {
+    "date": "",
+    "file": "data/articles/perplexity__ai-maturity.md",
+    "image": "",
+    "scraped_at": "2026-10-03T09:33:55+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
   },
   "https://www.perplexity.ai/hub/blog/ai-personal-assistants": {
     "date": "2026-09-01",
