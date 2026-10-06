@@ -824,6 +824,18 @@
     "title": "Cohere and OpenText partner to bring trusted agentic AI to governments and regulated industries",
     "topic": "Product & Tools"
   },
+  "https://cohere.com/blog/cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption": {
+    "date": "",
+    "file": "data/articles/cohere__cohere-and-pwc-partner-to-accelerate-secure-enterprise-ai-adoption.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/a2c6d85b8dadab8d3b6be028c73386cc6661b590-7680x4320.png?rect=0,144,7680,4032&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "PwC and Cohere announced a global partnership to help enterprises deploy secure AI systems, starting in Canada, combining Cohere's North platform with PwC's consulting expertise. The alliance focuses on helping organizations identify high-value AI use cases, connect AI to enterprise data securely, and establish governance frameworks for responsible deployment across private cloud and on-premises environments.",
+    "nugget_at": "2026-10-06T11:00:56+00:00",
+    "scraped_at": "2026-10-06T10:56:12+00:00",
+    "signal": 2,
+    "site": "cohere",
+    "title": "Cohere and PwC partner to accelerate secure enterprise AI adoption",
+    "topic": "Business"
+  },
   "https://cohere.com/blog/cohere-security-ai-agent-north-wiz": {
     "date": "",
     "file": "data/articles/cohere__cohere-security-ai-agent-north-wiz.md",
@@ -956,6 +968,18 @@
     "signal": 3,
     "site": "cohere",
     "title": "How small AI models can make a big impact for enterprises",
+    "topic": "Product & Tools"
+  },
+  "https://cohere.com/blog/introducing-north-2": {
+    "date": "",
+    "file": "data/articles/cohere__introducing-north-2.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/8e4c711d1fc7c3be2acdbda3b85c7160e277c891-3840x2160.jpg?rect=0,72,3840,2016&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "Cohere launched North 2, an enterprise agentic AI platform designed to balance security, intelligence, cost, and control without compromises. The platform includes advanced agent orchestration, admin governance tools, private deployment options, and integration with NVIDIA accelerators, targeting regulated industries like finance, healthcare, and government.",
+    "nugget_at": "2026-10-06T11:00:57+00:00",
+    "scraped_at": "2026-10-06T10:56:10+00:00",
+    "signal": 3,
+    "site": "cohere",
+    "title": "North 2: Enterprise AI without compromises",
     "topic": "Product & Tools"
   },
   "https://cohere.com/blog/introducing-north-automations-ai-workflows": {
@@ -1460,6 +1484,14 @@
     "site": "huggingface",
     "title": "https://huggingface.co/blog/pwc-search"
   },
+  "https://huggingface.co/blog/rl-environments": {
+    "date": "2026-03-23",
+    "file": "data/articles/huggingface__rl-environments.md",
+    "image": "https://huggingface.co/blog/assets/datasets-filters/thumbnail.png",
+    "scraped_at": "2026-10-06T10:55:53+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/rl-environments"
+  },
   "https://huggingface.co/blog/tokenizers-v1": {
     "date": "2026-09-21",
     "file": "data/articles/huggingface__tokenizers-v1.md",
@@ -1516,6 +1548,18 @@
     "site": "huggingface",
     "title": "https://huggingface.co/blog/webgpu-kernels",
     "topic": "Infrastructure"
+  },
+  "https://mistral.ai/news/?categories=research": {
+    "date": "",
+    "file": "data/articles/mistral__categories-research.md",
+    "image": "https://mistral.ai/cms-media/api/media/file/cover-mistral-sovereign%20copie.webp",
+    "nugget": "Mistral raised \u20ac3 billion in Series D funding at a \u20ac21 billion+ valuation, becoming a major European AI player. The company is simultaneously expanding with a German hub, launching new products (agents, workflows, retrieval systems), and publishing research across models, speech synthesis, and embodied AI.",
+    "nugget_at": "2026-10-06T11:00:59+00:00",
+    "scraped_at": "2026-10-06T10:56:04+00:00",
+    "signal": 4,
+    "site": "mistral",
+    "title": "Latest updates from Mistral.",
+    "topic": "Business"
   },
   "https://mistral.ai/news/accelerate-ai-native-industry/": {
     "date": "",
@@ -2024,6 +2068,18 @@
     "site": "openai-index",
     "title": "Disrupting a coordinated model-distillation campaign",
     "topic": "Safety & Policy"
+  },
+  "https://openai.com/index/eu-text-provenance/": {
+    "date": "2026-09-28",
+    "file": "data/articles/openai-index__eu-text-provenance.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/7u8k3vMOefnc2eIwqAZlCJ/5e39aad76e07dc260070eae95d545d6f/ChatGPT_Image_5_Oct_2026__18_22_35.png?w=1600&h=900&fit=fill",
+    "nugget": "An AI benchmarking report shows performance metrics across multiple evaluation systems, with mixed results showing both improvements and declines on various tasks including automation, software engineering, terminal operations, and professional benchmarks. The post emphasizes transparency in AI capability measurement within current technological constraints.",
+    "nugget_at": "2026-10-06T11:01:01+00:00",
+    "scraped_at": "2026-10-06T10:55:34+00:00",
+    "signal": 2,
+    "site": "openai-index",
+    "title": "Our approach to EU text provenance rules",
+    "topic": "Research"
   },
   "https://openai.com/index/expanding-access-to-ai-with-chatgpt-ads/": {
     "date": "2026-09-03",
@@ -2573,6 +2629,18 @@
     "site": "google-research",
     "title": "MilleMiglia: A realistic instance generator for middle-mile logistics",
     "topic": "Research"
+  },
+  "https://research.google/blog/open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle/": {
+    "date": "",
+    "file": "data/articles/google-research__open-and-emergent-problems-in-agentic-privacy-and-security-a-contextual-angle.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "Google Research released a workshop report on building trustworthy AI agents by grounding them in Contextual Integrity theory, which defines privacy as appropriate information flow according to social norms. The report proposes a multi-layered approach including contextual policy engines, model improvements, and new safety evaluation methods to enable agents to understand when actions are socially appropriate before executing them.",
+    "nugget_at": "2026-10-06T11:01:04+00:00",
+    "scraped_at": "2026-10-06T10:55:41+00:00",
+    "signal": 3,
+    "site": "google-research",
+    "title": "Open and Emergent Problems in Agentic Privacy and Security: A Contextual Angle",
+    "topic": "Safety & Policy"
   },
   "https://research.google/blog/planetary-prediction-engine-automating-global-models-via-earth-ai/": {
     "date": "",
@@ -4200,6 +4268,14 @@
     "title": "Q2D-Web: Evaluating First-Stage Retrievers at Scale",
     "topic": "Research"
   },
+  "https://www.perplexity.ai/hub/blog/rag-example": {
+    "date": "",
+    "file": "data/articles/perplexity__rag-example.md",
+    "image": "",
+    "scraped_at": "2026-10-06T10:56:42+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
+  },
   "https://www.perplexity.ai/hub/blog/securing-agents-across-perplexity-s-client-endpoints-with-numbat": {
     "date": "2026-07-29",
     "file": "data/articles/perplexity__securing-agents-across-perplexity-s-client-endpoints-with-numbat.md",
@@ -4543,6 +4619,18 @@
     "site": "together",
     "title": "Together AI brings Thinking Machines Lab\u2019s new model Inkling on day 0",
     "topic": "Models"
+  },
+  "https://www.together.ai/blog/together-link-frontier-quality-open-models-in-the-harness-you-already-use": {
+    "date": "",
+    "file": "data/articles/together__together-link-frontier-quality-open-models-in-the-harness-you-already-use.md",
+    "image": "https://cdn.prod.website-files.com/69654e88dce9154b5f12070c/6ac396a5f8a841cbd899141c_Together_Link_Blog_Thumbnail_OG_1200x630.jpg",
+    "nugget": "Together AI launched Together Link, a tool that routes coding agent tasks to open-source models like DeepSeek and GLM instead of expensive closed models, cutting costs by over 50% while integrating seamlessly with existing tools like Claude and ChatGPT. This matters because engineering teams currently spend tens of thousands to millions monthly on premium model APIs, and open models have now closed the capability gap for most coding tasks.",
+    "nugget_at": "2026-10-06T11:01:05+00:00",
+    "scraped_at": "2026-10-06T10:56:36+00:00",
+    "signal": 3,
+    "site": "together",
+    "title": "Together Link: frontier-quality open models in the harness you already use",
+    "topic": "Product & Tools"
   },
   "https://www.together.ai/blog/together-yc-gpu-cluster": {
     "date": "",
