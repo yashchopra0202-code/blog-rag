@@ -232,6 +232,18 @@
     "title": "TutorMoments: Do AI tutors know when to help and when to hold back?",
     "topic": "Research"
   },
+  "https://blogs.nvidia.com/blog/ai-breast-cancer-startups/": {
+    "date": "2026-10-05",
+    "file": "data/articles/nvidia__ai-breast-cancer-startups.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/AdobeStock_422714256_BCAMheader.jpeg",
+    "nugget": "NVIDIA Inception startups are deploying AI across the breast cancer care journey\u2014from faster automated imaging and radiologist assistance to treatment prediction\u2014addressing critical gaps like radiologist shortages and slow diagnostic turnaround times. The article showcases four companies (iSono Health, Whiterabbit.ai, Ataraxis AI, and SimBioSys) using GPU-accelerated AI to improve screening access, reduce false alarms, predict treatment response, and guide surgery planning.",
+    "nugget_at": "2026-10-07T10:48:52+00:00",
+    "scraped_at": "2026-10-07T10:44:29+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "From Scan to Treatment Plan, AI Helps Close Breast Cancer\u2019s Deadliest Gaps",
+    "topic": "Product & Tools"
+  },
   "https://blogs.nvidia.com/blog/ai-day-singapore/": {
     "date": "2026-09-23",
     "file": "data/articles/nvidia__ai-day-singapore.md",
@@ -512,6 +524,18 @@
     "title": "\u2018Now We Can Know Everything and Do Anything,\u2019 Jensen Huang Says at Dreamforce",
     "topic": "Product & Tools"
   },
+  "https://blogs.nvidia.com/blog/local-ai-dgx-spark-64gb-sync/": {
+    "date": "2026-10-02",
+    "file": "data/articles/nvidia__local-ai-dgx-spark-64gb-sync.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/nv-blog-1280x680-1.jpg",
+    "nugget": "NVIDIA launched the DGX Spark 64GB, a local AI supercomputer starting at $4,999, available from major manufacturers beginning October 23rd. The system runs up to 100-billion-parameter models entirely on-device and can cluster two units together for 128GB memory and up to 1.7x performance gains, enabling developers to build and scale AI agents without cloud dependency.",
+    "nugget_at": "2026-10-07T10:48:54+00:00",
+    "scraped_at": "2026-10-07T10:44:33+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "NVIDIA DGX Spark 64GB Gives Developers More Ways to Build and Scale Local AI",
+    "topic": "Product & Tools"
+  },
   "https://blogs.nvidia.com/blog/local-ai-ifa-next-gen-agents-nv-pair-rtx-spark/": {
     "date": "2026-09-03",
     "file": "data/articles/nvidia__local-ai-ifa-next-gen-agents-nv-pair-rtx-spark.md",
@@ -709,6 +733,18 @@
     "title": "Skild AI Taps NVIDIA Physical AI to Teach Robots New Tasks From a Single Video",
     "topic": "Product & Tools"
   },
+  "https://blogs.nvidia.com/blog/telecom-operators-open-models/": {
+    "date": "2026-10-06",
+    "file": "data/articles/nvidia__telecom-operators-open-models.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/image1.png",
+    "nugget": "Telecom operators are increasingly adopting open-source AI models instead of proprietary ones, with 89% citing open models as important to their AI strategy. Open models enable telcos to customize AI for telecom-specific tasks, maintain control and governance, and deploy across multiple environments\u2014with NVIDIA releasing the Nemotron 3 Large Telco Model and partners like SoftBank and AT&T demonstrating production implementations.",
+    "nugget_at": "2026-10-07T10:48:56+00:00",
+    "scraped_at": "2026-10-07T10:44:25+00:00",
+    "signal": 3,
+    "site": "nvidia",
+    "title": "Why Telecom Operators Are Building Their AI Strategy on Open Models",
+    "topic": "Product & Tools"
+  },
   "https://blogs.nvidia.com/blog/ugm-indosat-nvidia-ai-technology-center/": {
     "date": "2026-08-14",
     "file": "data/articles/nvidia__ugm-indosat-nvidia-ai-technology-center.md",
@@ -798,6 +834,18 @@
     "signal": 4,
     "site": "cohere",
     "title": "Automation\u2019s Early Footprint",
+    "topic": "Research"
+  },
+  "https://cohere.com/blog/building-multilingual-bridges": {
+    "date": "",
+    "file": "data/articles/cohere__building-multilingual-bridges.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/b416a7d67e66515c45c29ca7b0664a6491ee9d5a-3840x2160.png?rect=0,72,3840,2016&w=1200&h=630&q=80&fit=crop&auto=format",
+    "nugget": "Researchers developed Tiny Aya L2-Thinker, a multilingual reasoning model that thinks through problems in the user's language rather than defaulting to English, addressing a critical accessibility gap where non-English speakers couldn't follow the model's reasoning steps. The approach uses strategic data mixing across three types of training data to achieve 93% in-language reasoning across 60 languages while maintaining accuracy nearly on par with English-only reasoning models.",
+    "nugget_at": "2026-10-07T10:48:58+00:00",
+    "scraped_at": "2026-10-07T10:43:52+00:00",
+    "signal": 4,
+    "site": "cohere",
+    "title": "Multilingual Bridges: How Data Mixing Unlocks In-Language Reasoning",
     "topic": "Research"
   },
   "https://cohere.com/blog/cohere-and-aleph-alpha-sign-agreement": {
@@ -1706,6 +1754,18 @@
     "title": "Your Prompts and Skills need a system of record.",
     "topic": "Product & Tools"
   },
+  "https://mistral.ai/news/mistral-large-4/": {
+    "date": "",
+    "file": "data/articles/mistral__mistral-large-4.md",
+    "image": "https://mistral.ai/cms-media/api/media/file/cover-mistral-sovereign%20copie.webp",
+    "nugget": "Mistral launched Mistral Large 4 (ML4), a 1 trillion-parameter open-weight model with 49 billion active parameters that achieves state-of-the-art performance in cybersecurity, coding, and multimodal understanding. The model will be released by end of month after red-teaming with security partners, positioning Mistral as a major player in open-source AI with enterprise-grade capabilities.",
+    "nugget_at": "2026-10-07T10:49:00+00:00",
+    "scraped_at": "2026-10-07T10:43:48+00:00",
+    "signal": 5,
+    "site": "mistral",
+    "title": "Introducing Mistral Large 4 | Mistral",
+    "topic": "Models"
+  },
   "https://mistral.ai/news/mistral-makes-sovereign-open-weight-ai-to-frontier": {
     "date": "",
     "file": "data/articles/mistral__mistral-makes-sovereign-open-weight-ai-to-frontier.md",
@@ -1939,6 +1999,14 @@
     "title": "Workflows for work that runs the business",
     "topic": "Product & Tools"
   },
+  "https://openai.com/index/advancing-computer-use-with-ironclad/": {
+    "date": "2026-10-06",
+    "file": "data/articles/openai-research__advancing-computer-use-with-ironclad.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/7MHs3xHafyN62xj8ZblzjX/b0bfb5320a21766be56d761631d18899/oai_ironclad_cua_16x9.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-10-07T10:43:12+00:00",
+    "site": "openai-research",
+    "title": "Advancing computer use with Ironclad"
+  },
   "https://openai.com/index/advisory-group-on-mathematics-and-ai/": {
     "date": "2026-09-21",
     "file": "data/articles/openai-index__advisory-group-on-mathematics-and-ai.md",
@@ -1996,6 +2064,14 @@
     "site": "openai-index",
     "title": "Introducing Astra for Law",
     "topic": "Product & Tools"
+  },
+  "https://openai.com/index/atlassian-partnership/": {
+    "date": "",
+    "file": "data/articles/openai-index__atlassian-partnership.md",
+    "image": "",
+    "scraped_at": "2026-10-07T10:43:18+00:00",
+    "site": "openai-index",
+    "title": "Just a moment..."
   },
   "https://openai.com/index/australian-youth-safety-blueprint/": {
     "date": "2026-09-17",
@@ -2409,6 +2485,18 @@
     "site": "openai-research",
     "title": "Scientific computing in the age of agentic AI"
   },
+  "https://openai.com/index/sharing-ai-progress-in-mathematics/": {
+    "date": "2026-10-06",
+    "file": "data/articles/openai-research__sharing-ai-progress-in-mathematics.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/3430T8Aum4BAOFwLEnHQmC/bbc034e46bc5766dc6569183e87fa6df/ai-progress-in-mathematics-social.png?w=1600&h=900&fit=fill",
+    "nugget": "OpenAI released mathematical research results produced by an internal frontier model, publishing proofs in a GitHub repository with Lean formalizations to enable computer verification. The release emphasizes transparency by sharing reasoning summaries, compute usage (~3 hours of ChatGPT Pro per result), and problem statistics, while OpenAI commits to funding workshops and responsibly releasing the model itself.",
+    "nugget_at": "2026-10-07T10:49:01+00:00",
+    "scraped_at": "2026-10-07T10:43:09+00:00",
+    "signal": 4,
+    "site": "openai-research",
+    "title": "Sharing AI progress in mathematics",
+    "topic": "Research"
+  },
   "https://openai.com/index/supporting-california-bill-advance-ai-youth-safety/": {
     "date": "2026-08-28",
     "file": "data/articles/openai-index__supporting-california-bill-advance-ai-youth-safety.md",
@@ -2561,6 +2649,18 @@
     "site": "google-research",
     "title": "Automating coherent long-form video generation",
     "topic": "Models"
+  },
+  "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/": {
+    "date": "",
+    "file": "data/articles/google-research__earth-ais-planetary-geospatial-foundation-models-for-global-public-health.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "Google Research introduced the Population Dynamics Foundation Model (PDFM), a geospatial AI system that compresses satellite imagery, search trends, mobility data, and environmental signals into location embeddings to improve public health predictions. Five real-world case studies across measles vaccination, cardiovascular disease, dengue forecasting, postpartum depression screening, and cholera prediction demonstrated that PDFM embeddings matched or exceeded traditional epidemiological data sources while being fresher, more accessible, and deployable in resource-constrained settings.",
+    "nugget_at": "2026-10-07T10:49:04+00:00",
+    "scraped_at": "2026-10-07T10:43:24+00:00",
+    "signal": 4,
+    "site": "google-research",
+    "title": "Unlocking Earth AI\u2019s planetary geospatial foundation models for global public health",
+    "topic": "Research"
   },
   "https://research.google/blog/empty-shelves-or-lost-keys-recall-is-the-bottleneck-for-parametric-factuality/": {
     "date": "",
@@ -3349,6 +3449,18 @@
     "title": "How Claude\u2019s text watermark works",
     "topic": "Safety & Policy"
   },
+  "https://www.anthropic.com/news/cyber-verification-program": {
+    "date": "2026-10-06",
+    "file": "data/articles/anthropic-news__cyber-verification-program.md",
+    "image": "https://www.anthropic.com/api/opengraph-illustration?name=Hand%20Lock&backgroundColor=heather",
+    "nugget": "Anthropic expanded its Cyber Verification Program into three tiered access levels for security professionals, providing reduced AI safety restrictions on Claude models based on organizational scope\u2014from defensive security work to red-teaming to critical infrastructure testing. The program aims to give defenders better tools while maintaining safeguards, with Project Glasswing data showing Claude Mythos helped partners find 129,000+ verified vulnerabilities in just four months.",
+    "nugget_at": "2026-10-07T10:49:06+00:00",
+    "scraped_at": "2026-10-07T10:43:02+00:00",
+    "signal": 3,
+    "site": "anthropic-news",
+    "title": "Expanding the Cyber Verification Program",
+    "topic": "Product & Tools"
+  },
   "https://www.anthropic.com/news/enterprise-frontier-safeguards": {
     "date": "",
     "file": "data/articles/anthropic-news__enterprise-frontier-safeguards.md",
@@ -3927,6 +4039,18 @@
     "scraped_at": "2026-09-28T10:20:31+00:00",
     "site": "perplexity",
     "title": "www.perplexity.ai"
+  },
+  "https://www.perplexity.ai/hub/blog/ai-collaboration-tools": {
+    "date": "2026-10-06",
+    "file": "data/articles/perplexity__ai-collaboration-tools.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/06bf15633174be3d672cba566abe2df0af904e81-1320x740.png?rect=0,24,1320,693&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "nugget": "This article reviews 10 AI-enabled collaboration tools (Slack, Loom, Confluence, Airtable, Notion, ClickUp, Asana, Monday.com, Trello, Miro), detailing their AI features, use cases, and pricing tiers. It matters because teams evaluating AI collaboration software need a comprehensive comparison to choose tools that solve their specific workflow problems.",
+    "nugget_at": "2026-10-07T10:49:07+00:00",
+    "scraped_at": "2026-10-07T10:44:18+00:00",
+    "signal": 2,
+    "site": "perplexity",
+    "title": "10 Best AI Collaboration Tools",
+    "topic": "Product & Tools"
   },
   "https://www.perplexity.ai/hub/blog/ai-detector": {
     "date": "2026-09-15",
