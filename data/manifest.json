@@ -132,6 +132,18 @@
     "title": "BenchMIRT: What are LLM benchmarks actually measuring?",
     "topic": "Research"
   },
+  "https://allenai.org/blog/bolmo-nature": {
+    "date": "",
+    "file": "data/articles/ai2__bolmo-nature.md",
+    "image": "https://www.datocms-assets.com/64837/1791355720-nature-cover-for-release-thumbnail.jpg",
+    "nugget": "AI2 published research in Nature on Bolmo, their open-source byte-level language models that process text at the character level rather than using fixed vocabularies. The approach, called byteification, converts existing subword models into byte-level ones with minimal retraining, and has been applied to Qwen and Llama models, potentially enabling more flexible AI systems that could eventually work across text, images, and audio.",
+    "nugget_at": "2026-10-08T11:09:00+00:00",
+    "scraped_at": "2026-10-08T11:05:19+00:00",
+    "signal": 4,
+    "site": "ai2",
+    "title": "Now in Nature: Retrofitting language models to operate over bytes",
+    "topic": "Research"
+  },
   "https://allenai.org/blog/discoformer": {
     "date": "",
     "file": "data/articles/ai2__discoformer.md",
@@ -564,6 +576,18 @@
     "signal": 3,
     "site": "nvidia",
     "title": "Perplexity Portable Computer Is Now Available on Windows, Powered by NVIDIA RTX",
+    "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/": {
+    "date": "2026-10-07",
+    "file": "data/articles/nvidia__local-ai-rtx-spark-microsoft-windows-event.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/nvidia-rtx-spark-microsoft-event-3840x2160-1-scaled.png",
+    "nugget": "NVIDIA and Microsoft announced RTX Spark, a new GPU-powered Windows laptop and desktop line with up to 128GB memory and petaflop-scale AI compute that launches today for preorder, alongside a preview of DGX Station for Windows\u2014the first deskside supercomputer bringing enterprise-grade AI infrastructure to Windows PCs. This matters because it positions local AI agents as persistent assistants on Windows machines through new OS-level security primitives (Microsoft Execution Containers), eliminating the need for cloud compute and closing the gap between Windows productivity tools and Linux AI development workflows.",
+    "nugget_at": "2026-10-08T11:09:03+00:00",
+    "scraped_at": "2026-10-08T11:05:40+00:00",
+    "signal": 4,
+    "site": "nvidia",
+    "title": "NVIDIA, Microsoft Kick Off a New Beginning for Windows PCs With RTX Spark and AI Agents",
     "topic": "Product & Tools"
   },
   "https://blogs.nvidia.com/blog/medical-physics-simulation-open-source/": {
@@ -2197,6 +2221,18 @@
     "title": "GPT-6 Astra: A new generation of intelligence",
     "topic": "Models"
   },
+  "https://openai.com/index/gpt-6-for-everyone/": {
+    "date": "2026-10-07",
+    "file": "data/articles/openai-research__gpt-6-for-everyone.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/5frqtUAWccstAbVrCFraH6/5ae9b6bfbc3f3dff8001ed249812f97d/Intelligent-UI_Art-Card_16x9.png?w=1600&h=900&fit=fill",
+    "nugget": "This post appears to be a corrupted or accidentally merged document combining bicycle design explanations with a Sunday roast lamb recipe. Neither content is substantive AI or tech news.",
+    "nugget_at": "2026-10-08T11:09:04+00:00",
+    "scraped_at": "2026-10-08T11:04:09+00:00",
+    "signal": 1,
+    "site": "openai-research",
+    "title": "GPT\u20116 and Intelligent UI for everyone",
+    "topic": "Product & Tools"
+  },
   "https://openai.com/index/how-to-connect-ai-usage-to-business-value/": {
     "date": "2026-09-16",
     "file": "data/articles/openai-index__how-to-connect-ai-usage-to-business-value.md",
@@ -2522,6 +2558,14 @@
     "site": "openai-index",
     "title": "Funding grants for new research into AI and teen development"
   },
+  "https://openai.com/index/teens-learn-and-plan/": {
+    "date": "2026-10-07",
+    "file": "data/articles/openai-index__teens-learn-and-plan.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/48q2nDNP9Gj81cxL5sCOFv/e0692d4bcad2b81fad9b62b5bea904b7/teens-learn-and-plan-social.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-10-08T11:04:23+00:00",
+    "site": "openai-index",
+    "title": "Helping teens learn, plan, and shape the future of AI"
+  },
   "https://openai.com/index/ten-advances-in-mathematics/": {
     "date": "2026-08-26",
     "file": "data/articles/openai-research__ten-advances-in-mathematics.md",
@@ -2649,6 +2693,18 @@
     "site": "google-research",
     "title": "Automating coherent long-form video generation",
     "topic": "Models"
+  },
+  "https://research.google/blog/does-better-work-always-mean-better-workers/": {
+    "date": "",
+    "file": "data/articles/google-research__does-better-work-always-mean-better-workers.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "nugget": "A three-month randomized controlled trial with 133 patent attorneys found that AI tools consistently improved work quality for all lawyers, but skill development differed sharply by experience level: senior lawyers demonstrated enhanced judgment even without AI assistance afterward, while junior lawyers showed no sustained skill gains despite short-term performance boosts. This suggests AI can serve as a productivity multiplier for experienced professionals but may hinder foundational skill-building for juniors if it substitutes for the tedious, formative work required to develop expertise.",
+    "nugget_at": "2026-10-08T11:09:06+00:00",
+    "scraped_at": "2026-10-08T11:04:30+00:00",
+    "signal": 4,
+    "site": "google-research",
+    "title": "Does better work always mean better workers?",
+    "topic": "Research"
   },
   "https://research.google/blog/earth-ais-planetary-geospatial-foundation-models-for-global-public-health/": {
     "date": "",
@@ -3821,6 +3877,18 @@
     "title": "What do you want from AI?",
     "topic": "Safety & Policy"
   },
+  "https://www.microsoft.com/en-us/research/blog/agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-agents-with-real-harnesses/": {
+    "date": "2026-10-07",
+    "file": "data/articles/microsoft-research__agent-lightning-v1-0-a-3500-line-lightweight-agentic-rl-framework-for-training-a.md",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/10/AgentLightning-TWLIFB-1200x627-1.jpg",
+    "nugget": "Microsoft Research Asia released Agent Lightning v1.0, a new framework for training AI agents using reinforcement learning without rebuilding the agent's core logic inside the training system. The key innovation is Harnessed Agentic RL, which lets developers train agents in their actual deployed harnesses by using an LLM proxy, achieving 2x speedup and better efficiency while remaining lightweight and reproducible.",
+    "nugget_at": "2026-10-08T11:09:08+00:00",
+    "scraped_at": "2026-10-08T11:04:51+00:00",
+    "signal": 4,
+    "site": "microsoft-research",
+    "title": "Agent Lightning v1.0: A 3,500-Line Lightweight Agentic RL Framework for Training Agents with Real Harnesses",
+    "topic": "Infrastructure"
+  },
   "https://www.microsoft.com/en-us/research/blog/aurora-1-5-extending-open-foundation-models-for-weather-and-earth-system-applications/": {
     "date": "2026-07-09",
     "file": "data/articles/microsoft-research__aurora-1-5-extending-open-foundation-models-for-weather-and-earth-system-applica.md",
@@ -4307,6 +4375,14 @@
     "site": "perplexity",
     "title": "www.perplexity.ai"
   },
+  "https://www.perplexity.ai/hub/blog/multimodal-embeddings-beyond-a-single-vector": {
+    "date": "",
+    "file": "data/articles/perplexity__multimodal-embeddings-beyond-a-single-vector.md",
+    "image": "",
+    "scraped_at": "2026-10-08T11:05:31+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
+  },
   "https://www.perplexity.ai/hub/blog/optimizing-on-device-inference-for-apple-silicon": {
     "date": "2026-09-01",
     "file": "data/articles/perplexity__optimizing-on-device-inference-for-apple-silicon.md",
@@ -4397,6 +4473,14 @@
     "file": "data/articles/perplexity__rag-example.md",
     "image": "",
     "scraped_at": "2026-10-06T10:56:42+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
+  },
+  "https://www.perplexity.ai/hub/blog/rag-vs-llm": {
+    "date": "",
+    "file": "data/articles/perplexity__rag-vs-llm.md",
+    "image": "",
+    "scraped_at": "2026-10-08T11:05:34+00:00",
     "site": "perplexity",
     "title": "www.perplexity.ai"
   },
