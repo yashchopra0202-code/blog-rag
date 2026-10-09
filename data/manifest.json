@@ -1440,6 +1440,18 @@
     "site": "huggingface",
     "title": "https://huggingface.co/blog/asyncgrpo-lora-hfjobs"
   },
+  "https://huggingface.co/blog/building-with-ml-intern": {
+    "date": "2026-09-22",
+    "file": "data/articles/huggingface__building-with-ml-intern.md",
+    "image": "https://huggingface.co/blog/assets/building-with-ml-intern/thumbnail.png",
+    "nugget": "Hugging Face showcased several new AI demo applications including real-time text-to-image generation with the 4-step Agate model, prompt rewriting with distilled Qwen-Image 2.1, and specialized tools for image editing and domain applications like citrus disease diagnosis. These demos highlight practical uses of smaller, efficient models that run directly in browsers, making AI tools more accessible and interactive.",
+    "nugget_at": "2026-10-09T11:07:21+00:00",
+    "scraped_at": "2026-10-09T11:02:50+00:00",
+    "signal": 2,
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/building-with-ml-intern",
+    "topic": "Product & Tools"
+  },
   "https://huggingface.co/blog/community": {
     "date": "2026-09-04",
     "file": "data/articles/huggingface__community.md",
@@ -2167,6 +2179,18 @@
     "signal": 4,
     "site": "openai-index",
     "title": "Disrupting a coordinated model-distillation campaign",
+    "topic": "Safety & Policy"
+  },
+  "https://openai.com/index/disrupting-ai-enabled-false-front-operations/": {
+    "date": "2026-10-05",
+    "file": "data/articles/openai-index__disrupting-ai-enabled-false-front-operations.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/59gWIyg4DMtitwWO9AW6Af/9c66b1544d2b8d55f98703da82eeb5cf/false-front-operations-social.png?w=1600&h=900&fit=fill",
+    "nugget": "OpenAI disrupted two major covert influence operations\u2014one Russian (Operation Dark Clark) and one Iranian (Operation Bogus Bylines)\u2014that used AI models combined with traditional techniques to spread disinformation and geopolitical messaging. The Russian operation, rated Category 5 on OpenAI's Breakout Scale (the highest disrupted to date), successfully deceived people in Latin America into working for a fake think tank, while the Iranian operation deployed AI-generated fake journalist personas to place articles in mainstream media outlets.",
+    "nugget_at": "2026-10-09T11:07:23+00:00",
+    "scraped_at": "2026-10-09T11:02:36+00:00",
+    "signal": 4,
+    "site": "openai-index",
+    "title": "Disrupting AI-enabled \u201cfalse front\u201d operations",
     "topic": "Safety & Policy"
   },
   "https://openai.com/index/eu-text-provenance/": {
@@ -3424,6 +3448,18 @@
     "title": "Writing effective tools for agents \u2014 with agents",
     "topic": "Product & Tools"
   },
+  "https://www.anthropic.com/news/2026-usage-policy-update": {
+    "date": "2026-10-08",
+    "file": "data/articles/anthropic-news__2026-usage-policy-update.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+    "nugget": "Anthropic released an updated Usage Policy for Claude that consolidates and clarifies restrictions on deceptive campaigns, weapons development, surveillance, and high-risk applications in healthcare and finance, while removing overly broad prohibitions on political targeting that hindered legitimate civic work. The changes reflect observed misuse patterns and Claude's expanded capabilities, with enforcement mechanisms including human-in-the-loop requirements and safety controls for autonomous physical actions.",
+    "nugget_at": "2026-10-09T11:07:25+00:00",
+    "scraped_at": "2026-10-09T11:02:18+00:00",
+    "signal": 3,
+    "site": "anthropic-news",
+    "title": "2026 Usage Policy update",
+    "topic": "Safety & Policy"
+  },
   "https://www.anthropic.com/news/accenture-embedded-evaluation": {
     "date": "",
     "file": "data/articles/anthropic-news__accenture-embedded-evaluation.md",
@@ -3445,6 +3481,18 @@
     "signal": 3,
     "site": "anthropic-news",
     "title": "Announcing our updated Responsible Scaling Policy",
+    "topic": "Safety & Policy"
+  },
+  "https://www.anthropic.com/news/anthropic-cyber-mission": {
+    "date": "2026-10-08",
+    "file": "data/articles/anthropic-news__anthropic-cyber-mission.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d2af4f6715cbe9766a47430a24420cfca0a2c588-1200x630.jpg",
+    "nugget": "Anthropic launched the Cyber Mission, a comprehensive initiative to help defenders secure critical infrastructure and open-source software by providing Claude models, engineering talent, and funding to trusted security partners and maintainers. The effort includes a Critical Infrastructure Defense Program working with major security firms and a new OSS Scanner service that automatically scans open-source projects for vulnerabilities, recognizing that defensive AI tools have lagged far behind offensive capabilities now available to attackers.",
+    "nugget_at": "2026-10-09T11:07:27+00:00",
+    "scraped_at": "2026-10-09T11:02:23+00:00",
+    "signal": 4,
+    "site": "anthropic-news",
+    "title": "Introducing the Anthropic Cyber Mission",
     "topic": "Safety & Policy"
   },
   "https://www.anthropic.com/news/barclays-scales-claude": {
@@ -3538,6 +3586,18 @@
     "site": "anthropic-news",
     "title": "Expanding our support for scientists",
     "topic": "Product & Tools"
+  },
+  "https://www.anthropic.com/news/genesis-mission-commitment": {
+    "date": "2026-10-08",
+    "file": "data/articles/anthropic-news__genesis-mission-commitment.md",
+    "image": "https://www.anthropic.com/api/opengraph-illustration?name=Object%20DoubleHelix&backgroundColor=heather",
+    "nugget": "Anthropic committed $150 million over three years to support the White House's Genesis Mission, making Claude available to 15+ federal agencies including NASA, NIH, and NSF for scientific research. The company is positioning itself as a key infrastructure provider for government-backed scientific discovery while expanding researcher access programs and launching a new cybersecurity initiative.",
+    "nugget_at": "2026-10-09T11:07:29+00:00",
+    "scraped_at": "2026-10-09T11:02:21+00:00",
+    "signal": 4,
+    "site": "anthropic-news",
+    "title": "Building on our commitment to American scientific discovery",
+    "topic": "Business"
   },
   "https://www.anthropic.com/news/improving-alignment-security-efforts": {
     "date": "",
@@ -3774,6 +3834,18 @@
     "title": "Measuring tactical intelligence targeting and conventional weapons capabilities of AI models",
     "topic": "Safety & Policy"
   },
+  "https://www.anthropic.com/research/launching-opt-in-vuln-finding-service-for-open-source": {
+    "date": "2026-10-08",
+    "file": "data/articles/anthropic-research__launching-opt-in-vuln-finding-service-for-open-source.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+    "nugget": "Anthropic launched OSS Scanner, a free AI-powered vulnerability detection tool for open-source projects that uses their strongest language models to find security bugs at scale. The scanner has achieved 88% accuracy on critical/high-severity findings in early testing and represents a significant scaling of AI-assisted security auditing, though it trades human verification for speed to keep pace with exploit development.",
+    "nugget_at": "2026-10-09T11:07:31+00:00",
+    "scraped_at": "2026-10-09T11:02:11+00:00",
+    "signal": 4,
+    "site": "anthropic-research",
+    "title": "Launching an opt-in vulnerability-finding service for open-source software",
+    "topic": "Product & Tools"
+  },
   "https://www.anthropic.com/research/multiagent-systems": {
     "date": "",
     "file": "data/articles/anthropic-research__multiagent-systems.md",
@@ -3840,6 +3912,18 @@
     "site": "anthropic-research",
     "title": "Teaching Claude why",
     "topic": "Safety & Policy"
+  },
+  "https://www.anthropic.com/research/the-missing-map-of-the-sky": {
+    "date": "2026-10-08",
+    "file": "data/articles/anthropic-research__the-missing-map-of-the-sky.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/dde28f2eb899eade347dd07314a9c6b65bfbbb3c-1200x630.png",
+    "nugget": "A researcher used Claude AI to create the first complete ultraviolet map of the entire sky by orchestrating multiple AI agents to download, calibrate, and merge decades of space telescope data, then fill in unobserved regions using machine learning inpainting techniques. This demonstrates how AI can tackle time-consuming scientific data processing work that researchers typically deprioritize, potentially accelerating discovery across many fields with similar backlogs.",
+    "nugget_at": "2026-10-09T11:07:33+00:00",
+    "scraped_at": "2026-10-09T11:02:08+00:00",
+    "signal": 3,
+    "site": "anthropic-research",
+    "title": "The missing map of the sky",
+    "topic": "Product & Tools"
   },
   "https://www.anthropic.com/research/what-work-can-robots-do": {
     "date": "2026-09-30",
@@ -4137,6 +4221,14 @@
     "file": "data/articles/perplexity__ai-for-market-research.md",
     "image": "",
     "scraped_at": "2026-09-28T10:20:33+00:00",
+    "site": "perplexity",
+    "title": "www.perplexity.ai"
+  },
+  "https://www.perplexity.ai/hub/blog/ai-guardrails": {
+    "date": "",
+    "file": "data/articles/perplexity__ai-guardrails.md",
+    "image": "",
+    "scraped_at": "2026-10-09T11:03:26+00:00",
     "site": "perplexity",
     "title": "www.perplexity.ai"
   },
