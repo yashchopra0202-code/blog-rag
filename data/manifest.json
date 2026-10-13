@@ -386,6 +386,14 @@
     "title": "d-Matrix Adopts NVIDIA NVLink Fusion for Rack-Scale XPU Deployment",
     "topic": "Infrastructure"
   },
+  "https://blogs.nvidia.com/blog/developers-simulation-frontier-ai-agents/": {
+    "date": "2026-10-08",
+    "file": "data/articles/nvidia__developers-simulation-frontier-ai-agents.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/Copy-of-nvidia-ov-x-astra-4up-KV-r1-press-4k-r2-1680x945.png",
+    "scraped_at": "2026-10-13T11:19:14+00:00",
+    "site": "nvidia",
+    "title": "Into the Omniverse: How Developers Turn Ideas Into Simulations With Frontier AI Agents"
+  },
   "https://blogs.nvidia.com/blog/dsx-ready-ai-factories-power-cooling/": {
     "date": "2026-09-21",
     "file": "data/articles/nvidia__dsx-ready-ai-factories-power-cooling.md",
@@ -416,6 +424,14 @@
     "scraped_at": "2026-09-05T05:24:33+00:00",
     "site": "nvidia",
     "title": "Firebird Launches CIS Region\u2019s Largest AI Factory in Armenia"
+  },
+  "https://blogs.nvidia.com/blog/france-ecosystem-agentic-computing/": {
+    "date": "2026-10-13",
+    "file": "data/articles/nvidia__france-ecosystem-agentic-computing.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/france-ai-ecosystem-gtc-berlin-updated.jpeg",
+    "scraped_at": "2026-10-13T11:19:08+00:00",
+    "site": "nvidia",
+    "title": "From Earth to Orbit, France\u2019s Ecosystem Delivers Agentic Computing at Scale With NVIDIA"
   },
   "https://blogs.nvidia.com/blog/from-megawatts-to-tokens-how-nvidia-maximizes-ai-factory-production/": {
     "date": "2026-09-15",
@@ -693,6 +709,14 @@
     "site": "nvidia",
     "title": "NVIDIA NVLink Fusion Expands With NVHBM Custom High-Bandwidth Memory",
     "topic": "Infrastructure"
+  },
+  "https://blogs.nvidia.com/blog/ocp-global-summit-vera-rubin-scale-ai-factories/": {
+    "date": "2026-10-12",
+    "file": "data/articles/nvidia__ocp-global-summit-vera-rubin-scale-ai-factories.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/gpu-architecture-rolling-blog-kv-ocp-blog-1920x1080-5820310-1680x945.jpg",
+    "scraped_at": "2026-10-13T11:19:11+00:00",
+    "site": "nvidia",
+    "title": "OCP Global Summit: Amid Ecosystem Adoption, NVIDIA Opens Vera Rubin Architecture to Help Scale AI Factories Worldwide"
   },
   "https://blogs.nvidia.com/blog/open-protein-dataset/": {
     "date": "2026-09-24",
@@ -3799,6 +3823,14 @@
     "title": "Discovering cryptographic weaknesses with Claude",
     "topic": "Research"
   },
+  "https://www.anthropic.com/research/distillation-defenses": {
+    "date": "2026-10-12",
+    "file": "data/articles/anthropic-research__distillation-defenses.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/a5934d1ae8428b2a97fae1963a5f427594fc7202-1200x630.jpg",
+    "scraped_at": "2026-10-13T11:17:57+00:00",
+    "site": "anthropic-research",
+    "title": "Strengthening our defenses against distillation attacks"
+  },
   "https://www.anthropic.com/research/enabling-independent-research": {
     "date": "",
     "file": "data/articles/anthropic-research__enabling-independent-research.md",
@@ -3945,6 +3977,14 @@
     "site": "anthropic-research",
     "title": "Learning more about Claude's mathematical capabilities",
     "topic": "Research"
+  },
+  "https://www.anthropic.com/research/self-replicating-ai": {
+    "date": "2026-10-12",
+    "file": "data/articles/anthropic-research__self-replicating-ai.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+    "scraped_at": "2026-10-13T11:17:55+00:00",
+    "site": "anthropic-research",
+    "title": "AI models may be capable of self-replicating without access to a datacenter"
   },
   "https://www.anthropic.com/research/teaching-claude-why": {
     "date": "",
@@ -4186,6 +4226,14 @@
     "site": "microsoft-research",
     "title": "Orchard: An open framework for scalable agentic AI",
     "topic": "Infrastructure"
+  },
+  "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/": {
+    "date": "2026-10-12",
+    "file": "data/articles/microsoft-research__simulating-student-learning-for-better-ai-tutoring.md",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/09/StudentSim-TWLIFB-1200x627-1.jpg",
+    "scraped_at": "2026-10-13T11:18:30+00:00",
+    "site": "microsoft-research",
+    "title": "Simulating student learning for better AI tutoring"
   },
   "https://www.microsoft.com/en-us/research/blog/skillopt-agent-skills-as-trainable-parameters/": {
     "date": "2026-06-30",
@@ -5329,5 +5377,13 @@
     "site": "xai",
     "title": "Workflows in Grok Build",
     "topic": "Product & Tools"
+  },
+  "https://x.ai/news/x-subscription": {
+    "date": "2026-10-12",
+    "file": "data/articles/xai__x-subscription.md",
+    "image": "https://media.x.ai/v1/website/the-x-subscription-db7a1253.png",
+    "scraped_at": "2026-10-13T11:18:45+00:00",
+    "site": "xai",
+    "title": "Introducing The X Subscription"
   }
 }
