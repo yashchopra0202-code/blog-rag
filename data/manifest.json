@@ -418,6 +418,14 @@
     "title": "From Enablement to Execution, Egypt\u2019s AI Ecosystem Reaches Production Scale",
     "topic": "Infrastructure"
   },
+  "https://blogs.nvidia.com/blog/european-cities-agents-urban-operations/": {
+    "date": "2026-10-14",
+    "file": "data/articles/nvidia__european-cities-agents-urban-operations.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/gtc-berlin-smart-cities-blog-1680x945.jpg",
+    "scraped_at": "2026-10-14T09:11:20+00:00",
+    "site": "nvidia",
+    "title": "European Cities Deploy NVIDIA-Powered AI Agents to Run Smarter Urban Operations"
+  },
   "https://blogs.nvidia.com/blog/firebird-ai-factory-armenia-blackwell-rubin-dsx/": {
     "date": "2026-08-08",
     "file": "data/articles/nvidia__firebird-ai-factory-armenia-blackwell-rubin-dsx.md",
@@ -613,6 +621,14 @@
     "site": "nvidia",
     "title": "Perplexity Portable Computer Is Now Available on Windows, Powered by NVIDIA RTX",
     "topic": "Product & Tools"
+  },
+  "https://blogs.nvidia.com/blog/local-ai-rtx-spark-laptops-software-updates/": {
+    "date": "2026-10-13",
+    "file": "data/articles/nvidia__local-ai-rtx-spark-laptops-software-updates.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/nv-raig-weekly-kit-10132026-nv-blog-1280x680-1.jpg",
+    "scraped_at": "2026-10-14T09:11:23+00:00",
+    "site": "nvidia",
+    "title": "All Systems Go: Global PC App Ecosystem Ready for NVIDIA RTX Spark"
   },
   "https://blogs.nvidia.com/blog/local-ai-rtx-spark-microsoft-windows-event/": {
     "date": "2026-10-07",
@@ -835,6 +851,14 @@
     "site": "nvidia",
     "title": "University of Manchester Uses NVIDIA Earth-2 to Forecast Air Pollution Across the UK",
     "topic": "Research"
+  },
+  "https://blogs.nvidia.com/blog/uk-ecosystem-deployment/": {
+    "date": "2026-10-14",
+    "file": "data/articles/nvidia__uk-ecosystem-deployment.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/uk-ecosystem-industries-1280x720.png",
+    "scraped_at": "2026-10-14T09:11:17+00:00",
+    "site": "nvidia",
+    "title": "From Enterprise to Earthshot: UK\u2019s Ecosystem Moves From Ambition to Application With NVIDIA"
   },
   "https://blogs.nvidia.com/blog/vera-cpu-delivery/": {
     "date": "2026-08-27",
@@ -1399,6 +1423,14 @@
     "site": "deepmind",
     "title": "Investing in multi-agent AI safety research",
     "topic": "Safety & Policy"
+  },
+  "https://deepmind.google/blog/on-device-ai-scam-detection-mddi/": {
+    "date": "2026-10-14",
+    "file": "data/articles/deepmind__on-device-ai-scam-detection-mddi.md",
+    "image": "https://lh3.googleusercontent.com/m134KeViYlQXqWaac-fW1TuTvCk1ZQ2EnHF72xH6anzjd4iKukfGHvV3o5PiDTJfSytjxUF2E1rwAAHlZ4ZyCkGkOHV7Uij2ZZ3zsbVZUAFCMCccZQ=w1200-h630-n-nu-rw",
+    "scraped_at": "2026-10-14T09:10:06+00:00",
+    "site": "deepmind",
+    "title": "Google DeepMind and Singapore Government collaborate to build fine-tuned AI model for scam detection"
   },
   "https://deepmind.google/blog/our-approach-to-bioresilience/": {
     "date": "2026-07-16",
@@ -3482,6 +3514,14 @@
     "title": "How we built our multi-agent research system",
     "topic": "Product & Tools"
   },
+  "https://www.anthropic.com/engineering/redesigning-source-control": {
+    "date": "2026-10-13",
+    "file": "data/articles/anthropic-engineering__redesigning-source-control.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d344b849251502fade67ad16f09bb86fa6f42363-500x263.png",
+    "scraped_at": "2026-10-14T09:09:44+00:00",
+    "site": "anthropic-engineering",
+    "title": "Redesigning source control at Anthropic"
+  },
   "https://www.anthropic.com/engineering/swe-bench-sonnet": {
     "date": "",
     "file": "data/articles/anthropic-engineering__swe-bench-sonnet.md",
@@ -3721,6 +3761,14 @@
     "site": "anthropic-news",
     "title": "Our position on open-weights models",
     "topic": "Safety & Policy"
+  },
+  "https://www.anthropic.com/news/singapore-office-opening": {
+    "date": "2026-10-14",
+    "file": "data/articles/anthropic-news__singapore-office-opening.md",
+    "image": "https://www.anthropic.com/api/opengraph-illustration?name=Node%20Globe&backgroundColor=olive",
+    "scraped_at": "2026-10-14T09:09:49+00:00",
+    "site": "anthropic-news",
+    "title": "Anthropic opens Singapore office and signs MOU with the Government of Singapore"
   },
   "https://www.anthropic.com/news/tino-cuellar": {
     "date": "",
@@ -4304,6 +4352,14 @@
     "title": "10 Best AI Collaboration Tools",
     "topic": "Product & Tools"
   },
+  "https://www.perplexity.ai/hub/blog/ai-costs": {
+    "date": "2026-10-13",
+    "file": "data/articles/perplexity__ai-costs.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/b26426b52b54771e60683ec746a24da008084979-1320x740.png?rect=0,24,1320,693&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "scraped_at": "2026-10-14T09:11:07+00:00",
+    "site": "perplexity",
+    "title": "AI costs: what teams pay to use AI tools"
+  },
   "https://www.perplexity.ai/hub/blog/ai-detector": {
     "date": "2026-09-15",
     "file": "data/articles/perplexity__ai-detector.md",
@@ -4419,6 +4475,14 @@
     "site": "perplexity",
     "title": "Brain: Agentic Memory as a Knowledge Wiki",
     "topic": "Infrastructure"
+  },
+  "https://www.perplexity.ai/hub/blog/building-shared-workspaces-for-people-and-agents": {
+    "date": "2026-10-12",
+    "file": "data/articles/perplexity__building-shared-workspaces-for-people-and-agents.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/c2f9f91f9a29df324b109f208c8058eef7053acc-1600x838.svg?rect=2,0,1596,838&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "scraped_at": "2026-10-14T09:11:10+00:00",
+    "site": "perplexity",
+    "title": "Building shared workspaces for people and agents"
   },
   "https://www.perplexity.ai/hub/blog/cobbledb": {
     "date": "2026-09-14",
