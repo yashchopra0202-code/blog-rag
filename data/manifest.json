@@ -155,6 +155,14 @@
     "title": "DiScoFormer: One transformer for density and score, across distributions",
     "topic": "Research"
   },
+  "https://allenai.org/blog/hiro-acev2": {
+    "date": "",
+    "file": "data/articles/ai2__hiro-acev2.md",
+    "image": "https://www.datocms-assets.com/64837/1791997968-ace-hiro-v2-feature-c-v4.png",
+    "scraped_at": "2026-10-15T08:43:46+00:00",
+    "site": "ai2",
+    "title": "HiRO-ACEv2: Simulating extreme weather at 3 km resolution for a fraction of the cost"
+  },
   "https://allenai.org/blog/hybrid-token-prediction": {
     "date": "",
     "file": "data/articles/ai2__hybrid-token-prediction.md",
@@ -660,6 +668,14 @@
     "title": "NVIDIA Nemotron 3.5 Lightning and NeMo Switchyard Deliver Faster, Smarter, More Efficient Agentic AI",
     "topic": "Models"
   },
+  "https://blogs.nvidia.com/blog/nordics-technology-ecosystem/": {
+    "date": "2026-10-15",
+    "file": "data/articles/nvidia__nordics-technology-ecosystem.md",
+    "image": "https://blogs.nvidia.com/wp-content/uploads/2026/10/nordics-embrace-social-1920x1080-5822300.jpeg",
+    "scraped_at": "2026-10-15T08:44:02+00:00",
+    "site": "nvidia",
+    "title": "The Nordics and NVIDIA Show What\u2019s Possible When a Region Commits to Advanced Computing"
+  },
   "https://blogs.nvidia.com/blog/nsf-state-regional-ai-hub-program/": {
     "date": "2026-08-04",
     "file": "data/articles/nvidia__nsf-state-regional-ai-hub-program.md",
@@ -1132,6 +1148,14 @@
     "site": "cohere",
     "title": "Introducing North Automations: Intelligent workflow orchestration",
     "topic": "Product & Tools"
+  },
+  "https://cohere.com/blog/lessons-from-scaling-teams-of-frontier-coding-agents": {
+    "date": "",
+    "file": "data/articles/cohere__lessons-from-scaling-teams-of-frontier-coding-agents.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/aedaf863bfaae76749d82ae2c259ca0d891b0f4f-3200x1800.png?rect=0,60,3200,1680&w=1200&h=630&q=80&fit=crop&auto=format",
+    "scraped_at": "2026-10-15T08:43:27+00:00",
+    "site": "cohere",
+    "title": "Lessons from scaling teams of coding agents: reach the frontier at 30% of the cost"
   },
   "https://cohere.com/blog/megakernels": {
     "date": "",
@@ -2782,6 +2806,14 @@
     "title": "An AI tool for prioritizing candidate biomarkers from wearable sensor data",
     "topic": "Research"
   },
+  "https://research.google/blog/analyzing-technical-documents-with-deep-review/": {
+    "date": "",
+    "file": "data/articles/google-research__analyzing-technical-documents-with-deep-review.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "scraped_at": "2026-10-15T08:42:56+00:00",
+    "site": "google-research",
+    "title": "Analyzing technical documents with Deep Review"
+  },
   "https://research.google/blog/bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for-train/": {
     "date": "",
     "file": "data/articles/google-research__bypassing-inference-bottlenecks-accelerating-complex-ai-search-with-retrieve-for.md",
@@ -2920,6 +2952,22 @@
     "site": "google-research",
     "title": "Planetary prediction engine: Automating global models via Earth AI",
     "topic": "Research"
+  },
+  "https://research.google/blog/putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges/": {
+    "date": "",
+    "file": "data/articles/google-research__putting-earth-ai-to-work-geospatial-agents-for-our-planets-biggest-challenges.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "scraped_at": "2026-10-15T08:42:59+00:00",
+    "site": "google-research",
+    "title": "Putting Earth AI to work: Geospatial agents for our planet's biggest challenges"
+  },
+  "https://research.google/blog/research-2026-10-ways-were-amplifying-human-ingenuity/": {
+    "date": "",
+    "file": "data/articles/google-research__research-2026-10-ways-were-amplifying-human-ingenuity.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "scraped_at": "2026-10-15T08:42:53+00:00",
+    "site": "google-research",
+    "title": "Research@ 2026: 10 ways we're amplifying human ingenuity"
   },
   "https://research.google/blog/seeing-beyond-bmi-estimating-cardiometabolic-risk-with-smartphone-imagery/": {
     "date": "",
@@ -3543,6 +3591,14 @@
     "site": "anthropic-engineering",
     "title": "Writing effective tools for agents \u2014 with agents",
     "topic": "Product & Tools"
+  },
+  "https://www.anthropic.com/news/2026-us-midterms": {
+    "date": "2026-10-14",
+    "file": "data/articles/anthropic-news__2026-us-midterms.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/609927c7af2a454cedad848e4b2adc980c1f5fe6-2000x1125.jpg",
+    "scraped_at": "2026-10-15T08:42:39+00:00",
+    "site": "anthropic-news",
+    "title": "Preparing for the 2026 US midterms"
   },
   "https://www.anthropic.com/news/2026-usage-policy-update": {
     "date": "2026-10-08",
@@ -5351,6 +5407,14 @@
     "site": "xai",
     "title": "Imagine Video 1.5 with References",
     "topic": "Product & Tools"
+  },
+  "https://x.ai/news/grok-voice-3": {
+    "date": "2026-10-14",
+    "file": "data/articles/xai__grok-voice-3.md",
+    "image": "https://media.x.ai/v1/website/og-grok-voice-3-0-b281361b.webp",
+    "scraped_at": "2026-10-15T08:43:34+00:00",
+    "site": "xai",
+    "title": "Introducing Grok Voice 3.0"
   },
   "https://x.ai/news/grok-voice-think-fast-2": {
     "date": "",
