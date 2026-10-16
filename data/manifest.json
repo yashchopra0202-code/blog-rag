@@ -910,6 +910,14 @@
     "title": "A day in the life of a wealth manager, with and without AI",
     "topic": "Product & Tools"
   },
+  "https://cohere.com/blog/agent-sprawl": {
+    "date": "",
+    "file": "data/articles/cohere__agent-sprawl.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/1094f3e6b1cb6e160811e3553dd4baed23dca498-3840x2160.png?rect=0,72,3840,2016&w=1200&h=630&q=80&fit=crop&auto=format",
+    "scraped_at": "2026-10-16T08:38:30+00:00",
+    "site": "cohere",
+    "title": "Agent sprawl: How to manage agent proliferation in the enterprise"
+  },
   "https://cohere.com/blog/ai-change-management": {
     "date": "",
     "file": "data/articles/cohere__ai-change-management.md",
@@ -921,6 +929,22 @@
     "site": "cohere",
     "title": "AI change management: A human-centric approach",
     "topic": "Product & Tools"
+  },
+  "https://cohere.com/blog/ai-for-utilities-requires-capability-and-control": {
+    "date": "",
+    "file": "data/articles/cohere__ai-for-utilities-requires-capability-and-control.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/b36c731c34b23aeeb737f166444aeaa87d9e9c68-1920x1080.png?rect=0,36,1920,1008&w=1200&h=630&q=80&fit=crop&auto=format",
+    "scraped_at": "2026-10-16T08:38:28+00:00",
+    "site": "cohere",
+    "title": "AI for utilities requires capability and control"
+  },
+  "https://cohere.com/blog/ai-roi": {
+    "date": "",
+    "file": "data/articles/cohere__ai-roi.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/b98e79e7d049a148e4b66c85027f7ad08c9297ba-3840x2160.png?rect=0,72,3840,2016&w=1200&h=630&q=80&fit=crop&auto=format",
+    "scraped_at": "2026-10-16T08:38:32+00:00",
+    "site": "cohere",
+    "title": "AI ROI: How enterprises can measure the return on AI investments"
   },
   "https://cohere.com/blog/automating-fork-maintenance-with-ai-agents": {
     "date": "",
@@ -955,6 +979,14 @@
     "site": "cohere",
     "title": "Multilingual Bridges: How Data Mixing Unlocks In-Language Reasoning",
     "topic": "Research"
+  },
+  "https://cohere.com/blog/cohere-and-aisle-sign-letter-of-intent-to-advance-cyber-resilient-sovereign-ai": {
+    "date": "",
+    "file": "data/articles/cohere__cohere-and-aisle-sign-letter-of-intent-to-advance-cyber-resilient-sovereign-ai.md",
+    "image": "https://cdn.sanity.io/images/rjtqmwfu/web3-prod/e62b59612dff99b3a1c1cfadb6227d4806e7a774-7680x4320.png?rect=0,144,7680,4032&w=1200&h=630&q=80&fit=crop&auto=format",
+    "scraped_at": "2026-10-16T08:38:26+00:00",
+    "site": "cohere",
+    "title": "Cohere to acquire AISLE to advance cyber-resilient sovereign AI"
   },
   "https://cohere.com/blog/cohere-and-aleph-alpha-sign-agreement": {
     "date": "",
@@ -1325,6 +1357,14 @@
     "title": "Why Cultural Awareness is Essential for Global AI",
     "topic": "Safety & Policy"
   },
+  "https://deepmind.google/blog/accelerating-antimicrobial-discovery/": {
+    "date": "2026-10-15",
+    "file": "data/articles/deepmind__accelerating-antimicrobial-discovery.md",
+    "image": "https://lh3.googleusercontent.com/Xgnc_DxAUS2Fs9H2rokxsYwPnnM_KOkPyPtKm7V2C_sjZ7YS4N1-D6lD8wjYIRQoKaiSwHUXB7qmw77m6FCfHLZenWdNymO7B_JLChlB6ied6emR=w1200-h630-n-nu-rw",
+    "scraped_at": "2026-10-16T08:37:54+00:00",
+    "site": "deepmind",
+    "title": "Accelerating the search for antimicrobial peptides with Google Antigravity"
+  },
   "https://deepmind.google/blog/advancing-private-ai-compute-with-secure-server-side-memory/": {
     "date": "2026-09-23",
     "file": "data/articles/deepmind__advancing-private-ai-compute-with-secure-server-side-memory.md",
@@ -1598,6 +1638,14 @@
     "title": "https://huggingface.co/blog/evaleval-aisi",
     "topic": "Safety & Policy"
   },
+  "https://huggingface.co/blog/flux-3": {
+    "date": "2026-10-16",
+    "file": "data/articles/huggingface__flux-3.md",
+    "image": "https://huggingface.co/blog/assets/flux3/thumbnail.png",
+    "scraped_at": "2026-10-16T08:38:05+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/flux-3"
+  },
   "https://huggingface.co/blog/funes": {
     "date": "2026-09-03",
     "file": "data/articles/huggingface__funes.md",
@@ -1641,6 +1689,14 @@
     "site": "huggingface",
     "title": "Fine-tuning a 350M Model for Better Structured Outputs in 100 GRPO Steps",
     "topic": "Product & Tools"
+  },
+  "https://huggingface.co/blog/meta-muse-spark-open": {
+    "date": "2026-10-15",
+    "file": "data/articles/huggingface__meta-muse-spark-open.md",
+    "image": "https://huggingface.co/blog/assets/meta-muse-spark-open/thumbnail.png",
+    "scraped_at": "2026-10-16T08:38:04+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/meta-muse-spark-open"
   },
   "https://huggingface.co/blog/omlx": {
     "date": "2026-09-22",
@@ -2103,6 +2159,14 @@
     "title": "Introducing Shieldstral.",
     "topic": "Product & Tools"
   },
+  "https://mistral.ai/news/timestral/": {
+    "date": "",
+    "file": "data/articles/mistral__timestral.md",
+    "image": "https://mistral.ai/cms-media/api/media/file/og-timestral.webp",
+    "scraped_at": "2026-10-16T08:38:23+00:00",
+    "site": "mistral",
+    "title": "Introducing Timestral"
+  },
   "https://mistral.ai/news/vibe-agent/": {
     "date": "",
     "file": "data/articles/mistral__vibe-agent.md",
@@ -2505,6 +2569,14 @@
     "site": "openai-index",
     "title": "Introducing the Agents API"
   },
+  "https://openai.com/index/introducing-the-rosalind-academic-plan/": {
+    "date": "2026-10-07",
+    "file": "data/articles/openai-index__introducing-the-rosalind-academic-plan.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/g91SfQ7YxvtosiWacUxkg/47162ea17967b74890a6ef14a8c9fa78/rosalind-academic-plan-seo.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-10-16T08:37:40+00:00",
+    "site": "openai-index",
+    "title": "Bringing GPT\u2011Rosalind to academic research labs"
+  },
   "https://openai.com/index/lenfest-ai-collaborative-expansion/": {
     "date": "2026-09-28",
     "file": "data/articles/openai-index__lenfest-ai-collaborative-expansion.md",
@@ -2686,6 +2758,14 @@
     "site": "openai-index",
     "title": "OpenAI expands initiatives to support journalism from classrooms to newsrooms",
     "topic": "Product & Tools"
+  },
+  "https://openai.com/index/teaching-students-to-think-and-learn-through-questions/": {
+    "date": "2026-10-06",
+    "file": "data/articles/openai-index__teaching-students-to-think-and-learn-through-questions.md",
+    "image": "https://images.ctfassets.net/kftzwdyauwt9/16A5mkf828KStF68ijvmN1/2f720d42bb308b9c1ab0edc26a047a17/teaching-students-to-think-and-learn-through-questions-social.png?w=1600&h=900&fit=fill",
+    "scraped_at": "2026-10-16T08:37:44+00:00",
+    "site": "openai-index",
+    "title": "Teaching students to think and learn through questions"
   },
   "https://openai.com/index/teen-development-research-grants/": {
     "date": "",
@@ -3624,6 +3704,14 @@
     "title": "Partnering with Accenture on embedded evaluation",
     "topic": "Safety & Policy"
   },
+  "https://www.anthropic.com/news/an-update-on-independent-evaluators": {
+    "date": "2026-10-15",
+    "file": "data/articles/anthropic-news__an-update-on-independent-evaluators.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d2e351e6311a0ada8ea4a0304ce6cda39243eaf4-1200x630.jpg",
+    "scraped_at": "2026-10-16T08:37:30+00:00",
+    "site": "anthropic-news",
+    "title": "An update on independent evaluators"
+  },
   "https://www.anthropic.com/news/announcing-our-updated-responsible-scaling-policy": {
     "date": "",
     "file": "data/articles/anthropic-news__announcing-our-updated-responsible-scaling-policy.md",
@@ -4330,6 +4418,14 @@
     "site": "microsoft-research",
     "title": "Orchard: An open framework for scalable agentic AI",
     "topic": "Infrastructure"
+  },
+  "https://www.microsoft.com/en-us/research/blog/proof-based-general-purpose-computing-with-magnetar/": {
+    "date": "2026-10-15",
+    "file": "data/articles/microsoft-research__proof-based-general-purpose-computing-with-magnetar.md",
+    "image": "https://www.microsoft.com/en-us/research/wp-content/uploads/2026/10/Magnetar-TWLIFB-1200x627-1.jpg",
+    "scraped_at": "2026-10-16T08:38:14+00:00",
+    "site": "microsoft-research",
+    "title": "Proof-based general-purpose computing with Magnetar"
   },
   "https://www.microsoft.com/en-us/research/blog/simulating-student-learning-for-better-ai-tutoring/": {
     "date": "2026-10-12",
