@@ -1736,6 +1736,14 @@
     "site": "huggingface",
     "title": "https://huggingface.co/blog/pwc-search"
   },
+  "https://huggingface.co/blog/reflection-beam": {
+    "date": "2026-10-16",
+    "file": "data/articles/huggingface__reflection-beam.md",
+    "image": "https://huggingface.co/blog/assets/reflection-beam/thumbnail.jpg",
+    "scraped_at": "2026-10-17T08:09:54+00:00",
+    "site": "huggingface",
+    "title": "https://huggingface.co/blog/reflection-beam"
+  },
   "https://huggingface.co/blog/rl-environments": {
     "date": "2026-03-23",
     "file": "data/articles/huggingface__rl-environments.md",
@@ -2964,6 +2972,14 @@
     "title": "GlucoFM: Foundation model for continuous glucose monitoring",
     "topic": "Research"
   },
+  "https://research.google/blog/grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-labs/": {
+    "date": "",
+    "file": "data/articles/google-research__grounding-ai-agents-in-biological-reality-building-blocks-for-autonomous-wet-lab.md",
+    "image": "https://storage.googleapis.com/gweb-research2023-media/images/HO_previewImage1.width-800.format-jpeg.jpg",
+    "scraped_at": "2026-10-17T08:09:42+00:00",
+    "site": "google-research",
+    "title": "Grounding AI agents in biological reality: Building blocks for autonomous wet labs"
+  },
   "https://research.google/blog/how-diffusion-controller-unifies-and-simplifies-ai-image-generation/": {
     "date": "",
     "file": "data/articles/google-research__how-diffusion-controller-unifies-and-simplifies-ai-image-generation.md",
@@ -3947,6 +3963,14 @@
     "title": "How Claude is accelerating protein design and analytical chemistry",
     "topic": "Research"
   },
+  "https://www.anthropic.com/research/ai-expectations-gap": {
+    "date": "2026-10-16",
+    "file": "data/articles/anthropic-research__ai-expectations-gap.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/f887bbe389a32292f37fd38e5515da404a384d0f-2000x1125.jpg",
+    "scraped_at": "2026-10-17T08:09:17+00:00",
+    "site": "anthropic-research",
+    "title": "The AI expectations gap"
+  },
   "https://www.anthropic.com/research/alignment-assessment-cybersecurity-incidents": {
     "date": "",
     "file": "data/articles/anthropic-research__alignment-assessment-cybersecurity-incidents.md",
@@ -4004,6 +4028,14 @@
     "title": "Claude\u2019s values across models and languages",
     "topic": "Research"
   },
+  "https://www.anthropic.com/research/designing-efficient-quantum-circuits": {
+    "date": "2026-10-16",
+    "file": "data/articles/anthropic-research__designing-efficient-quantum-circuits.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/cc389d90b468ebc86011f6642099dfad9a4a757f-2000x1125.jpg",
+    "scraped_at": "2026-10-17T08:09:11+00:00",
+    "site": "anthropic-research",
+    "title": "Designing more efficient quantum circuits with Claude"
+  },
   "https://www.anthropic.com/research/discovering-cryptographic-weaknesses": {
     "date": "",
     "file": "data/articles/anthropic-research__discovering-cryptographic-weaknesses.md",
@@ -4023,6 +4055,22 @@
     "site": "anthropic-research",
     "title": "Strengthening our defenses against distillation attacks"
   },
+  "https://www.anthropic.com/research/ecdsa-curve-origins": {
+    "date": "2026-10-16",
+    "file": "data/articles/anthropic-research__ecdsa-curve-origins.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/d0c862c5cabd703c0fcbaad939385133f02b694c-1200x630.jpg",
+    "scraped_at": "2026-10-17T08:09:14+00:00",
+    "site": "anthropic-research",
+    "title": "Claude reveals ECDSA curve origins"
+  },
+  "https://www.anthropic.com/research/employment-at-anthropic": {
+    "date": "2026-10-16",
+    "file": "data/articles/anthropic-research__employment-at-anthropic.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/6d4a0d28992ade92d6fa63646fd9c9d318245c6c-2400x1260.jpg",
+    "scraped_at": "2026-10-17T08:09:19+00:00",
+    "site": "anthropic-research",
+    "title": "How employment is changing at Anthropic"
+  },
   "https://www.anthropic.com/research/enabling-independent-research": {
     "date": "",
     "file": "data/articles/anthropic-research__enabling-independent-research.md",
@@ -4033,6 +4081,14 @@
     "site": "anthropic-research",
     "title": "Enabling independent research on how people use Claude",
     "topic": "Safety & Policy"
+  },
+  "https://www.anthropic.com/research/expectations-for-the-future": {
+    "date": "2026-10-16",
+    "file": "data/articles/anthropic-research__expectations-for-the-future.md",
+    "image": "https://www-cdn.anthropic.com/images/4zrzovbb/website/bb7d44b0b539fd7f179324bbb647b10c2d7bc833-2000x1125.jpg",
+    "scraped_at": "2026-10-17T08:09:22+00:00",
+    "site": "anthropic-research",
+    "title": "Working at the frontier shapes expectations for the future"
   },
   "https://www.anthropic.com/research/formalizing-fermats-last-theorem": {
     "date": "",
@@ -4605,6 +4661,14 @@
     "title": "AI personal assistants: What digital helpers can and can\u2019t do",
     "topic": "Product & Tools"
   },
+  "https://www.perplexity.ai/hub/blog/ai-research": {
+    "date": "2026-10-15",
+    "file": "data/articles/perplexity__ai-research.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/ef1dad98ec470f2744b6186482b06998c05a49e7-1320x740.png?rect=0,24,1320,693&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "scraped_at": "2026-10-17T08:10:40+00:00",
+    "site": "perplexity",
+    "title": "AI Research: Major Papers and Top Tools for Researchers (+ Best Practices)"
+  },
   "https://www.perplexity.ai/hub/blog/ai-tools-for-consultants": {
     "date": "2026-10-01",
     "file": "data/articles/perplexity__ai-tools-for-consultants.md",
@@ -4710,6 +4774,22 @@
     "title": "Fast Embeddings on GPUs",
     "topic": "Infrastructure"
   },
+  "https://www.perplexity.ai/hub/blog/how-space-routes-requests-to-the-right-sandbox-execution": {
+    "date": "2026-10-14",
+    "file": "data/articles/perplexity__how-space-routes-requests-to-the-right-sandbox-execution.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/0d3e1ca695fd8a5929226aaf27adc569419e856f-1456x816.jpg?rect=0,26,1456,764&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "scraped_at": "2026-10-17T08:10:46+00:00",
+    "site": "perplexity",
+    "title": "How SPACE routes requests to the right sandbox execution"
+  },
+  "https://www.perplexity.ai/hub/blog/how-to-use-ai-for-studying": {
+    "date": "2026-10-15",
+    "file": "data/articles/perplexity__how-to-use-ai-for-studying.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/944e62340899f2e920e5cd9162677a243c3a13a6-3000x2000.png?rect=0,213,3000,1575&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "scraped_at": "2026-10-17T08:10:35+00:00",
+    "site": "perplexity",
+    "title": "How to use AI for studying: 5 methods that work"
+  },
   "https://www.perplexity.ai/hub/blog/how-we-engineer-safer-agents": {
     "date": "",
     "file": "data/articles/perplexity__how-we-engineer-safer-agents.md",
@@ -4775,6 +4855,22 @@
     "title": "Learning from Real-World Mistakes",
     "topic": "Research"
   },
+  "https://www.perplexity.ai/hub/blog/llm-security": {
+    "date": "2026-10-16",
+    "file": "data/articles/perplexity__llm-security.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/07861b3e74b088ab61dc80fc3241340ddb243b85-1320x740.png?rect=0,24,1320,693&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "scraped_at": "2026-10-17T08:10:32+00:00",
+    "site": "perplexity",
+    "title": "What is LLM security? How to mitigate the OWASP top 10 safety risks"
+  },
+  "https://www.perplexity.ai/hub/blog/mcp-tools": {
+    "date": "2026-10-14",
+    "file": "data/articles/perplexity__mcp-tools.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/884ced3634f7402cc9866040fe910aa7b0edd74b-1320x740.png?rect=0,24,1320,693&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "scraped_at": "2026-10-17T08:10:43+00:00",
+    "site": "perplexity",
+    "title": "What Are MCP Tools and How Do AI Models Use Them?"
+  },
   "https://www.perplexity.ai/hub/blog/mcp-vs-api": {
     "date": "",
     "file": "data/articles/perplexity__mcp-vs-api.md",
@@ -4790,6 +4886,14 @@
     "scraped_at": "2026-10-08T11:05:31+00:00",
     "site": "perplexity",
     "title": "www.perplexity.ai"
+  },
+  "https://www.perplexity.ai/hub/blog/open-sourcing-space": {
+    "date": "2026-10-15",
+    "file": "data/articles/perplexity__open-sourcing-space.md",
+    "image": "https://cdn.sanity.io/images/aqo64vfr/production/85aca8565652ce1dd2886392c7445ad593e9db6f-2688x1512.jpg?rect=0,51,2688,1411&w=1200&h=630&fm=jpg&q=80&fit=crop",
+    "scraped_at": "2026-10-17T08:10:28+00:00",
+    "site": "perplexity",
+    "title": "Open-sourcing SPACE, the sandbox platform behind Computer"
   },
   "https://www.perplexity.ai/hub/blog/optimizing-on-device-inference-for-apple-silicon": {
     "date": "2026-09-01",
